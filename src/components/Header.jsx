@@ -1,132 +1,240 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
-import { Mail, Phone, Menu, X } from 'lucide-react';
+import { Mail, Phone, Menu, X } from "lucide-react";
 
 const Header = ({ page }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 10 || page === "about") {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.scrollY > 10 ||
+        page === "about" ||
+        page === "products" ||
+        page === "downloads" ||
+        page === "contact"
+      ) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [page]);
 
-    return (
-        <>
-            {/* Announcement Bar */}
-            <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary py-1  text-sm font-medium">
-                <div className="container mx-auto flex items-center justify-center space-x-6 ">
-                    <div className="flex items-center space-x-2">
-                        <Phone />
-                        <span>+971 2 123 4567</span>
-                    </div>
-                    <div className="h-4 w-[2px] bg-primary/80"></div>
-                    <div className="flex items-center space-x-2">
-                        <Mail />
-                        <span>info@abundancesolar.com</span>
-                    </div>
-                </div>
+  return (
+    <>
+      {/* Announcement Bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary py-1  text-sm font-medium">
+        <div className="container mx-auto flex items-center justify-center space-x-6 ">
+          <div className="flex items-center space-x-2">
+            <Phone />
+            <span>+971 2 123 4567</span>
+          </div>
+          <div className="h-4 w-[2px] bg-primary/80"></div>
+          <div className="flex items-center space-x-2">
+            <Mail />
+            <span>info@abundancesolar.com</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Header positioned below the announcement bar */}
+      <header
+        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-sm" : "bg-transparent"
+        }`}
+      >
+        <div
+          className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${
+            !isScrolled ? "backdrop-blur-md" : ""
+          }`}
+        >
+          {/* Logo with glass effect when not scrolled */}
+          <div
+            className={`flex-shrink-0 ${
+              !isScrolled
+                ? "bg-secondary/10 backdrop-blur-md rounded-lg px-3 py-1"
+                : ""
+            }`}
+          >
+            <a href="/" className="flex items-center">
+              <img src={Logo} alt="Abundance Solar" className="h-12 w-auto" />
+            </a>
+          </div>
+
+          {/* Desktop Navigation with glassmorphism and primary/secondary colors */}
+          <nav
+            className={`hidden md:flex items-center space-x-8 ${
+              !isScrolled
+                ? "bg-secondary/30 backdrop-blur-md rounded-full px-6 py-2"
+                : ""
+            }`}
+          >
+            <a
+              href="/"
+              data-readdy="true"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              About Us
+            </a>
+            <a
+              href="/products"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Products
+            </a>
+            <a
+              href="/downloads"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Downloads
+            </a>
+            <a
+              href="#"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Media
+            </a>
+            <Link
+              to="/contact"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Contact
+            </Link>
+          </nav>
+
+          {/* Right side elements with glass effect when not scrolled */}
+          <div
+            className={`hidden md:flex items-center space-x-4 ${
+              !isScrolled
+                ? "bg-secondary/20 backdrop-blur-md rounded-full px-4 py-2"
+                : ""
+            }`}
+          >
+            <div className="relative">
+              <button
+                className={`${
+                  isScrolled
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+              >
+                <span>EN</span>
+                <i className="fas fa-chevron-down ml-1 text-xs"></i>
+              </button>
             </div>
+            <button
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+            >
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
 
-            {/* Header positioned below the announcement bar */}
-            <header className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
-                <div className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${!isScrolled ? 'backdrop-blur-md' : ''}`}>
-                    {/* Logo with glass effect when not scrolled */}
-                    <div className={`flex-shrink-0 ${!isScrolled ? 'bg-secondary/10 backdrop-blur-md rounded-lg px-3 py-1' : ''}`}>
-                        <a href="#" className="flex items-center">
-                            <img src={Logo} alt='Abundance Solar' className='h-12 w-auto' />
-                        </a>
-                    </div>
-
-                    {/* Desktop Navigation with glassmorphism and primary/secondary colors */}
-                    <nav className={`hidden md:flex items-center space-x-8 ${!isScrolled ? 'bg-secondary/30 backdrop-blur-md rounded-full px-6 py-2' : ''}`}>
-                        <a href="/" data-readdy="true" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            Home
-                        </a>
-                        <a href="/about" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            About Us
-                        </a>
-                        <a href="/products" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            Products
-                        </a>
-                        <a href="/downloads" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            Downloads
-                        </a>
-                        <a href="#" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            Media
-                        </a>
-                        <a href="#" className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} font-medium transition-colors duration-200`}>
-                            Contact
-                        </a>
-                    </nav>
-
-                    {/* Right side elements with glass effect when not scrolled */}
-                    <div className={`hidden md:flex items-center space-x-4 ${!isScrolled ? 'bg-secondary/20 backdrop-blur-md rounded-full px-4 py-2' : ''}`}>
-                        <div className="relative">
-                            <button className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}>
-                                <span>EN</span>
-                                <i className="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
-                        </div>
-                        <button className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}>
-                            <i className="fas fa-search"></i>
-                        </button>
-                    </div>
-
-                    {/* Mobile menu button */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`${isScrolled ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary/90'} transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
-                        >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 right-0 md:hidden bg-white shadow-lg border-t py-4">
+            <div className="container mx-auto px-4">
+              <nav className="flex flex-col space-y-4">
+                <a
+                  href="/"
+                  data-readdy="true"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  Home
+                </a>
+                <a
+                  href="/about"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  About Us
+                </a>
+                <a
+                  href="/products"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  Products
+                </a>
+                <a
+                  href="/media"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  Media
+                </a>
+                <Link
+                  to="/contact"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  Contact
+                </Link>
+                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                  <button className="text-primary hover:text-secondary transition-colors duration-200">
+                    <span>EN</span>
+                    <i className="fas fa-chevron-down ml-1 text-xs"></i>
+                  </button>
+                  <button className="text-primary hover:text-secondary transition-colors duration-200">
+                    <i className="fas fa-search"></i>
+                  </button>
                 </div>
-                {/* Mobile Navigation */}
-                {isMenuOpen && (
-                    <div className="absolute top-full left-0 right-0 md:hidden bg-white shadow-lg border-t py-4">
-                        <div className="container mx-auto px-4">
-                            <nav className="flex flex-col space-y-4">
-                                <a href="/" data-readdy="true" className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2">
-                                    Home
-                                </a>
-                                <a href="/about" className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2">
-                                    About Us
-                                </a>
-                                <a href="/products" className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2">
-                                    Products
-                                </a>
-                                <a href="/media" className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2">
-                                    Media
-                                </a>
-                                <a href="/contact" className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2">
-                                    Contact
-                                </a>
-                                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                                    <button className="text-primary hover:text-secondary transition-colors duration-200">
-                                        <span>EN</span>
-                                        <i className="fas fa-chevron-down ml-1 text-xs"></i>
-                                    </button>
-                                    <button className="text-primary hover:text-secondary transition-colors duration-200">
-                                        <i className="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                )}
-            </header>
-        </>
-    )
-}
+              </nav>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
+  );
+};
 
 export default Header;
