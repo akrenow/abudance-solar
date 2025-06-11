@@ -33,12 +33,12 @@ const Header = ({ page }) => {
         <div className="container mx-auto flex items-center justify-center space-x-6 ">
           <div className="flex items-center space-x-2">
             <Phone />
-            <span>+971 2 123 4567</span>
+            <span>+971 55 950 1737</span>
           </div>
           <div className="h-4 w-[2px] bg-primary/80"></div>
           <div className="flex items-center space-x-2">
             <Mail />
-            <span>info@abundancesolar.com</span>
+            <span> purchase@abundance-solar.com</span>
           </div>
         </div>
       </div>

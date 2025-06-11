@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { X, Download, Info, Zap, Sun, Award } from "lucide-react";
+import { X, Download, Info, Zap, Sun, Eye } from "lucide-react";
 import PropTypes from "prop-types";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -555,7 +555,7 @@ const SolarPanelsPage = () => {
           </div>
           <div className="flex-1 space-y-1 sm:space-y-2 ml-4">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              Power
+              MAX POWER
             </div>
             <div
               className="h-6 sm:h-8 bg-gradient-to-t from-slate-600 to-slate-500 rounded-lg relative overflow-hidden transition-all duration-1000"
@@ -795,7 +795,7 @@ const SolarPanelsPage = () => {
                     </div>
                   </div>
 
-                  {/* Certifications */}
+                  {/* Certifications
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
                       <Award size={20} className="text-amber-500 mr-2" />
@@ -811,7 +811,7 @@ const SolarPanelsPage = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -838,6 +838,9 @@ const SolarPanelsPage = () => {
                             Efficiency (%)
                           </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
+                            View PDF
+                          </th>
+                          <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
                             Download
                           </th>
                         </tr>
@@ -859,6 +862,15 @@ const SolarPanelsPage = () => {
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
                               {model.efficiency}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-3 text-center">
+                              <button
+                                onClick={() => window.open(model.pdfFile, '_blank')}
+                                className="inline-flex items-center justify-center w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-200"
+                                title={`View ${model.name} datasheet`}
+                              >
+                                <Eye size={16} />
+                              </button>
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-center">
                               <button
