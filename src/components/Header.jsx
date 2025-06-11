@@ -29,25 +29,40 @@ const Header = ({ page }) => {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary py-1  text-sm font-medium">
-        <div className="container mx-auto flex items-center justify-center space-x-6 ">
-          <div className="flex items-center space-x-2">
-            <Phone />
-            <span>+971 55 950 1737</span>
+      <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary py-1 text-xs sm:text-sm font-medium">
+        <div className="container mx-auto px-4">
+          {/* Desktop view */}
+          <div className="hidden md:flex items-center justify-center space-x-6">
+            <div className="flex items-center space-x-2">
+              <Phone size={16} />
+              <span>+971 55 950 1737</span>
+            </div>
+            <div className="h-4 w-[2px] bg-primary/80"></div>
+            <div className="flex items-center space-x-2">
+              <Mail size={16} />
+              <span>purchase@abundance-solar.com</span>
+            </div>
           </div>
-          <div className="h-4 w-[2px] bg-primary/80"></div>
-          <div className="flex items-center space-x-2">
-            <Mail />
-            <span> purchase@abundance-solar.com</span>
+
+          {/* Mobile view - stacked layout */}
+          <div className="md:hidden flex flex-col items-center space-y-1 py-1">
+            <div className="flex items-center space-x-2">
+              <Phone size={14} />
+              <span>+971 55 950 1737</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Mail size={14} />
+              <span>purchase@abundance-solar.com</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Header positioned below the announcement bar */}
       <header
-        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-sm" : "bg-transparent"
-        }`}
+        } top-12 md:top-8`}
       >
         <div
           className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${
