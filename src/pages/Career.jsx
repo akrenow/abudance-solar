@@ -10,8 +10,20 @@ import {
   Star,
 } from "lucide-react";
 import { jobOpenings } from "../core/constants/jobOpenings";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Career = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const filteredJobOpenings = jobOpenings.filter(
+    (job) =>
+      job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.department.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const benefits = [
     {
       icon: <Star className="w-6 h-6" />,
@@ -97,6 +109,16 @@ Best regards,
     window.location.href = mailtoLink;
   };
 
+  const handleViewOpenPositions = () => {
+    const element = document.getElementById("current-opportunities-heading");
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Header page={"career"} />
@@ -114,10 +136,16 @@ Best regards,
               sustainable energy solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+              <button
+                onClick={handleViewOpenPositions}
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+              >
                 View Open Positions
               </button>
-              <button className="border-2 border-white hover:bg-white hover:text-secondary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+              <button
+                onClick={() => navigate("/about")}
+                className="border-2 border-white hover:bg-white hover:text-secondary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+              >
                 Learn About Our Culture
               </button>
             </div>
@@ -176,10 +204,13 @@ Best regards,
       </section>
 
       {/* Job Openings Section */}
-      <section className="py-20">
+      <section id="current-opportunities" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2
+              id="current-opportunities-heading"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            >
               Current Opportunities
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -187,9 +218,25 @@ Best regards,
               innovative team
             </p>
           </div>
-
+          {/* Search Section */}
+          <section className="py-10 ">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Search Job Openings
+                </h2>
+                <input
+                  type="text"
+                  placeholder="Search by title, department, or description"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                />
+              </div>
+            </div>
+          </section>
           <div className="grid gap-8">
-            {jobOpenings.map((job) => (
+            {filteredJobOpenings.map((job) => (
               <div
                 key={job.id}
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
