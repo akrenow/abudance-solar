@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
   const validateForm = () => {
     const newErrors = {};
@@ -66,20 +68,59 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
+    setSubmitStatus({ type: "", message: "" });
 
-    // Simulate form submission - replace with actual API call
-    setTimeout(() => {
-      alert("This is under Development! Please Try Again After sometime.");
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        subject: "",
-        message: "",
+    try {
+      // EmailJS configuration
+      // const serviceID = "service_itnj3qj"; // Replace with your EmailJS service ID
+      // const templateID = "template_ldhre8f"; // Replace with your EmailJS template ID
+      // const publicKey = "Z-eiDS2yHt4qOfWLx"; // Replace with your EmailJS public key
+
+      // Template parameters that will be sent to your email
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_email: "ankushabhat13@gmail.com",
+        subject: formData.subject,
+        company: formData.company || "Not provided",
+        message: formData.message,
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! We will get back to you soon.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          subject: "",
+          message: "",
+        });
+        setErrors({});
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Failed to send message. Please try again or contact us directly.",
       });
-      setErrors({});
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
