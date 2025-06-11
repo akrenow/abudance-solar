@@ -14,7 +14,8 @@ const Header = ({ page }) => {
         page === "about" ||
         page === "products" ||
         page === "downloads" ||
-        page === "contact"
+        page === "contact" ||
+        page === "career"
       ) {
         setIsScrolled(true);
       } else {
@@ -151,6 +152,16 @@ const Header = ({ page }) => {
             >
               Contact
             </Link>
+            <Link
+              to="/career"
+              className={`${
+                isScrolled
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary/90"
+              } font-medium transition-colors duration-200`}
+            >
+              Career
+            </Link>
           </nav>
 
           {/* Right side elements with glass effect when not scrolled */}
@@ -233,6 +244,12 @@ const Header = ({ page }) => {
                   className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
                 >
                   Contact
+                </Link>
+                <Link
+                  to="/career"
+                  className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                >
+                  Career
                 </Link>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <button className="text-primary hover:text-secondary transition-colors duration-200">
