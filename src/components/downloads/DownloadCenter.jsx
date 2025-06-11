@@ -1,121 +1,558 @@
-// src/components/downloads/DownloadCenter.jsx
-import React from "react";
+import { useState } from "react";
+import {
+  X,
+  Download,
+  Eye,
+  FileText,
+  Shield,
+  Settings,
+  ChevronRight,
+} from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
 
+// Import PDF files for datasheets
+import WarrantyPDF from "../../assets/pdf/LIMITED AND LINEAR WARRANTY OF PV MODULES-ABUNDANCE.pdf";
+
+// Import Glass Glass Bifacial PDFs
+import ABS_144GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-144GGS-M10-585-605.pdf";
+import ABS_132GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-M10-535-555.pdf";
+import ABS_120GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-120GGS-M10-485-505.pdf";
+import ABS_108GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-108GGS-M10-435-455.pdf";
+import ABS_132GGS_G12 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12-705-725.pdf";
+import ABS_132GGS_G12R from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12R-610-630.pdf";
+
+// Import Glass Glass All Black PDFs
+import ABS_144GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-144GGB-M10-585-605.pdf";
+import ABS_132GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-M10-535-555.pdf";
+import ABS_120GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-120GGB-M10-485-505.pdf";
+import ABS_108GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-108GGB-M10-435-455.pdf";
+import ABS_132GGB_G12R from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-G12R-610-630.pdf";
+
+// Import Glass Transparent Backsheet PDFs
+import ABS_144GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-144GTS-M10-585-605.pdf";
+import ABS_132GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-M10-535-555.pdf";
+import ABS_120GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-120GTS-M10-485-505.pdf";
+import ABS_108GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-108GTS-M10-435-455.pdf";
+import ABS_132GTS_G12R from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-G12R-610-630.pdf";
+
+// Import Glass White Backsheet PDFs
+import ABS_144GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-144GWS-M10-585-605.pdf";
+import ABS_132GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-M10-535-555.pdf";
+import ABS_120GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-120GWS-M10-485-505.pdf";
+import ABS_108GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-108GWS-M10-435-455.pdf";
+import ABS_132GWS_G12 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12-705-725.pdf";
+import ABS_132GWS_G12R from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12R-610-630.pdf";
+
+// Import Glass Black Backsheet PDFs
+import ABS_144GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-144GBB-M10-585-605.pdf";
+import ABS_132GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-M10-535-555.pdf";
+import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-120GBB-M10-485-505.pdf";
+import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
+import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
+
 const DownloadCenter = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  // Datasheet collections with all model PDFs
+  const datasheetCollections = {
+    "Glass/Glass Bifacial Datasheet": {
+      title: "Glass/Glass Bifacial PV Module Datasheets",
+      description:
+        "Complete collection of Glass/Glass bifacial solar panel datasheets with silver frame construction.",
+      models: [
+        {
+          name: "ABS-144GGS-M10",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "585 to 605",
+          efficiency: "22.65 to 23.42",
+          pdfFile: ABS_144GGS_M10,
+        },
+        {
+          name: "ABS-132GGS-M10",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "535 to 555",
+          efficiency: "22.58 to 23.43",
+          pdfFile: ABS_132GGS_M10,
+        },
+        {
+          name: "ABS-120GGS-M10",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "485 to 505",
+          efficiency: "22.42 to 23.34",
+          pdfFile: ABS_120GGS_M10,
+        },
+        {
+          name: "ABS-108GGS-M10",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "435 to 455",
+          efficiency: "22.28 to 23.30",
+          pdfFile: ABS_108GGS_M10,
+        },
+        {
+          name: "ABS-132GGS-G12",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "705 to 725",
+          efficiency: "22.70 to 23.34",
+          pdfFile: ABS_132GGS_G12,
+        },
+        {
+          name: "ABS-132GGS-G12R",
+          productType: "Glass/Glass-Silver Frame",
+          wattage: "610 to 630",
+          efficiency: "22.56 to 23.30",
+          pdfFile: ABS_132GGS_G12R,
+        },
+      ],
+    },
+    "Glass/Glass All Black Datasheet": {
+      title: "Glass/Glass All Black PV Module Datasheets",
+      description:
+        "Complete collection of Glass/Glass all black solar panel datasheets with premium black frame design.",
+      models: [
+        {
+          name: "ABS-144GGB-M10",
+          productType: "Glass/Glass-Black Frame",
+          wattage: "585 to 605",
+          efficiency: "22.65 to 23.42",
+          pdfFile: ABS_144GGB_M10,
+        },
+        {
+          name: "ABS-132GGB-M10",
+          productType: "Glass/Glass-Black Frame",
+          wattage: "535 to 555",
+          efficiency: "22.58 to 23.43",
+          pdfFile: ABS_132GGB_M10,
+        },
+        {
+          name: "ABS-120GGB-M10",
+          productType: "Glass/Glass-Black Frame",
+          wattage: "485 to 505",
+          efficiency: "22.42 to 23.34",
+          pdfFile: ABS_120GGB_M10,
+        },
+        {
+          name: "ABS-108GGB-M10",
+          productType: "Glass/Glass-Black Frame",
+          wattage: "435 to 455",
+          efficiency: "22.28 to 23.30",
+          pdfFile: ABS_108GGB_M10,
+        },
+        {
+          name: "ABS-132GGB-G12R",
+          productType: "Glass/Glass-Black Frame",
+          wattage: "610 to 630",
+          efficiency: "22.56 to 23.30",
+          pdfFile: ABS_132GGB_G12R,
+        },
+      ],
+    },
+    "Glass/Transparent Backsheet Datasheet": {
+      title: "Glass/Transparent Backsheet PV Module Datasheets",
+      description:
+        "Complete collection of Glass/Transparent backsheet solar panel datasheets for architectural applications.",
+      models: [
+        {
+          name: "ABS-144GTS-M10",
+          productType: "Glass/Transparent Back sheet-Silver Frame",
+          wattage: "585 to 605",
+          efficiency: "22.65 to 23.42",
+          pdfFile: ABS_144GTS_M10,
+        },
+        {
+          name: "ABS-132GTS-M10",
+          productType: "Glass/Transparent Back sheet-Silver Frame",
+          wattage: "535 to 555",
+          efficiency: "22.58 to 23.43",
+          pdfFile: ABS_132GTS_M10,
+        },
+        {
+          name: "ABS-120GTS-M10",
+          productType: "Glass/Transparent Back sheet-Silver Frame",
+          wattage: "485 to 505",
+          efficiency: "22.42 to 23.34",
+          pdfFile: ABS_120GTS_M10,
+        },
+        {
+          name: "ABS-108GTS-M10",
+          productType: "Glass/Transparent Back sheet-Silver Frame",
+          wattage: "435 to 455",
+          efficiency: "22.28 to 23.30",
+          pdfFile: ABS_108GTS_M10,
+        },
+        {
+          name: "ABS-132GTS-G12R",
+          productType: "Glass/Transparent Back sheet-Silver Frame",
+          wattage: "610 to 630",
+          efficiency: "22.56 to 23.30",
+          pdfFile: ABS_132GTS_G12R,
+        },
+      ],
+    },
+    "Glass/White Backsheet Datasheet": {
+      title: "Glass/White Backsheet PV Module Datasheets",
+      description:
+        "Complete collection of Glass/White backsheet solar panel datasheets for optimal heat dissipation.",
+      models: [
+        {
+          name: "ABS-144GWS-M10",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "585 to 605",
+          efficiency: "22.65 to 23.42",
+          pdfFile: ABS_144GWS_M10,
+        },
+        {
+          name: "ABS-132GWS-M10",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "535 to 555",
+          efficiency: "22.58 to 23.43",
+          pdfFile: ABS_132GWS_M10,
+        },
+        {
+          name: "ABS-120GWS-M10",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "485 to 505",
+          efficiency: "22.42 to 23.34",
+          pdfFile: ABS_120GWS_M10,
+        },
+        {
+          name: "ABS-108GWS-M10",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "435 to 455",
+          efficiency: "22.28 to 23.30",
+          pdfFile: ABS_108GWS_M10,
+        },
+        {
+          name: "ABS-132GWS-G12",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "705 to 725",
+          efficiency: "22.70 to 23.34",
+          pdfFile: ABS_132GWS_G12,
+        },
+        {
+          name: "ABS-132GWS-G12R",
+          productType: "Glass/White Back Sheet-Silver Frame",
+          wattage: "610 to 630",
+          efficiency: "22.56 to 23.30",
+          pdfFile: ABS_132GWS_G12R,
+        },
+      ],
+    },
+    "Glass/Black Backsheet Datasheet": {
+      title: "Glass/Black Backsheet PV Module Datasheets",
+      description:
+        "Complete collection of Glass/Black backsheet solar panel datasheets combining performance with aesthetic appeal.",
+      models: [
+        {
+          name: "ABS-144GBB-M10",
+          productType: "Glass/Black Back Sheet-Silver Frame",
+          wattage: "585 to 605",
+          efficiency: "22.65 to 23.42",
+          pdfFile: ABS_144GBB_M10,
+        },
+        {
+          name: "ABS-132GBB-M10",
+          productType: "Glass/Black Back Sheet-Silver Frame",
+          wattage: "535 to 555",
+          efficiency: "22.58 to 23.43",
+          pdfFile: ABS_132GBB_M10,
+        },
+        {
+          name: "ABS-120GBB-M10",
+          productType: "Glass/Black Back Sheet-Silver Frame",
+          wattage: "485 to 505",
+          efficiency: "22.42 to 23.34",
+          pdfFile: ABS_120GBB_M10,
+        },
+        {
+          name: "ABS-108GBB-M10",
+          productType: "Glass/Black Back Sheet-Silver Frame",
+          wattage: "435 to 455",
+          efficiency: "22.28 to 23.30",
+          pdfFile: ABS_108GBB_M10,
+        },
+        {
+          name: "ABS-132GBB-G12R",
+          productType: "Glass/Black Back Sheet-Silver Frame",
+          wattage: "610 to 630",
+          efficiency: "22.56 to 23.30",
+          pdfFile: ABS_132GBB_G12R,
+        },
+      ],
+    },
+  };
+
   const downloadCategories = [
     {
       id: "datasheets",
-      name: "Datasheets",
+      name: "Product Datasheets",
+      icon: FileText,
+      description:
+        "Comprehensive technical specifications for all solar panel models",
+      color: "from-amber-500 to-orange-500",
       files: [
-        {
-          name: "Glass/Glass Bifacial Datasheet",
-          url: "/downloads/datasheets/glass-glass.pdf",
-        },
-        {
-          name: "Glass/Glass All Black Datasheet",
-          url: "/downloads/datasheets/glass-glass-black.pdf",
-        },
-        {
-          name: "Glass/Transparent Backsheet Datasheet",
-          url: "/downloads/datasheets/glass-transparent.pdf",
-        },
-        {
-          name: "Glass/White Backsheet Datasheet",
-          url: "/downloads/datasheets/glass-white.pdf",
-        },
-        {
-          name: "Glass/Black Backsheet Datasheet",
-          url: "/downloads/datasheets/glass-black.pdf",
-        },
+        { name: "Glass/Glass Bifacial Datasheet", hasPopup: true },
+        { name: "Glass/Glass All Black Datasheet", hasPopup: true },
+        { name: "Glass/Transparent Backsheet Datasheet", hasPopup: true },
+        { name: "Glass/White Backsheet Datasheet", hasPopup: true },
+        { name: "Glass/Black Backsheet Datasheet", hasPopup: true },
       ],
     },
     {
       id: "warranty",
       name: "Warranty Documents",
+      icon: Shield,
+      description: "Product warranties and claim procedures",
+      color: "from-green-500 to-green-600",
       files: [
         {
           name: "Limited and Linear Warranty",
-          url: "/downloads/warranty/warranty.pdf",
+          file: WarrantyPDF,
+          hasPopup: false,
         },
         {
           name: "Warranty Claim Form",
           url: "/downloads/warranty/claim-form.pdf",
+          hasPopup: false,
         },
       ],
     },
     {
       id: "installation",
       name: "Installation Manuals",
+      icon: Settings,
+      description: "Installation guides and safety procedures",
+      color: "from-slate-600 to-slate-700",
       files: [
         {
           name: "Solar PV Modules Installation Manual",
           url: "/downloads/installation/manual.pdf",
+          hasPopup: false,
         },
         {
           name: "Mounting Instructions",
           url: "/downloads/installation/mounting.pdf",
+          hasPopup: false,
         },
         {
           name: "Safety Precautions",
           url: "/downloads/installation/safety.pdf",
+          hasPopup: false,
         },
       ],
     },
   ];
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header page="downloads" />
-      <div className="container mx-auto px-4 py-12 pt-28 mt-10">
-        <h1 className="text-3xl font-bold text-primary mb-8">
-          Download Center
-        </h1>
+  const openDatasheetPopup = (categoryName) => {
+    setSelectedCategory(datasheetCollections[categoryName]);
+    setIsPopupOpen(true);
+  };
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-          {downloadCategories.map((category) => (
-            <div
-              key={category.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200"
-            >
-              <div className="bg-secondary p-4">
-                <h2 className="text-xl font-semibold text-white">
-                  {category.name}
-                </h2>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3">
-                  {category.files.map((file, index) => (
-                    <li key={index}>
-                      <a
-                        href={file.url}
-                        download
-                        className="flex items-center text-primary hover:text-secondary transition-colors"
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedCategory(null);
+  };
+
+  const handleDownload = (file, fileName) => {
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleFileClick = (file) => {
+    if (file.hasPopup) {
+      openDatasheetPopup(file.name);
+    } else if (file.file) {
+      handleDownload(file.file, `${file.name}.pdf`);
+    } else if (file.url) {
+      window.open(file.url, "_blank");
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Header page="downloads" />
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16 mt-20 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {downloadCategories.map((category) => {
+            const IconComponent = category.icon;
+            return (
+              <div
+                key={category.id}
+                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              >
+                {/* Category Header */}
+                <div
+                  className={`bg-gradient-to-r ${category.color} p-6 relative overflow-hidden`}
+                >
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-10 translate-x-10"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+                  <div className="relative z-10">
+                    <IconComponent size={32} className="text-white mb-3" />
+                    <h2 className="text-2xl font-bold text-white mb-2">
+                      {category.name}
+                    </h2>
+                    <p className="text-white/90 text-sm">
+                      {category.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Files List */}
+                <div className="p-6">
+                  <div className="space-y-3">
+                    {category.files.map((file, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleFileClick(file)}
+                        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-gray-100 hover:to-gray-50 rounded-xl transition-all duration-300 group/item border border-gray-200 hover:border-gray-300"
                       >
-                        <svg
-                          className="w-5 h-5 mr-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover/item:from-amber-500 group-hover/item:to-orange-500 transition-all duration-300">
+                            <FileText
+                              size={20}
+                              className="text-gray-600 group-hover/item:text-white transition-colors duration-300"
+                            />
+                          </div>
+                          <div className="text-left">
+                            <div className="font-semibold text-gray-800 group-hover/item:text-amber-600 transition-colors duration-300">
+                              {file.name}
+                            </div>
+                            {file.hasPopup && (
+                              <div className="text-xs text-gray-500">
+                                Click to view all models
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Download
+                            size={16}
+                            className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
                           />
-                        </svg>
-                        {file.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+
+                          <ChevronRight
+                            size={16}
+                            className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
+                          />
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
+
+      {/* Datasheet Popup */}
+      {isPopupOpen && selectedCategory && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            {/* Popup Header */}
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-6 rounded-t-3xl flex-shrink-0">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-2">
+                    {selectedCategory.title}
+                  </h2>
+                  <p className="text-white/90">
+                    {selectedCategory.description}
+                  </p>
+                </div>
+                <button
+                  onClick={closePopup}
+                  className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                >
+                  <X size={24} className="text-white" />
+                </button>
+              </div>
+            </div>
+
+            {/* Popup Content - Scrollable */}
+            <div className="p-6 overflow-y-auto flex-1">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-amber-50 to-orange-50">
+                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                        Model Name
+                      </th>
+                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                        Product Type
+                      </th>
+                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                        Wattage (WP)
+                      </th>
+                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                        Efficiency (%)
+                      </th>
+                      <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
+                        View PDF
+                      </th>
+                      <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
+                        Download
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedCategory.models.map((model, index) => (
+                      <tr
+                        key={index}
+                        className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-orange-50 transition-colors"
+                      >
+                        <td className="border border-gray-200 px-4 py-3 text-sm font-medium text-gray-800">
+                          {model.name}
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
+                          {model.productType}
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
+                          {model.wattage}
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
+                          {model.efficiency}
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-center">
+                          <button
+                            onClick={() => window.open(model.pdfFile, "_blank")}
+                            className="inline-flex items-center justify-center w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-200"
+                            title={`View ${model.name} datasheet`}
+                          >
+                            <Eye size={16} />
+                          </button>
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-center">
+                          <button
+                            onClick={() =>
+                              handleDownload(
+                                model.pdfFile,
+                                `${model.name}-datasheet.pdf`
+                              )
+                            }
+                            className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
+                            title={`Download ${model.name} datasheet`}
+                          >
+                            <Download size={16} />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );
