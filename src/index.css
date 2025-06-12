@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,17 +7,32 @@
 @layer base {
   :root {
     /* Light Theme */
-    --background: 0 0% 100%;             /* #ffffff */
-    --foreground: 222.2 84% 4.9%;        /* #0a0e17 */
-    
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 222.2 84% 4.9%; /* #0a0e17 */
+
     /* Updated Primary (DB840A) */
-    --primary: 30 91% 45%;               /* #DB840A */
-    --primary-foreground: 0 0% 100%;     /* White text for better contrast */
-    
+    --primary: 30 91% 45%; /* #DB840A */
+    --primary-foreground: 0 0% 100%; /* White text for better contrast */
+
     /* Updated Secondary (1B2A4F) */
-    --secondary: 222 47% 20%;            /* #1B2A4F */
+    --secondary: 222 47% 20%; /* #1B2A4F */
     --secondary-foreground: 210 40% 98%; /* Light text for contrast */
-    
+
+    /* Design system additions */
+    --gradient-primary: linear-gradient(135deg, #1b2a4f 0%, #2a3f5f 100%);
+    --gradient-secondary: linear-gradient(135deg, #db840a 0%, #f39c12 100%);
+    --gradient-accent: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 0.75rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
+
     /* Rest of light theme colors remain the same */
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -38,17 +52,17 @@
 
   .dark {
     /* Dark Theme */
-    --background: 222.2 84% 4.9%;       /* #0a0e17 */
-    --foreground: 210 40% 98%;          /* #f8fafc */
-    
+    --background: 222.2 84% 4.9%; /* #0a0e17 */
+    --foreground: 210 40% 98%; /* #f8fafc */
+
     /* Dark mode primary becomes orange */
-    --primary: 30 91% 45%;              /* #DB840A */
-    --primary-foreground: 0 0% 100%;    /* White text */
-    
+    --primary: 30 91% 45%; /* #DB840A */
+    --primary-foreground: 0 0% 100%; /* White text */
+
     /* Dark mode secondary becomes lighter navy */
-    --secondary: 222 47% 30%;           /* #2a3a5f (lighter than 1B2A4F) */
+    --secondary: 222 47% 30%; /* #2a3a5f (lighter than 1B2A4F) */
     --secondary-foreground: 210 40% 98%; /* Light text */
-    
+
     /* Rest of dark theme colors */
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -80,11 +94,45 @@
   width: 100% !important;
 }
 
-
-
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
+/* Custom utilities for better design consistency */
+@layer utilities {
+  .btn-primary {
+    @apply bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
 
+  .btn-secondary {
+    @apply bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
 
+  .btn-outline {
+    @apply border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105;
+  }
+
+  .card-modern {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .text-gradient-primary {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary/80;
+  }
+
+  .text-gradient-secondary {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary/80;
+  }
+}

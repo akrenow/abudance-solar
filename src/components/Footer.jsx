@@ -1,156 +1,209 @@
 import React from "react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Send,
+  ExternalLink,
+  LinkedinIcon,
+  TwitterIcon,
+  FacebookIcon,
+  InstagramIcon,
+} from "lucide-react";
+import Logo from "../assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-20 pb-8 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(219,132,10,0.1)_0%,transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(27,42,79,0.1)_0%,transparent_50%)]"></div>
+
+      <div className="container mx-auto container-padding relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Abundance Solar</h3>
-            <p className="text-gray-400 mb-6">
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
+              <img
+                src={Logo}
+                alt="Abundance Solar"
+                className="h-12 w-auto mr-4"
+              />
+              <h3 className="text-2xl font-bold">Abundance Solar</h3>
+            </div>
+            <p className="text-gray-300 mb-8 leading-relaxed text-lg">
               Leading manufacturer of premium N-Type TopCon solar modules for
-              residential and commercial applications.
+              residential and commercial applications, driving the UAE's vision
+              for sustainable energy.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                className="group w-12 h-LinkedinIcon12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
-                <i className="fab fa-linkedin text-xl"></i>
+                <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
-                <i className="fab fa-twitter text-xl"></i>
+                <TwitterIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
-                <i className="fab fa-facebook text-xl"></i>
+                <FacebookIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
-                <i className="fab fa-instagram text-xl"></i>
+                <InstagramIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>
+
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-bold mb-6 text-primary">Quick Links</h3>
+            <ul className="space-y-4">
               <li>
                 <a
-                  href="https://readdy.ai/home/478205b1-512e-47f5-b295-f70968878c4c/f04a6b34-4a33-496c-944d-a26c087505e3"
+                  href="/"
                   data-readdy="true"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   Home
                 </a>
               </li>
               <li>
                 <a
                   href="/about"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   About Us
                 </a>
               </li>
               <li>
                 <a
                   href="/products"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   Products
                 </a>
               </li>
               <li>
                 <a
                   href="/career"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   Career
                 </a>
               </li>
               <li>
                 <a
                   href="/contact"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   Contact
                 </a>
               </li>
             </ul>
           </div>
+
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <i className="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
-                <span className="text-gray-400">
+            <h3 className="text-xl font-bold mb-6 text-primary">Contact Us</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start group">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
                   KEZAD, Abu Dhabi, United Arab Emirates
                 </span>
               </li>
-              <li className="flex items-start">
-                <i className="fas fa-phone mt-1 mr-3 text-gray-400"></i>
-                <span className="text-gray-400">+971 2 123 4567</span>
+              <li className="flex items-start group">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  +971 55 950 1737
+                </span>
               </li>
-              <li className="flex items-start">
-                <i className="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
-                <span className="text-gray-400">info@abundancesolar.com</span>
+              <li className="flex items-start group">
+                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  purchase@abundance-solar.com
+                </span>
               </li>
             </ul>
           </div>
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="text-gray-400 mb-4">
-              Subscribe to our newsletter for the latest updates and industry
-              insights.
-            </p>
-            <form className="flex flex-col space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="bg-gray-800 text-white border-none rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button"
-              >
-                Subscribe
-              </button>
-            </form>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-3xl p-8 mb-12 border border-gray-700/50">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-primary">
+                Stay Updated
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Subscribe to our newsletter for the latest updates, industry
+                insights, and exclusive offers on our solar solutions.
+              </p>
+            </div>
+            <div>
+              <form className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 bg-gray-800/50 text-white border border-gray-600 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 placeholder-gray-400"
+                />
+                <button
+                  type="submit"
+                  className="btn-secondary flex items-center justify-center min-w-[140px]"
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  Subscribe
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-700/50 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-gray-400 text-sm">
               &copy; 2025 Abundance Solar. All rights reserved.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
                 Terms of Service
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors duration-200"
+                className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
-                Sitemap
+                Cookie Policy
               </a>
             </div>
           </div>
