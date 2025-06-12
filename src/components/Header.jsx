@@ -30,10 +30,10 @@ const Header = ({ page }) => {
   return (
     <>
       {/* Announcement Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary py-1 text-xs sm:text-sm font-medium">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-secondary text-primary text-xs sm:text-sm font-medium">
         <div className="container mx-auto px-4">
           {/* Desktop view */}
-          <div className="hidden md:flex items-center justify-center space-x-6">
+          <div className="hidden md:flex items-center justify-center space-x-6 py-5">
             <div className="flex items-center space-x-2">
               <Phone size={16} />
               <span>+971 55 950 1737</span>
@@ -46,7 +46,7 @@ const Header = ({ page }) => {
           </div>
 
           {/* Mobile view - stacked layout */}
-          <div className="md:hidden flex flex-col items-center space-y-1 py-1">
+          <div className="md:hidden flex flex-col items-center space-y-1 py-2">
             <div className="flex items-center space-x-2">
               <Phone size={14} />
               <span>+971 55 950 1737</span>
@@ -59,11 +59,12 @@ const Header = ({ page }) => {
         </div>
       </div>
 
-      {/* Header positioned below the announcement bar */}
+      {/* Header positioned directly below the announcement bar */}
       <header
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-sm" : "bg-transparent"
-        } top-12 md:top-8`}
+        }`}
+        style={{ top: "var(--announcement-height, 44px)" }}
       >
         <div
           className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${
@@ -265,6 +266,19 @@ const Header = ({ page }) => {
           </div>
         )}
       </header>
+
+      {/* Add CSS custom property for dynamic announcement height */}
+      <style jsx>{`
+        :global(:root) {
+          --announcement-height: 44px; /* Adjust based on your announcement bar's actual height */
+        }
+
+        @media (min-width: 768px) {
+          :global(:root) {
+            --announcement-height: 40px; /* Desktop height */
+          }
+        }
+      `}</style>
     </>
   );
 };
