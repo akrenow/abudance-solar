@@ -26,41 +26,41 @@ const mainProducts = [
 
 const MainProductsPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
       {/* Header - Using the main site header */}
       <Header page="products" />
 
       {/* Product Cards */}
-      <div className="container mx-auto px-4 py-16 mt-20 relative  ">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 py-12 mt-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {mainProducts.map((product, index) => (
             <Link
               key={index}
               to={product.path}
-              className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105"
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-400 transform hover:-translate-y-1 hover:scale-102"
             >
               {/* Product Image Container */}
-              <div className="relative h-80 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
+              <div className="relative h-56 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10"></div>
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Floating badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
                   Premium
                 </div>
               </div>
 
               {/* Product Info */}
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-slate-700 transition-colors duration-300">
+              <div className="p-5">
+                <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-slate-700 transition-colors duration-300">
                   {product.title}
                 </h2>
 
                 {/* Product descriptions */}
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   {index === 0 &&
                     "High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty"}
                   {index === 1 &&
@@ -70,43 +70,43 @@ const MainProductsPage = () => {
                 </p>
 
                 {/* Features list */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-1.5 mb-4">
                   {index === 0 && (
                     <>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         <span>22.65-23.42% Efficiency</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         <span>Bifacial Technology</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                         <span>Monofacial technology</span>
                       </div>
                     </>
                   )}
                   {index === 1 && (
                     <>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                         <span>99.5% Peak Efficiency</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                         <span>Smart Monitoring</span>
                       </div>
                     </>
                   )}
                   {index === 2 && (
                     <>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
                         <span>Turnkey Solutions</span>
                       </div>
-                      <div className="flex items-center text-sm text-gray-700">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
                         <span>Project Management</span>
                       </div>
                     </>
@@ -115,12 +115,12 @@ const MainProductsPage = () => {
 
                 {/* Call to action */}
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-amber-600 group-hover:text-orange-600 transition-colors duration-300">
+                  <span className="text-xs font-medium text-amber-600 group-hover:text-orange-600 transition-colors duration-300">
                     Explore Products
                   </span>
-                  <div className="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center group-hover:from-orange-500 group-hover:to-red-500 transition-all duration-300 group-hover:scale-110">
+                  <div className="w-7 h-7 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center group-hover:from-orange-500 group-hover:to-red-500 transition-all duration-300 group-hover:scale-105">
                     <svg
-                      className="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform duration-300"
+                      className="w-3 h-3 text-white transform group-hover:translate-x-0.5 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -137,23 +137,23 @@ const MainProductsPage = () => {
               </div>
 
               {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl"></div>
             </Link>
           ))}
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="text-center mt-20">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+        <div className="text-center mt-16">
+          <h3 className="text-xl font-bold text-gray-800 mb-3">
             Need Help Choosing the Right Solution?
           </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-sm">
             Our expert team is here to help you find the perfect solar solution
             for your specific needs and requirements.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+            className="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
           >
             <svg
               className="w-5 h-5 mr-2"
