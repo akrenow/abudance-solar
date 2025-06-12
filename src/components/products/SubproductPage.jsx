@@ -50,7 +50,7 @@ const categories = {
       image:
         "https://www.pnsolarpv.com/storage/uploads/images/202308/11/1691747648_6YyCEdJdeI.webp",
       path: "/products/solar-panels",
-      wattage: "585-605W",
+      wattage: "435-725W",
       efficiency: "22.65-23.42%",
       type: "Bifacial N-Type",
       description:
@@ -120,7 +120,7 @@ const categories = {
       image:
         "https://greenmondi.de/media/64/54/39/1688712658/PV-Module-Mono-Halfcut-Full-Black-9.png?ts=1688712658",
       path: "/products/solar-panels",
-      wattage: "585-605W",
+      wattage: "485-630W",
       efficiency: "22.65-23.42%",
       type: "Bifacial N-Type",
       description:
@@ -183,7 +183,7 @@ const categories = {
       image:
         "https://s.alicdn.com/@sc04/kf/H3139fbc9b7ae43ebbf653873f6f1f039f.png_720x720q50.jpg",
       path: "/products/solar-panels",
-      wattage: "585-605W",
+      wattage: "485-630W",
       efficiency: "22.65-23.42%",
       type: "Bifacial N-Type",
       description:
@@ -247,7 +247,7 @@ const categories = {
       image:
         "https://metsolar.eu/wp-content/uploads/2017/11/Glass-blacksheet-layers.png",
       path: "/products/solar-panels",
-      wattage: "585-605W",
+      wattage: "485-725W",
       efficiency: "22.65-23.42%",
       type: "Monofacial N-Type",
       description:
@@ -317,7 +317,7 @@ const categories = {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa9nFoOyssxa3q14PjpIEgjsY9NXTTX9qRHA&s",
       path: "/products/solar-panels",
-      wattage: "585-605W",
+      wattage: "485-630W",
       efficiency: "22.65-23.42%",
       type: "Monofacial N-Type",
       description:
@@ -429,7 +429,7 @@ const categories = {
     //   certifications: ["IEC 61215", "IEC 61730", "CE", "TUV", "UL"],
     // },
   ],
-  "Proven PERC Technology": [
+  "Proven ABC Technology": [
     //   {
     //     title: "PERC Mono Half-Cut Panel",
     //     category: "Monofacial",
@@ -865,7 +865,9 @@ const SolarPanelsPage = () => {
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-center">
                               <button
-                                onClick={() => window.open(model.pdfFile, '_blank')}
+                                onClick={() =>
+                                  window.open(model.pdfFile, "_blank")
+                                }
                                 className="inline-flex items-center justify-center w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-200"
                                 title={`View ${model.name} datasheet`}
                               >
