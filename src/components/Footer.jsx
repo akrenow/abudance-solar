@@ -28,13 +28,13 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
               Leading manufacturer of premium N-Type TopCon solar modules for
-              residential and commercial applications, driving the UAE's vision
+              residential and commercial applications, driving the UAE&#39;s vision
               for sustainable energy.
             </p>
             <div className="flex space-x-6">
               <a
                 href="#"
-                className="group w-12 h-LinkedinIcon12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
@@ -116,26 +116,35 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-primary">Contact Us</h3>
             <ul className="space-y-6">
-              <li className="flex items-start group">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 text-white" />
-                </div>
+              <li className="flex items-start">
+                <a
+                  href="#"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                >
+                  <MapPin className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                </a>
                 <span className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
                   KEZAD, Abu Dhabi, United Arab Emirates
                 </span>
               </li>
-              <li className="flex items-start group">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-5 h-5 text-white" />
-                </div>
+              <li className="flex items-start">
+                <a
+                  href="#"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                >
+                  <Phone className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                </a>
                 <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   +971 55 950 1737
                 </span>
               </li>
-              <li className="flex items-start group">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-5 h-5 text-white" />
-                </div>
+              <li className="flex items-start">
+                <a
+                  href="#"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                >
+                  <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                </a>
                 <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   purchase@abundance-solar.com
                 </span>

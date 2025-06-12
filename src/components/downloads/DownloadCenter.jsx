@@ -331,11 +331,6 @@ const DownloadCenter = () => {
           hasPopup: false,
         },
         {
-          name: "Mounting Instructions",
-          url: "/downloads/installation/mounting.pdf",
-          hasPopup: false,
-        },
-        {
           name: "Safety Precautions",
           url: "/downloads/installation/safety.pdf",
           hasPopup: false,
@@ -374,54 +369,54 @@ const DownloadCenter = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
       <Header page="downloads" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 mt-20 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-3 py-8 mt-20 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {downloadCategories.map((category) => {
             const IconComponent = category.icon;
             return (
               <div
                 key={category.id}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
                 {/* Category Header */}
                 <div
-                  className={`bg-gradient-to-r ${category.color} p-6 relative overflow-hidden`}
+                  className={`bg-gradient-to-r ${category.color} p-3 relative overflow-hidden`}
                 >
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-10 translate-x-10"></div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full translate-y-8 -translate-x-8"></div>
+                  <div className="absolute top-0 right-0 w-12 h-12 bg-white/10 rounded-full -translate-y-6 translate-x-6"></div>
+                  <div className="absolute bottom-0 left-0 w-8 h-8 bg-white/10 rounded-full translate-y-4 -translate-x-4"></div>
                   <div className="relative z-10">
-                    <IconComponent size={32} className="text-white mb-3" />
-                    <h2 className="text-2xl font-bold text-white mb-2">
+                    <IconComponent size={20} className="text-white mb-1" />
+                    <h2 className="text-base font-bold text-white mb-1">
                       {category.name}
                     </h2>
-                    <p className="text-white/90 text-sm">
+                    <p className="text-white/90 text-xs leading-tight">
                       {category.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Files List */}
-                <div className="p-6">
-                  <div className="space-y-3">
+                <div className="p-3">
+                  <div className="space-y-1.5">
                     {category.files.map((file, index) => (
                       <button
                         key={index}
                         onClick={() => handleFileClick(file)}
-                        className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-gray-100 hover:to-gray-50 rounded-xl transition-all duration-300 group/item border border-gray-200 hover:border-gray-300"
+                        className="w-full flex items-center justify-between p-2.5 bg-gray-50 hover:bg-gradient-to-r hover:from-gray-100 hover:to-gray-50 rounded-lg transition-all duration-300 group/item border border-gray-200 hover:border-gray-300"
                       >
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover/item:from-amber-500 group-hover/item:to-orange-500 transition-all duration-300">
+                        <div className="flex items-center space-x-2.5">
+                          <div className="w-7 h-7 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover/item:from-amber-500 group-hover/item:to-orange-500 transition-all duration-300">
                             <FileText
-                              size={20}
+                              size={14}
                               className="text-gray-600 group-hover/item:text-white transition-colors duration-300"
                             />
                           </div>
                           <div className="text-left">
-                            <div className="font-semibold text-gray-800 group-hover/item:text-amber-600 transition-colors duration-300">
+                            <div className="font-medium text-xs text-gray-800 group-hover/item:text-amber-600 transition-colors duration-300">
                               {file.name}
                             </div>
                             {file.hasPopup && (
@@ -431,14 +426,14 @@ const DownloadCenter = () => {
                             )}
                           </div>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-1.5">
                           <Download
-                            size={16}
+                            size={14}
                             className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
                           />
 
                           <ChevronRight
-                            size={16}
+                            size={14}
                             className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
                           />
                         </div>
@@ -454,24 +449,24 @@ const DownloadCenter = () => {
 
       {/* Datasheet Popup */}
       {isPopupOpen && selectedCategory && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-3">
+          <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[85vh] overflow-hidden flex flex-col">
             {/* Popup Header */}
-            <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-6 rounded-t-3xl flex-shrink-0">
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-4 rounded-t-2xl flex-shrink-0">
               <div className="flex justify-between items-center">
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-2">
+                  <h2 className="text-xl font-bold text-white mb-1">
                     {selectedCategory.title}
                   </h2>
-                  <p className="text-white/90">
+                  <p className="text-white/90 text-sm">
                     {selectedCategory.description}
                   </p>
                 </div>
                 <button
                   onClick={closePopup}
-                  className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                  className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
                 >
-                  <X size={24} className="text-white" />
+                  <X size={20} className="text-white" />
                 </button>
               </div>
             </div>
