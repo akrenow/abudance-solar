@@ -14,7 +14,6 @@ const OurMission = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-          
             <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
               Our Mission
             </h2>
@@ -153,7 +152,7 @@ const OurMission = () => {
               <div className="bg-gradient-to-r from-secondary/5 via-primary/5 to-secondary/5 rounded-2xl p-8 border border-primary/10">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold text-secondary mb-2">
-                    🇦🇪 Aligned with UAE Vision 2071
+                    🇦🇪 Aligned with UAE Vision 2050
                   </h3>
                   <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-4"></div>
                 </div>

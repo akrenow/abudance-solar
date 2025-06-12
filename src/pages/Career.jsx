@@ -3,11 +3,13 @@ import Footer from "@/components/Footer";
 import {
   MapPin,
   Clock,
-  Users,
   Briefcase,
   ChevronRight,
   Send,
-  Star,
+  Cpu,
+  TrendingUp,
+  Leaf,
+  Globe,
 } from "lucide-react";
 import { jobOpenings } from "../core/constants/jobOpenings";
 import { useState } from "react";
@@ -26,25 +28,30 @@ const Career = () => {
 
   const benefits = [
     {
-      icon: <Star className="w-6 h-6" />,
-      title: "Competitive Salary",
-      description: "Attractive compensation packages with performance bonuses",
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Health & Wellness",
-      description: "Comprehensive health insurance and wellness programs",
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Work-Life Balance",
-      description: "Flexible working hours and remote work options",
-    },
-    {
-      icon: <Briefcase className="w-6 h-6" />,
-      title: "Career Growth",
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Career Growth in Renewables",
       description:
-        "Professional development opportunities and training programs",
+        "Structured progression paths in the fast-growing renewable energy sector with mentorship from industry leaders",
+    },
+    {
+      icon: <Leaf className="w-6 h-6" />,
+      title: "Impact Through Sustainability",
+      description:
+        "Direct contribution to meaningful climate solutions and sustainable infrastructure projects with measurable environmental impact",
+    },
+
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: "Future-Focused Projects",
+      description:
+        "Work with cutting-edge technologies in solar, wind, and energy storage systems that are shaping tomorrow's energy landscape",
+    },
+
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      title: "Innovation Culture",
+      description:
+        "Dedicated R&D time and resources to develop sustainable energy solutions and patentable technologies",
     },
   ];
 
