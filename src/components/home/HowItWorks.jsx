@@ -1,38 +1,28 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Users, FileText, Zap } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
       title: "Consult With Us",
-      description:
-        "Share your energy needs and business goals with our expert team.",
-      icon: Users,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "from-blue-50 to-blue-100",
+      description: "Share your energy needs and business goals.",
+      icon: "1",
     },
     {
       title: "Get a Custom Proposal",
-      description:
-        "Receive detailed datasheets, configurations, and competitive pricing tailored to your requirements.",
-      icon: FileText,
-      color: "from-green-500 to-green-600",
-      bgColor: "from-green-50 to-green-100",
+      description: "Receive datasheets, configurations, and pricing.",
+      icon: "2",
     },
     {
       title: "Deploy Sustainable Power",
-      description:
-        "Enjoy long-term performance, significant savings, and contribute to a cleaner environment.",
-      icon: Zap,
-      color: "from-amber-500 to-orange-600",
-      bgColor: "from-amber-50 to-orange-100",
+      description: "Enjoy long-term performance and savings.",
+      icon: "3",
     },
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto container-padding">
+    <section className="py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-20 relative">
           <div className="inline-block">
@@ -45,52 +35,37 @@ const HowItWorks = () => {
             Simple steps to transition to solar energy with Abundance Solar
           </p>
         </div>
-
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step, index) => {
-            const IconComponent = step.icon;
-            return (
-              <Card
-                key={index}
-                className="card-modern group relative overflow-hidden p-8 hover:shadow-2xl"
-              >
-                {/* Background gradient overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${step.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                ></div>
-
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  {/* Step Number & Icon */}
-                  <div className="relative mb-6">
-                    <div
-                      className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <IconComponent className="w-10 h-10 text-white" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-sm font-bold">
-                        {index + 1}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Step Content */}
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-secondary transition-colors duration-300">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    {step.description}
-                  </p>
-
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <Card
+              key={index}
+              className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="flex flex-col items-center text-center">
+                {/* Step Number */}
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4">
+                  <span className="text-white text-2xl font-bold">
+                    {step.icon}
+                  </span>
                 </div>
-              </Card>
-            );
-          })}
+
+                {/* Step Content */}
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            </Card>
+          ))}
         </div>
+
+        {/* Optional CTA */}
+        {/* <div className="mt-12 text-center">
+                    <button className="bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300">
+                        Start Your Solar Journey
+                    </button>
+                </div> */}
       </div>
     </section>
   );

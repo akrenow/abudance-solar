@@ -24,7 +24,7 @@ const AwardsCertifications = () => {
       title: "KEZAD Excellence in Industry",
       description:
         "Awarded for outstanding contribution to industrial development",
-      year: "2023",
+      year: "2025",
       category: "Excellence",
       image:
         "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200",

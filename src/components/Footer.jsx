@@ -24,11 +24,6 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <img
-                src={Logo}
-                alt="Abundance Solar"
-                className="h-12 w-auto mr-4"
-              />
               <h3 className="text-2xl font-bold">Abundance Solar</h3>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
