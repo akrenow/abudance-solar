@@ -11,10 +11,14 @@ import SubproductPage from "./components/products/SubproductPage";
 import Contact from "./components/Contact";
 import Career from "./pages/Career";
 import PageNotFound from "./components/PageNotFound";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
+      <ScrollToTopButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />

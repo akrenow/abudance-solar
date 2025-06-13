@@ -1,16 +1,16 @@
 import {
   BadgeDollarSignIcon,
   Bolt,
-  GlassWater,
+  PanelTop,
   Globe,
   Leaf,
   Lightbulb,
   Medal,
-  Recycle,
+  SunDim,
   Users,
 } from "lucide-react";
 import React, { useState } from "react";
-
+import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
 const TabNavigation = () => {
   const [activeTab, setActiveTab] = useState("overview");
 
@@ -114,8 +114,10 @@ const TabNavigation = () => {
                       Premium Products
                     </h3>
                     <p className="text-gray-600">
-                      N-type Topcon photovoltaic modules with industry-leading
-                      efficiency
+                      Our N-type TOPCon, Heterojunction (HJT), and
+                      Interdigitated Back Contact (IBC) photovoltaic modules set
+                      new benchmarks in efficiency, providing cutting-edge solar
+                      solutions for a sustainable future.
                     </p>
                   </div>
                 </div>
@@ -123,7 +125,7 @@ const TabNavigation = () => {
               <div>
                 <div className="rounded-lg overflow-hidden shadow-xl">
                   <img
-                    src="https://readdy.ai/api/search-image?query=Modern%2520solar%2520panel%2520manufacturing%2520facility%2520interior%2520with%2520high-tech%2520automated%2520production%2520lines%252C%2520clean%2520room%2520environment%252C%2520workers%2520in%2520protective%2520gear%252C%2520bright%2520industrial%2520lighting%252C%2520professional%2520corporate%2520photography%252C%2520high%2520resolution%2520commercial%2520imagery&width=700&height=500&seq=facility-interior&orientation=landscape"
+                    src={PowerPlant}
                     alt="Abundance Solar Manufacturing Facility"
                     className="w-full h-auto"
                   />
@@ -174,13 +176,22 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    To become a global leader in solar panel manufacturing,
-                    driving the adoption of renewable energy and supporting the
-                    UAE's vision for a sustainable, energy-efficient future.
-                    Abundance Solar is committed to setting new industry
-                    standards through advanced technology and innovative
-                    practices, envisioning a world where solar energy powers a
-                    resilient and eco-friendly society.
+                    We envision a future where renewable energy, powered by
+                    solar innovation, is the cornerstone of a resilient,
+                    eco-conscious, and thriving global community. As pioneers in
+                    the solar industry, we aspire to lead the global renewable
+                    energy transition by setting new standards for quality,
+                    efficiency, and sustainability through advanced European
+                    technology. Our ambition is to make clean energy a universal
+                    solution, accessible to all, driving a worldwide movement
+                    toward reduced carbon emissions and environmental
+                    stewardship. Aligned with the UAE&apos;s goal of achieving
+                    net-zero emissions and a diversified energy mix, we aim to
+                    create a ripple effect that transforms the global energy
+                    landscape. By integrating innovation, strategic
+                    partnerships, and a passion for sustainability, we are
+                    committed to building a cleaner, brighter world where solar
+                    energy powers sustainable progress for generations to come.{" "}
                   </p>
                 </div>
               </div>
@@ -206,12 +217,23 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    Abundance Solar's mission is to lead the renewable energy
-                    transition by leveraging state-of-the-art European
-                    technology and fostering environmental stewardship. The
-                    company is dedicated to supporting the UAE's green agenda,
-                    reducing carbon emissions, and empowering businesses to
-                    adopt clean, energy-efficient solutions.
+                    Our mission is to empower businesses, industries, and
+                    communities worldwide by providing innovative, high-quality
+                    solar panels that accelerate the shift to a sustainable,
+                    renewable energy future. We are dedicated to harnessing
+                    state-of-the-art European technology to produce solar
+                    solutions that are not only efficient and reliable but also
+                    accessible and cost-effective. Rooted in the UAE&apos;s
+                    ambitious vision for a green and energy-efficient future, we
+                    strive to drive the adoption of clean energy through
+                    cutting-edge manufacturing processes and sustainable
+                    practices. By fostering environmental responsibility and
+                    reducing carbon emissions, we aim to create energy-efficient
+                    ecosystems that inspire positive change and empower our
+                    customers to contribute to a healthier planet. Through
+                    collaboration, innovation, and an unwavering commitment to
+                    excellence, we are building a legacy of sustainability that
+                    resonates locally and globally.
                   </p>
                 </div>
               </div>
@@ -727,25 +749,28 @@ const TabNavigation = () => {
                     <i className="fas fa-tint"></i>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Water Conservation
+                    Recycling and Sustainable Waste Management
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Our advanced water management system recycles and reuses
-                    process water, significantly reducing our freshwater
-                    consumption.
+                    Implement a strict policy for recycling panel packaging,
+                    metals, and end-of-life solar panels.
                   </p>
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>Closed-loop water recycling system</span>
+                      <span>
+                        Reduces landfill waste and lowers carbon footprint.
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>40% reduction in water usage</span>
+                      <span>
+                        Promotes responsible material lifecycle management.
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>Rainwater harvesting capabilities</span>
+                      <span>Aligns with circular economy principles.</span>
                     </li>
                   </ul>
                 </div>
@@ -755,24 +780,31 @@ const TabNavigation = () => {
                     <i className="fas fa-recycle"></i>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Waste Reduction
+                    Energy Storage and Grid Stabilization
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    We've implemented comprehensive waste management protocols
-                    to minimize landfill waste and maximize recycling.
+                    Integrate battery energy storage systems (BESS) to store
+                    excess solar energy and supply it during peak demand or grid
+                    outages.
                   </p>
                   <ul className="text-gray-600 space-y-2">
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>85% waste diversion rate</span>
+                      <span>
+                        Maximizes the use of clean energy and reduces reliance
+                        on fossil-fuel-based backup.
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>Silicon waste recycling program</span>
+                      <span>
+                        Improves grid stability and resilience, especially in
+                        rural or underpowered areas.
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <i className="fas fa-check text-green-500 mt-1 mr-2"></i>
-                      <span>Zero hazardous waste to landfill</span>
+                      <span>Reduces wastage of excess solar power.</span>
                     </li>
                   </ul>
                 </div>
@@ -882,40 +914,42 @@ const TabNavigation = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">
-                    <Bolt />
+                    <SunDim />{" "}
+                    {/* Changed from Bolt to SunDim for solar relevance */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Carbon Neutrality
+                    Carbon Neutral Operations
                   </h3>
                   <p className="text-gray-600">
-                    Achieve carbon-neutral operations by 2030 through renewable
-                    energy adoption and carbon offset programs.
+                    Achieve carbon-neutral operations by 2025 through 100%
+                    renewable energy usage and sustainable business practices.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">
-                    <GlassWater />
+                    <PanelTop /> {/* Changed to represent solar panels */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Water Stewardship
+                    Sustainable Manufacturing
                   </h3>
                   <p className="text-gray-600">
-                    Reduce water consumption by 60% by 2035 through advanced
-                    recycling and conservation technologies.
+                    Reduce manufacturing emissions by 75% by 2026 through clean
+                    production methods and recycled materials in our solar
+                    panels.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">
-                    <Recycle />
+                    <Lightbulb /> {/* Changed to represent energy efficiency */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Zero Waste
+                    Energy Access
                   </h3>
                   <p className="text-gray-600">
-                    Achieve zero waste to landfill by 2028 through comprehensive
-                    recycling and waste reduction initiatives.
+                    Provide clean energy access to 1 million households by 2030,
+                    focusing on underserved communities.
                   </p>
                 </div>
               </div>
