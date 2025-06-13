@@ -2,24 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-
+import SolarPanelImage from "../../assets/images/Solar.png";
+import SolarInverter from "../../assets/images/Inverter.png";
+import SolarEPC from "../../assets/images/epc.png";
 const mainProducts = [
   {
     title: "Solar Panels",
-    image:
-      "https://silfabsolar.com/wp-content/uploads/2021/08/Panels_Commercial.png",
+    image: SolarPanelImage,
     path: "/products/solar-panels",
   },
   {
     title: "Solar Inverters",
-    image:
-      "https://blog.athom.com/wp-content/uploads/2024/12/goodwe-inverter.png",
+    image: SolarInverter,
     path: "/products/solar-inverters",
   },
   {
     title: "EPC Solution",
-    image:
-      "https://silfabsolar.com/wp-content/uploads/2021/07/Homepage_type_installer.jpg",
+    image: SolarEPC,
     path: "/products/epc-solution",
   },
 ];
