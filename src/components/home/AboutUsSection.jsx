@@ -19,11 +19,10 @@ const AboutUsSection = () => {
 
     return (
         <section
-            className="py-16 md:py-24 relative overflow-hidden"
+            className="py-5 md:py-15 my-10 relative overflow-hidden"
             style={{
                 backgroundImage: `url(${yellowBanner})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
         >
@@ -40,7 +39,7 @@ const AboutUsSection = () => {
                             About Us
                         </h2>
                     </div>
-                    <div className="w-24 h-1 bg-white mx-auto rounded-full mb-8"></div>
+                    <div className="w-24 h-1 bg-white mx-auto rounded-full "></div>
                 </div>
                 {/* Main Content */}
                 <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row items-center">
@@ -63,7 +62,7 @@ const AboutUsSection = () => {
                                     <img
                                         src={img}
                                         alt={`About Abundance Solar ${idx + 1}`}
-                                        className="rounded-2xl shadow-lg w-full max-w-xs md:max-w-sm object-cover mx-auto "
+                                        className="rounded-2xl shadow-lg w-full max-w-xs md:max-w-sm object-cover mx-auto m-2"
                                         style={{ minHeight: 260, maxHeight: 320 }}
                                     />
                                 </SwiperSlide>
