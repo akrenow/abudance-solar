@@ -444,7 +444,7 @@ const HeroSection = () => {
                 href={currentSlide.cta.link}
                 className={`${responsiveClasses.primaryButton} ${styles.primaryButton}`}
               >
-                {screenSize === "xs" ? "Join" : currentSlide.cta.text}
+                {currentSlide.cta.text}
                 <svg
                   className={responsiveClasses.buttonIcon}
                   fill="none"
