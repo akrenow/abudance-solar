@@ -4,18 +4,21 @@ import { Card } from "@/components/ui/card";
 const HowItWorks = () => {
   const steps = [
     {
-      title: "Consult With Us",
-      description: "Share your energy needs and business goals.",
+      title: "Advanced European Automation",
+      description:
+        "Our fully automated facility integrates cutting-edge technology for high-efficiency, precision-driven solar module production.",
       icon: "1",
     },
     {
-      title: "Get a Custom Proposal",
-      description: "Receive datasheets, configurations, and pricing.",
+      title: "Next-Gen Photovoltaic Technologies",
+      description:
+        "We specialize in N-type TOPCon, IBC, and HJT cell technologies, enhancing efficiency, durability, and cost-effectiveness.",
       icon: "2",
     },
     {
-      title: "Deploy Sustainable Power",
-      description: "Enjoy long-term performance and savings.",
+      title: "Sustainable & Future-Ready Solutions",
+      description:
+        "Our commitment to automation and innovation aligns with global standards, ensuring scalable, reliable, and eco-friendly energy production.",
       icon: "3",
     },
   ];
@@ -27,7 +30,7 @@ const HowItWorks = () => {
         <div className="text-center mb-20 relative">
           <div className="inline-block">
             <h1 className="text-3xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-8 leading-tight">
-              Our Process
+              Technology
             </h1>
             <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
           </div>

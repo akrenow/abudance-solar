@@ -96,31 +96,6 @@ const NewsSection = ({
                 </Card>
               ))}
             </div>
-
-            {/* CTA Section */}
-            <div className="text-center">
-              <div className="bg-gradient-to-r from-white to-gray-50 rounded-3xl p-8 border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  Stay Informed About Solar Industry
-                </h3>
-                <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Get the latest insights, technology updates, and industry
-                  developments delivered to your inbox.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    className="btn-primary"
-                    style={{ backgroundColor: primaryColor }}
-                  >
-                    {viewAllButtonText}
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                  <Button variant="outline" className="btn-outline">
-                    Subscribe to Newsletter
-                  </Button>
-                </div>
-              </div>
-            </div>
           </>
         ) : (
           <div className="text-center py-12">

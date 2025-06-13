@@ -157,8 +157,9 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${errors.name ? "border-red-500" : "border-gray-300"
-                        }`}
+                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                        errors.name ? "border-red-500" : "border-gray-300"
+                      }`}
                       placeholder="Your Name"
                     />
                     {errors.name && (
@@ -178,8 +179,9 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${errors.email ? "border-red-500" : "border-gray-300"
-                        }`}
+                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                        errors.email ? "border-red-500" : "border-gray-300"
+                      }`}
                       placeholder="Your Email"
                     />
                     {errors.email && (
@@ -219,8 +221,9 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${errors.subject ? "border-red-500" : "border-gray-300"
-                      }`}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                      errors.subject ? "border-red-500" : "border-gray-300"
+                    }`}
                     placeholder="Subject"
                   />
                   {errors.subject && (
@@ -242,8 +245,9 @@ const Contact = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent resize-none ${errors.message ? "border-red-500" : "border-gray-300"
-                      }`}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent resize-none ${
+                      errors.message ? "border-red-500" : "border-gray-300"
+                    }`}
                     placeholder="Your Message"
                   ></textarea>
                   {errors.message && (
@@ -302,7 +306,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <p className="text-gray-300">info@abundancesolar.com</p>
+                      <p className="text-gray-300">
+                        purchase@abundance-solar.com
+                      </p>
                     </div>
                   </div>
                 </div>

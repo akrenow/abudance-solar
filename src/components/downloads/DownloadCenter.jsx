@@ -490,7 +490,7 @@ const DownloadCenter = () => {
                         Efficiency (%)
                       </th>
                       <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                        View PDF
+                        View Product
                       </th>
                       <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
                         Download

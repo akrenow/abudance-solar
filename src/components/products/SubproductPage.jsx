@@ -82,7 +82,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GGS_M10,
-          dimensions: "2278 mm x 1134 mm x 30mm"
+          dimensions: "2278 mm x 1134 mm x 30mm",
         },
         {
           name: "ABS-132GGS-M10",
@@ -98,7 +98,7 @@ const categories = {
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
           pdfFile: ABS_120GGS_M10,
-          dimensions: "1908mm x 1134 mm x 30mm"
+          dimensions: "1908mm x 1134 mm x 30mm",
         },
         {
           name: "ABS-108GGS-M10",
@@ -157,7 +157,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GGB_M10,
-          dimensions: "2278 mm x 1134 mm x 30mm"
+          dimensions: "2278 mm x 1134 mm x 30mm",
         },
         {
           name: "ABS-132GGB-M10",
@@ -618,10 +618,11 @@ const SolarPanelsPage = () => {
           {Object.keys(categories).map((cat) => (
             <button
               key={cat}
-              className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${activeTab === cat
-                ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg transform scale-105"
-                : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg"
-                }`}
+              className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
+                activeTab === cat
+                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg transform scale-105"
+                  : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg"
+              }`}
               onClick={() => setActiveTab(cat)}
             >
               {cat}
@@ -869,7 +870,7 @@ const SolarPanelsPage = () => {
                             Dimensions
                           </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                            View PDF
+                            View Product
                           </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
                             Download

@@ -102,7 +102,7 @@ const TabNavigation = () => {
                       State-of-the-Art Facility
                     </h3>
                     <p className="text-gray-600">
-                      27,000 sqm manufacturing plant with advanced European
+                      28,000 sqm manufacturing plant with advanced European
                       technology
                     </p>
                   </div>
@@ -431,7 +431,7 @@ const TabNavigation = () => {
                 <p className="text-lg text-gray-600 mb-6">
                   Located in KEZAD Area A – Al Ma'mourah, Abu Dhabi, UAE, our
                   manufacturing plant represents a significant investment in the
-                  region's renewable energy sector. The facility spans 27,000
+                  region's renewable energy sector. The facility spans 28,000
                   square meters and utilizes the latest innovations in solar
                   panel technology.
                 </p>
@@ -449,7 +449,7 @@ const TabNavigation = () => {
                     <li className="flex items-start">
                       <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
                       <span className="text-gray-300">
-                        Annual production capacity of 500MW
+                        Annual production capacity of 600MW+
                       </span>
                     </li>
                     <li className="flex items-start">
@@ -808,20 +808,7 @@ const TabNavigation = () => {
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start">
-                      <div className="flex-shrink-0 mt-1">
-                        <i className="fas fa-hands-helping text-primary mr-3"></i>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">
-                          Community Solar Projects
-                        </h4>
-                        <p>
-                          Donating solar systems to community facilities and
-                          supporting local renewable energy initiatives.
-                        </p>
-                      </div>
-                    </li>
+
                     <li className="flex items-start">
                       <div className="flex-shrink-0 mt-1">
                         <i className="fas fa-users text-primary mr-3"></i>
@@ -880,15 +867,6 @@ const TabNavigation = () => {
                     <li className="flex items-start">
                       <div className="flex-shrink-0 mt-1">
                         <i className="fas fa-leaf text-primary mr-3"></i>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">
-                          Climate Pledge
-                        </h4>
-                        <p>
-                          Committed to achieving net-zero carbon emissions by
-                          2040, ten years ahead of the Paris Agreement.
-                        </p>
                       </div>
                     </li>
                   </ul>

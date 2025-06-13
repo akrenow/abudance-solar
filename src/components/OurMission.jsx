@@ -162,7 +162,11 @@ const OurMission = () => {
                   through cutting-edge manufacturing processes and sustainable
                   practices. Through collaboration, innovation, and unwavering
                   commitment to excellence, we're building a legacy of
-                  sustainability that resonates locally and globally.
+                  sustainability that resonates locally and globally.By
+                  harnessing solar innovation and reducing carbon footprints, we
+                  empower communities and industries to thrive sustainably.
+                  Together, we pave the way for a brighter, cleaner
+                  tomorrow—aligning progress with planetary stewardship.
                 </p>
               </div>
             </div>
