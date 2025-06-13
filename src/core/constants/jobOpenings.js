@@ -23,7 +23,7 @@ export const jobOpenings = [
     id: 2,
     title: "Sales Engineer",
     department: "Sales & Engineering",
-    location: "Dubai, UAE",
+    location: "Abu Dhabi, UAE",
     type: "Full-time",
     experience: "3+ years",
     posted: "1 day ago",
