@@ -35,7 +35,7 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      imageUrl: image1,
+      imageUrl: image3,
       title: "Solar Manufacturing Excellence",
       highlight: "Abundance Solar",
       description:
@@ -101,7 +101,7 @@ const HeroSection = () => {
     },
     {
       id: 3,
-      imageUrl: image3,
+      imageUrl: image1,
       title: "Innovation for Tomorrow",
       highlight: "Sustainable Future",
       description:
