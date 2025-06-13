@@ -270,6 +270,9 @@ Best regards,
                         <span className="text-secondary font-medium">
                           {job.experience}
                         </span>
+                        <span className="text-secondary font-medium">
+                          {job.openings} 
+                        </span>
                       </div>
                     </div>
                     <div className="text-right">
