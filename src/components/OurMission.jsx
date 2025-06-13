@@ -34,7 +34,10 @@ const OurMission = () => {
                   Our mission is to empower businesses, industries, and
                   communities worldwide by providing innovative, high-quality
                   solar panels that accelerate the shift to a sustainable,
-                  renewable energy future.
+                  renewable energy future. We harness state-of-the-art European
+                  technology to deliver efficient, reliable, and cost-effective
+                  solar solutions while fostering environmental responsibility
+                  and building a legacy of sustainability.
                 </p>
               </div>
 
@@ -157,11 +160,11 @@ const OurMission = () => {
                   <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-4"></div>
                 </div>
                 <p className="text-base text-gray-700 leading-relaxed text-center">
-                  Rooted in the UAE's ambitious vision for a green and
+                  Rooted in the UAE&apos;s ambitious vision for a green and
                   energy-efficient future, we drive clean energy adoption
                   through cutting-edge manufacturing processes and sustainable
                   practices. Through collaboration, innovation, and unwavering
-                  commitment to excellence, we're building a legacy of
+                  commitment to excellence, we&apos;re building a legacy of
                   sustainability that resonates locally and globally.By
                   harnessing solar innovation and reducing carbon footprints, we
                   empower communities and industries to thrive sustainably.

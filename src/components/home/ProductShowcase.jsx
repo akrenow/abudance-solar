@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
 import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
+import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
+import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
+import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
 
 const ProductShowcase = () => {
   const navigate = useNavigate();
@@ -19,45 +22,95 @@ const ProductShowcase = () => {
       lightGradient: "from-amber-50 to-orange-50",
       products: [
         {
-          name: "ABS-144GGS-M10",
+          name: "Glass Glass Bifacial PV Module",
           type: "Glass/Glass Bifacial",
-          wattage: "585-605W",
+          wattage: "435-725W",
           efficiency: "22.65-23.42%",
           image: imgGlassGlassBifacial,
           variants: [
-            { name: "ABS-144GGS-M10", wattage: "585W", efficiency: "22.65%" },
-            { name: "ABS-144GGS-M10+", wattage: "595W", efficiency: "23.10%" },
             {
-              name: "ABS-144GGS-M10 Pro",
-              wattage: "605W",
-              efficiency: "23.42%",
+              name: "ABS-144GGS-M10",
+              wattage: "585-605W",
+              efficiency: "22.65-23.42%",
+              dimensions: "2278 mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-132GGS-M10",
+              wattage: "535-555W",
+              efficiency: "22.58-23.43%",
+              dimensions: "2089mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-120GGS-M10",
+              wattage: "485-505W",
+              efficiency: "22.42-23.34%",
+              dimensions: "1908mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-108GGS-M10",
+              wattage: "435-455W",
+              efficiency: "22.28-23.30%",
+              dimensions: "1722mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-132GGS-G12",
+              wattage: "705-725W",
+              efficiency: "22.70-23.34%",
+              dimensions: "2384mm x 1303mm x 30mm",
+            },
+            {
+              name: "ABS-132GGS-G12R",
+              wattage: "610-630W",
+              efficiency: "22.56-23.30%",
+              dimensions: "2384mm x 1134mm x 30mm",
             },
           ],
           features: [
-            "Dual Glass Design (30+ year lifespan)",
+            "Dual Glass Design for 30+ year lifespan",
             "Bifacial Output (5-30% extra energy)",
             "N-type TOPCon Cells (>23.5% efficiency)",
             "Excellent temperature performance",
+            "Anti-PID technology",
+            "Superior low-light performance",
           ],
-          applications: [
-            "Residential rooftops",
-            "Commercial installations",
-            "Utility-scale projects",
-          ],
+          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
         },
         {
-          name: "ABS-132GGS-M10",
+          name: "Glass Glass All Black PV Module",
           type: "Glass/Glass All Black",
-          wattage: "535-555W",
-          efficiency: "22.58-23.43%",
+          wattage: "485-630W",
+          efficiency: "22.65-23.42%",
           image: imgGlassGlassAllBlack,
           variants: [
-            { name: "ABS-132GGS-M10", wattage: "535W", efficiency: "22.58%" },
-            { name: "ABS-132GGS-M10+", wattage: "545W", efficiency: "23.00%" },
             {
-              name: "ABS-132GGS-M10 Pro",
-              wattage: "555W",
-              efficiency: "23.43%",
+              name: "ABS-144GGB-M10",
+              wattage: "585-605W",
+              efficiency: "22.65-23.42%",
+              dimensions: "2278 mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-132GGB-M10",
+              wattage: "535-555W",
+              efficiency: "22.58-23.43%",
+              dimensions: "2089mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-120GGB-M10",
+              wattage: "485-505W",
+              efficiency: "22.42-23.34%",
+              dimensions: "1908mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-108GGB-M10",
+              wattage: "435-455W",
+              efficiency: "22.28-23.30%",
+              dimensions: "1722mm x 1134 mm x 30mm",
+            },
+            {
+              name: "ABS-132GGB-G12R",
+              wattage: "610-630W",
+              efficiency: "22.56-23.30%",
+              dimensions: "2384mm x 1134mm x 30mm",
             },
           ],
           features: [
@@ -65,8 +118,160 @@ const ProductShowcase = () => {
             "Dual Glass Protection",
             "High efficiency in low light",
             "Perfect for residential rooftops",
+            "Anti-reflective coating",
+            "Enhanced durability",
           ],
-          applications: ["Residential rooftops", "Architectural projects"],
+          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+        },
+        {
+          name: "Glass Transparent Backsheet PV Module",
+          type: "Glass/Transparent Backsheet",
+          wattage: "485-630W",
+          efficiency: "22.65-23.42%",
+          image: imgGlassTransparentBacksheet,
+          variants: [
+            {
+              name: "ABS-144GTS-M10",
+              wattage: "585-605W",
+              efficiency: "22.65-23.42%",
+              dimensions: "2278mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GTS-M10",
+              wattage: "535-555W",
+              efficiency: "22.58-23.43%",
+              dimensions: "2089mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-120GTS-M10",
+              wattage: "485-505W",
+              efficiency: "22.42-23.34%",
+              dimensions: "1908mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-108GTS-M10",
+              wattage: "435-455W",
+              efficiency: "22.28-23.30%",
+              dimensions: "1722mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GTS-G12R",
+              wattage: "610-630W",
+              efficiency: "22.56-23.30%",
+              dimensions: "2384mm x 1134mm x 30mm",
+            },
+          ],
+          features: [
+            "Transparent backsheet design",
+            "Enhanced bifacial gain",
+            "Architectural integration",
+            "Superior light transmission",
+            "Weather resistant",
+            "Long-term reliability",
+          ],
+          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+        },
+        {
+          name: "Glass White Back Sheet PV Module",
+          type: "Glass/White Back Sheet",
+          wattage: "485-725W",
+          efficiency: "22.65-23.42%",
+          image: imgGlassWhiteBacksheet,
+          variants: [
+            {
+              name: "ABS-144GWS-M10",
+              wattage: "585-605W",
+              efficiency: "22.65-23.42%",
+              dimensions: "2278mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GWS-M10",
+              wattage: "535-555W",
+              efficiency: "22.58-23.43%",
+              dimensions: "2089mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-120GWS-M10",
+              wattage: "485-505W",
+              efficiency: "22.42-23.34%",
+              dimensions: "1908mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-108GWS-M10",
+              wattage: "435-455W",
+              efficiency: "22.28-23.30%",
+              dimensions: "1722mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GWS-G12",
+              wattage: "705-725W",
+              efficiency: "22.70-23.34%",
+              dimensions: "2384mm x 1303mm x 30mm",
+            },
+            {
+              name: "ABS-132GWS-G12R",
+              wattage: "610-630W",
+              efficiency: "22.56-23.30%",
+              dimensions: "2384mm x 1134mm x 30mm",
+            },
+          ],
+          features: [
+            "Cost-effective solution",
+            "White backsheet for heat dissipation",
+            "Proven reliability",
+            "Easy installation",
+            "Standard grid connection",
+            "Excellent price-performance ratio",
+          ],
+          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+        },
+        {
+          name: "Glass Black Back Sheet – All Black PV Module",
+          type: "Glass/Black Back Sheet",
+          wattage: "485-630W",
+          efficiency: "22.65-23.42%",
+          image: imgGlassBlackBacksheet,
+          variants: [
+            {
+              name: "ABS-144GBB-M10",
+              wattage: "585-605W",
+              efficiency: "22.65-23.42%",
+              dimensions: "2278mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GBB-M10",
+              wattage: "535-555W",
+              efficiency: "22.58-23.43%",
+              dimensions: "2089mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-120GBB-M10",
+              wattage: "485-505W",
+              efficiency: "22.42-23.34%",
+              dimensions: "1908mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-108GBB-M10",
+              wattage: "435-455W",
+              efficiency: "22.28-23.30%",
+              dimensions: "1722mm x 1134mm x 30mm",
+            },
+            {
+              name: "ABS-132GBB-G12R",
+              wattage: "610-630W",
+              efficiency: "22.56-23.30%",
+              dimensions: "2384mm x 1134mm x 30mm",
+            },
+          ],
+          features: [
+            "Premium all-black design",
+            "High aesthetic appeal",
+            "Reliable performance",
+            "Easy maintenance",
+            "Weather resistant frame",
+            "25-year performance warranty",
+          ],
+          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
         },
       ],
     },
@@ -85,7 +290,6 @@ const ProductShowcase = () => {
       comingSoon: true,
     },
   };
-
   const currentProduct =
     productSeries[activeSeries]?.products?.[currentProductIndex];
 

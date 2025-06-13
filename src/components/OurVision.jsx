@@ -30,7 +30,12 @@ const OurVision = () => {
               {/* Vision Statement */}
               <div className="text-center mb-12">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
-                  To become a global leader in solar panel manufacturing, driving the adoption of renewable energy and supporting the UAE&apos;s vision for a sustainable, energy-efficient future. Abundance Solar is committed to setting new industry standards through advanced technology and innovative practices, envisioning a world where solar energy powers a resilient and eco-friendly society.
+                  We envision a future where renewable energy is the cornerstone
+                  of a resilient, eco-conscious global community. As pioneers in
+                  solar innovation, we aspire to lead the renewable energy
+                  transition by setting new standards through advanced European
+                  technology, making clean energy accessible to all while
+                  creating a sustainable world for generations to come.
                 </p>
               </div>
 
@@ -79,15 +84,13 @@ const OurVision = () => {
               {/* Detailed Description */}
               <div className="bg-gradient-to-r from-gray-50 to-primary/5 rounded-2xl p-8">
                 <p className="text-base text-gray-700 leading-relaxed">
-                  As pioneers in the solar industry, we aspire to lead the
-                  global renewable energy transition. Our ambition is to make
-                  clean energy a universal solution, accessible to all, driving
-                  environmental stewardship. Aligned with the UAE&apos;s goal of
-                  achieving net-zero emissions and a diversified energy mix, we
-                  aim to create a ripple effect that transforms the global
-                  energy landscape. Through innovation, strategic partnerships,
-                  and unwavering commitment to excellence, we are building a
-                  legacy of sustainability that resonates locally and globally.
+                  Through cutting-edge manufacturing processes, sustainable
+                  practices, and unwavering commitment to excellence, we are
+                  creating energy-efficient ecosystems that inspire positive
+                  change. Our vision extends beyond just producing solar panels
+                  – we are fostering a global movement that empowers customers
+                  to contribute to a healthier planet while building a legacy
+                  that resonates both locally and globally.
                 </p>
               </div>
             </div>
