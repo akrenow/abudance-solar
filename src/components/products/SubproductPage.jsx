@@ -69,11 +69,7 @@ const categories = {
         "Anti-PID technology",
         "Superior low-light performance",
       ],
-      applications: [
-        "Residential rooftops",
-        "Commercial installations",
-        "Utility-scale projects",
-      ],
+      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -144,11 +140,7 @@ const categories = {
         "Anti-reflective coating",
         "Enhanced durability",
       ],
-      applications: [
-        "Residential rooftops",
-        "Architectural projects",
-        "Premium installations",
-      ],
+      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -211,12 +203,7 @@ const categories = {
         "Weather resistant",
         "Long-term reliability",
       ],
-      applications: [
-        "BIPV applications",
-        "Canopies",
-        "Agrivoltaics",
-        "Architectural integration",
-      ],
+      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -279,11 +266,7 @@ const categories = {
         "Standard grid connection",
         "Excellent price-performance ratio",
       ],
-      applications: [
-        "Commercial rooftops",
-        "Ground-mount systems",
-        "Standard installations",
-      ],
+      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -354,11 +337,7 @@ const categories = {
         "Weather resistant frame",
         "25-year performance warranty",
       ],
-      applications: [
-        "Residential rooftops",
-        "Commercial buildings",
-        "Premium projects",
-      ],
+      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
