@@ -31,7 +31,7 @@ const MainProductsPage = () => {
       <Header page="products" />
 
       {/* Product Cards */}
-      <div className="container mx-auto px-4 py-12 mt-20 relative">
+      <div className="container mx-auto px-4 py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {mainProducts.map((product, index) => (
             <Link

@@ -10,6 +10,8 @@ import OurMission from "@/components/OurMission";
 import { newsItems } from "../core/constants/constant";
 import Footer from "@/components/Footer";
 import HowItWorks from "@/components/home/HowItWorks";
+import AboutUsSection from "@/components/home/AboutUsSection";
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -17,6 +19,7 @@ const Home = () => {
       <main>
         <HeroSection />
         <VideoSection />
+        <AboutUsSection />
         <HowItWorks />
         <OurVision />
         <OurMission />
@@ -25,6 +28,7 @@ const Home = () => {
         {/* <TestimonialsSwiper /> */}
         <ProductShowcase />
         <NewsSection newsItems={newsItems} />
+
       </main>
 
       <Footer />

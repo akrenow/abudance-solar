@@ -42,13 +42,19 @@ import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all bl
 import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
 import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
 
+// Import local images for each product
+import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
+import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
+import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
+import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
+import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
+
 const categories = {
   "N-type – Topcon": [
     {
       title: "Glass Glass Bifacial PV Module",
       category: "Bifacial",
-      image:
-        "https://www.pnsolarpv.com/storage/uploads/images/202308/11/1691747648_6YyCEdJdeI.webp",
+      image: imgGlassGlassBifacial,
       path: "/products/solar-panels",
       wattage: "435-725W",
       efficiency: "22.65-23.42%",
@@ -76,6 +82,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GGS_M10,
+          dimensions: "2278 mm x 1134 mm x 30mm"
         },
         {
           name: "ABS-132GGS-M10",
@@ -83,6 +90,7 @@ const categories = {
           wattage: "535 to 555",
           efficiency: "22.58 to 23.43",
           pdfFile: ABS_132GGS_M10,
+          dimensions: "2089mm x 1134 mm x 30mm",
         },
         {
           name: "ABS-120GGS-M10",
@@ -90,12 +98,14 @@ const categories = {
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
           pdfFile: ABS_120GGS_M10,
+          dimensions: "1908mm x 1134 mm x 30mm"
         },
         {
           name: "ABS-108GGS-M10",
           productType: "Glass/Glass-Silver Frame",
           wattage: "435 to 455",
           efficiency: "22.28 to 23.30",
+          dimensions: "1722mm x 1134 mm x 30mm",
           pdfFile: ABS_108GGS_M10,
         },
         {
@@ -103,6 +113,7 @@ const categories = {
           productType: "Glass/Glass-Silver Frame",
           wattage: "705 to 725",
           efficiency: "22.70 to 23.34",
+          dimensions: "2384mm x 1303mm x 30mm",
           pdfFile: ABS_132GGS_G12,
         },
         {
@@ -110,6 +121,7 @@ const categories = {
           productType: "Glass/Glass-Silver Frame",
           wattage: "610 to 630",
           efficiency: "22.56 to 23.30",
+          dimensions: " 2384mm x 1134mm x 30mm",
           pdfFile: ABS_132GGS_G12R,
         },
       ],
@@ -117,8 +129,7 @@ const categories = {
     {
       title: "Glass Glass All Black PV Module",
       category: "Bifacial",
-      image:
-        "https://greenmondi.de/media/64/54/39/1688712658/PV-Module-Mono-Halfcut-Full-Black-9.png?ts=1688712658",
+      image: imgGlassGlassAllBlack,
       path: "/products/solar-panels",
       wattage: "485-630W",
       efficiency: "22.65-23.42%",
@@ -146,12 +157,14 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GGB_M10,
+          dimensions: "2278 mm x 1134 mm x 30mm"
         },
         {
           name: "ABS-132GGB-M10",
           productType: "Glass/Glass-Black Frame",
           wattage: "535 to 555",
           efficiency: "22.58 to 23.43",
+          dimensions: "2089mm x 1134 mm x 30mm",
           pdfFile: ABS_132GGB_M10,
         },
         {
@@ -159,6 +172,7 @@ const categories = {
           productType: "Glass/Glass-Black Frame",
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
+          dimensions: " 1908mm x 1134 mm x 30mm",
           pdfFile: ABS_120GGB_M10,
         },
         {
@@ -166,6 +180,7 @@ const categories = {
           productType: "Glass/Glass-Black Frame",
           wattage: "435 to 455",
           efficiency: "22.28 to 23.30",
+          dimensions: "1722mm x 1134 mm x 30mm",
           pdfFile: ABS_108GGB_M10,
         },
         {
@@ -174,14 +189,14 @@ const categories = {
           wattage: "610 to 630",
           efficiency: "22.56 to 23.30",
           pdfFile: ABS_132GGB_G12R,
+          dimensions: "2384mm x 1134mm x 30mm",
         },
       ],
     },
     {
       title: "Glass Transparent Backsheet PV Module",
       category: "Bifacial",
-      image:
-        "https://s.alicdn.com/@sc04/kf/H3139fbc9b7ae43ebbf653873f6f1f039f.png_720x720q50.jpg",
+      image: imgGlassTransparentBacksheet,
       path: "/products/solar-panels",
       wattage: "485-630W",
       efficiency: "22.65-23.42%",
@@ -210,6 +225,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GTS_M10,
+          dimensions: "2278mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GTS-M10",
@@ -217,6 +233,7 @@ const categories = {
           wattage: "535 to 555",
           efficiency: "22.58 to 23.43",
           pdfFile: ABS_132GTS_M10,
+          dimensions: "2089mm x 1134mm x 30mm",
         },
         {
           name: "ABS-120GTS-M10",
@@ -224,6 +241,7 @@ const categories = {
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
           pdfFile: ABS_120GTS_M10,
+          dimensions: "1908mm x 1134mm x 30mm",
         },
         {
           name: "ABS-108GTS-M10",
@@ -231,6 +249,7 @@ const categories = {
           wattage: "435 to 455",
           efficiency: "22.28 to 23.30",
           pdfFile: ABS_108GTS_M10,
+          dimensions: "1722mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GTS-G12R",
@@ -238,14 +257,14 @@ const categories = {
           wattage: "610 to 630",
           efficiency: "22.56 to 23.30",
           pdfFile: ABS_132GTS_G12R,
+          dimensions: "2384mm x 1134mm x 30mm",
         },
       ],
     },
     {
       title: "Glass White Back Sheet PV Module",
       category: "Monofacial",
-      image:
-        "https://metsolar.eu/wp-content/uploads/2017/11/Glass-blacksheet-layers.png",
+      image: imgGlassWhiteBacksheet,
       path: "/products/solar-panels",
       wattage: "485-725W",
       efficiency: "22.65-23.42%",
@@ -273,6 +292,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GWS_M10,
+          dimensions: "2278mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GWS-M10",
@@ -280,6 +300,7 @@ const categories = {
           wattage: "535 to 555",
           efficiency: "22.58 to 23.43",
           pdfFile: ABS_132GWS_M10,
+          dimensions: "2089mm x 1134mm x 30mm",
         },
         {
           name: "ABS-120GWS-M10",
@@ -287,6 +308,7 @@ const categories = {
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
           pdfFile: ABS_120GWS_M10,
+          dimensions: "1908mm x 1134mm x 30mm",
         },
         {
           name: "ABS-108GWS-M10",
@@ -294,6 +316,7 @@ const categories = {
           wattage: "435 to 455",
           efficiency: "22.28 to 23.30",
           pdfFile: ABS_108GWS_M10,
+          dimensions: "1722mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GWS-G12",
@@ -301,6 +324,7 @@ const categories = {
           wattage: "705 to 725",
           efficiency: "22.70 to 23.34",
           pdfFile: ABS_132GWS_G12,
+          dimensions: "2384mm x 1303mm x 30mm",
         },
         {
           name: "ABS-132GWS-G12R",
@@ -308,14 +332,14 @@ const categories = {
           wattage: "610 to 630",
           efficiency: "22.56 to 23.30",
           pdfFile: ABS_132GWS_G12R,
+          dimensions: "2384mm x 1134mm x 30mm",
         },
       ],
     },
     {
       title: "Glass Black Back Sheet – All Black PV Module",
       category: "Monofacial",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa9nFoOyssxa3q14PjpIEgjsY9NXTTX9qRHA&s",
+      image: imgGlassBlackBacksheet,
       path: "/products/solar-panels",
       wattage: "485-630W",
       efficiency: "22.65-23.42%",
@@ -343,6 +367,7 @@ const categories = {
           wattage: "585 to 605",
           efficiency: "22.65 to 23.42",
           pdfFile: ABS_144GBB_M10,
+          dimensions: "2278mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GBB-M10",
@@ -350,6 +375,7 @@ const categories = {
           wattage: "535 to 555",
           efficiency: "22.58 to 23.43",
           pdfFile: ABS_132GBB_M10,
+          dimensions: "2089mm x 1134mm x 30mm",
         },
         {
           name: "ABS-120GBB-M10",
@@ -357,6 +383,7 @@ const categories = {
           wattage: "485 to 505",
           efficiency: "22.42 to 23.34",
           pdfFile: ABS_120GBB_M10,
+          dimensions: "1908mm x 1134mm x 30mm",
         },
         {
           name: "ABS-108GBB-M10",
@@ -364,6 +391,7 @@ const categories = {
           wattage: "435 to 455",
           efficiency: "22.28 to 23.30",
           pdfFile: ABS_108GBB_M10,
+          dimensions: "1722mm x 1134mm x 30mm",
         },
         {
           name: "ABS-132GBB-G12R",
@@ -371,6 +399,7 @@ const categories = {
           wattage: "610 to 630",
           efficiency: "22.56 to 23.30",
           pdfFile: ABS_132GBB_G12R,
+          dimensions: "2384mm x 1134mm x 30mm",
         },
       ],
     },
@@ -429,7 +458,7 @@ const categories = {
     //   certifications: ["IEC 61215", "IEC 61730", "CE", "TUV", "UL"],
     // },
   ],
-  "Proven ABC Technology": [
+  "IBC Technology": [
     //   {
     //     title: "PERC Mono Half-Cut Panel",
     //     category: "Monofacial",
@@ -583,17 +612,16 @@ const SolarPanelsPage = () => {
       <Header page="products" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 mt-20 relative z-20 ">
+      <div className="container mx-auto px-4 py-16 relative z-20 ">
         {/* Technology Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-4">
           {Object.keys(categories).map((cat) => (
             <button
               key={cat}
-              className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
-                activeTab === cat
-                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg transform scale-105"
-                  : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg"
-              }`}
+              className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${activeTab === cat
+                ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg transform scale-105"
+                : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg"
+                }`}
               onClick={() => setActiveTab(cat)}
             >
               {cat}
@@ -837,6 +865,9 @@ const SolarPanelsPage = () => {
                           <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
                             Efficiency (%)
                           </th>
+                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                            Dimensions
+                          </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
                             View PDF
                           </th>
@@ -862,6 +893,9 @@ const SolarPanelsPage = () => {
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
                               {model.efficiency}
+                            </td>
+                            <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
+                              {model.dimensions || "-"}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-center">
                               <button

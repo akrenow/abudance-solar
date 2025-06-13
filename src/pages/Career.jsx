@@ -131,7 +131,7 @@ Best regards,
       <Header page={"career"} />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary via-secondary/90 to-secondary text-white py-20 mt-16">
+      <section className="relative bg-gradient-to-br from-secondary via-secondary/90 to-secondary text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
