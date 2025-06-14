@@ -6,9 +6,6 @@ const NewsSection = ({
   title = "Latest News",
   description = "Stay updated with our latest developments, innovations, and industry news.",
   newsItems = [],
-  viewAllButtonText = "View All News",
-  primaryColor = "#1B2A4F",
-  secondaryColor = "#DB8400",
   backgroundColor = "bg-gray-50",
 }) => {
   return (
@@ -34,7 +31,18 @@ const NewsSection = ({
               {newsItems.map((news, index) => (
                 <Card
                   key={index}
-                  className="card-modern group overflow-hidden h-full hover:shadow-2xl"
+                  className="card-modern group overflow-hidden h-full hover:shadow-2xl cursor-pointer relative transform transition-all duration-300 hover:scale-[1.02] hover:border-primary"
+                  onClick={() => {
+                    // Handle both absolute and relative URLs
+                    const link = news.readMoreLink || "#";
+                    if (link.startsWith("http")) {
+                      // External link - open in new tab
+                      window.open(link, "_blank");
+                    } else {
+                      // Internal link - use window.location.href for navigation
+                      window.location.href = link;
+                    }
+                  }}
                 >
                   {/* Image Container */}
                   <div className="relative h-48 overflow-hidden">
@@ -78,19 +86,26 @@ const NewsSection = ({
                     </p>
 
                     {/* Read More Button */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center justify-center pt-4 border-t border-gray-100">
                       <Button
-                        variant="link"
-                        className="p-0 text-secondary hover:text-primary transition-colors duration-300 font-semibold group/btn"
+                        variant="default"
+                        className="bg-primary hover:bg-secondary text-white transition-colors duration-300 font-semibold group/btn flex items-center w-full justify-center py-2"
+                        onClick={(e) => {
+                          e.stopPropagation(); // Prevent card click event from firing
+                          // Handle both absolute and relative URLs
+                          const link = news.readMoreLink || "#";
+                          if (link.startsWith("http")) {
+                            // External link - open in new tab
+                            window.open(link, "_blank");
+                          } else {
+                            // Internal link - use window.location.href for navigation
+                            window.location.href = link;
+                          }
+                        }}
                       >
                         Read More
                         <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-200" />
                       </Button>
-
-                      <div className="flex items-center space-x-2">
-                        <span className="text-xs text-gray-400">Share</span>
-                        <ExternalLink className="w-4 h-4 text-gray-400 hover:text-secondary transition-colors cursor-pointer" />
-                      </div>
                     </div>
                   </div>
                 </Card>
