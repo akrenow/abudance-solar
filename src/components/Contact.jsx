@@ -287,7 +287,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Address</h4>
                       <p className="text-gray-300">
-                        KEZAD Industrial Zone, Abu Dhabi, United Arab Emirates
+                        Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
                       </p>
                     </div>
                   </div>
@@ -297,7 +297,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Phone</h4>
-                      <p className="text-gray-300">+971 2 123 4567</p>
+                      <p className="text-gray-300"> +971 55 950 1737</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -315,11 +315,16 @@ const Contact = () => {
               </div>
 
               <div className="h-[300px] rounded-2xl overflow-hidden shadow-md">
-                <img
-                  src="https://readdy.ai/api/search-image?query=A%20satellite%20or%20aerial%20view%20of%20an%20industrial%20zone%20in%20Abu%20Dhabi%2C%20showing%20a%20modern%20manufacturing%20facility%20complex%20with%20solar%20panels%20visible%20on%20rooftops.%20The%20image%20shows%20the%20surrounding%20area%20with%20roads%2C%20other%20industrial%20buildings%2C%20and%20possibly%20water%20nearby%2C%20representing%20the%20KEZAD%20industrial%20zone&width=600&height=300&seq=15&orientation=landscape"
-                  alt="KEZAD Location - Abundance Solar Headquarters"
-                  className="w-full h-full object-cover"
-                />
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.1234567890123!2d54.3456789!3d24.2123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5eff0037655fab%3A0x9a7f9d8dfe5a4e48!2sABDUNDANCE%20SOLAR%20PLOT%20-%20Al%20Ma'Mourah%20-%20KHIA%205%20-%20Abu%20Dhabi!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Abundance Solar Location - KEZAD, Abu Dhabi"
+                ></iframe>
               </div>
             </div>
           </div>

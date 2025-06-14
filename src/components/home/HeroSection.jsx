@@ -111,7 +111,7 @@ const HeroSection = () => {
       stats: [
         { value: "15yrs", label: "Product Warranty" },
         { value: "30yrs", label: "Linear Power Performance Warranty" },
-        { value: "ISO", label: "Certified Facility" },
+        { value: "Fully Automatic", label: " European technology" },
       ],
       cta: {
         text: "Learn More",
