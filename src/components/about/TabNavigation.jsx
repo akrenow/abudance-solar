@@ -14,7 +14,134 @@ import React, { useState } from "react";
 import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
 const TabNavigation = () => {
   const [activeTab, setActiveTab] = useState("overview");
-
+  const processSteps = [
+    {
+      id: 1,
+      title: "Auto Cutting M/C",
+      subtitle: "(EVA, Backsheet)",
+      description:
+        "Precision cutting of EVA encapsulant and backsheet materials to exact specifications.",
+      color: "bg-secondary scale-125",
+    },
+    {
+      id: 2,
+      title: "Auto Glass Loader",
+      subtitle: "",
+      description:
+        "Automated loading of tempered glass substrate for module foundation.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 3,
+      title: "Tabber",
+      subtitle: "(Stringer W/C)",
+      description:
+        "Tabbing and stringing process to interconnect solar cells with conductive ribbons.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 4,
+      title: "Auto Layup",
+      subtitle: "",
+      description:
+        "Automated positioning and layering of all module components in proper sequence.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 5,
+      title: "Auto Bussing",
+      subtitle: "",
+      description:
+        "Installation of bus bars to collect current from cell strings.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 6,
+      title: "Electroluminescence (EL)",
+      subtitle: "Testing",
+      description:
+        "Pre-lamination EL testing to detect cell defects and ensure quality.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 7,
+      title: "Repair Station",
+      subtitle: "",
+      description:
+        "Manual repair and correction of any identified defects or issues.",
+      color: "bg-secondary scale-125",
+    },
+    {
+      id: 8,
+      title: "Lamination",
+      subtitle: "",
+      description:
+        "High-temperature lamination process to bond all module layers permanently.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 9,
+      title: "Trimming & Visual Inspection",
+      subtitle: "",
+      description: "Edge trimming and comprehensive visual quality inspection.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 10,
+      title: "Auto Framing Station",
+      subtitle: "",
+      description:
+        "Automated installation of aluminum frame around the module perimeter.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 11,
+      title: "Auto JB Fixing",
+      subtitle: "",
+      description: "Automated junction box attachment and cable connection.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 12,
+      title: "Sun Simulation",
+      subtitle: "",
+      description:
+        "Standard Test Conditions (STC) performance measurement under simulated sunlight.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 13,
+      title: "Final Electroluminescence",
+      subtitle: "(EL) Testing",
+      description:
+        "Final EL inspection to verify module integrity and performance.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 14,
+      title: "Hi-pot Testing",
+      subtitle: "",
+      description:
+        "High-voltage insulation testing for electrical safety verification.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 15,
+      title: "Module Cleaning & Auto Sorting",
+      subtitle: "",
+      description:
+        "Final cleaning and automated sorting by power output and grade classification.",
+      color: "bg-primary scale-125",
+    },
+    {
+      id: 16,
+      title: "Packing",
+      subtitle: "",
+      description:
+        "Protective packaging and preparation for shipping to customers.",
+      color: "bg-primary scale-125",
+    },
+  ];
   return (
     <>
       <section className="bg-white border-b border-gray-200 sticky top-20 z-40">
@@ -526,58 +653,57 @@ const TabNavigation = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
                 Our Manufacturing Process
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="bg-gray-50 rounded-lg p-6 text-center">
-                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-secondary text-gray-100 mb-4">
-                    <span className="text-2xl font-bold">1</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Silicon Wafer Production
-                  </h3>
-                  <p className="text-gray-600">
-                    High-purity N-type silicon wafers are produced as the
-                    foundation for our solar cells.
-                  </p>
-                </div>
 
-                <div className="bg-gray-50 rounded-lg p-6 text-center">
-                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-secondary text-gray-100 mb-4">
-                    <span className="text-2xl font-bold">2</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    TopCon Cell Manufacturing
-                  </h3>
-                  <p className="text-gray-600">
-                    Advanced TopCon technology is applied to create
-                    high-efficiency solar cells.
-                  </p>
-                </div>
+              {/* Process Steps Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {processSteps.map((step, index) => (
+                  <div
+                    key={step.id}
+                    className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+                  >
+                    <div className={`${step.color} h-2`}></div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <div
+                          className={`inline-flex items-center justify-center h-10 w-10 rounded-full ${step.color} text-white`}
+                        >
+                          <span className="text-sm font-bold">{step.id}</span>
+                        </div>
+                        {index < processSteps.length - 1 && (
+                          <div className="hidden lg:block">
+                            <svg
+                              className="w-6 h-6 text-gray-300"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
 
-                <div className="bg-gray-50 rounded-lg p-6 text-center">
-                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-secondary text-gray-100 mb-4">
-                    <span className="text-2xl font-bold">3</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Module Assembly
-                  </h3>
-                  <p className="text-gray-600">
-                    Cells are assembled into modules with premium materials for
-                    durability and performance.
-                  </p>
-                </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        {step.title}
+                      </h3>
 
-                <div className="bg-gray-50 rounded-lg p-6 text-center">
-                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-secondary text-gray-100 mb-4">
-                    <span className="text-2xl font-bold">4</span>
+                      {step.subtitle && (
+                        <p className="text-sm font-medium text-gray-500 mb-2">
+                          {step.subtitle}
+                        </p>
+                      )}
+
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Testing & Certification
-                  </h3>
-                  <p className="text-gray-600">
-                    Rigorous quality control ensures every module meets our high
-                    standards.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
 

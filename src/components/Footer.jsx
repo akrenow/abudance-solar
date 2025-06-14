@@ -10,7 +10,6 @@ import {
   FacebookIcon,
   InstagramIcon,
 } from "lucide-react";
-import Logo from "../assets/images/logo.png";
 
 const Footer = () => {
   return (
