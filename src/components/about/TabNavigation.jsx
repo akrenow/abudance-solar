@@ -1,13 +1,14 @@
 import {
   BadgeDollarSignIcon,
   Bolt,
-  PanelTop,
   Globe,
   Leaf,
   Lightbulb,
   Medal,
   SunDim,
   Users,
+  Recycle,
+  Droplet,
 } from "lucide-react";
 import React, { useState } from "react";
 import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
@@ -918,38 +919,44 @@ const TabNavigation = () => {
                     {/* Changed from Bolt to SunDim for solar relevance */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Carbon Neutral Operations
+                    Carbon Footprint Reduction
                   </h3>
                   <p className="text-gray-600">
-                    Achieve carbon-neutral operations by 2025 through 100%
-                    renewable energy usage and sustainable business practices.
+                    Use renewable energy in manufacturing facilities
+                  </p>
+                  <p className="text-gray-600">
+                    Optimize logistics to reduce transportation emissions
+                  </p>
+                  <p className="text-gray-600">
+                    Implement energy-efficient production processes
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">
-                    <PanelTop /> {/* Changed to represent solar panels */}
+                    <Recycle /> {/* Changed to represent solar panels */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Sustainable Manufacturing
+                    Circular Economy & Waste Management
                   </h3>
                   <p className="text-gray-600">
-                    Reduce manufacturing emissions by 75% by 2026 through clean
-                    production methods and recycled materials in our solar
-                    panels.
+                    Recycle silicon wafers, glass, and metals from defective
+                    panels. Develop take-back and recycling programs for
+                    end-of-life panels. Minimize packaging waste and use
+                    biodegradable materials.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">
-                    <Lightbulb /> {/* Changed to represent energy efficiency */}
+                    <Droplet /> {/* Changed to represent energy efficiency */}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Energy Access
+                    Water Conservation
                   </h3>
                   <p className="text-gray-600">
-                    Provide clean energy access to 1 million households by 2030,
-                    focusing on underserved communities.
+                    Reduce water usage in wafer cleaning and cooling processes.
+                    Recycle and treat water used in manufacturing.
                   </p>
                 </div>
               </div>
