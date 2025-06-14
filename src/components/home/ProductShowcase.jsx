@@ -421,7 +421,10 @@ const ProductShowcase = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="relative group">
                   <div className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                    <div className="aspect-[4/3] relative overflow-hidden">
+                    <div
+                      onClick={() => navigate("/products")}
+                      className="aspect-[4/4] relative overflow-hidden"
+                    >
                       <img
                         src={currentProduct?.image}
                         alt={currentProduct?.name}
