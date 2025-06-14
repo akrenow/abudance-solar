@@ -7,6 +7,7 @@ import {
   Shield,
   Settings,
   ChevronRight,
+  Award,
 } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -332,6 +333,25 @@ const DownloadCenter = () => {
         },
         {
           name: "Safety Precautions",
+          url: "/downloads/installation/safety.pdf",
+          hasPopup: false,
+        },
+      ],
+    },
+    {
+      id: "certificates",
+      name: "Certificates",
+      icon: Award,
+      description: "Product certifications and compliance documents",
+      color: "from-amber-500 to-orange-500",
+      files: [
+        {
+          name: "IEC(TUV) ",
+          url: "/downloads/installation/manual.pdf",
+          hasPopup: false,
+        },
+        {
+          name: "UL",
           url: "/downloads/installation/safety.pdf",
           hasPopup: false,
         },

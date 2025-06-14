@@ -54,7 +54,8 @@ const HeroSection = () => {
         icon: "",
       },
       styles: {
-        container: "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+        container:
+          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
@@ -87,7 +88,8 @@ const HeroSection = () => {
         icon: "",
       },
       styles: {
-        container: "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+        container:
+          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
@@ -107,8 +109,8 @@ const HeroSection = () => {
       description:
         "Empowering communities and industries with reliable, efficient, and eco-friendly solar solutions for a brighter tomorrow.",
       stats: [
-        { value: "100+", label: "Projects Delivered" },
-        { value: "30yr", label: "Performance Warranty" },
+        { value: "15yrs", label: "Product Warranty" },
+        { value: "30yrs", label: "Linear Power Performance Warranty" },
         { value: "ISO", label: "Certified Facility" },
       ],
       cta: {
@@ -120,7 +122,8 @@ const HeroSection = () => {
         icon: "",
       },
       styles: {
-        container: "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+        container:
+          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
@@ -163,18 +166,18 @@ const HeroSection = () => {
         screenSize === "xs"
           ? "absolute bottom-20 left-2 right-2 z-10"
           : screenSize === "sm"
-            ? "absolute bottom-20 left-4 right-4 z-10"
-            : screenSize === "md"
-              ? "absolute bottom-8 left-6 right-6 z-10 max-w-lg"
-              : "absolute bottom-8 left-8 z-10 max-w-md",
+          ? "absolute bottom-20 left-4 right-4 z-10"
+          : screenSize === "md"
+          ? "absolute bottom-8 left-6 right-6 z-10 max-w-lg"
+          : "absolute bottom-8 left-8 z-10 max-w-md",
 
       // Content box padding
       contentBox:
         screenSize === "xs"
           ? "p-3 rounded-lg backdrop-blur-md"
           : screenSize === "sm"
-            ? "p-4 rounded-xl backdrop-blur-md"
-            : "p-5 rounded-xl backdrop-blur-md",
+          ? "p-4 rounded-xl backdrop-blur-md"
+          : "p-5 rounded-xl backdrop-blur-md",
 
       // Title sizing
       // Smaller title sizing
@@ -182,39 +185,39 @@ const HeroSection = () => {
         screenSize === "xs"
           ? "text-sm font-bold mb-1"
           : screenSize === "sm"
-            ? "text-base font-bold mb-1"
-            : "text-lg font-bold mb-2",
+          ? "text-base font-bold mb-1"
+          : "text-lg font-bold mb-2",
 
       description:
         screenSize === "xs"
           ? "text-xs mb-2 leading-tight"
           : screenSize === "sm"
-            ? "text-sm mb-3 leading-tight"
-            : "text-sm mb-3 leading-relaxed",
+          ? "text-sm mb-3 leading-tight"
+          : "text-sm mb-3 leading-relaxed",
 
       // Horizontal stats layout for compactness
       statsGrid:
         screenSize === "xs"
           ? "flex gap-1 mb-2"
           : screenSize === "sm"
-            ? "flex gap-2 mb-3"
-            : "flex gap-3 mb-3",
+          ? "flex gap-2 mb-3"
+          : "flex gap-3 mb-3",
 
       // Very compact stats container
       statsContainer:
         screenSize === "xs"
           ? "rounded px-2 py-1 border transition-all duration-300 flex-1 text-center"
           : screenSize === "sm"
-            ? "rounded-md px-2 py-1.5 border transition-all duration-300 flex-1 text-center"
-            : "rounded-lg px-3 py-2 border transition-all duration-300 flex-1 text-center",
+          ? "rounded-md px-2 py-1.5 border transition-all duration-300 flex-1 text-center"
+          : "rounded-lg px-3 py-2 border transition-all duration-300 flex-1 text-center",
 
       // Compact stats values and labels
       statsValue:
         screenSize === "xs"
           ? "text-xs font-bold"
           : screenSize === "sm"
-            ? "text-sm font-bold"
-            : "text-base font-bold",
+          ? "text-sm font-bold"
+          : "text-base font-bold",
 
       statsLabel:
         screenSize === "xs" ? "text-xs opacity-80" : "text-xs opacity-90",
@@ -226,30 +229,30 @@ const HeroSection = () => {
         screenSize === "xs"
           ? "px-4 py-2 text-sm font-medium rounded-full flex items-center gap-1 transition-all duration-300"
           : screenSize === "sm"
-            ? "px-5 py-2.5 text-sm font-medium rounded-full flex items-center gap-2 transition-all duration-300"
-            : "px-6 py-3 font-medium rounded-full flex items-center gap-2 transition-all duration-300",
+          ? "px-5 py-2.5 text-sm font-medium rounded-full flex items-center gap-2 transition-all duration-300"
+          : "px-6 py-3 font-medium rounded-full flex items-center gap-2 transition-all duration-300",
 
       secondaryButton:
         screenSize === "xs"
           ? "px-4 py-2 text-sm font-medium rounded-full flex items-center gap-1 transition-all duration-300"
           : screenSize === "sm"
-            ? "px-5 py-2.5 text-sm font-medium rounded-full flex items-center gap-2 transition-all duration-300"
-            : "px-6 py-3 font-medium rounded-full flex items-center gap-2 transition-all duration-300",
+          ? "px-5 py-2.5 text-sm font-medium rounded-full flex items-center gap-2 transition-all duration-300"
+          : "px-6 py-3 font-medium rounded-full flex items-center gap-2 transition-all duration-300",
 
       // Navigation
       navContainer:
         screenSize === "xs"
           ? "absolute bottom-2 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full"
           : screenSize === "sm"
-            ? "absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-3 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full"
-            : "absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full",
+          ? "absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-3 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full"
+          : "absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full",
 
       navButton:
         screenSize === "xs"
           ? "flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
           : screenSize === "sm"
-            ? "flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
-            : "flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group",
+          ? "flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+          : "flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group",
 
       navIcon:
         screenSize === "xs"
@@ -467,13 +470,13 @@ const HeroSection = () => {
       <style jsx>{`
         .custom-bullet {
           width: ${screenSize === "xs"
-          ? "8px"
-          : screenSize === "sm"
+            ? "8px"
+            : screenSize === "sm"
             ? "10px"
             : "12px"};
           height: ${screenSize === "xs"
-          ? "8px"
-          : screenSize === "sm"
+            ? "8px"
+            : screenSize === "sm"
             ? "10px"
             : "12px"};
           border-radius: 50%;
