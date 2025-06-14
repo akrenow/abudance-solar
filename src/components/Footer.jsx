@@ -27,9 +27,12 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">Abundance Solar</h3>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Leading manufacturer of premium N-Type TopCon solar modules for
-              residential and commercial applications, driving the UAE&#39;s
-              vision for sustainable energy.
+              Abundance Solar Panels Industries LLC, based in KEZAD, UAE, is a
+              leading solar panel manufacturer with a 600MW annual capacity.
+              Utilizing advanced European technology, we produce high-efficiency
+              N-type TOPCon, HJT, and IBC photovoltaic modules, driving
+              innovation and sustainability to make renewable energy accessible
+              worldwide, supporting the UAE&apos;s vision for a green future.
             </p>
             <div className="flex space-x-6">
               <a
