@@ -390,11 +390,10 @@ const ProductShowcase = () => {
                 <button
                   key={series}
                   onClick={() => handleSeriesChange(series)}
-                  className={`relative px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-500 ${
-                    activeSeries === series
+                  className={`relative px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-500 ${activeSeries === series
                       ? `bg-gradient-to-r ${data.gradient} text-white`
                       : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <span className="relative z-10">{series}</span>
                   {data.comingSoon && (
@@ -409,11 +408,10 @@ const ProductShowcase = () => {
         {/* Main Content Area */}
         {!productSeries[activeSeries].comingSoon ? (
           <div
-            className={`transition-all duration-500 ${
-              isAnimating
+            className={`transition-all duration-500 ${isAnimating
                 ? "opacity-0 transform scale-95"
                 : "opacity-100 transform scale-100"
-            }`}
+              }`}
           >
             {/* Product Display */}
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start mb-12 sm:mb-16">
@@ -428,7 +426,7 @@ const ProductShowcase = () => {
                       <img
                         src={currentProduct?.image}
                         alt={currentProduct?.name}
-                        className="w-full h-full  transition-transform duration-700"
+                        className="w-full h-full  transition-transform duration-700 object-contain"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                     </div>
@@ -513,11 +511,10 @@ const ProductShowcase = () => {
                         key={index}
                         onMouseEnter={() => setHoveredVariant(index)}
                         onMouseLeave={() => setHoveredVariant(null)}
-                        className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer ${
-                          hoveredVariant === index
+                        className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer ${hoveredVariant === index
                             ? "border-amber-300 bg-gradient-to-r from-amber-50 to-orange-50 transform scale-105"
                             : "border-gray-200 bg-white hover:border-gray-300"
-                        }`}
+                          }`}
                       >
                         <div className="flex justify-between items-center">
                           <div>

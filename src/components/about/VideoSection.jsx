@@ -1,4 +1,3 @@
-import videoPath from "../../assets/videos/homepage.mp4";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
 
@@ -57,7 +56,7 @@ const VideoSection = () => {
               loop
               muted={isMuted}
               playsInline
-              src={videoPath}
+              src="https://storage.googleapis.com/abudance-assets/intro-video.mp4"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             />
