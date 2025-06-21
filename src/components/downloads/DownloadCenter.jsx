@@ -328,7 +328,7 @@ const DownloadCenter = () => {
       files: [
         {
           name: "Solar PV Modules Installation Manual",
-          url: "/downloads/installation/manual.pdf",
+          url: "/src/assets/pdf/Abundance Installation instruction.pptx",
           hasPopup: false,
         },
         {
