@@ -19,6 +19,31 @@ const Career = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
+  // Function to calculate time difference from posted date
+  const getTimeAgo = (postedDate) => {
+    const currentDate = new Date();
+    const postDate = new Date(postedDate);
+    const timeDiff = currentDate - postDate;
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    if (daysDiff === 0) {
+      return "Today";
+    } else if (daysDiff === 1) {
+      return "1 day ago";
+    } else if (daysDiff < 7) {
+      return `${daysDiff} days ago`;
+    } else if (daysDiff < 30) {
+      const weeksDiff = Math.floor(daysDiff / 7);
+      return weeksDiff === 1 ? "1 week ago" : `${weeksDiff} weeks ago`;
+    } else if (daysDiff < 365) {
+      const monthsDiff = Math.floor(daysDiff / 30);
+      return monthsDiff === 1 ? "1 month ago" : `${monthsDiff} months ago`;
+    } else {
+      const yearsDiff = Math.floor(daysDiff / 365);
+      return yearsDiff === 1 ? "1 year ago" : `${yearsDiff} years ago`;
+    }
+  };
+
   const filteredJobOpenings = jobOpenings.filter(
     (job) =>
       job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -277,7 +302,7 @@ Best regards,
                     </div>
                     <div className="text-right">
                       <span className="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-2">
-                        Posted {job.posted}
+                        Posted {getTimeAgo(job.postedDate)}
                       </span>
                       <button
                         onClick={() => handleApplyNow(job.title)}

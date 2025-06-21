@@ -7,7 +7,7 @@ export const jobOpenings = [
     location: "Abu Dhabi, UAE",
     type: "Full-time",
     experience: "5+ years",
-    posted: "1 day ago",
+    postedDate: "2025-06-20",
     description:
       "Lead sales and marketing initiatives, develop strategic marketing campaigns, and drive revenue growth across regional markets.",
     requirements: [
@@ -26,7 +26,7 @@ export const jobOpenings = [
     location: "Abu Dhabi, UAE",
     type: "Full-time",
     experience: "3+ years",
-    posted: "1 day ago",
+    postedDate: "2025-05-30",
     description:
       "Provide technical sales support, develop customer solutions, and bridge the gap between engineering and sales teams.",
     requirements: [
@@ -45,7 +45,7 @@ export const jobOpenings = [
     location: "Abu Dhabi, UAE",
     type: "Full-time",
     experience: "6+ years",
-    posted: "1 day ago",
+    postedDate: "2025-05-19",
     description:
       "Lead complex solar project sales, provide advanced technical consultation, and mentor junior sales engineers.",
     requirements: [
