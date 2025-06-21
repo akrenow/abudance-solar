@@ -14,7 +14,7 @@ import Footer from "../Footer";
 
 // Import PDF files for datasheets
 import WarrantyPDF from "../../assets/pdf/LIMITED AND LINEAR WARRANTY OF PV MODULES-ABUNDANCE.pdf";
-
+import Instalation from "../../assets/pdf/Abundance Installation instruction.pdf";
 // Import Glass Glass Bifacial PDFs
 import ABS_144GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-144GGS-M10-585-605.pdf";
 import ABS_132GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-M10-535-555.pdf";
@@ -328,7 +328,7 @@ const DownloadCenter = () => {
       files: [
         {
           name: "Solar PV Modules Installation Manual",
-          url: "/src/assets/pdf/Abundance Installation instruction.pptx",
+          file: Instalation,
           hasPopup: false,
         },
         {

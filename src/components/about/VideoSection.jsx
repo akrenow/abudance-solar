@@ -25,12 +25,12 @@ const VideoSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-white pt-16">
-      <div className="">
+    <section className="bg-gradient-to-br from-gray-50 to-white py-12 lg:py-16">
+      <div className="container mx-auto px-4">
         {/* Heading Section */}
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-8 lg:mb-12 relative">
           <div className="inline-block">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
               Powering the Future with{" "}
               <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600">
                 Solar Energy
@@ -39,15 +39,15 @@ const VideoSection = () => {
 
             <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-48 md:w-64 mx-auto" />
           </div>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mt-8 leading-relaxed">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
             High-efficiency solar panels engineered for sustainable living by
             Abundance Solar
           </p>
         </div>
 
         {/* Video Section */}
-        <div className="relative group">
-          <div className="relative overflow-hidden shadow-2xl">
+        <div className="relative group max-w-7xl mx-auto">
+          <div className="relative overflow-hidden shadow-2xl rounded-xl">
             {/* Video Element */}
             <video
               ref={videoRef}

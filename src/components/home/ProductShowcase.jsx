@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
 import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
@@ -362,28 +362,28 @@ const ProductShowcase = () => {
   );
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden">
+    <section className="relative bg-white overflow-hidden py-12 lg:py-16">
       {/* Dynamic Background */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${productSeries[activeSeries].lightGradient} opacity-5 transition-all duration-1000`}
       />
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Compact Header */}
-        <div className="text-center mb-12 relative">
+        <div className="text-center mb-8 lg:mb-10 relative">
           <div className="inline-block">
-            <h1 className="text-3xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-8 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-6 leading-tight">
               Solar Innovation
             </h1>
             <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
           </div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
-            Engineering tomorrow's energy solutions with cutting-edge
+          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
+            Engineering tomorrow&apos;s energy solutions with cutting-edge
             photovoltaic technology
           </p>
         </div>
         {/* Compact Series Navigation */}
-        <div className="flex justify-center mb-8 sm:mb-12">
+        <div className="flex justify-center mb-6 sm:mb-8">
           <div className="bg-white border border-gray-200 rounded-2xl p-2">
             <div className="flex flex-wrap justify-center gap-2">
               {Object.entries(productSeries).map(([series, data]) => (

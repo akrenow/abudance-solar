@@ -1,12 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, AnimatePresence } from "framer-motion";
-import RobotImage from "@/assets/images/robotManufacturing.png";
 import image1 from "@/assets/images/image1.jpg";
 import image2 from "@/assets/images/image2.jpg";
 import vedio1 from "@/assets/videos/video_1.mp4";
@@ -268,7 +267,7 @@ const HeroSection = () => {
   const responsiveClasses = getResponsiveClasses();
 
   return (
-    <section className="relative h-[90vh] w-screen max-h-[90vh] md:h-screen md:max-h-screen max-w-full overflow-hidden">
+    <section className="relative h-[70vh] w-screen max-h-[70vh] md:h-[80vh] md:max-h-[80vh] max-w-full overflow-hidden">
       {" "}
       {/* Background Swiper with Changing Images */}
       <div className="absolute inset-0 z-0">
@@ -478,7 +477,7 @@ const HeroSection = () => {
         </AnimatePresence>
       </div>
       {/* Custom Styles for Pagination */}
-      <style jsx>{`
+      <style>{`
         .custom-bullet {
           width: ${screenSize === "xs"
             ? "8px"

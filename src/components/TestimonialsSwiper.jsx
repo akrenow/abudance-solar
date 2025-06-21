@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const TestimonialsSwiper = ({
     testimonials = [],
@@ -99,12 +99,12 @@ const TestimonialsSwiper = ({
     const visibleSlides = getVisibleSlides();
 
     return (
-        <section className="sm:py-10 py-20  bg-gray-50">
-            <div className="container mx-auto px-4 max-w-7xl">
+        <section className="py-8 lg:py-12 bg-gray-50">
+            <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
-                <div className="text-center mb-12 relative">
+                <div className="text-center mb-8 lg:mb-10 relative">
                     <div className="inline-block">
-                        <h1 className="text-3xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-8 leading-tight">
+                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-6 leading-tight">
                             Customer Satisfaction is Our Priority
                         </h1>
                         <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
@@ -113,13 +113,13 @@ const TestimonialsSwiper = ({
                 </div>
 
                 {/* Testimonials Container */}
-                <div className="relative mb-12">
+                <div className="relative mb-6 lg:mb-8">
                     {/* Testimonials - Stack vertically on mobile, horizontal on desktop */}
                     <div className={`flex ${isMobile ? 'flex-col space-y-8' : 'flex-row space-x-8'}`}>
                         {visibleSlides.map((testimonial, index) => (
                             <div
                                 key={`${currentSlide}-${index}`}
-                                className={`bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 ${isMobile ? 'w-full' : 'w-full md:w-1/3 flex-shrink-0'}`}
+                                className={`bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 ${isMobile ? 'w-full' : 'w-full md:w-1/3 flex-shrink-0'}`}
                             >
                                 {/* Quote Icon */}
                                 <div className="mb-6">
