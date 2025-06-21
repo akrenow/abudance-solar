@@ -120,36 +120,41 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex items-start">
                 <a
-                  href="#"
+                  href="https://maps.app.goo.gl/KCWrsf6z5MedCScr5" target="_blank"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <MapPin className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
-                  Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
-                </span>
+                <div className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed w-full">
+                  <div className="font-semibold text-white mb-1">Our Location</div>
+                  <div className="whitespace-nowrap">Abundance Solar Panels Industries LLC</div>
+                  <div>Plot No. 7-8, KHIA5 KEZAD</div>
+                  <div>Abu Dhabi, United Arab Emirates</div>
+                </div>
               </li>
               <li className="flex items-start">
                 <a
-                  href="#"
+                  href="tel:+971559501737"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Phone className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  +971 55 950 1737
-                </span>
+                <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  <div className="font-semibold text-white mb-1">Call Us</div>
+                  <div>+971 55 950 1737</div>
+                </div>
               </li>
               <li className="flex items-start">
                 <a
-                  href="#"
+                  href="mailto:purchase@abundance-solar.com"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  purchase@abundance-solar.com
-                </span>
+                <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                  <div className="font-semibold text-white mb-1">Email Us</div>
+                  <div>purchase@abundance-solar.com</div>
+                </div>
               </li>
             </ul>
           </div>

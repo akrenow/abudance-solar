@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import RobotImage from "@/assets/images/robotManufacturing.png";
 import image1 from "@/assets/images/image1.jpg";
 import image2 from "@/assets/images/image2.jpg";
-import image3 from "@/assets/images/image3.jpg";
+import vedio1 from "@/assets/videos/video_1.mp4";
 
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,7 +35,7 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      imageUrl: image3,
+      imageUrl: vedio1,
       title: "Solar Manufacturing Excellence",
       highlight: "Abundance Solar",
       description:
@@ -298,12 +298,23 @@ const HeroSection = () => {
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="absolute inset-0 bg-black/40"></div>
-              <img
-                className="absolute inset-0 w-full h-full object-cover"
-                src={slide.imageUrl}
-                alt={slide.title}
-                loading="lazy"
-              />
+              {slide.imageUrl === vedio1 ? (
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src={slide.imageUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src={slide.imageUrl}
+                  alt={slide.title}
+                  loading="lazy"
+                />
+              )}
             </SwiperSlide>
           ))}
         </Swiper>
