@@ -649,7 +649,7 @@ const TabNavigation = () => {
             </div>
 
             {/* Manufacturing Process */}
-            <div className="mb-20">
+            <div className="mb-20 max-w-7xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
                 Our Manufacturing Process
               </h2>
@@ -708,7 +708,7 @@ const TabNavigation = () => {
             </div>
 
             {/* Strategic Impact */}
-            <div className="bg-gray-50 rounded-xl p-8 md:p-12">
+            <div className="bg-gray-50 rounded-xl p-8 md:p-12" >
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                 Strategic Impact
               </h2>
