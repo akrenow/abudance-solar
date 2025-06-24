@@ -54,11 +54,11 @@ const HeroSection = () => {
       },
       styles: {
         container:
-          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+          "bg-white/50 shadow-xl ring-1 ring-white/40 backdrop-blur-lg",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
-        statsContainer: "bg-white/60 border-secondary/20",
+        statsContainer: "bg-white/20 border-secondary/20",
         statsValue: "text-secondary",
         statsLabel: "text-gray-700",
         primaryButton: "bg-secondary hover:bg-secondary/90 text-white",
@@ -88,11 +88,11 @@ const HeroSection = () => {
       },
       styles: {
         container:
-          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+          "bg-white/50 shadow-xl ring-1 ring-white/40 backdrop-blur-lg",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
-        statsContainer: "bg-white/60 border-secondary/20",
+        statsContainer: "bg-white/20 border-secondary/20",
         statsValue: "text-secondary",
         statsLabel: "text-gray-700",
         primaryButton: "bg-secondary hover:bg-secondary/90 text-white",
@@ -122,11 +122,11 @@ const HeroSection = () => {
       },
       styles: {
         container:
-          "bg-white/90 shadow-2xl ring-1 ring-white/60 backdrop-blur-xl",
+          "bg-white/50 shadow-xl ring-1 ring-white/40 backdrop-blur-lg",
         title: "text-gray-900",
         highlight: "text-secondary",
         description: "text-gray-700",
-        statsContainer: "bg-white/60 border-secondary/20",
+        statsContainer: "bg-white/20 border-secondary/20",
         statsValue: "text-secondary",
         statsLabel: "text-gray-700",
         primaryButton: "bg-secondary hover:bg-secondary/90 text-white",
@@ -170,12 +170,12 @@ const HeroSection = () => {
           ? "absolute bottom-8 left-6 right-6 z-10 max-w-lg"
           : "absolute bottom-8 left-8 z-10 max-w-md",
 
-      // Content box padding
+      // Content box padding with responsive transparency
       contentBox:
         screenSize === "xs"
-          ? "p-3 rounded-lg backdrop-blur-md"
+          ? "p-3 rounded-lg backdrop-blur-sm bg-white/50"
           : screenSize === "sm"
-          ? "p-4 rounded-xl backdrop-blur-md"
+          ? "p-4 rounded-xl backdrop-blur-md bg-white/60"
           : "p-5 rounded-xl backdrop-blur-md",
 
       // Title sizing
