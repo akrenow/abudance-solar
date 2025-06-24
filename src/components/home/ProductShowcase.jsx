@@ -325,34 +325,34 @@ const ProductShowcase = () => {
   };
 
   const PerformanceChart = ({ efficiency, wattage }) => (
-    <div className="relative h-20 sm:h-24 w-full overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="relative h-14 sm:h-16 w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="absolute inset-0 px-2">
         <div className="flex justify-between items-end h-full">
-          <div className="flex-1 space-y-1 sm:space-y-2">
+          <div className="flex-1 space-y-1">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
               Efficiency
             </div>
             <div
-              className="h-6 sm:h-8 bg-gradient-to-t from-amber-500 to-orange-400 rounded-lg relative overflow-hidden transition-all duration-1000"
+              className="h-4 sm:h-5 bg-gradient-to-t from-amber-500 to-orange-400 rounded-md relative overflow-hidden transition-all duration-1000"
               style={{ width: `${parseFloat(efficiency) * 4}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
             </div>
-            <div className="text-sm sm:text-base font-bold text-gray-800">
+            <div className="text-xs sm:text-sm font-bold text-gray-800">
               {efficiency}
             </div>
           </div>
-          <div className="flex-1 space-y-1 sm:space-y-2 ml-4">
+          <div className="flex-1 space-y-1 ml-3">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
               Max Power
             </div>
             <div
-              className="h-6 sm:h-8 bg-gradient-to-t from-slate-600 to-slate-500 rounded-lg relative overflow-hidden transition-all duration-1000"
+              className="h-4 sm:h-5 bg-gradient-to-t from-slate-600 to-slate-500 rounded-md relative overflow-hidden transition-all duration-1000"
               style={{ width: `${parseInt(wattage) / 10}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
             </div>
-            <div className="text-sm sm:text-base font-bold text-gray-800">
+            <div className="text-xs sm:text-sm font-bold text-gray-800">
               {wattage}
             </div>
           </div>
@@ -362,7 +362,7 @@ const ProductShowcase = () => {
   );
 
   return (
-    <section className="relative bg-white overflow-hidden py-12 lg:py-16">
+    <section className="relative bg-white overflow-hidden py-8 lg:py-10">
       {/* Dynamic Background */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${productSeries[activeSeries].lightGradient} opacity-5 transition-all duration-1000`}
@@ -383,21 +383,21 @@ const ProductShowcase = () => {
           </p>
         </div>
         {/* Compact Series Navigation */}
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="bg-white border border-gray-200 rounded-2xl p-2">
-            <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex justify-center mb-4 sm:mb-6">
+          <div className="bg-white border border-gray-200 rounded-xl p-1">
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-2">
               {Object.entries(productSeries).map(([series, data]) => (
                 <button
                   key={series}
                   onClick={() => handleSeriesChange(series)}
-                  className={`relative px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-500 ${activeSeries === series
+                  className={`relative px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs uppercase tracking-wider transition-all duration-500 ${activeSeries === series
                       ? `bg-gradient-to-r ${data.gradient} text-white`
                       : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
                     }`}
                 >
                   <span className="relative z-10">{series}</span>
                   {data.comingSoon && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                    <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
                   )}
                 </button>
               ))}
@@ -414,14 +414,14 @@ const ProductShowcase = () => {
               }`}
           >
             {/* Product Display */}
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start mb-12 sm:mb-16">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-start mb-8 sm:mb-10">
               {/* Left: Product Visualization */}
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="relative group">
-                  <div className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                  <div className="relative bg-white border border-gray-200 rounded-xl overflow-hidden">
                     <div
                       onClick={() => navigate("/products")}
-                      className="aspect-[4/4] relative overflow-hidden"
+                      className="aspect-[4/3] relative overflow-hidden"
                     >
                       <img
                         src={currentProduct?.image}
@@ -430,7 +430,7 @@ const ProductShowcase = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                     </div>
-                    <div className="p-4 sm:p-6">
+                    <div className="p-3 sm:p-4">
                       <PerformanceChart
                         efficiency={
                           currentProduct?.efficiency?.split("-")[1] || "23%"
@@ -445,13 +445,13 @@ const ProductShowcase = () => {
 
                 {/* Navigation */}
                 {productSeries[activeSeries].products?.length > 1 && (
-                  <div className="flex justify-center space-x-4">
+                  <div className="flex justify-center space-x-3">
                     <button
                       onClick={() => handleProductChange("prev")}
-                      className="group w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
+                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
                     >
                       <svg
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-amber-600 transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-amber-600 transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -466,10 +466,10 @@ const ProductShowcase = () => {
                     </button>
                     <button
                       onClick={() => handleProductChange("next")}
-                      className="group w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
+                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
                     >
                       <svg
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 group-hover:text-amber-600 transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-amber-600 transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -487,46 +487,46 @@ const ProductShowcase = () => {
               </div>
 
               {/* Right: Product Information */}
-              <div className="space-y-6 sm:space-y-8">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <div className="inline-block px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-amber-200">
+                  <div className="inline-block px-2 sm:px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 rounded-full text-xs font-semibold mb-2 sm:mb-3 border border-amber-200">
                     {currentProduct?.type}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-800 mb-2 sm:mb-3 leading-tight">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-black text-gray-800 mb-2 leading-tight">
                     {currentProduct?.name}
                   </h2>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {productSeries[activeSeries].description}
                   </p>
                 </div>
 
                 {/* Variants */}
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
                     Available Configurations
                   </h3>
-                  <div className="space-y-2 sm:space-y-3">
+                  <div className="space-y-2">
                     {currentProduct?.variants.map((variant, index) => (
                       <div
                         key={index}
                         onMouseEnter={() => setHoveredVariant(index)}
                         onMouseLeave={() => setHoveredVariant(null)}
-                        className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer ${hoveredVariant === index
+                        className={`p-2 sm:p-3 rounded-lg border-2 transition-all duration-300 cursor-pointer ${hoveredVariant === index
                             ? "border-amber-300 bg-gradient-to-r from-amber-50 to-orange-50 transform scale-105"
                             : "border-gray-200 bg-white hover:border-gray-300"
                           }`}
                       >
                         <div className="flex justify-between items-center">
                           <div>
-                            <div className="font-bold text-gray-800 text-sm sm:text-base">
+                            <div className="font-bold text-gray-800 text-xs sm:text-sm">
                               {variant.name}
                             </div>
-                            <div className="text-xs sm:text-sm text-gray-600 mt-1">
+                            <div className="text-xs text-gray-600 mt-0.5">
                               Efficiency: {variant.efficiency}
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="text-xl sm:text-2xl font-black text-amber-600">
+                            <div className="text-lg sm:text-xl font-black text-amber-600">
                               {variant.wattage}
                             </div>
                           </div>
@@ -538,14 +538,14 @@ const ProductShowcase = () => {
 
                 {/* Applications */}
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
                     Applications
                   </h3>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {currentProduct?.applications.map((app, index) => (
                       <span
                         key={index}
-                        className="px-3 sm:px-4 py-2  text-secondary bg-primary/20 rounded-full text-xs sm:text-sm font-semibold hover:from-slate-600 hover:to-slate-700 transition-all duration-300 transform hover:scale-105"
+                        className="px-2 sm:px-3 py-1  text-secondary bg-primary/20 rounded-full text-xs font-semibold hover:from-slate-600 hover:to-slate-700 transition-all duration-300 transform hover:scale-105"
                       >
                         {app}
                       </span>
@@ -556,9 +556,9 @@ const ProductShowcase = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center py-12 sm:py-16">
-            <div className="inline-block p-8 sm:p-12 bg-white border border-gray-200 rounded-2xl">
-              <p className="text-gray-600 mb-6 sm:mb-8 max-w-md text-sm sm:text-base leading-relaxed">
+          <div className="text-center py-8 sm:py-10">
+            <div className="inline-block p-6 sm:p-8 bg-white border border-gray-200 rounded-xl">
+              <p className="text-gray-600 mb-4 sm:mb-6 max-w-md text-xs sm:text-sm leading-relaxed">
                 {productSeries[activeSeries].description}
               </p>
             </div>
@@ -566,15 +566,15 @@ const ProductShowcase = () => {
         )}
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 sm:mt-16">
+        <div className="text-center mt-8 sm:mt-10">
           <button
             onClick={() => navigate("/products")}
-            className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl transition-all duration-500 transform hover:scale-105 hover:from-slate-700 hover:to-slate-800"
+            className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-slate-800 to-slate-900 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-all duration-500 transform hover:scale-105 hover:from-slate-700 hover:to-slate-800"
           >
             <span className="relative z-10 flex items-center">
               view all products
               <svg
-                className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300"
+                className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -587,7 +587,7 @@ const ProductShowcase = () => {
                 />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>
