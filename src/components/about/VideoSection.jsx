@@ -44,73 +44,73 @@ const VideoSection = () => {
             Abundance Solar
           </p>
         </div>
+      </div>
 
-        {/* Video Section */}
-        <div className="relative group max-w-7xl mx-auto">
-          <div className="relative overflow-hidden shadow-2xl rounded-xl">
-            {/* Video Element */}
-            <video
-              ref={videoRef}
-              className="w-full h-auto object-cover"
-              autoPlay
-              loop
-              muted={isMuted}
-              playsInline
-              src="https://storage.googleapis.com/abudance-assets/intro-video.mp4"
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-            />
+      {/* Video Section - Full Width with Small Padding */}
+      <div className="relative group w-full px-2 sm:px-4 md:px-6">
+        <div className="relative overflow-hidden shadow-2xl rounded-lg">
+          {/* Video Element */}
+          <video
+            ref={videoRef}
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] object-cover"
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            src="https://storage.googleapis.com/abudance-assets/intro-video.mp4"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+          />
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            {/* Video Controls */}
-            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={togglePlay}
-                  className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 group/btn"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
-                  ) : (
-                    <Play className="w-6 h-6 text-white ml-1 group-hover/btn:scale-110 transition-transform" />
-                  )}
-                </button>
+          {/* Video Controls */}
+          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={togglePlay}
+                className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 group/btn"
+              >
+                {isPlaying ? (
+                  <Pause className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
+                ) : (
+                  <Play className="w-6 h-6 text-white ml-1 group-hover/btn:scale-110 transition-transform" />
+                )}
+              </button>
 
-                <button
-                  onClick={toggleMute}
-                  className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 group/btn"
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
-                  ) : (
-                    <Volume2 className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
-                  )}
-                </button>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <div className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full">
-                  <span className="text-white text-sm font-medium">
-                    Manufacturing Excellence
-                  </span>
-                </div>
-              </div>
+              <button
+                onClick={toggleMute}
+                className="flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-md rounded-full hover:bg-white/30 transition-all duration-300 group/btn"
+              >
+                {isMuted ? (
+                  <VolumeX className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
+                ) : (
+                  <Volume2 className="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" />
+                )}
+              </button>
             </div>
 
-            {/* Play Button Overlay (shown when paused) */}
-            {!isPlaying && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                <button
-                  onClick={togglePlay}
-                  className="flex items-center justify-center w-20 h-20 bg-white/90 backdrop-blur-md rounded-full hover:bg-white hover:scale-110 transition-all duration-300 shadow-2xl"
-                >
-                  <Play className="w-8 h-8 text-gray-800 ml-1" />
-                </button>
+            <div className="flex items-center space-x-3">
+              <div className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full">
+                <span className="text-white text-sm font-medium">
+                  Manufacturing Excellence
+                </span>
               </div>
-            )}
+            </div>
           </div>
+
+          {/* Play Button Overlay (shown when paused) */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <button
+                onClick={togglePlay}
+                className="flex items-center justify-center w-20 h-20 bg-white/90 backdrop-blur-md rounded-full hover:bg-white hover:scale-110 transition-all duration-300 shadow-2xl"
+              >
+                <Play className="w-8 h-8 text-gray-800 ml-1" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
