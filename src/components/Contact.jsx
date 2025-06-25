@@ -72,15 +72,15 @@ const Contact = () => {
 
     try {
       // EmailJS configuration
-      // const serviceID = "service_itnj3qj"; // Replace with your EmailJS service ID
-      // const templateID = "template_ldhre8f"; // Replace with your EmailJS template ID
-      // const publicKey = "Z-eiDS2yHt4qOfWLx"; // Replace with your EmailJS public key
+      const serviceID = "service_itnj3qj"; // Replace with your EmailJS service ID
+      const templateID = "template_ldhre8f"; // Replace with your EmailJS template ID
+      const publicKey = "Z-eiDS2yHt4qOfWLx"; // Replace with your EmailJS public key
 
       // Template parameters that will be sent to your email
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_email: "ankushabhat13@gmail.com",
+        to_email: "purchase@abundance-solar.com",
         subject: formData.subject,
         company: formData.company || "Not provided",
         message: formData.message,
@@ -287,7 +287,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Address</h4>
                       <p className="text-gray-300">
-                        Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
+                      Abundance Solar Panels Industries LLC
+                      </p>
+                      <p className="text-gray-300">
+                      Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
                       </p>
                     </div>
                   </div>
