@@ -19,10 +19,13 @@ const HeroSection = ({ page }) => {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 About Abundance Solar
               </h1>
-              <p className="text-xl text-white/90 mb-8">
+              {/* <p className="text-xl text-white/90 mb-8">
                 Pioneering solar manufacturing excellence in the UAE, driving
                 the global transition to sustainable energy with an AI-powered,
                 fully automated production facility.
+              </p> */}
+               <p className="text-xl text-white/90 mb-8">
+               Highly automated European manufacturing technology with zero Human intervention.
               </p>
               <div className="flex flex-wrap gap-6 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">

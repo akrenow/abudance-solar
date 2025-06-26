@@ -35,25 +35,25 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/abundance-solar"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/abundancesolar"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <TwitterIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/abundancesolar"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <FacebookIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/abundancesolar"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <InstagramIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />

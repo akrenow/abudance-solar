@@ -74,7 +74,7 @@ const HeroSection = () => {
       description:
         "Driving the worldwide transition to clean energy with UAE manufacturing excellence and innovation.",
       stats: [
-        { value: "2025", label: "Established" },
+        { value: "2024", label: "Established" },
         { value: "50+", label: "Expert Team" },
         { value: "24/7", label: "Operations" },
       ],
@@ -106,7 +106,7 @@ const HeroSection = () => {
       title: "Innovation for Tomorrow",
       highlight: "Sustainable Future",
       description:
-        "Empowering communities and industries with reliable, efficient, and eco-friendly solar solutions for a brighter tomorrow.",
+        "Highly automated European manufacturing technology with zero Human intervention",
       stats: [
         { value: "15yrs", label: "Product Warranty" },
         { value: "30yrs", label: "Linear Power Performance Warranty" },
