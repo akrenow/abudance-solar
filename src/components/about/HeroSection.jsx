@@ -25,8 +25,11 @@ const HeroSection = ({ page }) => {
                 fully automated production facility.
               </p> */}
               <p className="text-xl text-white/90 mb-8">
-                Highly automated European manufacturing technology with zero
-                Human intervention.
+                Our AI-powered European highly- Automated manufacturing facility
+                produces 600 MW annually, using advanced TOPCon, HJT, and IBC
+                technologies to deliver high-efficiency, top-quality solar
+                modules. With cutting-edge automation, we drive sustainability
+                and excellence in renewable energy.
               </p>
               <div className="flex flex-wrap gap-6 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
