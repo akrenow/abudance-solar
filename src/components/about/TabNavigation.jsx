@@ -593,12 +593,6 @@ const TabNavigation = () => {
                     <li className="flex items-start">
                       <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
                       <span className="text-gray-300">
-                        Advanced European manufacturing processes and technology
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                      <span className="text-gray-300">
                         Annual production capacity of 600MW+
                       </span>
                     </li>
@@ -613,6 +607,12 @@ const TabNavigation = () => {
                       <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
                       <span className="text-gray-300">
                         Comprehensive quality control and testing laboratory
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                      <span className="text-gray-300">
+                        Advanced European manufacturing processes and technology
                       </span>
                     </li>
                   </ul>
