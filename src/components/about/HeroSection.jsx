@@ -16,7 +16,7 @@ const HeroSection = ({ page }) => {
         <div className="container mx-auto px-4 md:px-6 relative z-20 h-full flex items-center  ">
           <div className="min-h-[00px] flex items-center p-10 rounded-xl">
             <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 About Abundance Solar
               </h1>
               {/* <p className="text-xl text-white/90 mb-8">
@@ -24,14 +24,14 @@ const HeroSection = ({ page }) => {
                 the global transition to sustainable energy with an AI-powered,
                 fully automated production facility.
               </p> */}
-              <p className="text-xl text-primary/80 mb-8">
+              <p className="text-xl text-white/90 mb-8">
                 Highly automated European manufacturing technology with zero
                 Human intervention.
               </p>
               <div className="flex flex-wrap gap-6 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
-                  <div className="text-3xl font-bold text-primary">KEZAD</div>
-                  <div className="text-primary/80">Abu Dhabi, UAE</div>
+                  <div className="text-3xl font-bold text-white">KEZAD</div>
+                  <div className="text-white/80">Abu Dhabi, UAE</div>
                 </div>
               </div>
             </div>
