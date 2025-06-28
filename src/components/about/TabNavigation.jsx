@@ -10,9 +10,11 @@ import {
   Recycle,
   Droplet,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
 const TabNavigation = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const processSteps = [
     {
@@ -227,11 +229,11 @@ const TabNavigation = () => {
                       <i className="fas fa-industry text-3xl"></i>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      State-of-the-Art Facility
+                      European Manufacturing Technology
                     </h3>
                     <p className="text-gray-600">
-                      28,000 sqm manufacturing plant with advanced European
-                      technology
+                      Highly automated European manufacturing technology with
+                      zero Human intervention
                     </p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-6">
@@ -615,7 +617,10 @@ const TabNavigation = () => {
                     </li>
                   </ul>
                 </div>
-                <button className="bg-primary hover:bg-primary text-white px-6 py-3 rounded-md font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button">
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="bg-primary hover:bg-primary text-white px-6 py-3 rounded-md font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button"
+                >
                   Request Facility Tour
                 </button>
               </div>

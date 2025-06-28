@@ -110,7 +110,11 @@ const HeroSection = () => {
       stats: [
         { value: "15yrs", label: "Product Warranty" },
         { value: "30yrs", label: "Linear Power Performance Warranty" },
-        { value: "Fully Automatic", label: " European technology" },
+        {
+          value: "Highly automated",
+          label:
+            "European manufacturing technology with zero Human intervention",
+        },
       ],
       cta: {
         text: "Learn More",
@@ -479,16 +483,12 @@ const HeroSection = () => {
       {/* Custom Styles for Pagination */}
       <style>{`
         .custom-bullet {
-          width: ${screenSize === "xs"
-            ? "8px"
-            : screenSize === "sm"
-            ? "10px"
-            : "12px"};
-          height: ${screenSize === "xs"
-            ? "8px"
-            : screenSize === "sm"
-            ? "10px"
-            : "12px"};
+          width: ${
+            screenSize === "xs" ? "8px" : screenSize === "sm" ? "10px" : "12px"
+          };
+          height: ${
+            screenSize === "xs" ? "8px" : screenSize === "sm" ? "10px" : "12px"
+          };
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.3);
           border: 1px solid rgba(255, 255, 255, 0.2);
