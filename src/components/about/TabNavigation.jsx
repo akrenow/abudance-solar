@@ -304,22 +304,21 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    We envision a future where renewable energy, powered by
-                    solar innovation, is the cornerstone of a resilient,
-                    eco-conscious, and thriving global community. As pioneers in
-                    the solar industry, we aspire to lead the global renewable
-                    energy transition by setting new standards for quality,
-                    efficiency, and sustainability through advanced European
-                    technology. Our ambition is to make clean energy a universal
-                    solution, accessible to all, driving a worldwide movement
-                    toward reduced carbon emissions and environmental
-                    stewardship. Aligned with the UAE&apos;s goal of achieving
-                    net-zero emissions and a diversified energy mix, we aim to
-                    create a ripple effect that transforms the global energy
-                    landscape. By integrating innovation, strategic
-                    partnerships, and a passion for sustainability, we are
-                    committed to building a cleaner, brighter world where solar
-                    energy powers sustainable progress for generations to come.{" "}
+                    At Abundance Solar Panels Industries LLC, we dream of a
+                    world where clean, renewable energy lights up every home,
+                    business, and community. Our vision is to lead the global
+                    shift to sustainable energy with cutting-edge European solar
+                    technology, setting new benchmarks for quality, efficiency,
+                    and eco-friendly innovation. We&apos;re dedicated to making
+                    solar power accessible to everyone, sparking a global
+                    movement to cut carbon emissions and champion environmental
+                    care. In line with the UAE&apos;s bold goal of net-zero
+                    emissions and a diverse energy future, we&apos;re creating a
+                    wave of change that reshapes how the world powers itself.
+                    Through innovation, strong partnerships, and a deep
+                    commitment to sustainability, we&apos;re building a
+                    brighter, cleaner future where solar energy drives progress
+                    for generations to come.
                   </p>
                 </div>
               </div>
@@ -345,23 +344,22 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    Our mission is to empower businesses, industries, and
-                    communities worldwide by providing innovative, high-quality
-                    solar panels that accelerate the shift to a sustainable,
-                    renewable energy future. We are dedicated to harnessing
-                    state-of-the-art European technology to produce solar
-                    solutions that are not only efficient and reliable but also
-                    accessible and cost-effective. Rooted in the UAE&apos;s
-                    ambitious vision for a green and energy-efficient future, we
-                    strive to drive the adoption of clean energy through
-                    cutting-edge manufacturing processes and sustainable
-                    practices. By fostering environmental responsibility and
-                    reducing carbon emissions, we aim to create energy-efficient
-                    ecosystems that inspire positive change and empower our
-                    customers to contribute to a healthier planet. Through
-                    collaboration, innovation, and an unwavering commitment to
-                    excellence, we are building a legacy of sustainability that
-                    resonates locally and globally.
+                    At Abundance Solar Panels Industries LLC, our mission is to
+                    empower businesses, industries, and communities worldwide
+                    with innovative, top-quality solar panels that pave the way
+                    for a sustainable, renewable energy future. Using advanced
+                    European technology, we create solar solutions that are
+                    efficient, reliable, affordable, and accessible to all.
+                    Anchored in the UAE&apos;s bold vision for a green,
+                    energy-efficient tomorrow, we&apos;re driving the shift to
+                    clean energy with state-of-the-art manufacturing and
+                    eco-conscious practices. By promoting environmental
+                    responsibility and cutting carbon emissions, we inspire
+                    energy-efficient ecosystems that spark positive change and
+                    empower our customers to build a healthier planet. Through
+                    collaboration, innovation, and a relentless pursuit of
+                    excellence, we&apos;re crafting a lasting legacy of
+                    sustainability that shines locally and globally.
                   </p>
                 </div>
               </div>
@@ -708,7 +706,7 @@ const TabNavigation = () => {
             </div>
 
             {/* Strategic Impact */}
-            <div className="bg-gray-50 rounded-xl p-8 md:p-12" >
+            <div className="bg-gray-50 rounded-xl p-8 md:p-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                 Strategic Impact
               </h2>

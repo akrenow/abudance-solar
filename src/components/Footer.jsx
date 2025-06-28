@@ -35,25 +35,29 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="https://www.linkedin.com/company/abundance-solar"
+                href="https://www.linkedin.com/in/abundance-solar-b6973a370/"
+                target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://twitter.com/abundancesolar"
+                href="https://x.com/abundance_solar"
+                target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <TwitterIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://www.facebook.com/abundancesolar"
+                href="https://www.facebook.com/people/Abundance-Solar/pfbid035WNvbTiNfc2Lq7C5yjW6A9QDBAYn4Hseca878xxf7n3GsPzSr9WA9FPBaXHnoSw8l/?mibextid=ZbWKwL"
+                target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <FacebookIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://www.instagram.com/abundancesolar"
+                href="https://www.instagram.com/abundance.solar/"
+                target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <InstagramIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
@@ -120,14 +124,19 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex items-start">
                 <a
-                  href="https://maps.app.goo.gl/KCWrsf6z5MedCScr5" target="_blank"
+                  href="https://maps.app.goo.gl/KCWrsf6z5MedCScr5"
+                  target="_blank"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <MapPin className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed w-full">
-                  <div className="font-semibold text-white mb-1">Our Location</div>
-                  <div className="whitespace-nowrap">Abundance Solar Panels Industries LLC</div>
+                  <div className="font-semibold text-white mb-1">
+                    Our Location
+                  </div>
+                  <div className="whitespace-nowrap">
+                    Abundance Solar Panels Industries LLC
+                  </div>
                   <div>Plot No. 7-8, KHIA5 KEZAD</div>
                   <div>Abu Dhabi, United Arab Emirates</div>
                 </div>
