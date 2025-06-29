@@ -612,7 +612,8 @@ const TabNavigation = () => {
                     <li className="flex items-start">
                       <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
                       <span className="text-gray-300">
-                        Advanced European manufacturing processes and technology
+                        AI-powered advanced European manufacturing processes and
+                        technology
                       </span>
                     </li>
                   </ul>
