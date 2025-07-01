@@ -599,7 +599,7 @@ const TabNavigation = () => {
                     <li className="flex items-start">
                       <i className="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
                       <span className="text-gray-300">
-                        Automated production lines for consistent quality and
+                       Highly-Automated production lines for consistent quality and
                         efficiency
                       </span>
                     </li>
