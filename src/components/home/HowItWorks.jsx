@@ -28,12 +28,14 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-20 relative">
-          <div className="inline-block">
-            <h1 className="text-3xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-8 leading-tight">
+          <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary">
               Technology
-            </h1>
-            <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
+            </h2>
           </div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
+        </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-10 leading-relaxed">
             Simple steps to transition to solar energy with BRONZE SOLAR
           </p>

@@ -47,7 +47,7 @@ const MainProductsPage = () => {
                   className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Floating badge */}
-                <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
+                <div className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary/90 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
                   Premium
                 </div>
               </div>
@@ -114,10 +114,10 @@ const MainProductsPage = () => {
 
                 {/* Call to action */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-amber-600 group-hover:text-orange-600 transition-colors duration-300">
+                  <span className="text-xs font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
                     Explore Products
                   </span>
-                  <div className="w-7 h-7 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center group-hover:from-orange-500 group-hover:to-red-500 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-7 h-7 bg-gradient-to-r from-primary to-primary/90 rounded-full flex items-center justify-center group-hover:from-primary/90 group-hover:to-primary/80 transition-all duration-300 group-hover:scale-105">
                     <svg
                       className="w-3 h-3 text-white transform group-hover:translate-x-0.5 transition-transform duration-300"
                       fill="none"
@@ -136,7 +136,7 @@ const MainProductsPage = () => {
               </div>
 
               {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl"></div>
             </Link>
           ))}
         </div>
@@ -152,7 +152,7 @@ const MainProductsPage = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
+            className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
           >
             <svg
               className="w-5 h-5 mr-2"

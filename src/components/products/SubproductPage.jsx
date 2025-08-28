@@ -552,7 +552,7 @@ const SolarPanelsPage = () => {
               Efficiency
             </div>
             <div
-              className="h-6 sm:h-8 bg-gradient-to-t from-amber-500 to-orange-400 rounded-lg relative overflow-hidden transition-all duration-1000"
+              className="h-6 sm:h-8 bg-gradient-to-t from-primary to-primary/90 rounded-lg relative overflow-hidden transition-all duration-1000"
               style={{ width: `${parseFloat(efficiency) * 4}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
@@ -599,7 +599,7 @@ const SolarPanelsPage = () => {
               key={cat}
               className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
                 activeTab === cat
-                  ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg transform scale-105"
+                  ? "bg-gradient-to-r from-primary to-primary/90 text-white shadow-lg transform scale-105"
                   : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg"
               }`}
               onClick={() => setActiveTab(cat)}
@@ -624,7 +624,7 @@ const SolarPanelsPage = () => {
                   className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                 />
                 {/* Category Badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
                   {product.category}
                 </div>
               </div>
@@ -632,7 +632,7 @@ const SolarPanelsPage = () => {
               {/* Product Content */}
               <div className="p-6">
                 {/* Type Badge */}
-                <div className="inline-block px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 rounded-full text-xs font-semibold mb-3 border border-amber-200">
+                <div className="inline-block px-3 py-1 bg-gradient-to-r from-primary/10 to-primary/20 text-primary rounded-full text-xs font-semibold mb-3 border border-primary/30">
                   {product.type}
                 </div>
 
@@ -652,11 +652,11 @@ const SolarPanelsPage = () => {
                 {/* Quick Features */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-gray-700">
-                    <Zap size={16} className="text-amber-500 mr-2" />
+                    <Zap size={16} className="text-primary mr-2" />
                     <span>{product.efficiency} Efficiency</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
-                    <Sun size={16} className="text-orange-500 mr-2" />
+                    <Sun size={16} className="text-primary mr-2" />
                     <span>{product.wattage} Power Output</span>
                   </div>
                 </div>
@@ -665,7 +665,7 @@ const SolarPanelsPage = () => {
                 <div className="flex gap-3">
                   <button
                     onClick={() => openProductPopup(product)}
-                    className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-500 hover:to-red-500 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                    className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Info size={16} />
                     Details
@@ -684,7 +684,7 @@ const SolarPanelsPage = () => {
                 </h3>
                 <p className="text-gray-600">
                   Next-generation{" "}
-                  <span className="font-semibold text-amber-600">
+                  <span className="font-semibold text-primary">
                     {activeTab}
                   </span>{" "}
                   modules are currently under development.
@@ -705,7 +705,7 @@ const SolarPanelsPage = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
+            className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
             Contact Technical Team
           </Link>
@@ -723,7 +723,7 @@ const SolarPanelsPage = () => {
                   <h2 className="text-2xl font-bold text-gray-800">
                     {selectedProduct.title}
                   </h2>
-                  <p className="text-amber-600 font-medium">
+                  <p className="text-primary font-medium">
                     {selectedProduct.type}
                   </p>
                 </div>
@@ -806,14 +806,14 @@ const SolarPanelsPage = () => {
                   {/* Certifications
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                      <Award size={20} className="text-amber-500 mr-2" />
+                      <Award size={20} className="text-primary mr-2" />
                       Certifications
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProduct.certifications.map((cert, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-amber-100 text-primary rounded-full text-sm font-medium"
                         >
                           {cert}
                         </span>

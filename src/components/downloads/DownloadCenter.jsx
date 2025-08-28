@@ -291,7 +291,7 @@ const DownloadCenter = () => {
       icon: FileText,
       description:
         "Comprehensive technical specifications for all solar panel models",
-      color: "from-amber-500 to-orange-500",
+      color: "from-primary to-primary/90",
       files: [
         { name: "Glass/Glass Bifacial Datasheet", hasPopup: true },
         { name: "Glass/Glass All Black Datasheet", hasPopup: true },
@@ -343,7 +343,7 @@ const DownloadCenter = () => {
       name: "Certificates",
       icon: Award,
       description: "Product certifications and compliance documents",
-      color: "from-amber-500 to-orange-500",
+      color: "from-primary to-primary/90",
       files: [
         {
           name: "IEC(TUV) ",
@@ -429,14 +429,14 @@ const DownloadCenter = () => {
                         className="w-full flex items-center justify-between p-2.5 bg-gray-50 hover:bg-gradient-to-r hover:from-gray-100 hover:to-gray-50 rounded-lg transition-all duration-300 group/item border border-gray-200 hover:border-gray-300"
                       >
                         <div className="flex items-center space-x-2.5">
-                          <div className="w-7 h-7 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover/item:from-amber-500 group-hover/item:to-orange-500 transition-all duration-300">
+                          <div className="w-7 h-7 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover/item:from-primary group-hover/item:to-primary/90 transition-all duration-300">
                             <FileText
                               size={14}
                               className="text-gray-600 group-hover/item:text-white transition-colors duration-300"
                             />
                           </div>
                           <div className="text-left">
-                            <div className="font-medium text-xs text-gray-800 group-hover/item:text-amber-600 transition-colors duration-300">
+                            <div className="font-medium text-xs text-gray-800 group-hover/item:text-primary/600 transition-colors duration-300">
                               {file.name}
                             </div>
                             {file.hasPopup && (
@@ -449,12 +449,12 @@ const DownloadCenter = () => {
                         <div className="flex items-center space-x-1.5">
                           <Download
                             size={14}
-                            className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
+                            className="text-gray-400 group-hover/item:text-primary/500 transition-colors duration-300"
                           />
 
                           <ChevronRight
                             size={14}
-                            className="text-gray-400 group-hover/item:text-amber-500 transition-colors duration-300"
+                            className="text-gray-400 group-hover/item:text-primary/500 transition-colors duration-300"
                           />
                         </div>
                       </button>
@@ -472,7 +472,7 @@ const DownloadCenter = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-3">
           <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[85vh] overflow-hidden flex flex-col">
             {/* Popup Header */}
-            <div className="bg-gradient-to-r from-amber-500 to-orange-500 p-4 rounded-t-2xl flex-shrink-0">
+            <div className="bg-gradient-to-r from-primary to-primary/90 p-4 rounded-t-2xl flex-shrink-0">
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-xl font-bold text-white mb-1">
@@ -496,7 +496,7 @@ const DownloadCenter = () => {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="bg-gradient-to-r from-amber-50 to-orange-50">
+                    <tr className="bg-gradient-to-r from-primary/10 to-primary/20">
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
                         Model Name
                       </th>
@@ -552,7 +552,7 @@ const DownloadCenter = () => {
                                 `${model.name}-datasheet.pdf`
                               )
                             }
-                            className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
+                            className="inline-flex items-center justify-center w-8 h-8 bg-primary/500 hover:bg-primary/600 text-white rounded-full transition-colors duration-200"
                             title={`Download ${model.name} datasheet`}
                           >
                             <Download size={16} />
