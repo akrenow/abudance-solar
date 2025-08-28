@@ -5,7 +5,7 @@ const ContactSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#1B2A4F] mb-4">
+          <h2 className="text-3xl font-bold text-[#4B2354] mb-4">
             Get in Touch
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
@@ -16,7 +16,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-gray-50 p-8 rounded-lg">
-            <h3 className="text-2xl font-semibold text-[#1B2A4F] mb-6">
+            <h3 className="text-2xl font-semibold text-[#4B2354] mb-6">
               Contact Us
             </h3>
             <form className="space-y-4">
@@ -31,7 +31,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                     placeholder="Your Name"
                   />
                 </div>
@@ -45,7 +45,7 @@ const ContactSection = () => {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                     placeholder="Your Email"
                   />
                 </div>
@@ -60,7 +60,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="company"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                   placeholder="Your Company"
                 />
               </div>
@@ -74,7 +74,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                   placeholder="Subject"
                 />
               </div>
@@ -88,24 +88,24 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                   placeholder="Your Message"
                 ></textarea>
               </div>
-              <Button className="bg-[#DB840A] hover:bg-[#c47609] text-white px-6 py-2 w-full !rounded-button whitespace-nowrap cursor-pointer">
+              <Button className="bg-[#F3B700] hover:bg-[#d9a400] text-white px-6 py-2 w-full !rounded-button whitespace-nowrap cursor-pointer">
                 Send Message
               </Button>
             </form>
           </div>
 
           <div>
-            <div className="bg-[#1B2A4F] text-white p-8 rounded-lg mb-8">
+            <div className="bg-[#4B2354] text-white p-8 rounded-lg mb-8">
               <h3 className="text-2xl font-semibold mb-6">
                 Contact Information
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                     <MapPin />
                   </div>
                   <div>
@@ -116,7 +116,7 @@ const ContactSection = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                     <Phone />
                   </div>
                   <div>
@@ -125,13 +125,13 @@ const ContactSection = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                     <Mail />
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <p className="text-gray-300">
-                      purchase@abundance-solar.com
+                      purchase@bronze-solar.com
                     </p>
                   </div>
                 </div>

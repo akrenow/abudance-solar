@@ -10,17 +10,17 @@
     --background: 0 0% 100%; /* #ffffff */
     --foreground: 222.2 84% 4.9%; /* #0a0e17 */
 
-    /* Updated Primary (DB840A) */
-    --primary: 30 91% 45%; /* #DB840A */
+    /* Updated Primary (#F3B700) */
+    --primary: 45 100% 48%; /* #F3B700 */
     --primary-foreground: 0 0% 100%; /* White text for better contrast */
 
-    /* Updated Secondary (1B2A4F) */
-    --secondary: 222 47% 20%; /* #1B2A4F */
+    /* Updated Secondary (#4B2354) */
+    --secondary: 305 38% 24%; /* #4B2354 */
     --secondary-foreground: 210 40% 98%; /* Light text for contrast */
 
     /* Design system additions */
-    --gradient-primary: linear-gradient(135deg, #1b2a4f 0%, #2a3f5f 100%);
-    --gradient-secondary: linear-gradient(135deg, #db840a 0%, #f39c12 100%);
+    --gradient-primary: linear-gradient(135deg, #4b2354 0%, #5a2a5f 100%);
+    --gradient-secondary: linear-gradient(135deg, #f3b700 0%, #ffc100 100%);
     --gradient-accent: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
     --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -56,7 +56,7 @@
     --foreground: 210 40% 98%; /* #f8fafc */
 
     /* Dark mode primary becomes orange */
-    --primary: 30 91% 45%; /* #DB840A */
+    --primary: 45 100% 48%; /* #F3B700 */
     --primary-foreground: 0 0% 100%; /* White text */
 
     /* Dark mode secondary becomes lighter navy */

@@ -107,7 +107,7 @@ const Career = () => {
     const subject = `Application for ${jobTitle} Position`;
     const body = `Dear Hiring Manager,
 
-I am writing to express my interest in the ${jobTitle} position at Abundance Solar. I have attached my resume for your review.
+I am writing to express my interest in the ${jobTitle} position at BRONZE SOLAR. I have attached my resume for your review.
 
 I would welcome the opportunity to discuss how my skills and experience align with your requirements.
 
@@ -116,17 +116,17 @@ Thank you for your consideration.
 Best regards,
 [Your Name]`;
 
-    const mailtoLink = `mailto:purchase@abundance-solar.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:purchase@bronze-solar.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
   const handleSendResume = () => {
-    const subject = "General Job Application - Abundance Solar";
+    const subject = "General Job Application - BRONZE SOLAR";
     const body = `Dear Hiring Manager,
 
-I am writing to express my interest in joining the Abundance Solar team. While I may not see a specific position that matches my current background, I am passionate about renewable energy and would love to contribute to your mission.
+I am writing to express my interest in joining the BRONZE SOLAR team. While I may not see a specific position that matches my current background, I am passionate about renewable energy and would love to contribute to your mission.
 
 I have attached my resume for your review and would appreciate the opportunity to discuss how I can add value to your organization.
 
@@ -135,7 +135,7 @@ Thank you for your time and consideration.
 Best regards,
 [Your Name]`;
 
-    const mailtoLink = `mailto:purchase@abundance-solar.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:purchase@bronze-solar.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -190,7 +190,7 @@ Best regards,
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Abundance Solar?
+              Why Choose BRONZE SOLAR?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join a company that&apos;s not just manufacturing solar panels,
@@ -375,7 +375,7 @@ Best regards,
                 step: "04",
                 title: "Final Decision",
                 description:
-                  "Receive feedback and, if successful, welcome to the Abundance Solar family!",
+                  "Receive feedback and, if successful, welcome to the BRONZE SOLAR family!",
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
@@ -408,7 +408,7 @@ Best regards,
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="flex items-center text-lg">
                   <Send className="w-5 h-5 mr-2" />
-                  <span>purchase@abundance-solar.com</span>
+                  <span>purchase@bronze-solar.com</span>
                 </div>
                 <button
                   onClick={handleSendResume}

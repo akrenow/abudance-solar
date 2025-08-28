@@ -17,7 +17,7 @@ const ProductShowcase = () => {
     "N-type TOPCon": {
       description:
         "High-efficiency N-type TOPCon technology with 30-year linear performance warranty",
-      color: "#DB840A",
+      color: "#F3B700",
       gradient: "from-amber-600 to-orange-600",
       lightGradient: "from-amber-50 to-orange-50",
       products: [
@@ -277,14 +277,14 @@ const ProductShowcase = () => {
     },
     HJT: {
       description: "Coming soon - Next-generation Heterojunction Technology",
-      color: "#1B2A4F",
+      color: "#4B2354",
       gradient: "from-slate-700 to-slate-800",
       lightGradient: "from-slate-50 to-gray-50",
       comingSoon: true,
     },
     IBC: {
       description: "Coming soon - IBC technology with enhanced performance",
-      color: "#DB840A",
+      color: "#F3B700",
       gradient: "from-amber-600 to-orange-600",
       lightGradient: "from-amber-50 to-orange-50",
       comingSoon: true,

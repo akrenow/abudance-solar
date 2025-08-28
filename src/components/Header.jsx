@@ -49,7 +49,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
               <div className="h-4 w-[2px] bg-primary/80"></div>
               <div className="flex items-center space-x-2">
                 <Mail size={16} />
-                <span>purchase@abundance-solar.com</span>
+                <span>purchase@bronze-solar.com</span>
               </div>
             </div>
 
@@ -61,7 +61,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={14} />
-                <span>purchase@abundance-solar.com</span>
+                <span>purchase@bronze-solar.com</span>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 }`}
             >
               <a href="/" className="flex items-center">
-                <img src={Logo} alt="Abundance Solar" className="h-12 w-auto" />
+                <img src={Logo} alt="BRONZE SOLAR" className="h-12 w-auto" />
               </a>
             </div>
 

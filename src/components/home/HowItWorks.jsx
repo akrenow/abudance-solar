@@ -35,7 +35,7 @@ const HowItWorks = () => {
             <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-10 leading-relaxed">
-            Simple steps to transition to solar energy with Abundance Solar
+            Simple steps to transition to solar energy with BRONZE SOLAR
           </p>
         </div>
         {/* Process Steps */}

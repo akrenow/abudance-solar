@@ -23,10 +23,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <h3 className="text-2xl font-bold">Abundance Solar</h3>
+              <h3 className="text-2xl font-bold">BRONZE SOLAR</h3>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Abundance Solar Panels Industries LLC, based in KEZAD, UAE, is a
+              BRONZE SOLAR Panels Industries LLC, based in KEZAD, UAE, is a
               leading solar panel manufacturer with a 600MW annual capacity.
               Utilizing advanced European technology, we produce high-efficiency
               N-type TOPCon, HJT, and IBC photovoltaic modules, driving
@@ -135,7 +135,7 @@ const Footer = () => {
                     Our Location
                   </div>
                   <div className="whitespace-nowrap">
-                    Abundance Solar Panels Industries LLC
+                    BRONZE SOLAR Panels Industries LLC
                   </div>
                   <div>Plot No. 7-8, KHIA5 KEZAD</div>
                   <div>Abu Dhabi, United Arab Emirates</div>
@@ -155,14 +155,14 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <a
-                  href="mailto:purchase@abundance-solar.com"
+                  href="mailto:purchase@bronze-solar.com"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   <div className="font-semibold text-white mb-1">Email Us</div>
-                  <div>purchase@abundance-solar.com</div>
+                  <div>purchase@bronze-solar.com</div>
                 </div>
               </li>
             </ul>
@@ -204,7 +204,7 @@ const Footer = () => {
         <div className="border-t border-gray-700/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-sm">
-              &copy; 2025 Abundance Solar. All rights reserved.
+              &copy; 2025 BRONZE SOLAR. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6">
               <a

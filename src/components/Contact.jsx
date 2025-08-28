@@ -80,7 +80,7 @@ const Contact = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_email: "purchase@abundance-solar.com",
+        to_email: "purchase@bronze-solar.com",
         subject: formData.subject,
         company: formData.company || "Not provided",
         message: formData.message,
@@ -129,7 +129,7 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1B2A4F] mb-4">
+            <h2 className="text-3xl font-bold text-[#4B2354] mb-4">
               Get in Touch
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
@@ -139,7 +139,7 @@ const Contact = () => {
           </div>{" "}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-gray-50 p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-semibold text-[#1B2A4F] mb-6">
+              <h3 className="text-2xl font-semibold text-[#4B2354] mb-6">
                 Send us a Message
               </h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
@@ -157,7 +157,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                         errors.name ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="Your Name"
@@ -179,7 +179,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                      className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                         errors.email ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="Your Email"
@@ -204,7 +204,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
                     placeholder="Your Company"
                   />
                 </div>
@@ -221,7 +221,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent ${
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                       errors.subject ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Subject"
@@ -245,7 +245,7 @@ const Contact = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#DB840A] focus:border-transparent resize-none ${
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent resize-none ${
                       errors.message ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="Your Message"
@@ -259,7 +259,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-[#DB840A] hover:bg-[#c47609] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-6 py-3 w-full !rounded-button whitespace-nowrap cursor-pointer flex items-center justify-center gap-2 transition-colors duration-200"
+                  className="bg-[#F3B700] hover:bg-[#d9a400] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-6 py-3 w-full !rounded-button whitespace-nowrap cursor-pointer flex items-center justify-center gap-2 transition-colors duration-200"
                 >
                   {isSubmitting ? (
                     <>
@@ -277,17 +277,17 @@ const Contact = () => {
             </div>
 
             <div>
-              <div className="bg-[#1B2A4F] text-white p-8 rounded-2xl mb-8 shadow-lg">
+              <div className="bg-[#4B2354] text-white p-8 rounded-2xl mb-8 shadow-lg">
                 <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                       <MapPin />
                     </div>
                     <div>
                       <h4 className="font-medium">Address</h4>
                       <p className="text-gray-300">
-                      Abundance Solar Panels Industries LLC
+                      BRONZE SOLAR Panels Industries LLC
                       </p>
                       <p className="text-gray-300">
                       Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
@@ -295,7 +295,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                       <Phone />
                     </div>
                     <div>
@@ -304,13 +304,13 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#DB840A] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
                       <Mail />
                     </div>
                     <div>
                       <h4 className="font-medium">Email</h4>
                       <p className="text-gray-300">
-                        purchase@abundance-solar.com
+                        purchase@bronze-solar.com
                       </p>
                     </div>
                   </div>
@@ -326,7 +326,7 @@ const Contact = () => {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Abundance Solar Location - KEZAD, Abu Dhabi"
+                  title="BRONZE SOLAR Location - KEZAD, Abu Dhabi"
                 ></iframe>
               </div>
             </div>

@@ -209,7 +209,7 @@ const TabNavigation = () => {
                   Pioneering Solar Manufacturing in the UAE
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Abundance Solar Panels Industries LLC is a pioneering solar
+                  BRONZE SOLAR Panels Industries LLC is a pioneering solar
                   panel manufacturing company based in Khalifa Economic Zones
                   Abu Dhabi (KEZAD), UAE. The company is dedicated to supporting
                   the global shift towards renewable energy by producing
@@ -217,7 +217,7 @@ const TabNavigation = () => {
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
                   With a strong focus on innovation and sustainability,
-                  Abundance Solar aims to make renewable energy accessible and
+                  BRONZE SOLAR aims to make renewable energy accessible and
                   affordable for businesses and communities worldwide. Our
                   state-of-the-art facility represents a significant investment
                   in the UAE's renewable energy sector and supports the nation's
@@ -256,7 +256,7 @@ const TabNavigation = () => {
                 <div className="rounded-lg overflow-hidden shadow-xl">
                   <img
                     src={PowerPlant}
-                    alt="Abundance Solar Manufacturing Facility"
+                    alt="BRONZE SOLAR Manufacturing Facility"
                     className="w-full h-auto"
                   />
                 </div>
@@ -306,7 +306,7 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    At Abundance Solar Panels Industries LLC, we dream of a
+                    At BRONZE SOLAR Panels Industries LLC, we dream of a
                     world where clean, renewable energy lights up every home,
                     business, and community. Our vision is to lead the global
                     shift to sustainable energy with cutting-edge European solar
@@ -346,7 +346,7 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    At Abundance Solar Panels Industries LLC, our mission is to
+                    At BRONZE SOLAR Panels Industries LLC, our mission is to
                     empower businesses, industries, and communities worldwide
                     with innovative, top-quality solar panels that pave the way
                     for a sustainable, renewable energy future. Using advanced
@@ -465,7 +465,7 @@ const TabNavigation = () => {
                 Our Leadership Team
               </h2>
               <p className="text-lg text-gray-600">
-                Meet the experienced professionals leading Abundance Solar's
+                Meet the experienced professionals leading BRONZE SOLAR's
                 mission to revolutionize the renewable energy landscape with
                 cutting-edge solar technology and sustainable practices.
               </p>
@@ -490,7 +490,7 @@ const TabNavigation = () => {
                   </p>
                   <p className="text-gray-600 mb-4">
                     With over 20 years of experience in renewable energy and
-                    manufacturing, Ahmed leads Abundance Solar's strategic
+                    manufacturing, Ahmed leads BRONZE SOLAR's strategic
                     vision and global expansion.
                   </p>
                   <div className="flex space-x-3">
@@ -629,7 +629,7 @@ const TabNavigation = () => {
                 <div className="rounded-lg overflow-hidden shadow-xl">
                   <img
                     src="https://readdy.ai/api/search-image?query=Aerial%2520view%2520of%2520large%2520modern%2520industrial%2520facility%2520in%2520Abu%2520Dhabi%2520industrial%2520zone%252C%2520solar%2520panel%2520manufacturing%2520plant%2520with%2520surrounding%2520infrastructure%252C%2520professional%2520drone%2520photography%252C%2520clear%2520day%2520with%2520blue%2520sky%252C%2520high%2520resolution%2520commercial%2520imagery&width=700&height=500&seq=facility-aerial&orientation=landscape"
-                    alt="Abundance Solar Manufacturing Facility Aerial View"
+                    alt="BRONZE SOLAR Manufacturing Facility Aerial View"
                     className="w-full h-auto"
                   />
                 </div>
@@ -775,7 +775,7 @@ const TabNavigation = () => {
                   Our Commitment to Sustainability
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Abundance Solar is deeply committed to environmental
+                  BRONZE SOLAR is deeply committed to environmental
                   stewardship, striving to reduce carbon emissions and foster
                   green technologies. Our operations are designed to support the
                   creation of energy-efficient ecosystems and promote

@@ -41,7 +41,7 @@
 //           </div>
 //           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
 //             High-efficiency solar panels engineered for sustainable living by
-//             Abundance Solar
+//             BRONZE SOLAR
 //           </p>
 //         </div>
 //       </div>
@@ -161,7 +161,7 @@ const VideoSection = () => {
           </div>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
             High-efficiency solar panels engineered for sustainable living by
-            Abundance Solar
+            BRONZE SOLAR
           </p>
         </div>
       </div>

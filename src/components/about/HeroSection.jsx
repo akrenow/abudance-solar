@@ -17,7 +17,7 @@ const HeroSection = ({ page }) => {
           <div className="min-h-[00px] flex items-center p-10 rounded-xl">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                About Abundance Solar
+                About BRONZE SOLAR
               </h1>
               {/* <p className="text-xl text-white/90 mb-8">
                 Pioneering solar manufacturing excellence in the UAE, driving
