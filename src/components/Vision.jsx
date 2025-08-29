@@ -6,7 +6,7 @@ const Vision = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Vision Section */}
         <div className="relative rounded-2xl overflow-hidden mb-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-900/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/70 z-10"></div>
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -47,7 +47,7 @@ const Vision = () => {
 
         {/* Mission Section */}
         <div className="relative rounded-2xl overflow-hidden mb-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-900/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-10"></div>
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -93,7 +93,7 @@ const Vision = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-orange-100 text-orange-500 mb-6">
+              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-primary/20 text-primary mb-6">
                 <i className="fas fa-leaf text-3xl"></i>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -106,7 +106,7 @@ const Vision = () => {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-orange-100 text-orange-500 mb-6">
+              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-secondary/20 text-secondary mb-6">
                 <i className="fas fa-lightbulb text-3xl"></i>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -119,7 +119,7 @@ const Vision = () => {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-8 text-center">
-              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-orange-100 text-orange-500 mb-6">
+              <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-primary/20 text-primary mb-6">
                 <i className="fas fa-medal text-3xl"></i>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">

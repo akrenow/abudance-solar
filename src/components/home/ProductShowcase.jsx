@@ -18,8 +18,8 @@ const ProductShowcase = () => {
       description:
         "High-efficiency N-type TOPCon technology with 30-year linear performance warranty",
       color: "#F3B700",
-      gradient: "from-amber-600 to-orange-600",
-      lightGradient: "from-amber-50 to-orange-50",
+      gradient: "from-primary to-secondary",
+      lightGradient: "from-primary/10 to-secondary/10",
       products: [
         {
           name: "Glass Glass Bifacial PV Module",
@@ -278,15 +278,15 @@ const ProductShowcase = () => {
     HJT: {
       description: "Coming soon - Next-generation Heterojunction Technology",
       color: "#4B2354",
-      gradient: "from-slate-700 to-slate-800",
-      lightGradient: "from-slate-50 to-gray-50",
+      gradient: "from-secondary to-secondary/80",
+      lightGradient: "from-secondary/10 to-secondary/5",
       comingSoon: true,
     },
     IBC: {
       description: "Coming soon - IBC technology with enhanced performance",
       color: "#F3B700",
-      gradient: "from-amber-600 to-orange-600",
-      lightGradient: "from-amber-50 to-orange-50",
+      gradient: "from-primary to-primary/80",
+      lightGradient: "from-primary/10 to-primary/5",
       comingSoon: true,
     },
   };
@@ -333,7 +333,7 @@ const ProductShowcase = () => {
               Efficiency
             </div>
             <div
-              className="h-4 sm:h-5 bg-gradient-to-t from-amber-500 to-orange-400 rounded-md relative overflow-hidden transition-all duration-1000"
+              className="h-4 sm:h-5 bg-gradient-to-t from-primary to-primary/80 rounded-md relative overflow-hidden transition-all duration-1000"
               style={{ width: `${parseFloat(efficiency) * 4}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
@@ -347,7 +347,7 @@ const ProductShowcase = () => {
               Max Power
             </div>
             <div
-              className="h-4 sm:h-5 bg-gradient-to-t from-slate-600 to-slate-500 rounded-md relative overflow-hidden transition-all duration-1000"
+              className="h-4 sm:h-5 bg-gradient-to-t from-secondary to-secondary/80 rounded-md relative overflow-hidden transition-all duration-1000"
               style={{ width: `${parseInt(wattage) / 10}%` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
@@ -372,10 +372,10 @@ const ProductShowcase = () => {
         {/* Compact Header */}
         <div className="text-center mb-8 lg:mb-10 relative">
           <div className="inline-block">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-6 leading-tight">
               Solar Innovation
             </h1>
-            <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />
+            <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-32 sm:w-48 mx-auto" />
           </div>
           <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
             Engineering tomorrow&apos;s energy solutions with cutting-edge
@@ -397,7 +397,7 @@ const ProductShowcase = () => {
                 >
                   <span className="relative z-10">{series}</span>
                   {data.comingSoon && (
-                    <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
+                    <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
                   )}
                 </button>
               ))}
@@ -448,10 +448,10 @@ const ProductShowcase = () => {
                   <div className="flex justify-center space-x-3">
                     <button
                       onClick={() => handleProductChange("prev")}
-                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
+                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-primary transition-all duration-300 flex items-center justify-center hover:bg-primary/10"
                     >
                       <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-amber-600 transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -466,10 +466,10 @@ const ProductShowcase = () => {
                     </button>
                     <button
                       onClick={() => handleProductChange("next")}
-                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-amber-300 transition-all duration-300 flex items-center justify-center hover:bg-amber-50"
+                      className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-primary transition-all duration-300 flex items-center justify-center hover:bg-primary/10"
                     >
                       <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-amber-600 transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -489,7 +489,7 @@ const ProductShowcase = () => {
               {/* Right: Product Information */}
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <div className="inline-block px-2 sm:px-3 py-1 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 rounded-full text-xs font-semibold mb-2 sm:mb-3 border border-amber-200">
+                  <div className="inline-block px-2 sm:px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-secondary rounded-full text-xs font-semibold mb-2 sm:mb-3 border border-primary/30">
                     {currentProduct?.type}
                   </div>
                   <h2 className="text-lg sm:text-xl md:text-2xl font-black text-gray-800 mb-2 leading-tight">
@@ -512,7 +512,7 @@ const ProductShowcase = () => {
                         onMouseEnter={() => setHoveredVariant(index)}
                         onMouseLeave={() => setHoveredVariant(null)}
                         className={`p-2 sm:p-3 rounded-lg border-2 transition-all duration-300 cursor-pointer ${hoveredVariant === index
-                            ? "border-amber-300 bg-gradient-to-r from-amber-50 to-orange-50 transform scale-105"
+                            ? "border-primary bg-gradient-to-r from-primary/10 to-secondary/10 transform scale-105"
                             : "border-gray-200 bg-white hover:border-gray-300"
                           }`}
                       >
@@ -526,7 +526,7 @@ const ProductShowcase = () => {
                             </div>
                           </div>
                           <div className="text-right">
-                            <div className="text-lg sm:text-xl font-black text-amber-600">
+                            <div className="text-lg sm:text-xl font-black text-primary">
                               {variant.wattage}
                             </div>
                           </div>
@@ -545,7 +545,7 @@ const ProductShowcase = () => {
                     {currentProduct?.applications.map((app, index) => (
                       <span
                         key={index}
-                        className="px-2 sm:px-3 py-1  text-secondary bg-primary/20 rounded-full text-xs font-semibold hover:from-slate-600 hover:to-slate-700 transition-all duration-300 transform hover:scale-105"
+                        className="px-2 sm:px-3 py-1  text-secondary bg-primary/20 rounded-full text-xs font-semibold hover:bg-secondary/20 transition-all duration-300 transform hover:scale-105"
                       >
                         {app}
                       </span>
@@ -569,7 +569,7 @@ const ProductShowcase = () => {
         <div className="text-center mt-8 sm:mt-10">
           <button
             onClick={() => navigate("/products")}
-            className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-slate-800 to-slate-900 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-all duration-500 transform hover:scale-105 hover:from-slate-700 hover:to-slate-800"
+            className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-secondary to-secondary/90 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-all duration-500 transform hover:scale-105 hover:from-secondary/90 hover:to-secondary"
           >
             <span className="relative z-10 flex items-center">
               view all products
@@ -587,7 +587,7 @@ const ProductShowcase = () => {
                 />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>

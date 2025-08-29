@@ -301,7 +301,7 @@ Best regards,
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-2">
+                      <span className="inline-block bg-primary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full mb-2">
                         Posted {getTimeAgo(job.postedDate)}
                       </span>
                       <button

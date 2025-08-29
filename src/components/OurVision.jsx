@@ -42,7 +42,7 @@ const OurVision = () => {
               {/* Key Vision Points */}
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Lightbulb className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-secondary mb-2">
@@ -55,7 +55,7 @@ const OurVision = () => {
                 </div>
 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-secondary to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-secondary to-secondary/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Globe className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-secondary mb-2">
@@ -68,7 +68,7 @@ const OurVision = () => {
                 </div>
 
                 <div className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-secondary mb-2">
