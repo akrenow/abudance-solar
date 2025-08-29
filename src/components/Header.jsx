@@ -84,7 +84,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 }`}
             >
               <a href="/" className="flex items-center">
-                <img src={Logo} alt="BRONZE SOLAR" className="h-12 w-auto" />
+                <img src={Logo} alt="Bronze Solar" className="h-12 w-auto" />
               </a>
             </div>
 

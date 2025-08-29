@@ -24,11 +24,11 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="text-2xl font-bold">                
-                <img src={logo} alt="BRONZE SOLAR" className="h-12 w-auto" />
+                <img src={logo} alt="Bronze Solar" className="h-12 w-auto" />
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              BRONZE SOLAR, based in KEZAD, UAE, is a
+              Bronze Solar, based in KEZAD, UAE, is a
               leading solar panel manufacturer with a 600MW annual capacity.
               Utilizing advanced European technology, we produce high-efficiency
               N-type TOPCon, HJT, and IBC photovoltaic modules, driving
@@ -206,7 +206,7 @@ const Footer = () => {
         <div className="border-t border-gray-700/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-sm">
-              &copy; 2025 BRONZE SOLAR. All rights reserved.
+              &copy; 2025 Bronze Solar. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6">
               <a

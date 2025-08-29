@@ -326,7 +326,7 @@ const Contact = () => {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="BRONZE SOLAR Location - KEZAD, Abu Dhabi"
+                  title="Bronze Solar Location - KEZAD, Abu Dhabi"
                 ></iframe>
               </div>
             </div>

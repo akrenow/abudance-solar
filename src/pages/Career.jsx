@@ -107,7 +107,7 @@ const Career = () => {
     const subject = `Application for ${jobTitle} Position`;
     const body = `Dear Hiring Manager,
 
-I am writing to express my interest in the ${jobTitle} position at BRONZE SOLAR. I have attached my resume for your review.
+I am writing to express my interest in the ${jobTitle} position at Bronze Solar. I have attached my resume for your review.
 
 I would welcome the opportunity to discuss how my skills and experience align with your requirements.
 
@@ -123,10 +123,10 @@ Best regards,
   };
 
   const handleSendResume = () => {
-    const subject = "General Job Application - BRONZE SOLAR";
+    const subject = "General Job Application - Bronze Solar";
     const body = `Dear Hiring Manager,
 
-I am writing to express my interest in joining the BRONZE SOLAR team. While I may not see a specific position that matches my current background, I am passionate about renewable energy and would love to contribute to your mission.
+I am writing to express my interest in joining the Bronze Solar team. While I may not see a specific position that matches my current background, I am passionate about renewable energy and would love to contribute to your mission.
 
 I have attached my resume for your review and would appreciate the opportunity to discuss how I can add value to your organization.
 
@@ -190,7 +190,7 @@ Best regards,
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose BRONZE SOLAR?
+              Why Choose Bronze Solar?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join a company that&apos;s not just manufacturing solar panels,
@@ -375,7 +375,7 @@ Best regards,
                 step: "04",
                 title: "Final Decision",
                 description:
-                  "Receive feedback and, if successful, welcome to the BRONZE SOLAR family!",
+                  "Receive feedback and, if successful, welcome to the Bronze Solar family!",
               },
             ].map((process, index) => (
               <div key={index} className="text-center">

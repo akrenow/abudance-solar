@@ -35,7 +35,7 @@ const HowItWorks = () => {
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Simple steps to transition to solar energy with BRONZE SOLAR
+            Simple steps to transition to solar energy with Bronze Solar
           </p>
         </div>
         {/* Process Steps */}

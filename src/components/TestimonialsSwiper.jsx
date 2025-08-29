@@ -16,7 +16,7 @@ const TestimonialsSwiper = ({
             name: "Fathima A.",
             position: "Project Lead - GreenGrid UAE",
             quote: "World-class quality at scale",
-            description: "BRONZE SOLAR provided exactly what we needed for our industrial solar deployment.",
+            description: "Bronze Solar provided exactly what we needed for our industrial solar deployment.",
             avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150"
         },
         {

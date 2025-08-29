@@ -305,7 +305,7 @@ const DownloadCenter = () => {
       name: "Warranty Documents",
       icon: Shield,
       description: "Product warranties and claim procedures",
-      color: "from-green-500 to-green-600",
+      color: "from-secondary to-secondary/90",
       files: [
         {
           name: "Limited and Linear Warranty",
@@ -324,7 +324,7 @@ const DownloadCenter = () => {
       name: "Installation Manuals",
       icon: Settings,
       description: "Installation guides and safety procedures",
-      color: "from-slate-600 to-slate-700",
+      color: "from-secondary to-secondary/90",
       files: [
         {
           name: "Solar PV Modules Installation Manual",
@@ -436,7 +436,7 @@ const DownloadCenter = () => {
                             />
                           </div>
                           <div className="text-left">
-                            <div className="font-medium text-xs text-gray-800 group-hover/item:text-primary/600 transition-colors duration-300">
+                            <div className="font-medium text-xs text-gray-800 group-hover/item:text-secondary transition-colors duration-300">
                               {file.name}
                             </div>
                             {file.hasPopup && (
@@ -449,12 +449,12 @@ const DownloadCenter = () => {
                         <div className="flex items-center space-x-1.5">
                           <Download
                             size={14}
-                            className="text-gray-400 group-hover/item:text-primary/500 transition-colors duration-300"
+                            className="text-gray-400 group-hover/item:text-primary transition-colors duration-300"
                           />
 
                           <ChevronRight
                             size={14}
-                            className="text-gray-400 group-hover/item:text-primary/500 transition-colors duration-300"
+                            className="text-gray-400 group-hover/item:text-primary transition-colors duration-300"
                           />
                         </div>
                       </button>
@@ -521,7 +521,7 @@ const DownloadCenter = () => {
                     {selectedCategory.models.map((model, index) => (
                       <tr
                         key={index}
-                        className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-orange-50 transition-colors"
+                        className="hover:bg-gradient-to-r hover:from-primary/5 hover:to-primary/10 transition-colors"
                       >
                         <td className="border border-gray-200 px-4 py-3 text-sm font-medium text-gray-800">
                           {model.name}
@@ -538,8 +538,7 @@ const DownloadCenter = () => {
                         <td className="border border-gray-200 px-4 py-3 text-center">
                           <button
                             onClick={() => window.open(model.pdfFile, "_blank")}
-                            className="inline-flex items-center justify-center w-8 h-8 text-white rounded-full transition-colors duration-200 hover:brightness-110"
-                            style={{ backgroundColor: '#4B2354' }}
+                            className="inline-flex items-center justify-center w-8 h-8 bg-secondary hover:bg-secondary/80 text-white rounded-full transition-colors duration-200"
                             title={`View ${model.name} datasheet`}
                           >
                             <Eye size={16} />
@@ -553,7 +552,7 @@ const DownloadCenter = () => {
                                 `${model.name}-datasheet.pdf`
                               )
                             }
-                            className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
+                            className="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary/80 text-white rounded-full transition-colors duration-200"
                             title={`Download ${model.name} datasheet`}
                           >
                             <Download size={16} />

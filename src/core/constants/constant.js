@@ -1,7 +1,7 @@
 export const newsItems = [
   {
     title:
-      "BRONZE SOLAR Panel Industries to establish AED 55 million solar‑power plant in KEZAD",
+      "Bronze Solar Panel Industries to establish AED 55 million solar‑power plant in KEZAD",
     date: "2024-08-27",
     excerpt:
       "A 50‑year land‑lease has been signed to build a 27,000 m² plant in Al Ma'mourah, with AED 55 million (≈ USD 15 million) investment to produce solar panels and integrated PV modules for industrial use",

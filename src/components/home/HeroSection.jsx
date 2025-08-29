@@ -36,7 +36,7 @@ const HeroSection = () => {
       id: 1,
       imageUrl: vedio1,
       title: "Solar Manufacturing Excellence",
-      highlight: "BRONZE SOLAR",
+      highlight: "Bronze Solar",
       description:
         "Pioneering the future of sustainable energy with cutting-edge solar technology from our state-of-the-art UAE facility.",
       stats: [
