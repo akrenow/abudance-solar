@@ -12,7 +12,7 @@ const PageNotFound = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* 404 Animation */}
           <div className="relative mb-8">
-            <div className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 opacity-20 select-none">
+            <div className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary opacity-20 select-none">
               404
             </div>
           </div>
@@ -33,7 +33,7 @@ const PageNotFound = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
               to="/"
-              className="group inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-500 hover:to-red-500 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Home size={20} className="mr-3 group-hover:animate-pulse" />
               Back to Home
@@ -41,7 +41,7 @@ const PageNotFound = () => {
 
             <button
               onClick={() => window.history.back()}
-              className="group inline-flex items-center bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-amber-500 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              className="group inline-flex items-center bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-primary px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               <ArrowLeft
                 size={20}
@@ -54,7 +54,7 @@ const PageNotFound = () => {
           {/* Helpful Links */}
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center justify-center">
-              <Search size={24} className="mr-3 text-amber-500" />
+              <Search size={24} className="mr-3 text-primary" />
               Looking for something specific?
             </h3>
 

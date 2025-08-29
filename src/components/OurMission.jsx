@@ -77,8 +77,8 @@ const OurMission = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-green-500/10 to-transparent rounded-xl">
-                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                    <div className="flex items-start gap-3 p-4 bg-gradient-to-r from-primary/10 to-transparent rounded-xl">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-secondary mb-1">
                           Environmental Responsibility
@@ -124,8 +124,8 @@ const OurMission = () => {
                       </p>
                     </div>
 
-                    <div className="text-center p-6 bg-gradient-to-br from-green-500/10 to-green-500/5 rounded-2xl">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="text-center p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl">
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
                         <Leaf className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-semibold text-secondary mb-1">
@@ -136,8 +136,8 @@ const OurMission = () => {
                       </p>
                     </div>
 
-                    <div className="text-center p-6 bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-2xl">
-                      <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="text-center p-6 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl">
+                      <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                         <Target className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-semibold text-secondary mb-1">

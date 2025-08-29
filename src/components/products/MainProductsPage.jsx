@@ -54,7 +54,7 @@ const MainProductsPage = () => {
 
               {/* Product Info */}
               <div className="p-5">
-                <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-slate-700 transition-colors duration-300">
+                <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
                   {product.title}
                 </h2>
 
@@ -73,15 +73,15 @@ const MainProductsPage = () => {
                   {index === 0 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
                         <span>22.65-23.42% Efficiency</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
                         <span>Bifacial Technology</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
                         <span>Monofacial technology</span>
                       </div>
                     </>
@@ -89,7 +89,7 @@ const MainProductsPage = () => {
                   {index === 1 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
                         <span>99.5% Peak Efficiency</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
