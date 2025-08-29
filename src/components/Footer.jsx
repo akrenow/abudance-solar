@@ -10,7 +10,7 @@ import {
   FacebookIcon,
   InstagramIcon,
 } from "lucide-react";
-
+import logo from "../assets/images/logo.png"
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-20 pb-8 relative overflow-hidden">
@@ -23,10 +23,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <h3 className="text-2xl font-bold">BRONZE SOLAR</h3>
+              <div className="text-2xl font-bold">                
+                <img src={logo} alt="BRONZE SOLAR" className="h-12 w-auto" />
+              </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              BRONZE SOLAR Panels Industries LLC, based in KEZAD, UAE, is a
+              BRONZE SOLAR, based in KEZAD, UAE, is a
               leading solar panel manufacturer with a 600MW annual capacity.
               Utilizing advanced European technology, we produce high-efficiency
               N-type TOPCon, HJT, and IBC photovoltaic modules, driving
@@ -124,7 +126,7 @@ const Footer = () => {
             <ul className="space-y-6">
               <li className="flex items-start">
                 <a
-                  href="https://maps.app.goo.gl/KCWrsf6z5MedCScr5"
+                  href="https://maps.app.goo.gl/xpKYsctNtk8WZ3Fu7"
                   target="_blank"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
@@ -135,7 +137,7 @@ const Footer = () => {
                     Our Location
                   </div>
                   <div className="whitespace-nowrap">
-                    BRONZE SOLAR Panels Industries LLC
+                    Abundance Solar Panels Industries LLC
                   </div>
                   <div>Plot No. 7-8, KHIA5 KEZAD</div>
                   <div>Abu Dhabi, United Arab Emirates</div>

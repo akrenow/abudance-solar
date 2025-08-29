@@ -552,7 +552,7 @@ const DownloadCenter = () => {
                                 `${model.name}-datasheet.pdf`
                               )
                             }
-                            className="inline-flex items-center justify-center w-8 h-8 bg-primary/500 hover:bg-primary/600 text-white rounded-full transition-colors duration-200"
+                            className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
                             title={`Download ${model.name} datasheet`}
                           >
                             <Download size={16} />

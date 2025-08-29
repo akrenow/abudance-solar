@@ -287,7 +287,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Address</h4>
                       <p className="text-gray-300">
-                      BRONZE SOLAR Panels Industries LLC
+                      Abundance Solar Panels Industries LLC
                       </p>
                       <p className="text-gray-300">
                       Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
@@ -319,7 +319,7 @@ const Contact = () => {
 
               <div className="h-[300px] rounded-2xl overflow-hidden shadow-md">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.1234567890123!2d54.3456789!3d24.2123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5eff0037655fab%3A0x9a7f9d8dfe5a4e48!2sABDUNDANCE%20SOLAR%20PLOT%20-%20Al%20Ma'Mourah%20-%20KHIA%205%20-%20Abu%20Dhabi!5e0!3m2!1sen!2sae!4v1234567890123!5m2!1sen!2sae"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3623.9131932836185!2d54.74514007536689!3d24.72986027801479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDQzJzQ3LjUiTiA1NMKwNDQnNTEuOCJF!5e0!3m2!1sen!2sin!4v1756444970798!5m2!1sen!2sin" 
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
