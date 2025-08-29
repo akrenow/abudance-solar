@@ -882,7 +882,8 @@ const SolarPanelsPage = () => {
                                 onClick={() =>
                                   window.open(model.pdfFile, "_blank")
                                 }
-                                className="inline-flex items-center justify-center w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors duration-200"
+                                className="inline-flex items-center justify-center w-8 h-8 text-white rounded-full transition-colors duration-200 hover:brightness-110"
+                                style={{ backgroundColor: '#4B2354' }}
                                 title={`View ${model.name} datasheet`}
                               >
                                 <Eye size={16} />
