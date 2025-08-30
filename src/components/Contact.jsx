@@ -72,9 +72,9 @@ const Contact = () => {
 
     try {
       // EmailJS configuration
-      const serviceID = "service_itnj3qj"; // Replace with your EmailJS service ID
-      const templateID = "template_ldhre8f"; // Replace with your EmailJS template ID
-      const publicKey = "Z-eiDS2yHt4qOfWLx"; // Replace with your EmailJS public key
+      // const serviceID = "service_itnj3qj"; 
+      // const templateID = "template_ldhre8f"; 
+      // const publicKey = "Z-eiDS2yHt4qOfWLx"; 
 
       // Template parameters that will be sent to your email
       const templateParams = {
