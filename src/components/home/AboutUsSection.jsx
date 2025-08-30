@@ -122,7 +122,7 @@ const AboutUsSection = () => {
                 <div className="space-y-4 md:space-y-6">
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border-l-4 border-secondary">
                     <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                      Bronze Solar Panels Industries LLC, based in KEZAD, UAE, is a
+                      Abundance Solar Panels Industries LLC, based in KEZAD, UAE, is a
                       leading solar panel manufacturer with a{" "}
                       <span className="font-bold text-secondary bg-secondary/10 px-1 md:px-2 py-0.5 md:py-1 rounded-md md:rounded-lg">600MW annual capacity</span>.
                     </p>

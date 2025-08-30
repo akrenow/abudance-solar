@@ -209,7 +209,7 @@ const TabNavigation = () => {
                   Pioneering Solar Manufacturing in the UAE
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Bronze Solar Panels Industries LLC is a pioneering solar
+                 Abundance Solar Panels Industries LLC is a pioneering solar
                   panel manufacturing company based in Khalifa Economic Zones
                   Abu Dhabi (KEZAD), UAE. The company is dedicated to supporting
                   the global shift towards renewable energy by producing
@@ -306,7 +306,7 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    At Bronze Solar Panels Industries LLC, we dream of a
+                    At Abundance Solar Panels Industries LLC, we dream of a
                     world where clean, renewable energy lights up every home,
                     business, and community. Our vision is to lead the global
                     shift to sustainable energy with cutting-edge European solar
@@ -346,7 +346,7 @@ const TabNavigation = () => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
-                    At Bronze Solar Panels Industries LLC, our mission is to
+                    At Abundance Solar Panels Industries LLC, our mission is to
                     empower businesses, industries, and communities worldwide
                     with innovative, top-quality solar panels that pave the way
                     for a sustainable, renewable energy future. Using advanced
