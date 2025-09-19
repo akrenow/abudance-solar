@@ -116,7 +116,7 @@ Thank you for your consideration.
 Best regards,
 [Your Name]`;
 
-    const mailtoLink = `mailto:purchase@bronze-solar.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:info@bronzesolar.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -135,7 +135,7 @@ Thank you for your time and consideration.
 Best regards,
 [Your Name]`;
 
-    const mailtoLink = `mailto:purchase@bronze-solar.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:info@bronzesolar.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -408,7 +408,7 @@ Best regards,
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <div className="flex items-center text-lg">
                   <Send className="w-5 h-5 mr-2" />
-                  <span>purchase@bronze-solar.com</span>
+                  <span>info@bronzesolar.com</span>
                 </div>
                 <button
                   onClick={handleSendResume}

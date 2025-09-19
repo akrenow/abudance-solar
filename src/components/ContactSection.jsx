@@ -131,7 +131,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <p className="text-gray-300">
-                      purchase@bronze-solar.com
+                      info@bronzesolar.com
                     </p>
                   </div>
                 </div>

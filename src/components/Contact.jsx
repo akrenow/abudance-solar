@@ -80,7 +80,7 @@ const Contact = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_email: "purchase@bronze-solar.com",
+        to_email: "info@bronzesolar.com",
         subject: formData.subject,
         company: formData.company || "Not provided",
         message: formData.message,
@@ -310,7 +310,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium">Email</h4>
                       <p className="text-gray-300">
-                        purchase@bronze-solar.com
+                        info@bronzesolar.com
                       </p>
                     </div>
                   </div>

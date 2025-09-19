@@ -157,14 +157,14 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <a
-                  href="mailto:purchase@bronze-solar.com"
+                  href="mailto:info@bronzesolar.com"
                   className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   <div className="font-semibold text-white mb-1">Email Us</div>
-                  <div>purchase@bronze-solar.com</div>
+                  <div>info@bronzesolar.com</div>
                 </div>
               </li>
             </ul>
