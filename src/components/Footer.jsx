@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Bronze Solar, based in KEZAD, UAE, is a
+              Abundance Solar Panels Industries LLC , based in KEZAD, UAE, is a
               leading solar panel manufacturer with a 600MW annual capacity.
               Utilizing advanced European technology, we produce high-efficiency
               N-type TOPCon, HJT, and IBC photovoltaic modules, driving
