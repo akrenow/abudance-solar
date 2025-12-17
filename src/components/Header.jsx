@@ -69,19 +69,26 @@ const Header = ({ page, enableGlassEffect = false }) => {
 
         {/* Main Header */}
         <header
-          className={`transition-all duration-300 ${isScrolled ? "bg-white shadow-sm" : shouldShowGlass ? "bg-transparent" : "bg-white shadow-sm"
-            }`}
+          className={`transition-all duration-300 ${
+            isScrolled
+              ? "bg-white shadow-sm"
+              : shouldShowGlass
+              ? "bg-transparent"
+              : "bg-white shadow-sm"
+          }`}
         >
           <div
-            className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${!isScrolled && shouldShowGlass ? "backdrop-blur-md" : ""
-              }`}
+            className={`container mx-auto px-4 md:px-6 flex items-center justify-between h-20 ${
+              !isScrolled && shouldShowGlass ? "backdrop-blur-md" : ""
+            }`}
           >
             {/* Logo with glass effect when not scrolled */}
             <div
-              className={`flex-shrink-0 ${!isScrolled && shouldShowGlass
-                ? "bg-secondary/10 backdrop-blur-md rounded-lg px-3 py-1"
-                : ""
-                }`}
+              className={`flex-shrink-0 ${
+                !isScrolled && shouldShowGlass
+                  ? "bg-secondary/10 backdrop-blur-md rounded-lg px-3 py-1"
+                  : ""
+              }`}
             >
               <a href="/" className="flex items-center">
                 <img src={Logo} alt="Bronze Solar" className="h-12 w-auto" />
@@ -90,72 +97,70 @@ const Header = ({ page, enableGlassEffect = false }) => {
 
             {/* Desktop Navigation with glassmorphism and primary/secondary colors */}
             <nav
-              className={`hidden md:flex items-center space-x-8 ${!isScrolled && shouldShowGlass
-                ? "bg-secondary/30 backdrop-blur-md rounded-full px-6 py-2"
-                : ""
-                }`}
+              className={`hidden md:flex items-center space-x-8 ${
+                !isScrolled && shouldShowGlass
+                  ? "bg-secondary/30 backdrop-blur-md rounded-full px-6 py-2"
+                  : ""
+              }`}
             >
               <a
                 href="/"
                 data-readdy="true"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 Home
               </a>
               <a
                 href="/about"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 About Us
               </a>
               <a
                 href="/products"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 Products
               </a>
               <a
                 href="/downloads"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 Downloads
               </a>
-              <a
-                href="#"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
-              >
-                Media
-              </a>
               <Link
                 to="/contact"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 Contact
               </Link>
               <Link
                 to="/career"
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } font-medium transition-colors duration-200`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
               >
                 Career
               </Link>
@@ -163,27 +168,30 @@ const Header = ({ page, enableGlassEffect = false }) => {
 
             {/* Right side elements with glass effect when not scrolled */}
             <div
-              className={`hidden md:flex items-center space-x-4 ${!isScrolled && shouldShowGlass
-                ? "bg-secondary/20 backdrop-blur-md rounded-full px-4 py-2"
-                : ""
-                }`}
+              className={`hidden md:flex items-center space-x-4 ${
+                !isScrolled && shouldShowGlass
+                  ? "bg-secondary/20 backdrop-blur-md rounded-full px-4 py-2"
+                  : ""
+              }`}
             >
               <div className="relative">
                 <button
-                  className={`${isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
-                    } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+                  className={`${
+                    isScrolled || !shouldShowGlass
+                      ? "text-primary hover:text-secondary"
+                      : "text-white hover:text-secondary/90"
+                  } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
                 >
                   <span>EN</span>
                   <i className="fas fa-chevron-down ml-1 text-xs"></i>
                 </button>
               </div>
               <button
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
               >
                 <i className="fas fa-search"></i>
               </button>
@@ -193,10 +201,11 @@ const Header = ({ page, enableGlassEffect = false }) => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${isScrolled || !shouldShowGlass
-                  ? "text-primary hover:text-secondary"
-                  : "text-white hover:text-secondary/90"
-                  } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

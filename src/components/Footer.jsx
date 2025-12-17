@@ -37,21 +37,21 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="https://www.linkedin.com/in/abundance-solar-b6973a370/"
+                href="https://www.linkedin.com/company/abundance-solar-panels-industries-llc/"
                 target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://x.com/abundance_solar"
+                href="https://x.com/webronzesolar"
                 target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
                 <TwitterIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
               </a>
               <a
-                href="https://www.facebook.com/people/Abundance-Solar/pfbid035WNvbTiNfc2Lq7C5yjW6A9QDBAYn4Hseca878xxf7n3GsPzSr9WA9FPBaXHnoSw8l/?mibextid=ZbWKwL"
+                href="https://www.instagram.com/bronze.solar_?igsh=cHRyYmF3OTM1d2pn"
                 target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >
