@@ -40,7 +40,7 @@ const HeroSection = () => {
       description:
         "Pioneering the future of sustainable energy with cutting-edge solar technology from our state-of-the-art UAE facility.",
       stats: [
-        { value: "28,000 m²", label: "Industrial Plot" },
+        { value: "3,01,389 ft²", label: "Industrial Plot" },
         { value: "600MW+", label: "Annual Capacity by 2026" },
         { value: "KEZAD", label: "Abu Dhabi" },
       ],

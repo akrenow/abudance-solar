@@ -7,7 +7,7 @@ import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
 const mainProducts = [
   {
-    title: "Solar Panels",
+    title: "High-Efficiency PV Modules",
     image: SolarPanelImage,
     path: "/products/solar-panels",
   },

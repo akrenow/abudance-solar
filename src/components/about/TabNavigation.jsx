@@ -581,8 +581,7 @@ const TabNavigation = () => {
                 <p className="text-lg text-gray-600 mb-6">
                   Located in KEZAD Area A – Al Ma'mourah, Abu Dhabi, UAE, our
                   manufacturing plant represents a significant investment in the
-                  region's renewable energy sector. The facility spans 28,000
-                  square meters and utilizes the latest innovations in solar
+                  region's renewable energy sector. The facility spans 3,01,389 square feet and utilizes the latest innovations in solar
                   panel technology.
                 </p>
                 <div className="bg-secondary rounded-lg p-6 mb-6">
