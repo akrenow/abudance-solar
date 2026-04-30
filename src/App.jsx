@@ -13,6 +13,7 @@ import Career from "./pages/Career";
 import PageNotFound from "./components/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Bipvpage from "./components/products/Bipvsubproducts";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<MainProductsPage />} />
         <Route path="/products/solar-panels" element={<SubproductPage />} />
+        <Route path="/products/bipv-products" element={<Bipvpage/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/career" element={<Career />} />
         {/* <Route path="/products/:model" element={<ProductDetailPage />} /> */}

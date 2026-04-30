@@ -5,11 +5,17 @@ import Footer from "../Footer";
 import SolarPanelImage from "../../assets/images/Solar.png";
 import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
+import bipv from "../../assets/images/BIPV.png"
 const mainProducts = [
   {
     title: "High-Efficiency PV Modules",
     image: SolarPanelImage,
     path: "/products/solar-panels",
+  },
+   {
+    title: "Building Integrated Photo-voltaic",
+    image: bipv,
+    path: "/products/bipv-products",
   },
   {
     title: "Solar Inverters",
@@ -62,9 +68,11 @@ const MainProductsPage = () => {
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   {index === 0 &&
                     "High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty"}
-                  {index === 1 &&
-                    "Advanced string inverters with maximum power point tracking and smart monitoring capabilities"}
+                    {index === 1 &&
+                    "Innovative BIPV systems that integrate solar photovoltaic technology into building structures, enabling efficient power generation while maintaining architectural aesthetics"}
                   {index === 2 &&
+                    "Advanced string inverters with maximum power point tracking and smart monitoring capabilities"}
+                  {index === 3 &&
                     "Complete Engineering, Procurement & Construction services for large-scale solar installations"}
                 </p>
 
@@ -90,6 +98,18 @@ const MainProductsPage = () => {
                     <>
                       <div className="flex items-center text-xs text-gray-700">
                         <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
+                        <span>18% – 23% Efficiency</span>
+                      </div>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        <span>Crystalline Silicon (c-Si)</span>
+                      </div>
+                    </>
+                  )}
+                   {index === 2 && (
+                    <>
+                      <div className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
                         <span>99.5% Peak Efficiency</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
@@ -98,7 +118,7 @@ const MainProductsPage = () => {
                       </div>
                     </>
                   )}
-                  {index === 2 && (
+                  {index === 3 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
                         <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
