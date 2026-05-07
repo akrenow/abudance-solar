@@ -73,7 +73,7 @@ const ProductShowcase = () => {
             "Anti-PID technology",
             "Superior low-light performance",
           ],
-          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+          applications: ["Residential", "Commercial", "Off-Grid", ],
         },
         {
           name: "Glass Glass All Black PV Module",
@@ -121,7 +121,7 @@ const ProductShowcase = () => {
             "Anti-reflective coating",
             "Enhanced durability",
           ],
-          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+          applications: ["Residential", "Commercial", "Off-Grid", ],
         },
         {
           name: "Glass Transparent Backsheet PV Module",
@@ -169,7 +169,7 @@ const ProductShowcase = () => {
             "Weather resistant",
             "Long-term reliability",
           ],
-          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+          applications: ["Residential", "Commercial", "Off-Grid", ],
         },
         {
           name: "Glass White Back Sheet PV Module",
@@ -223,7 +223,7 @@ const ProductShowcase = () => {
             "Standard grid connection",
             "Excellent price-performance ratio",
           ],
-          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+          applications: ["Residential", "Commercial", "Off-Grid", ],
         },
         {
           name: "Glass Black Back Sheet – All Black PV Module",
@@ -271,7 +271,7 @@ const ProductShowcase = () => {
             "Weather resistant frame",
             "25-year performance warranty",
           ],
-          applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+          applications: ["Residential", "Commercial", "Off-Grid", ],
         },
       ],
     },

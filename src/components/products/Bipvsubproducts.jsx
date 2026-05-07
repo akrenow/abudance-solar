@@ -42,6 +42,9 @@ import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all bl
 import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
 import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
 
+// Import BIPV Datasheet
+import ABS_BIPV_DATASHEET from "../../assets/pdf/ABS -BIPV DATASHEET.pdf";
+
 // Import local images for each product
 import SemiTransparentBIPVGlassPanels from "../../assets/Bipvsubproducts/Picture1.png";
 import ColoredBIPVPanel from "../../assets/Bipvsubproducts/Picture2.jpg";
@@ -67,7 +70,7 @@ const categories = {
        "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
 
       ],
-      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+      applications: ["Residential", "Commercial", "Off-Grid", ],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -75,7 +78,7 @@ const categories = {
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
           wattage: "80–180W",
           efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: ABS_144GGS_M10,
+          pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
@@ -97,7 +100,7 @@ const categories = {
        "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
 
       ],
-      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+      applications: ["Residential", "Commercial", "Off-Grid", ],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -105,7 +108,7 @@ const categories = {
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
           wattage: "80–180W",
           efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: ABS_144GGS_M10,
+          pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
@@ -127,7 +130,7 @@ const categories = {
        "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
 
       ],
-      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+      applications: ["Residential", "Commercial", "Off-Grid", ],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -135,7 +138,7 @@ const categories = {
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
           wattage: "80–180W",
           efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: ABS_144GGS_M10,
+          pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
@@ -157,7 +160,7 @@ const categories = {
        "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
 
       ],
-      applications: ["Residential", "Commercial", "Off-Grid", "Utility"],
+      applications: ["Residential", "Commercial", "Off-Grid", ],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
@@ -165,7 +168,7 @@ const categories = {
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
           wattage: "80–180W",
           efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: ABS_144GGS_M10,
+          pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
