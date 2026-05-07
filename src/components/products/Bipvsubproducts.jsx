@@ -59,8 +59,8 @@ const categories = {
     //   category: "Bifacial",
       image: SemiTransparentBIPVGlassPanels,
       path: "/products/solar-panels",
-      wattage: "100-300W",
-      efficiency: "20-22%",
+      wattage: "100 to 300W",
+      efficiency: "22%",
     //   type: "Bifacial N-Type",
       description:
         "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
@@ -76,7 +76,7 @@ const categories = {
         {
           name: "ABS-Semi-Transparent BIPV Glass Panel",
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
-          wattage: "80–180W",
+          wattage: "270W",
           efficiency: "Module Efficiency of 12.48 %",
           pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
@@ -89,8 +89,8 @@ const categories = {
     //   category: "Bifacial",
       image: ColoredBIPVPanel,
       path: "/products/solar-panels",
-      wattage: "100-380W",
-      efficiency: "20-21.67%",
+      wattage: "100 to 380W",
+      efficiency: "21.67%",
     //   type: "Bifacial N-Type",
       description:
         "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
@@ -104,10 +104,10 @@ const categories = {
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
-          name: "ABS-Semi-Transparent BIPV Glass Panel",
+          name: "ABS-Colored BIPV Glass Panel",
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
-          wattage: "80–180W",
-          efficiency: "Module Efficiency of 12.48 %",
+          wattage: "465W",
+          efficiency: "Module Efficiency of 21.67 %",
           pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
@@ -120,7 +120,7 @@ const categories = {
       image: SolarRoofTiles,
       path: "/products/solar-panels",
       wattage: "70-150W",
-      efficiency: "20-20.82%",
+      efficiency: "20.82%",
     //   type: "Bifacial N-Type",
       description:
         "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
@@ -134,10 +134,10 @@ const categories = {
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
-          name: "ABS-Semi-Transparent BIPV Glass Panel",
+          name: "ABS-Solar Roof Tile",
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
-          wattage: "80–180W",
-          efficiency: "Module Efficiency of 12.48 %",
+          wattage: "105W",
+          efficiency: "Module Efficiency of 20.82 %",
           pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
@@ -149,8 +149,8 @@ const categories = {
     //   category: "Bifacial",
       image:CustomPrintedFrontGlassBIPVPanels,
       path: "/products/solar-panels",
-      wattage: "100-400W",
-      efficiency: "20-23.88%",
+      wattage: "100 to 400W",
+      efficiency: "23.88%",
     //   type: "Bifacial N-Type",
       description:
         "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
@@ -164,10 +164,10 @@ const categories = {
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
-          name: "ABS-Semi-Transparent BIPV Glass Panel",
+          name: "ABS-Custom Printed Front-Glass BIPV Panel",
           productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
-          wattage: "80–180W",
-          efficiency: "Module Efficiency of 12.48 %",
+          wattage: "640W",
+          efficiency: "Module Efficiency of 23.88 %",
           pdfFile: ABS_BIPV_DATASHEET,
           dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
@@ -304,8 +304,8 @@ const Bipvpage = () => {
                 {/* Performance Chart */}
                 <div className="mb-4">
                   <PerformanceChart
-                    efficiency={product.efficiency?.split("-")[1] || "23%"}
-                    wattage={product.wattage?.split("-")[1] || "600W"}
+                    efficiency={product.efficiency}
+                    wattage={product.wattage?.split(" to ").pop()?.split("-").pop() || "300W"}
                   />
                 </div>
 
@@ -313,7 +313,7 @@ const Bipvpage = () => {
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-gray-700">
                     <Zap size={16} className="text-primary mr-2" />
-                    <span>{product.efficiency} Efficiency</span>
+                    <span>Fully customizable upon request</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
                     <Sun size={16} className="text-primary mr-2" />
@@ -410,9 +410,9 @@ const Bipvpage = () => {
                   </div>
                   <PerformanceChart
                     efficiency={
-                      selectedProduct.efficiency?.split("-")[1] || "23%"
+                      selectedProduct.efficiency
                     }
-                    wattage={selectedProduct.wattage?.split("-")[1] || "600W"}
+                    wattage={selectedProduct.wattage?.split(" to ").pop()?.split("-").pop() || "300W"}
                   />
                 </div>
 
