@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
+import SEOHead from "./SEOHead";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -125,6 +126,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Contact Us | Bronze Solar - Get In Touch"
+        description="Contact Bronze Solar for inquiries about our high-efficiency solar panels, PV modules, and solar solutions. Available in Abu Dhabi, UAE."
+        canonicalUrl="https://abundance-solar.com/contact"
+        keywords="contact Bronze Solar, solar inquiry, solar panels inquiry UAE, get solar quote"
+        ogImage="https://abundance-solar.com/Croppedlogo.png"
+      />
       <Header page="contact" />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

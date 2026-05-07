@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
+import SEOHead from "../SEOHead";
 
 // Import PDF files for datasheets
 import WarrantyPDF from "../../assets/pdf/LIMITED AND LINEAR WARRANTY OF PV MODULES-ABUNDANCE.pdf";
@@ -390,6 +391,13 @@ const DownloadCenter = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <SEOHead
+        title="Downloads | Bronze Solar - Product Datasheets & Documentation"
+        description="Download product datasheets, installation manuals, warranty documents, and certifications for Bronze Solar PV modules and solar solutions."
+        canonicalUrl="https://abundance-solar.com/downloads"
+        keywords="solar datasheets, PV module specifications, installation manuals, solar documentation, warranty documents"
+        ogImage="https://abundance-solar.com/Croppedlogo.png"
+      />
       <Header page="downloads" />
 
       {/* Main Content */}

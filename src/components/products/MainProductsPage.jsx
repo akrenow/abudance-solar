@@ -6,6 +6,7 @@ import SolarPanelImage from "../../assets/images/Solar.png";
 import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
 import bipv from "../../assets/images/BIPV.png"
+import SEOHead from "../SEOHead";
 const mainProducts = [
   {
     title: "High-Efficiency PV Modules",
@@ -32,6 +33,13 @@ const mainProducts = [
 const MainProductsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
+      <SEOHead
+        title="Products | Bronze Solar - Solar Panels, Inverters & BIPV Solutions"
+        description="Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions."
+        canonicalUrl="https://abundance-solar.com/products"
+        keywords="solar products, PV modules, solar inverters, BIPV products, solar solutions UAE, photovoltaic panels"
+        ogImage="https://abundance-solar.com/Croppedlogo.png"
+      />
       {/* Header - Using the main site header */}
       <Header page="products" />
 

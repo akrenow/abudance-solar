@@ -11,10 +11,18 @@ import { newsItems } from "../core/constants/constant";
 import Footer from "@/components/Footer";
 import HowItWorks from "@/components/home/HowItWorks";
 import AboutUsSection from "@/components/home/AboutUsSection";
+import SEOHead from "@/components/SEOHead";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Bronze Solar | Solar Panel Manufacturer UAE | High-Efficiency Solar Modules"
+        description="Leading solar panel manufacturer in UAE with 600MW capacity. High-efficiency N-type TOPCon, HJT & IBC photovoltaic modules. European technology, based in KEZAD Abu Dhabi."
+        canonicalUrl="https://abundance-solar.com/"
+        keywords="solar panels UAE, solar panel manufacturer UAE, N-type TOPCon solar panels, HJT solar modules, solar energy UAE, Abu Dhabi solar panels, renewable energy"
+        ogImage="https://abundance-solar.com/Croppedlogo.png"
+      />
       <Header />
       <main>
         <HeroSection />

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import {
   MapPin,
   Clock,
@@ -153,6 +154,13 @@ Best regards,
 
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SEOHead
+        title="Careers | Bronze Solar - Join Our Solar Revolution Team"
+        description="Join Bronze Solar's team and help shape the future of renewable energy. Explore career opportunities in solar technology, engineering, and sustainability."
+        canonicalUrl="https://abundance-solar.com/career"
+        keywords="careers at Bronze Solar, solar industry jobs, renewable energy careers UAE, job openings Abu Dhabi"
+        ogImage="https://abundance-solar.com/Croppedlogo.png"
+      />
       <Header page={"career"} />
 
       {/* Hero Section */}
