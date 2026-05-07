@@ -412,7 +412,7 @@ const Bipvpage = () => {
                     efficiency={
                       selectedProduct.efficiency
                     }
-                    wattage={selectedProduct.model.wattage}
+                    wattage={selectedProduct.models[0].wattage}
                   />
                 </div>
 
