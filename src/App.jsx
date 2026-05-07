@@ -14,10 +14,12 @@ import PageNotFound from "./components/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Bipvpage from "./components/products/Bipvsubproducts";
+import Analytics from "./components/Analytics";
 
 const App = () => {
   return (
     <Router>
+      <Analytics />
       <ScrollToTop />
       <ScrollToTopButton />
       <Routes>
