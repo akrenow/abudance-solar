@@ -394,9 +394,9 @@ const DownloadCenter = () => {
       <SEOHead
         title="Downloads | Bronze Solar - Product Datasheets & Documentation"
         description="Download product datasheets, installation manuals, warranty documents, and certifications for Bronze Solar PV modules and solar solutions."
-        canonicalUrl="https://abundance-solar.com/downloads"
+        canonicalUrl="https://bronzesolar.com/downloads"
         keywords="solar datasheets, PV module specifications, installation manuals, solar documentation, warranty documents"
-        ogImage="https://abundance-solar.com/Croppedlogo.png"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
       />
       <Header page="downloads" />
 

@@ -157,9 +157,9 @@ Best regards,
       <SEOHead
         title="Careers | Bronze Solar - Join Our Solar Revolution Team"
         description="Join Bronze Solar's team and help shape the future of renewable energy. Explore career opportunities in solar technology, engineering, and sustainability."
-        canonicalUrl="https://abundance-solar.com/career"
+        canonicalUrl="https://bronzesolar.com/career"
         keywords="careers at Bronze Solar, solar industry jobs, renewable energy careers UAE, job openings Abu Dhabi"
-        ogImage="https://abundance-solar.com/Croppedlogo.png"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
       />
       <Header page={"career"} />
 

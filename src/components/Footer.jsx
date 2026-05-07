@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a
-                href="https://www.linkedin.com/company/abundance-solar-panels-industries-llc/"
+                href="https://www.linkedin.com/company/bronzesolar-panels-industries-llc/"
                 target="_blank"
                 className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
               >

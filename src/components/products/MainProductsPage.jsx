@@ -36,9 +36,9 @@ const MainProductsPage = () => {
       <SEOHead
         title="Products | Bronze Solar - Solar Panels, Inverters & BIPV Solutions"
         description="Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions."
-        canonicalUrl="https://abundance-solar.com/products"
+        canonicalUrl="https://bronzesolar.com/products"
         keywords="solar products, PV modules, solar inverters, BIPV products, solar solutions UAE, photovoltaic panels"
-        ogImage="https://abundance-solar.com/Croppedlogo.png"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
       />
       {/* Header - Using the main site header */}
       <Header page="products" />

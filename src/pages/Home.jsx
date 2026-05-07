@@ -19,9 +19,9 @@ const Home = () => {
       <SEOHead
         title="Bronze Solar | Solar Panel Manufacturer UAE | High-Efficiency Solar Modules"
         description="Leading solar panel manufacturer in UAE with 600MW capacity. High-efficiency N-type TOPCon, HJT & IBC photovoltaic modules. European technology, based in KEZAD Abu Dhabi."
-        canonicalUrl="https://abundance-solar.com/"
+        canonicalUrl="https://bronzesolar.com/"
         keywords="solar panels UAE, solar panel manufacturer UAE, N-type TOPCon solar panels, HJT solar modules, solar energy UAE, Abu Dhabi solar panels, renewable energy"
-        ogImage="https://abundance-solar.com/Croppedlogo.png"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
       />
       <Header />
       <main>

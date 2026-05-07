@@ -60,7 +60,7 @@ const categories = {
       image: SemiTransparentBIPVGlassPanels,
       path: "/products/solar-panels",
       wattage: "100 to 300W",
-      efficiency: "22%",
+      efficiency: "12.48%",
     //   type: "Bifacial N-Type",
       description:
         "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
@@ -79,7 +79,7 @@ const categories = {
           wattage: "270W",
           efficiency: "Module Efficiency of 12.48 %",
           pdfFile: ABS_BIPV_DATASHEET,
-          dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
+          dimensions: "1908 mm x 1134 mm x 30 mm (Size can be Customized)",
         },
         
       ],
@@ -89,7 +89,7 @@ const categories = {
     //   category: "Bifacial",
       image: ColoredBIPVPanel,
       path: "/products/solar-panels",
-      wattage: "100 to 380W",
+      wattage: "Up to 470W",
       efficiency: "21.67%",
     //   type: "Bifacial N-Type",
       description:
@@ -139,7 +139,7 @@ const categories = {
           wattage: "105W",
           efficiency: "Module Efficiency of 20.82 %",
           pdfFile: ABS_BIPV_DATASHEET,
-          dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
+          dimensions: "1230 mm x 410 mm x 7.5 mm (Size can be Customized)",
         },
         
       ],
@@ -149,7 +149,7 @@ const categories = {
     //   category: "Bifacial",
       image:CustomPrintedFrontGlassBIPVPanels,
       path: "/products/solar-panels",
-      wattage: "100 to 400W",
+      wattage: "100 to 640W",
       efficiency: "23.88%",
     //   type: "Bifacial N-Type",
       description:
@@ -169,7 +169,7 @@ const categories = {
           wattage: "640W",
           efficiency: "Module Efficiency of 23.88 %",
           pdfFile: ABS_BIPV_DATASHEET,
-          dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
+          dimensions: "2376 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
       ],
@@ -305,7 +305,7 @@ const Bipvpage = () => {
                 <div className="mb-4">
                   <PerformanceChart
                     efficiency={product.efficiency}
-                    wattage={product.wattage?.split(" to ").pop()?.split("-").pop() || "300W"}
+                    wattage={product.models[0].wattage}
                   />
                 </div>
 
@@ -412,7 +412,7 @@ const Bipvpage = () => {
                     efficiency={
                       selectedProduct.efficiency
                     }
-                    wattage={selectedProduct.wattage?.split(" to ").pop()?.split("-").pop() || "300W"}
+                    wattage={selectedProduct.model.wattage}
                   />
                 </div>
 

@@ -129,9 +129,10 @@ const Contact = () => {
       <SEOHead
         title="Contact Us | Bronze Solar - Get In Touch"
         description="Contact Bronze Solar for inquiries about our high-efficiency solar panels, PV modules, and solar solutions. Available in Abu Dhabi, UAE."
-        canonicalUrl="https://abundance-solar.com/contact"
+
+        canonicalUrl="https://bronzesolar.com/contact"
         keywords="contact Bronze Solar, solar inquiry, solar panels inquiry UAE, get solar quote"
-        ogImage="https://abundance-solar.com/Croppedlogo.png"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
       />
       <Header page="contact" />
       <section className="py-16 bg-white">
