@@ -106,11 +106,11 @@ const MainProductsPage = () => {
                     <>
                       <div className="flex items-center text-xs text-gray-700">
                         <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
-                        <span>18% – 23% Efficiency</span>
+                        <span>Fully Customizable</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                        <span>Crystalline Silicon (c-Si)</span>
+                        <span>Ideal for windows, skylights, façades, cladding, roof tiles, and display/signboard BIPV applications.</span>
                       </div>
                     </>
                   )}

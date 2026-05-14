@@ -63,11 +63,12 @@ const categories = {
       efficiency: "12.48%",
     //   type: "Bifacial N-Type",
       description:
-        "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
+        "Semi-transparent BIPV (Building-Integrated Photovoltaic) glass panels are advanced solar solutions that generate electricity while allowing natural light to pass through.",
       features: [
-        "~50% visible light transparency (cells cover ~50% of area)",
-      "Typical power output: 80–180 W/m²",
-       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
+       "	~50% visible light transparency (cells cover ~50% of area)",
+       "	Customized size options.",
+       "	Typical power output: 100–300 W/m²",
+       "	Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation.",
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
@@ -93,12 +94,11 @@ const categories = {
       efficiency: "21.67%",
     //   type: "Bifacial N-Type",
       description:
-        "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
+        "Coloured BIPV (Building-Integrated Photovoltaic) panels with front coloured glass are aesthetically enhanced solar modules designed to blend seamlessly with modern architectural designs while generating clean electricity.",
       features: [
-        "~50% visible light transparency (cells cover ~50% of area)",
-      "Typical power output: 80–180 W/m²",
-       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
-
+        "Customized colour and size options.",
+        "Typical power output: Up to 470 W/m²",
+        "Ideal for: facades, cladding, curtain walls, and decorative building elements.",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
       certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
@@ -123,11 +123,12 @@ const categories = {
       efficiency: "20.82%",
     //   type: "Bifacial N-Type",
       description:
-        "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
+"Solar roof tiles (BIPV tiles) are integrated photovoltaic roofing products that function as both durable roof coverings and solar power generators.",
+
       features: [
-        "~50% visible light transparency (cells cover ~50% of area)",
-      "Typical power output: 80–180 W/m²",
-       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
+       "Customized colour and size options.",
+       "Typical power output: 70 to 150 W/m²",
+       "Ideal for: Residential homes, villas, heritage buildings, and premium architectural projects.",
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
@@ -153,11 +154,11 @@ const categories = {
       efficiency: "23.88%",
     //   type: "Bifacial N-Type",
       description:
-        "Semi-Transparent BIPV Glass Panels generate solar power while allowing natural daylight to pass through, with about 50% transparency and 9–12% module efficiency.",
+"Custom printed front-glass BIPV (Building-Integrated Photovoltaic) panels are innovative solar modules featuring digitally printed or patterned glass surfaces that combine renewable energy generation with unique architectural design.",
       features: [
-        "~50% visible light transparency (cells cover ~50% of area)",
-      "Typical power output: 80–180 W/m²",
-       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation."
+      "Customized colour and size options.",
+      "Typical power output: 100 to 640 W/m²",
+      "Ideal for: facades, skylights, canopies, and decorative building applications.",
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
