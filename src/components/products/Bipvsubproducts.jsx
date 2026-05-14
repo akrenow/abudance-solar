@@ -76,7 +76,7 @@ const categories = {
       models: [
         {
           name: "ABS-Semi-Transparent BIPV Glass Panel",
-          productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
+          productType: "",
           wattage: "270W",
           efficiency: "Module Efficiency of 12.48 %",
           pdfFile: ABS_BIPV_DATASHEET,
@@ -105,7 +105,7 @@ const categories = {
       models: [
         {
           name: "ABS-Colored BIPV Glass Panel",
-          productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
+          productType:"",
           wattage: "465W",
           efficiency: "Module Efficiency of 21.67 %",
           pdfFile: ABS_BIPV_DATASHEET,
@@ -136,7 +136,7 @@ const categories = {
       models: [
         {
           name: "ABS-Solar Roof Tile",
-          productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
+          productType: "Anodized Aluminum Alloy 6005T6",
           wattage: "105W",
           efficiency: "Module Efficiency of 20.82 %",
           pdfFile: ABS_BIPV_DATASHEET,
@@ -166,7 +166,7 @@ const categories = {
       models: [
         {
           name: "ABS-Custom Printed Front-Glass BIPV Panel",
-          productType: "Silver Anodized Aluminum Alloy Type 6005T6, Silver Color Frame",
+          productType: "",
           wattage: "640W",
           efficiency: "Module Efficiency of 23.88 %",
           pdfFile: ABS_BIPV_DATASHEET,
