@@ -2,10 +2,18 @@ import { Link } from "react-router-dom";
 import { Home, ArrowLeft, Search, AlertCircle } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
+import SEOHead from "./SEOHead";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const PageNotFound = () => {
+  const { t, localizePath } = useLanguage();
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
+      <SEOHead
+        title="Page Not Found | Bronze Solar"
+        description="The page you're looking for doesn't exist or has been moved."
+        noindex
+      />
       <Header />
 
       <div className="container mx-auto px-4 py-20 mt-16">
@@ -20,23 +28,21 @@ const PageNotFound = () => {
           {/* Main Content */}
           <div className="space-y-6 mb-12">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-              Oops! Page Not Found
+              {t("Oops! Page Not Found")}
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              It looks like the page you&apos;re looking for doesn&apos;t exist
-              or has been moved. Don&apos;t worry, even the best solar panels
-              sometimes need redirection!
+              {t("It looks like the page you're looking for doesn't exist or has been moved. Don't worry, even the best solar panels sometimes need redirection!")}
             </p>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
-              to="/"
+              to={localizePath("/")}
               className="group inline-flex items-center bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <Home size={20} className="mr-3 group-hover:animate-pulse" />
-              Back to Home
+              <Home size={20} className="me-3 group-hover:animate-pulse" />
+              {t("Back to Home")}
             </Link>
 
             <button
@@ -45,22 +51,22 @@ const PageNotFound = () => {
             >
               <ArrowLeft
                 size={20}
-                className="mr-3 group-hover:-translate-x-1 transition-transform duration-300"
+                className="me-3 group-hover:-translate-x-1 rtl:group-hover:translate-x-1 rtl:-scale-x-100 transition-transform duration-300"
               />
-              Go Back
+              {t("Go Back")}
             </button>
           </div>
 
           {/* Helpful Links */}
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center justify-center">
-              <Search size={24} className="mr-3 text-primary" />
-              Looking for something specific?
+              <Search size={24} className="me-3 text-primary" />
+              {t("Looking for something specific?")}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Link
-                to="/products"
+                to={localizePath("/products")}
                 className="group p-6 bg-gradient-to-br from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 rounded-xl border border-amber-200 hover:border-amber-300 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -78,14 +84,14 @@ const PageNotFound = () => {
                     />
                   </svg>
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">Products</h4>
+                <h4 className="font-semibold text-gray-800 mb-2">{t("Products")}</h4>
                 <p className="text-sm text-gray-600">
-                  Browse our solar panels and solutions
+                  {t("Browse our solar panels and solutions")}
                 </p>
               </Link>
 
               <Link
-                to="/about"
+                to={localizePath("/about")}
                 className="group p-6 bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 rounded-xl border border-blue-200 hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -103,14 +109,14 @@ const PageNotFound = () => {
                     />
                   </svg>
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">About Us</h4>
+                <h4 className="font-semibold text-gray-800 mb-2">{t("About Us")}</h4>
                 <p className="text-sm text-gray-600">
-                  Learn about our company and mission
+                  {t("Learn about our company and mission")}
                 </p>
               </Link>
 
               <Link
-                to="/contact"
+                to={localizePath("/contact")}
                 className="group p-6 bg-gradient-to-br from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 rounded-xl border border-green-200 hover:border-green-300 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -128,9 +134,9 @@ const PageNotFound = () => {
                     />
                   </svg>
                 </div>
-                <h4 className="font-semibold text-gray-800 mb-2">Contact</h4>
+                <h4 className="font-semibold text-gray-800 mb-2">{t("Contact")}</h4>
                 <p className="text-sm text-gray-600">
-                  Get in touch with our team
+                  {t("Get in touch with our team")}
                 </p>
               </Link>
             </div>
@@ -139,7 +145,7 @@ const PageNotFound = () => {
           {/* Fun Solar Fact */}
           <div className="mt-12 p-6 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl text-white max-w-2xl mx-auto">
             <div className="flex items-center justify-center mb-4">
-              <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center mr-3">
+              <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center me-3">
                 <svg
                   className="w-4 h-4 text-white"
                   fill="currentColor"
@@ -152,12 +158,10 @@ const PageNotFound = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold">Did you know?</h3>
+              <h3 className="text-lg font-semibold">{t("Did you know?")}</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Solar panels can still generate electricity on cloudy days,
-              producing about 10-25% of their rated capacity. Just like how
-              we&apos;re here to help even when things don&apos;t go as planned!
+              {t("Solar panels can still generate electricity on cloudy days, producing about 10-25% of their rated capacity. Just like how we're here to help even when things don't go as planned!")}
             </p>
           </div>
         </div>

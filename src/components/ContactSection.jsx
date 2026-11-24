@@ -111,7 +111,11 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium">Address</h4>
                     <p className="text-gray-300">
-                      KEZAD Industrial Zone, Abu Dhabi, United Arab Emirates
+                      ABUNDANCE SOLAR PANELS INDUSTRIES L.L.C
+                    </p>
+                    <p className="text-gray-300">
+                      Plot No. 7-8, KHIA5, KEZAD, Abu Dhabi, United Arab
+                      Emirates
                     </p>
                   </div>
                 </div>

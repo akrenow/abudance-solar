@@ -7,357 +7,107 @@ import {
   Shield,
   Settings,
   ChevronRight,
-  Award,
+  BookOpen,
 } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
+import { useLanguage } from "@/i18n/useLanguage";
 import SEOHead from "../SEOHead";
+import {
+  moduleFamilies,
+  bipvDownloads,
+  documents,
+} from "@/core/constants/products";
+import { SITE_URL } from "@/i18n/routing";
+import { documentListNode } from "@/seo/structuredData";
 
-// Import PDF files for datasheets
-import WarrantyPDF from "../../assets/pdf/LIMITED AND LINEAR WARRANTY OF PV MODULES-ABUNDANCE.pdf";
-import Instalation from "../../assets/pdf/Abundance Installation instruction.pdf";
-// Import Glass Glass Bifacial PDFs
-import ABS_144GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-144GGS-M10-585-605.pdf";
-import ABS_132GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-M10-535-555.pdf";
-import ABS_120GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-120GGS-M10-485-505.pdf";
-import ABS_108GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-108GGS-M10-435-455.pdf";
-import ABS_132GGS_G12 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12-705-725.pdf";
-import ABS_132GGS_G12R from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12R-610-630.pdf";
+// Popup collections, keyed by the file name shown on the Datasheets card
+const datasheetCollections = Object.fromEntries(
+  [...Object.values(moduleFamilies), bipvDownloads].map((collection) => [
+    collection.downloadName,
+    collection,
+  ])
+);
 
-// Import Glass Glass All Black PDFs
-import ABS_144GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-144GGB-M10-585-605.pdf";
-import ABS_132GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-M10-535-555.pdf";
-import ABS_120GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-120GGB-M10-485-505.pdf";
-import ABS_108GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-108GGB-M10-435-455.pdf";
-import ABS_132GGB_G12R from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-G12R-610-630.pdf";
-
-// Import Glass Transparent Backsheet PDFs
-import ABS_144GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-144GTS-M10-585-605.pdf";
-import ABS_132GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-M10-535-555.pdf";
-import ABS_120GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-120GTS-M10-485-505.pdf";
-import ABS_108GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-108GTS-M10-435-455.pdf";
-import ABS_132GTS_G12R from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-G12R-610-630.pdf";
-
-// Import Glass White Backsheet PDFs
-import ABS_144GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-144GWS-M10-585-605.pdf";
-import ABS_132GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-M10-535-555.pdf";
-import ABS_120GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-120GWS-M10-485-505.pdf";
-import ABS_108GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-108GWS-M10-435-455.pdf";
-import ABS_132GWS_G12 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12-705-725.pdf";
-import ABS_132GWS_G12R from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12R-610-630.pdf";
-
-// Import Glass Black Backsheet PDFs
-import ABS_144GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-144GBB-M10-585-605.pdf";
-import ABS_132GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-M10-535-555.pdf";
-import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-120GBB-M10-485-505.pdf";
-import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
-import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
+const downloadCategories = [
+  {
+    id: "datasheets",
+    name: "Product Datasheets",
+    icon: FileText,
+    description:
+      "Comprehensive technical specifications for all solar panel and BIPV models",
+    color: "from-primary to-primary/90",
+    files: Object.keys(datasheetCollections).map((name) => ({
+      name,
+      hasPopup: true,
+    })),
+  },
+  {
+    id: "warranty",
+    name: "Warranty Documents",
+    icon: Shield,
+    description: "Product warranty terms and conditions",
+    color: "from-secondary to-secondary/90",
+    files: [
+      {
+        name: "Limited and Linear Warranty",
+        file: documents.warranty,
+        hasPopup: false,
+      },
+    ],
+  },
+  {
+    id: "installation",
+    name: "Installation Manuals",
+    icon: Settings,
+    description: "Installation, safety and unpacking instructions",
+    color: "from-secondary to-secondary/90",
+    files: [
+      {
+        name: "Solar PV Module Installation & Safety Precautions Manual",
+        file: documents.installationManual,
+        hasPopup: false,
+      },
+      {
+        name: "Unpacking Instructions",
+        file: documents.unpackingInstructions,
+        hasPopup: false,
+      },
+    ],
+  },
+  {
+    id: "catalogue",
+    name: "Product Catalogue",
+    icon: BookOpen,
+    description: "Our complete range of PV modules and BIPV solutions",
+    color: "from-primary to-primary/90",
+    files: [
+      {
+        name: "Digital Product Catalogue",
+        file: documents.productCatalogue,
+        hasPopup: false,
+      },
+    ],
+  },
+];
 
 const DownloadCenter = () => {
+  const { t, localizePath } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const showProductType = selectedCategory?.models.some((m) => m.productType);
 
-  // Datasheet collections with all model PDFs
-  const datasheetCollections = {
-    "Glass/Glass Bifacial Datasheet": {
-      title: "Glass/Glass Bifacial PV Module Datasheets",
-      description:
-        "Complete collection of Glass/Glass bifacial solar panel datasheets with silver frame construction.",
-      models: [
-        {
-          name: "ABS-144GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GGS_M10,
-        },
-        {
-          name: "ABS-132GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GGS_M10,
-        },
-        {
-          name: "ABS-120GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GGS_M10,
-        },
-        {
-          name: "ABS-108GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GGS_M10,
-        },
-        {
-          name: "ABS-132GGS-G12",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "705 to 725",
-          efficiency: "22.70 to 23.34",
-          pdfFile: ABS_132GGS_G12,
-        },
-        {
-          name: "ABS-132GGS-G12R",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GGS_G12R,
-        },
-      ],
-    },
-    "Glass/Glass All Black Datasheet": {
-      title: "Glass/Glass All Black PV Module Datasheets",
-      description:
-        "Complete collection of Glass/Glass all black solar panel datasheets with premium black frame design.",
-      models: [
-        {
-          name: "ABS-144GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GGB_M10,
-        },
-        {
-          name: "ABS-132GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GGB_M10,
-        },
-        {
-          name: "ABS-120GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GGB_M10,
-        },
-        {
-          name: "ABS-108GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GGB_M10,
-        },
-        {
-          name: "ABS-132GGB-G12R",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GGB_G12R,
-        },
-      ],
-    },
-    "Glass/Transparent Backsheet Datasheet": {
-      title: "Glass/Transparent Backsheet PV Module Datasheets",
-      description:
-        "Complete collection of Glass/Transparent backsheet solar panel datasheets for architectural applications.",
-      models: [
-        {
-          name: "ABS-144GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GTS_M10,
-        },
-        {
-          name: "ABS-132GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GTS_M10,
-        },
-        {
-          name: "ABS-120GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GTS_M10,
-        },
-        {
-          name: "ABS-108GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GTS_M10,
-        },
-        {
-          name: "ABS-132GTS-G12R",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GTS_G12R,
-        },
-      ],
-    },
-    "Glass/White Backsheet Datasheet": {
-      title: "Glass/White Backsheet PV Module Datasheets",
-      description:
-        "Complete collection of Glass/White backsheet solar panel datasheets for optimal heat dissipation.",
-      models: [
-        {
-          name: "ABS-144GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GWS_M10,
-        },
-        {
-          name: "ABS-132GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GWS_M10,
-        },
-        {
-          name: "ABS-120GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GWS_M10,
-        },
-        {
-          name: "ABS-108GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GWS_M10,
-        },
-        {
-          name: "ABS-132GWS-G12",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "705 to 725",
-          efficiency: "22.70 to 23.34",
-          pdfFile: ABS_132GWS_G12,
-        },
-        {
-          name: "ABS-132GWS-G12R",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GWS_G12R,
-        },
-      ],
-    },
-    "Glass/Black Backsheet Datasheet": {
-      title: "Glass/Black Backsheet PV Module Datasheets",
-      description:
-        "Complete collection of Glass/Black backsheet solar panel datasheets combining performance with aesthetic appeal.",
-      models: [
-        {
-          name: "ABS-144GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GBB_M10,
-        },
-        {
-          name: "ABS-132GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GBB_M10,
-        },
-        {
-          name: "ABS-120GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GBB_M10,
-        },
-        {
-          name: "ABS-108GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GBB_M10,
-        },
-        {
-          name: "ABS-132GBB-G12R",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GBB_G12R,
-        },
-      ],
-    },
-  };
-
-  const downloadCategories = [
-    {
-      id: "datasheets",
-      name: "Product Datasheets",
-      icon: FileText,
-      description:
-        "Comprehensive technical specifications for all solar panel models",
-      color: "from-primary to-primary/90",
-      files: [
-        { name: "Glass/Glass Bifacial Datasheet", hasPopup: true },
-        { name: "Glass/Glass All Black Datasheet", hasPopup: true },
-        { name: "Glass/Transparent Backsheet Datasheet", hasPopup: true },
-        { name: "Glass/White Backsheet Datasheet", hasPopup: true },
-        { name: "Glass/Black Backsheet Datasheet", hasPopup: true },
-      ],
-    },
-    {
-      id: "warranty",
-      name: "Warranty Documents",
-      icon: Shield,
-      description: "Product warranties and claim procedures",
-      color: "from-secondary to-secondary/90",
-      files: [
-        {
-          name: "Limited and Linear Warranty",
-          file: WarrantyPDF,
-          hasPopup: false,
-        },
-        {
-          name: "Warranty Claim Form",
-          url: "/downloads/warranty/claim-form.pdf",
-          hasPopup: false,
-        },
-      ],
-    },
-    {
-      id: "installation",
-      name: "Installation Manuals",
-      icon: Settings,
-      description: "Installation guides and safety procedures",
-      color: "from-secondary to-secondary/90",
-      files: [
-        {
-          name: "Solar PV Modules Installation Manual",
-          file: Instalation,
-          hasPopup: false,
-        },
-        {
-          name: "Safety Precautions",
-          url: "/downloads/installation/safety.pdf",
-          hasPopup: false,
-        },
-      ],
-    },
-    {
-      id: "certificates",
-      name: "Certificates",
-      icon: Award,
-      description: "Product certifications and compliance documents",
-      color: "from-primary to-primary/90",
-      files: [
-        {
-          name: "IEC(TUV) ",
-          url: "/downloads/installation/manual.pdf",
-          hasPopup: false,
-        },
-        {
-          name: "UL",
-          url: "/downloads/installation/safety.pdf",
-          hasPopup: false,
-        },
-      ],
-    },
+  // Every downloadable file, for structured data
+  const allDocuments = [
+    ...[...Object.values(moduleFamilies), bipvDownloads].flatMap((collection) =>
+      collection.models.map((model) => ({
+        name: t("{name} datasheet", { name: model.name }),
+        url: model.pdfFile,
+      }))
+    ),
+    ...downloadCategories
+      .filter((category) => category.id !== "datasheets")
+      .flatMap((category) => category.files.map((file) => ({ name: t(file.name), url: file.file }))),
   ];
 
   const openDatasheetPopup = (categoryName) => {
@@ -384,8 +134,6 @@ const DownloadCenter = () => {
       openDatasheetPopup(file.name);
     } else if (file.file) {
       handleDownload(file.file, `${file.name}.pdf`);
-    } else if (file.url) {
-      window.open(file.url, "_blank");
     }
   };
 
@@ -393,10 +141,14 @@ const DownloadCenter = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <SEOHead
         title="Downloads | Bronze Solar - Product Datasheets & Documentation"
-        description="Download product datasheets, installation manuals, warranty documents, and certifications for Bronze Solar PV modules and solar solutions."
-        canonicalUrl="https://bronzesolar.com/downloads"
-        keywords="solar datasheets, PV module specifications, installation manuals, solar documentation, warranty documents"
+        description="Download product datasheets, the product catalogue, installation manuals and warranty documents for Bronze Solar PV modules and BIPV solutions."
+        keywords="solar datasheets, PV module specifications, BIPV datasheets, product catalogue, installation manuals, solar documentation, warranty documents"
         ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="CollectionPage"
+        breadcrumbs={[["Home", "/"], ["Downloads", "/downloads"]]}
+        jsonLd={[
+          documentListNode({ t, url: SITE_URL + localizePath("/downloads"), documents: allDocuments }),
+        ]}
       />
       <Header page="downloads" />
 
@@ -419,10 +171,10 @@ const DownloadCenter = () => {
                   <div className="relative z-10">
                     <IconComponent size={20} className="text-white mb-1" />
                     <h2 className="text-base font-bold text-white mb-1">
-                      {category.name}
+                      {t(category.name)}
                     </h2>
                     <p className="text-white/90 text-xs leading-tight">
-                      {category.description}
+                      {t(category.description)}
                     </p>
                   </div>
                 </div>
@@ -443,13 +195,13 @@ const DownloadCenter = () => {
                               className="text-gray-600 group-hover/item:text-white transition-colors duration-300"
                             />
                           </div>
-                          <div className="text-left">
+                          <div className="text-start">
                             <div className="font-medium text-xs text-gray-800 group-hover/item:text-secondary transition-colors duration-300">
-                              {file.name}
+                              {t(file.name)}
                             </div>
                             {file.hasPopup && (
                               <div className="text-xs text-gray-500">
-                                Click to view all models
+                                {t("Click to view all models")}
                               </div>
                             )}
                           </div>
@@ -462,7 +214,7 @@ const DownloadCenter = () => {
 
                           <ChevronRight
                             size={14}
-                            className="text-gray-400 group-hover/item:text-primary transition-colors duration-300"
+                            className="text-gray-400 group-hover/item:text-primary transition-colors duration-300 rtl:-scale-x-100"
                           />
                         </div>
                       </button>
@@ -484,14 +236,15 @@ const DownloadCenter = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-xl font-bold text-white mb-1">
-                    {selectedCategory.title}
+                    {t(selectedCategory.title)}
                   </h2>
                   <p className="text-white/90 text-sm">
-                    {selectedCategory.description}
+                    {t(selectedCategory.description)}
                   </p>
                 </div>
                 <button
                   onClick={closePopup}
+                  aria-label={t("Close")}
                   className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
                 >
                   <X size={20} className="text-white" />
@@ -505,23 +258,25 @@ const DownloadCenter = () => {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-gradient-to-r from-primary/10 to-primary/20">
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                        Model Name
+                      <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                        {t("Model Name")}
                       </th>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                        Product Type
+                      {showProductType && (
+                        <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                          {t("Product Type")}
+                        </th>
+                      )}
+                      <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                        {t("Wattage (WP)")}
                       </th>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                        Wattage (WP)
-                      </th>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                        Efficiency (%)
+                      <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                        {t("Efficiency (%)")}
                       </th>
                       <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                        View Product
+                        {t("View Product")}
                       </th>
                       <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                        Download
+                        {t("Download")}
                       </th>
                     </tr>
                   </thead>
@@ -534,9 +289,11 @@ const DownloadCenter = () => {
                         <td className="border border-gray-200 px-4 py-3 text-sm font-medium text-gray-800">
                           {model.name}
                         </td>
-                        <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                          {model.productType}
-                        </td>
+                        {showProductType && (
+                          <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
+                            {model.productType}
+                          </td>
+                        )}
                         <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
                           {model.wattage}
                         </td>
@@ -547,7 +304,7 @@ const DownloadCenter = () => {
                           <button
                             onClick={() => window.open(model.pdfFile, "_blank")}
                             className="inline-flex items-center justify-center w-8 h-8 bg-secondary hover:bg-secondary/80 text-white rounded-full transition-colors duration-200"
-                            title={`View ${model.name} datasheet`}
+                            title={t("View {name} datasheet", { name: model.name })}
                           >
                             <Eye size={16} />
                           </button>
@@ -561,7 +318,7 @@ const DownloadCenter = () => {
                               )
                             }
                             className="inline-flex items-center justify-center w-8 h-8 bg-primary hover:bg-primary/80 text-white rounded-full transition-colors duration-200"
-                            title={`Download ${model.name} datasheet`}
+                            title={t("Download {name} datasheet", { name: model.name })}
                           >
                             <Download size={16} />
                           </button>

@@ -9,8 +9,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import image1 from "@/assets/images/image1.jpg";
 import image2 from "@/assets/images/image2.jpg";
 import vedio1 from "@/assets/videos/video_1.mp4";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const HeroSection = () => {
+  const { t, localizePath } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [screenSize, setScreenSize] = useState("lg");
   const swiperRef = useRef(null);
@@ -172,7 +174,7 @@ const HeroSection = () => {
           ? "absolute bottom-20 left-4 right-4 z-10"
           : screenSize === "md"
           ? "absolute bottom-8 left-6 right-6 z-10 max-w-lg"
-          : "absolute bottom-8 left-8 z-10 max-w-md",
+          : "absolute bottom-8 start-8 z-10 max-w-md",
 
       // Content box padding with responsive transparency
       contentBox:
@@ -259,10 +261,10 @@ const HeroSection = () => {
 
       navIcon:
         screenSize === "xs"
-          ? "w-4 h-4 text-white group-hover:text-white/90 transition-colors"
-          : "w-5 h-5 text-white group-hover:text-white/90 transition-colors",
+          ? "w-4 h-4 text-white group-hover:text-white/90 transition-colors rtl:-scale-x-100"
+          : "w-5 h-5 text-white group-hover:text-white/90 transition-colors rtl:-scale-x-100",
 
-      buttonIcon: screenSize === "xs" ? "w-3 h-3" : "w-4 h-4",
+      buttonIcon: screenSize === "xs" ? "w-3 h-3 rtl:-scale-x-100" : "w-4 h-4 rtl:-scale-x-100",
     };
 
     return classes;
@@ -277,6 +279,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <Swiper
           ref={swiperRef}
+          dir="ltr"
           modules={[Autoplay, EffectFade, Pagination]}
           effect="fade"
           fadeEffect={{ crossFade: true }}
@@ -314,7 +317,7 @@ const HeroSection = () => {
                 <img
                   className="absolute inset-0 w-full h-full object-cover"
                   src={slide.imageUrl}
-                  alt={slide.title}
+                  alt={t(slide.title)}
                   loading="lazy"
                 />
               )}
@@ -327,7 +330,7 @@ const HeroSection = () => {
         <button
           onClick={goToPrevious}
           className={responsiveClasses.navButton}
-          aria-label="Previous slide"
+          aria-label={t("Previous slide")}
         >
           <svg
             className={responsiveClasses.navIcon}
@@ -353,7 +356,7 @@ const HeroSection = () => {
         <button
           onClick={goToNext}
           className={responsiveClasses.navButton}
-          aria-label="Next slide"
+          aria-label={t("Next slide")}
         >
           <svg
             className={responsiveClasses.navIcon}
@@ -388,17 +391,17 @@ const HeroSection = () => {
               <h1 className={`${responsiveClasses.title} ${styles.title}`}>
                 {screenSize === "xs" ? (
                   <>
-                    {currentSlide.title}
+                    {t(currentSlide.title)}
                     <br />
                     <span className={styles.highlight}>
-                      {currentSlide.highlight}
+                      {t(currentSlide.highlight)}
                     </span>
                   </>
                 ) : (
                   <>
-                    {currentSlide.title}{" "}
+                    {t(currentSlide.title)}{" "}
                     <span className={styles.highlight}>
-                      {currentSlide.highlight}
+                      {t(currentSlide.highlight)}
                     </span>
                   </>
                 )}
@@ -407,7 +410,7 @@ const HeroSection = () => {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8 }}
-                className="absolute bottom-0 left-0 h-0.5 sm:h-1 bg-secondary w-full origin-left"
+                className="absolute bottom-0 start-0 h-0.5 sm:h-1 bg-secondary w-full origin-left rtl:origin-right"
               />
             </motion.div>
 
@@ -418,8 +421,8 @@ const HeroSection = () => {
               className={`${responsiveClasses.description} ${styles.description}`}
             >
               {screenSize === "xs"
-                ? currentSlide.description.substring(0, 80) + "..."
-                : currentSlide.description}
+                ? t(currentSlide.description).substring(0, 80) + "..."
+                : t(currentSlide.description)}
             </motion.p>
 
             <motion.div
@@ -438,12 +441,12 @@ const HeroSection = () => {
                   <div
                     className={`${responsiveClasses.statsValue} ${styles.statsValue}`}
                   >
-                    {stat.value}
+                    {t(stat.value)}
                   </div>
                   <div
                     className={`${responsiveClasses.statsLabel} ${styles.statsLabel}`}
                   >
-                    {stat.label}
+                    {t(stat.label)}
                   </div>
                 </motion.div>
               ))}
@@ -458,10 +461,10 @@ const HeroSection = () => {
               <motion.a
                 whileHover={screenSize !== "xs" ? { scale: 1.05 } : {}}
                 whileTap={screenSize !== "xs" ? { scale: 0.95 } : {}}
-                href={currentSlide.cta.link}
+                href={localizePath(currentSlide.cta.link)}
                 className={`${responsiveClasses.primaryButton} ${styles.primaryButton}`}
               >
-                {currentSlide.cta.text}
+                {t(currentSlide.cta.text)}
                 <svg
                   className={responsiveClasses.buttonIcon}
                   fill="none"

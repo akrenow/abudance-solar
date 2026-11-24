@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import { Mail, Phone, Menu, X } from "lucide-react";
+import { useLanguage } from "@/i18n/useLanguage";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = ({ page, enableGlassEffect = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t, localizePath } = useLanguage();
 
   // Pages that should not have glass effect by default
   const noGlassPages = ["about", "products", "downloads", "contact", "career"];
@@ -44,7 +47,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
             <div className="hidden md:flex items-center justify-center space-x-6 py-3">
               <div className="flex items-center space-x-2">
                 <Phone size={16} />
-                <span>+971 55 950 1737</span>
+                <span dir="ltr">+971 55 950 1737</span>
               </div>
               <div className="h-4 w-[2px] bg-primary/80"></div>
               <div className="flex items-center space-x-2">
@@ -57,7 +60,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
             <div className="md:hidden flex flex-col items-center space-y-1 py-2">
               <div className="flex items-center space-x-2">
                 <Phone size={14} />
-                <span>+971 55 950 1737</span>
+                <span dir="ltr">+971 55 950 1737</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={14} />
@@ -90,9 +93,9 @@ const Header = ({ page, enableGlassEffect = false }) => {
                   : ""
               }`}
             >
-              <a href="/" className="flex items-center">
-                <img src={Logo} alt="Bronze Solar" className="h-12 w-auto" />
-              </a>
+              <Link to={localizePath("/")} className="flex items-center">
+                <img src={Logo} alt={t("Bronze Solar")} className="h-12 w-auto" />
+              </Link>
             </div>
 
             {/* Desktop Navigation with glassmorphism and primary/secondary colors */}
@@ -103,8 +106,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                   : ""
               }`}
             >
-              <a
-                href="/"
+              <Link
+                to={localizePath("/")}
                 data-readdy="true"
                 className={`${
                   isScrolled || !shouldShowGlass
@@ -112,57 +115,57 @@ const Header = ({ page, enableGlassEffect = false }) => {
                     : "text-white hover:text-secondary/90"
                 } font-medium transition-colors duration-200`}
               >
-                Home
-              </a>
-              <a
-                href="/about"
-                className={`${
-                  isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
-                } font-medium transition-colors duration-200`}
-              >
-                About Us
-              </a>
-              <a
-                href="/products"
-                className={`${
-                  isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
-                } font-medium transition-colors duration-200`}
-              >
-                Products
-              </a>
-              <a
-                href="/downloads"
-                className={`${
-                  isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
-                } font-medium transition-colors duration-200`}
-              >
-                Downloads
-              </a>
-              <Link
-                to="/contact"
-                className={`${
-                  isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
-                } font-medium transition-colors duration-200`}
-              >
-                Contact
+                {t("Home")}
               </Link>
               <Link
-                to="/career"
+                to={localizePath("/about")}
                 className={`${
                   isScrolled || !shouldShowGlass
                     ? "text-primary hover:text-secondary"
                     : "text-white hover:text-secondary/90"
                 } font-medium transition-colors duration-200`}
               >
-                Career
+                {t("About Us")}
+              </Link>
+              <Link
+                to={localizePath("/products")}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
+              >
+                {t("Products")}
+              </Link>
+              <Link
+                to={localizePath("/downloads")}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
+              >
+                {t("Downloads")}
+              </Link>
+              <Link
+                to={localizePath("/contact")}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
+              >
+                {t("Contact")}
+              </Link>
+              <Link
+                to={localizePath("/career")}
+                className={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary"
+                    : "text-white hover:text-secondary/90"
+                } font-medium transition-colors duration-200`}
+              >
+                {t("Career")}
               </Link>
             </nav>
 
@@ -174,18 +177,14 @@ const Header = ({ page, enableGlassEffect = false }) => {
                   : ""
               }`}
             >
-              <div className="relative">
-                <button
-                  className={`${
-                    isScrolled || !shouldShowGlass
-                      ? "text-primary hover:text-secondary"
-                      : "text-white hover:text-secondary/90"
-                  } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
-                >
-                  <span>EN</span>
-                  <i className="fas fa-chevron-down ml-1 text-xs"></i>
-                </button>
-              </div>
+              <LanguageSwitcher
+                align="end"
+                buttonClassName={`${
+                  isScrolled || !shouldShowGlass
+                    ? "text-primary hover:text-secondary border-primary/30 hover:border-secondary"
+                    : "text-white hover:text-secondary/90 border-white/40"
+                } border rounded-full px-3 py-1`}
+              />
               <button
                 className={`${
                   isScrolled || !shouldShowGlass
@@ -216,49 +215,52 @@ const Header = ({ page, enableGlassEffect = false }) => {
           {isMenuOpen && (
             <div className="md:hidden bg-white shadow-lg border-t py-4">
               <div className="container mx-auto px-4">
-                <nav className="flex flex-col space-y-4">
-                  <a
-                    href="/"
+                <nav
+                  className="flex flex-col space-y-4"
+                  onClick={(e) => e.target.closest("a") && setIsMenuOpen(false)}
+                >
+                  <Link
+                    to={localizePath("/")}
                     data-readdy="true"
                     className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
                   >
-                    Home
-                  </a>
-                  <a
-                    href="/about"
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="/products"
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
-                  >
-                    Products
-                  </a>
-                  <a
-                    href="/media"
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
-                  >
-                    Media
-                  </a>
-                  <Link
-                    to="/contact"
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
-                  >
-                    Contact
+                    {t("Home")}
                   </Link>
                   <Link
-                    to="/career"
+                    to={localizePath("/about")}
                     className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
                   >
-                    Career
+                    {t("About Us")}
+                  </Link>
+                  <Link
+                    to={localizePath("/products")}
+                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                  >
+                    {t("Products")}
+                  </Link>
+                  <Link
+                    to={localizePath("/downloads")}
+                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                  >
+                    {t("Downloads")}
+                  </Link>
+                  <Link
+                    to={localizePath("/contact")}
+                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                  >
+                    {t("Contact")}
+                  </Link>
+                  <Link
+                    to={localizePath("/career")}
+                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                  >
+                    {t("Career")}
                   </Link>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <button className="text-primary hover:text-secondary transition-colors duration-200">
-                      <span>EN</span>
-                      <i className="fas fa-chevron-down ml-1 text-xs"></i>
-                    </button>
+                    <LanguageSwitcher
+                      align="start"
+                      buttonClassName="text-primary hover:text-secondary border border-primary/30 rounded-full px-3 py-1"
+                    />
                     <button className="text-primary hover:text-secondary transition-colors duration-200">
                       <i className="fas fa-search"></i>
                     </button>

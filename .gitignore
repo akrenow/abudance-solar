@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 package-lock.json
 *.txt
+!public/robots.txt
+
+Website Updates and Required Modifications
+dist-ssr

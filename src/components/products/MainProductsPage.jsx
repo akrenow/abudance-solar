@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -7,6 +6,10 @@ import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
 import bipv from "../../assets/images/BIPV.png"
 import SEOHead from "../SEOHead";
+import { moduleEfficiencyRange } from "@/core/constants/products";
+import { SITE_URL } from "@/i18n/routing";
+import { categoryListNode } from "@/seo/structuredData";
+import { useLanguage } from "@/i18n/useLanguage";
 const mainProducts = [
   {
     title: "High-Efficiency PV Modules",
@@ -31,14 +34,25 @@ const mainProducts = [
 ];
 
 const MainProductsPage = () => {
+  const { t, localizePath } = useLanguage();
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
       <SEOHead
         title="Products | Bronze Solar - Solar Panels, Inverters & BIPV Solutions"
         description="Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions."
-        canonicalUrl="https://bronzesolar.com/products"
         keywords="solar products, PV modules, solar inverters, BIPV products, solar solutions UAE, photovoltaic panels"
         ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="CollectionPage"
+        breadcrumbs={[["Home", "/"], ["Products", "/products"]]}
+        jsonLd={[
+          categoryListNode({
+            url: SITE_URL + localizePath("/products"),
+            items: [
+              [t("High-Efficiency PV Modules"), SITE_URL + localizePath("/products/solar-panels")],
+              [t("Building Integrated Photo-voltaic"), SITE_URL + localizePath("/products/bipv-products")],
+            ],
+          }),
+        ]}
       />
       {/* Header - Using the main site header */}
       <Header page="products" />
@@ -49,7 +63,7 @@ const MainProductsPage = () => {
           {mainProducts.map((product, index) => (
             <Link
               key={index}
-              to={product.path}
+              to={localizePath(product.path)}
               className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-400 transform hover:-translate-y-1 hover:scale-102"
             >
               {/* Product Image Container */}
@@ -57,31 +71,31 @@ const MainProductsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10"></div>
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={t(product.title)}
                   className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Floating badge */}
-                <div className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary/90 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
-                  Premium
+                <div className="absolute top-3 end-3 bg-gradient-to-r from-primary to-primary/90 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
+                  {t("Premium")}
                 </div>
               </div>
 
               {/* Product Info */}
               <div className="p-5">
                 <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
-                  {product.title}
+                  {t(product.title)}
                 </h2>
 
                 {/* Product descriptions */}
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   {index === 0 &&
-                    "High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty"}
+                    t("High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty")}
                     {index === 1 &&
-                    "Innovative BIPV systems that integrate solar photovoltaic technology into building structures, enabling efficient power generation while maintaining architectural aesthetics"}
+                    t("Innovative BIPV systems that integrate solar photovoltaic technology into building structures, enabling efficient power generation while maintaining architectural aesthetics")}
                   {index === 2 &&
-                    "Advanced string inverters with maximum power point tracking and smart monitoring capabilities"}
+                    t("Advanced string inverters with maximum power point tracking and smart monitoring capabilities")}
                   {index === 3 &&
-                    "Complete Engineering, Procurement & Construction services for large-scale solar installations"}
+                    t("Complete Engineering, Procurement & Construction services for large-scale solar installations")}
                 </p>
 
                 {/* Features list */}
@@ -89,52 +103,52 @@ const MainProductsPage = () => {
                   {index === 0 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                        <span>22.65-23.42% Efficiency</span>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
+                        <span>{t("{range}% Efficiency", { range: moduleEfficiencyRange })}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                        <span>Bifacial Technology</span>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
+                        <span>{t("Bifacial Technology")}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                        <span>Monofacial technology</span>
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
+                        <span>{t("Monofacial technology")}</span>
                       </div>
                     </>
                   )}
                   {index === 1 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
-                        <span>Fully Customizable</span>
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full me-2"></div>
+                        <span>{t("Fully Customizable")}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                        <span>Ideal for windows, skylights, façades, cladding, roof tiles, and display/signboard BIPV applications.</span>
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full me-2"></div>
+                        <span>{t("Ideal for windows, skylights, façades, cladding, roof tiles, and display/signboard BIPV applications.")}</span>
                       </div>
                     </>
                   )}
                    {index === 2 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2"></div>
-                        <span>99.5% Peak Efficiency</span>
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full me-2"></div>
+                        <span>{t("99.5% Peak Efficiency")}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                        <span>Smart Monitoring</span>
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full me-2"></div>
+                        <span>{t("Smart Monitoring")}</span>
                       </div>
                     </>
                   )}
                   {index === 3 && (
                     <>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                        <span>Turnkey Solutions</span>
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full me-2"></div>
+                        <span>{t("Turnkey Solutions")}</span>
                       </div>
                       <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                        <span>Project Management</span>
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full me-2"></div>
+                        <span>{t("Project Management")}</span>
                       </div>
                     </>
                   )}
@@ -143,11 +157,11 @@ const MainProductsPage = () => {
                 {/* Call to action */}
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
-                    Explore Products
+                    {t("Explore Products")}
                   </span>
                   <div className="w-7 h-7 bg-gradient-to-r from-primary to-primary/90 rounded-full flex items-center justify-center group-hover:from-primary/90 group-hover:to-primary/80 transition-all duration-300 group-hover:scale-105">
                     <svg
-                      className="w-3 h-3 text-white transform group-hover:translate-x-0.5 transition-transform duration-300"
+                      className="w-3 h-3 text-white transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:-scale-x-100 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -172,18 +186,17 @@ const MainProductsPage = () => {
         {/* Bottom CTA Section */}
         <div className="text-center mt-16">
           <h3 className="text-xl font-bold text-gray-800 mb-3">
-            Need Help Choosing the Right Solution?
+            {t("Need Help Choosing the Right Solution?")}
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-sm">
-            Our expert team is here to help you find the perfect solar solution
-            for your specific needs and requirements.
+            {t("Our expert team is here to help you find the perfect solar solution for your specific needs and requirements.")}
           </p>
           <Link
-            to="/contact"
+            to={localizePath("/contact")}
             className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
           >
             <svg
-              className="w-5 h-5 mr-2"
+              className="w-5 h-5 me-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -195,7 +208,7 @@ const MainProductsPage = () => {
                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-            Contact Our Experts
+            {t("Contact Our Experts")}
           </Link>
         </div>
       </div>

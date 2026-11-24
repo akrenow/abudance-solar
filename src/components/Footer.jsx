@@ -1,4 +1,3 @@
-import React from "react";
 import {
   MapPin,
   Phone,
@@ -10,8 +9,12 @@ import {
   FacebookIcon,
   InstagramIcon,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png"
+import { useLanguage } from "@/i18n/useLanguage";
+
 const Footer = () => {
+  const { t, localizePath } = useLanguage();
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-20 pb-8 relative overflow-hidden">
       {/* Background decoration */}
@@ -24,16 +27,13 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="text-2xl font-bold">                
-                <img src={logo} alt="Bronze Solar" className="h-12 w-auto" />
+                <img src={logo} alt={t("Bronze Solar")} className="h-12 w-auto" />
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-              Abundance Solar Panels Industries LLC , based in KEZAD, UAE, is a
-              leading solar panel manufacturer with a 600MW annual capacity.
-              Utilizing advanced European technology, we produce high-efficiency
-              N-type TOPCon, HJT, and IBC photovoltaic modules, driving
-              innovation and sustainability to make renewable energy accessible
-              worldwide, supporting the UAE&apos;s vision for a green future.
+              {t(
+                "Abundance Solar Panels Industries L.L.C, based in KEZAD, UAE, is a leading solar panel manufacturer with a 600MW annual capacity. Utilizing advanced European technology, we produce high-efficiency N-type TOPCon, HJT, and IBC photovoltaic modules, driving innovation and sustainability to make renewable energy accessible worldwide, supporting the UAE's vision for a green future."
+              )}
             </p>
             <div className="flex space-x-6">
               <a
@@ -73,101 +73,99 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-primary">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-6 text-primary">{t("Quick Links")}</h3>
             <ul className="space-y-4">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to={localizePath("/")}
                   data-readdy="true"
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
-                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Home
-                </a>
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("Home")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="/about"
+                <Link
+                  to={localizePath("/about")}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
-                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  About Us
-                </a>
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("About Us")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="/products"
+                <Link
+                  to={localizePath("/products")}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
-                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Products
-                </a>
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("Products")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="/career"
+                <Link
+                  to={localizePath("/career")}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
-                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Career
-                </a>
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("Career")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="/contact"
+                <Link
+                  to={localizePath("/contact")}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
-                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Contact
-                </a>
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("Contact")}
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-primary">Contact Us</h3>
+            <h3 className="text-xl font-bold mb-6 text-primary">{t("Contact Us")}</h3>
             <ul className="space-y-6">
               <li className="flex items-start">
                 <a
                   href="https://maps.app.goo.gl/xpKYsctNtk8WZ3Fu7"
                   target="_blank"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <MapPin className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed w-full">
                   <div className="font-semibold text-white mb-1">
-                    Our Location
+                    {t("Our Location")}
                   </div>
-                  <div className="whitespace-nowrap">
-                    Abundance Solar Panels Industries LLC
-                  </div>
-                  <div>Plot No. 7-8, KHIA5 KEZAD</div>
-                  <div>Abu Dhabi, United Arab Emirates</div>
+                  <div>ABUNDANCE SOLAR PANELS INDUSTRIES L.L.C</div>
+                  <div>{t("Plot No. 7-8, KHIA5, KEZAD")}</div>
+                  <div>{t("Abu Dhabi, United Arab Emirates")}</div>
                 </div>
               </li>
               <li className="flex items-start">
                 <a
                   href="tel:+971559501737"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Phone className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  <div className="font-semibold text-white mb-1">Call Us</div>
-                  <div>+971 55 950 1737</div>
+                  <div className="font-semibold text-white mb-1">{t("Call Us")}</div>
+                  <div dir="ltr">+971 55 950 1737</div>
                 </div>
               </li>
               <li className="flex items-start">
                 <a
                   href="mailto:info@bronzesolar.com"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center mr-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                 >
                   <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                  <div className="font-semibold text-white mb-1">Email Us</div>
+                  <div className="font-semibold text-white mb-1">{t("Email Us")}</div>
                   <div>info@bronzesolar.com</div>
                 </div>
               </li>
@@ -198,7 +196,7 @@ const Footer = () => {
                   type="submit"
                   className="btn-secondary flex items-center justify-center min-w-[140px]"
                 >
-                  <Send className="w-5 h-5 mr-2" />
+                  <Send className="w-5 h-5 me-2" />
                   Subscribe
                 </button>
               </form>
@@ -210,26 +208,26 @@ const Footer = () => {
         <div className="border-t border-gray-700/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-gray-400 text-sm">
-              &copy; 2025 Bronze Solar. All rights reserved.
+              &copy; 2025 {t("Bronze Solar. All rights reserved.")}
             </p>
             <div className="flex flex-wrap gap-6">
               <a
                 href="#"
                 className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
-                Privacy Policy
+                {t("Privacy Policy")}
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
-                Terms of Service
+                {t("Terms of Service")}
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-primary text-sm transition-colors duration-200"
               >
-                Cookie Policy
+                {t("Cookie Policy")}
               </a>
             </div>
           </div>

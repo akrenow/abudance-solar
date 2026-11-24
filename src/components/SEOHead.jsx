@@ -1,69 +1,41 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
+import { useLanguage } from "@/i18n/useLanguage";
+import { HeadContext } from "@/seo/HeadContext";
+import { applyHead, buildHead } from "@/seo/head";
 
-const SEOHead = ({ 
-  title, 
-  description, 
-  canonicalUrl, 
-  ogImage, 
-  ogType = "website",
-  keywords,
-  author = "Bronze Solar Panels Industries LLC"
-}) => {
+// Title, description, social tags, canonical URL, hreflang alternates and
+// JSON-LD for the current page, in the page's language.
+//
+//   breadcrumbs: [["Home", "/"], ["Products", "/products"]]  (English labels, translated here)
+//   jsonLd:      extra schema.org nodes for this page (see src/seo/structuredData.js)
+const SEOHead = (props) => {
+  const { t, lang } = useLanguage();
+  const { pathname } = useLocation();
+  const collector = useContext(HeadContext);
+
+  const head = buildHead({ ...props, t, lang, pathname });
+  if (collector) collector.head = head; // pre-rendering at build time
+
+  const serialized = JSON.stringify(head);
   useEffect(() => {
-    // Set title
-    document.title = title;
-
-    // Set meta tags
-    const setMetaTag = (name, content) => {
-      let element = document.querySelector(`meta[name="${name}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.name = name;
-        document.head.appendChild(element);
-      }
-      element.content = content;
-    };
-
-    const setPropertyTag = (property, content) => {
-      let element = document.querySelector(`meta[property="${property}"]`);
-      if (!element) {
-        element = document.createElement("meta");
-        element.setAttribute("property", property);
-        document.head.appendChild(element);
-      }
-      element.content = content;
-    };
-
-    // Standard meta tags
-    setMetaTag("description", description);
-    if (keywords) setMetaTag("keywords", keywords);
-    setMetaTag("author", author);
-
-    // Open Graph tags
-    setPropertyTag("og:title", title);
-    setPropertyTag("og:description", description);
-    setPropertyTag("og:type", ogType);
-    setPropertyTag("og:url", canonicalUrl);
-    if (ogImage) setPropertyTag("og:image", ogImage);
-
-    // Twitter Card tags
-    setMetaTag("twitter:card", "summary_large_image");
-    setMetaTag("twitter:title", title);
-    setMetaTag("twitter:description", description);
-    if (ogImage) setMetaTag("twitter:image", ogImage);
-
-    // Canonical URL
-    let canonicalElement = document.querySelector('link[rel="canonical"]');
-    if (!canonicalElement) {
-      canonicalElement = document.createElement("link");
-      canonicalElement.rel = "canonical";
-      document.head.appendChild(canonicalElement);
-    }
-    canonicalElement.href = canonicalUrl;
-
-  }, [title, description, canonicalUrl, ogImage, ogType, keywords, author]);
+    applyHead(JSON.parse(serialized));
+  }, [serialized]);
 
   return null;
+};
+
+SEOHead.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  keywords: PropTypes.string,
+  ogImage: PropTypes.string,
+  ogType: PropTypes.string,
+  noindex: PropTypes.bool,
+  pageType: PropTypes.string,
+  breadcrumbs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  jsonLd: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default SEOHead;

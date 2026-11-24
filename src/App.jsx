@@ -15,26 +15,46 @@ import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Bipvpage from "./components/products/Bipvsubproducts";
 import Analytics from "./components/Analytics";
+import { LocaleLayout, DefaultLanguageRedirect } from "./i18n/LocaleLayout";
+
+// The same pages exist in every language: English at "/...", Arabic at "/ar/...".
+const pageRoutes = (
+  <>
+    <Route index element={<Home />} />
+    <Route path="about" element={<AboutPage />} />
+    <Route path="products" element={<MainProductsPage />} />
+    <Route path="products/solar-panels" element={<SubproductPage />} />
+    <Route path="products/bipv-products" element={<Bipvpage />} />
+    <Route path="contact" element={<Contact />} />
+    <Route path="career" element={<Career />} />
+    {/* <Route path="products/:model" element={<ProductDetailPage />} /> */}
+    <Route path="downloads" element={<DownloadCenter />} />
+    {/* Catch-all route for 404 - This should be the last route */}
+    <Route path="*" element={<PageNotFound />} />
+  </>
+);
+
+export const AppRoutes = () => (
+  <>
+    <Analytics />
+    <ScrollToTop />
+    <ScrollToTopButton />
+    <Routes>
+      <Route path="/ar" element={<LocaleLayout lang="ar" />}>
+        {pageRoutes}
+      </Route>
+      <Route path="/en/*" element={<DefaultLanguageRedirect />} />
+      <Route path="/" element={<LocaleLayout lang="en" />}>
+        {pageRoutes}
+      </Route>
+    </Routes>
+  </>
+);
 
 const App = () => {
   return (
     <Router>
-      <Analytics />
-      <ScrollToTop />
-      <ScrollToTopButton />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/products" element={<MainProductsPage />} />
-        <Route path="/products/solar-panels" element={<SubproductPage />} />
-        <Route path="/products/bipv-products" element={<Bipvpage/>} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/career" element={<Career />} />
-        {/* <Route path="/products/:model" element={<ProductDetailPage />} /> */}
-        <Route path="/downloads" element={<DownloadCenter />} />
-        {/* Catch-all route for 404 - This should be the last route */}
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      <AppRoutes />
     </Router>
   );
 };

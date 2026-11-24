@@ -4,46 +4,12 @@ import { X, Download, Info, Zap, Sun, Eye } from "lucide-react";
 import PropTypes from "prop-types";
 import Header from "../Header";
 import Footer from "../Footer";
+import SEOHead from "../SEOHead";
+import { SITE_URL } from "@/i18n/routing";
+import { bipvProductNode } from "@/seo/structuredData";
+import { useLanguage } from "@/i18n/useLanguage";
 
-// Import Glass Glass Bifacial PDFs
-import ABS_144GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-144GGS-M10-585-605.pdf";
-import ABS_132GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-M10-535-555.pdf";
-import ABS_120GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-120GGS-M10-485-505.pdf";
-import ABS_108GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-108GGS-M10-435-455.pdf";
-import ABS_132GGS_G12 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12-705-725.pdf";
-import ABS_132GGS_G12R from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12R-610-630.pdf";
-
-// Import Glass Glass All Black PDFs
-import ABS_144GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-144GGB-M10-585-605.pdf";
-import ABS_132GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-M10-535-555.pdf";
-import ABS_120GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-120GGB-M10-485-505.pdf";
-import ABS_108GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-108GGB-M10-435-455.pdf";
-import ABS_132GGB_G12R from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-G12R-610-630.pdf";
-
-// Import Glass Transparent Backsheet PDFs
-import ABS_144GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-144GTS-M10-585-605.pdf";
-import ABS_132GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-M10-535-555.pdf";
-import ABS_120GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-120GTS-M10-485-505.pdf";
-import ABS_108GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-108GTS-M10-435-455.pdf";
-import ABS_132GTS_G12R from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-G12R-610-630.pdf";
-
-// Import Glass White Backsheet PDFs
-import ABS_144GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-144GWS-M10-585-605.pdf";
-import ABS_132GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-M10-535-555.pdf";
-import ABS_120GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-120GWS-M10-485-505.pdf";
-import ABS_108GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-108GWS-M10-435-455.pdf";
-import ABS_132GWS_G12 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12-705-725.pdf";
-import ABS_132GWS_G12R from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12R-610-630.pdf";
-
-// Import Glass Black Backsheet PDFs
-import ABS_144GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-144GBB-M10-585-605.pdf";
-import ABS_132GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-M10-535-555.pdf";
-import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-120GBB-M10-485-505.pdf";
-import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
-import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
-
-// Import BIPV Datasheet
-import ABS_BIPV_DATASHEET from "../../assets/pdf/ABS -BIPV DATASHEET.pdf";
+import { bipvDatasheets } from "@/core/constants/products";
 
 // Import local images for each product
 import SemiTransparentBIPVGlassPanels from "../../assets/Bipvsubproducts/Picture1.png";
@@ -65,21 +31,20 @@ const categories = {
       description:
         "Semi-transparent BIPV (Building-Integrated Photovoltaic) glass panels are advanced solar solutions that generate electricity while allowing natural light to pass through.",
       features: [
-       "	~50% visible light transparency (cells cover ~50% of area)",
-       "	Customized size options.",
-       "	Typical power output: 100–300 W/m²",
-       "	Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation.",
+       "~50% visible light transparency (cells cover ~50% of area)",
+       "Customized size options.",
+       "Typical power output: 100–300 W/m²",
+       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation.",
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
           name: "ABS-Semi-Transparent BIPV Glass Panel",
           productType: "",
           wattage: "270W",
           efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: ABS_BIPV_DATASHEET,
+          pdfFile: bipvDatasheets.semiTransparent,
           dimensions: "1908 mm x 1134 mm x 30 mm (Size can be Customized)",
         },
         
@@ -90,26 +55,33 @@ const categories = {
     //   category: "Bifacial",
       image: ColoredBIPVPanel,
       path: "/products/solar-panels",
-      wattage: "Up to 470W",
-      efficiency: "21.67%",
+      wattage: "Up to 520W",
+      efficiency: "23.59%",
     //   type: "Bifacial N-Type",
       description:
         "Coloured BIPV (Building-Integrated Photovoltaic) panels with front coloured glass are aesthetically enhanced solar modules designed to blend seamlessly with modern architectural designs while generating clean electricity.",
       features: [
         "Customized colour and size options.",
-        "Typical power output: Up to 470 W/m²",
+        "Typical power output: Up to 520 W/m²",
         "Ideal for: facades, cladding, curtain walls, and decorative building elements.",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
-          name: "ABS-Colored BIPV Glass Panel",
-          productType:"",
-          wattage: "465W",
-          efficiency: "Module Efficiency of 21.67 %",
-          pdfFile: ABS_BIPV_DATASHEET,
-          dimensions: "1902 mm x 1128 mm x 7.5 mm (Size can be Customized)",
+          name: "ABS-Colored BIPV Panel (Option 1)",
+          productType: "",
+          wattage: "520W",
+          efficiency: "Module Efficiency of 23.59 %",
+          pdfFile: bipvDatasheets.colored,
+          dimensions: "1954 mm x 1128 mm x 7.5 mm (Size can be Customized)",
+        },
+        {
+          name: "ABS-Colored BIPV Panel (Option 2)",
+          productType: "",
+          wattage: "460W",
+          efficiency: "Module Efficiency of 23.22 %",
+          pdfFile: bipvDatasheets.colored,
+          dimensions: "1756 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
       ],
@@ -120,7 +92,7 @@ const categories = {
       image: SolarRoofTiles,
       path: "/products/solar-panels",
       wattage: "70-150W",
-      efficiency: "20.82%",
+      efficiency: "20.66%",
     //   type: "Bifacial N-Type",
       description:
 "Solar roof tiles (BIPV tiles) are integrated photovoltaic roofing products that function as both durable roof coverings and solar power generators.",
@@ -132,15 +104,14 @@ const categories = {
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
           name: "ABS-Solar Roof Tile",
           productType: "Anodized Aluminum Alloy 6005T6",
           wattage: "105W",
-          efficiency: "Module Efficiency of 20.82 %",
-          pdfFile: ABS_BIPV_DATASHEET,
-          dimensions: "1230 mm x 410 mm x 7.5 mm (Size can be Customized)",
+          efficiency: "Module Efficiency of 20.66 %",
+          pdfFile: bipvDatasheets.roofTile,
+          dimensions: "1210 mm x 420 mm x 7.5 mm (Size can be Customized)",
         },
         
       ],
@@ -162,14 +133,13 @@ const categories = {
 
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
       models: [
         {
           name: "ABS-Custom Printed Front-Glass BIPV Panel",
           productType: "",
           wattage: "640W",
           efficiency: "Module Efficiency of 23.88 %",
-          pdfFile: ABS_BIPV_DATASHEET,
+          pdfFile: bipvDatasheets.customPrinted,
           dimensions: "2376 mm x 1128 mm x 7.5 mm (Size can be Customized)",
         },
         
@@ -181,6 +151,7 @@ const categories = {
 };
 
 const Bipvpage = () => {
+  const { t, localizePath } = useLanguage();
   const [activeTab, setActiveTab] = useState("BIPV");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -210,7 +181,7 @@ const Bipvpage = () => {
         <div className="flex justify-between items-end h-full">
           <div className="flex-1 space-y-1 sm:space-y-2">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              Efficiency
+              {t("Efficiency")}
             </div>
             <div
               className="h-6 sm:h-8 bg-gradient-to-t from-primary to-primary/90 rounded-lg relative overflow-hidden transition-all duration-1000"
@@ -222,9 +193,9 @@ const Bipvpage = () => {
               {efficiency}
             </div>
           </div>
-          <div className="flex-1 space-y-1 sm:space-y-2 ml-4">
+          <div className="flex-1 space-y-1 sm:space-y-2 ms-4">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              MAX POWER
+              {t("MAX POWER")}
             </div>
             <div
               className="h-6 sm:h-8 bg-gradient-to-t from-slate-600 to-slate-500 rounded-lg relative overflow-hidden transition-all duration-1000"
@@ -248,6 +219,17 @@ const Bipvpage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <SEOHead
+        title="BIPV Products | Bronze Solar - Building-Integrated Photovoltaics"
+        description="Bronze Solar BIPV products: semi-transparent glass panels, coloured front-glass panels, solar roof tiles and custom printed front-glass panels, customizable in size and colour. Specifications and datasheets."
+        keywords="BIPV, building integrated photovoltaics, solar glass, semi-transparent solar panels, coloured solar panels, solar roof tiles, solar facade UAE"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="CollectionPage"
+        breadcrumbs={[["Home", "/"], ["Products", "/products"], ["Building Integrated Photo-voltaic", "/products/bipv-products"]]}
+        jsonLd={categories.BIPV.map((product) =>
+          bipvProductNode({ t, url: SITE_URL + localizePath("/products/bipv-products"), product })
+        )}
+      />
       {/* Header */}
       <Header page="products" />
 
@@ -281,7 +263,7 @@ const Bipvpage = () => {
               <div className="relative h-64 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={t(product.title)}
                   className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                 />
                 {/* Category Badge */}
@@ -299,7 +281,7 @@ const Bipvpage = () => {
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-slate-700 transition-colors duration-300">
-                  {product.title}
+                  {t(product.title)}
                 </h3>
 
                 {/* Performance Chart */}
@@ -313,12 +295,12 @@ const Bipvpage = () => {
                 {/* Quick Features */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-gray-700">
-                    <Zap size={16} className="text-primary mr-2" />
-                    <span>Fully customizable upon request</span>
+                    <Zap size={16} className="text-primary me-2" />
+                    <span>{t("Fully customizable upon request")}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
-                    <Sun size={16} className="text-primary mr-2" />
-                    <span>{product.wattage} Power Output</span>
+                    <Sun size={16} className="text-primary me-2" />
+                    <span>{t("{value} Power Output", { value: t(product.wattage) })}</span>
                   </div>
                 </div>
 
@@ -329,7 +311,7 @@ const Bipvpage = () => {
                     className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Info size={16} />
-                    Details
+                    {t("Details")}
                   </button>
                 </div>
               </div>
@@ -341,14 +323,14 @@ const Bipvpage = () => {
             <div className="col-span-full text-center py-16">
               <div className="bg-white rounded-3xl p-12 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  Coming Soon
+                  {t("Coming Soon")}
                 </h3>
                 <p className="text-gray-600">
-                  Next-generation{" "}
+                  {t("Next-generation")}{" "}
                   <span className="font-semibold text-primary">
-                    {activeTab}
+                    {t(activeTab)}
                   </span>{" "}
-                  modules are currently under development.
+                  {t("modules are currently under development.")}
                 </p>
               </div>
             </div>
@@ -358,17 +340,16 @@ const Bipvpage = () => {
         {/* Contact CTA */}
         <div className="text-center mt-20">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">
-            Need Technical Specifications?
+            {t("Need Technical Specifications?")}
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Get detailed technical documentation and customized solutions for
-            your specific project requirements.
+            {t("Get detailed technical documentation and customized solutions for your specific project requirements.")}
           </p>
           <Link
-            to="/contact"
+            to={localizePath("/contact")}
             className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
-            Contact Technical Team
+            {t("Contact Technical Team")}
           </Link>
         </div>
       </div>
@@ -382,7 +363,7 @@ const Bipvpage = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800">
-                    {selectedProduct.title}
+                    {t(selectedProduct.title)}
                   </h2>
                   {/* <p className="text-primary font-medium">
                     {selectedProduct.type}
@@ -405,7 +386,7 @@ const Bipvpage = () => {
                   <div className="bg-gray-50 rounded-2xl p-6 mb-6">
                     <img
                       src={selectedProduct.image}
-                      alt={selectedProduct.title}
+                      alt={t(selectedProduct.title)}
                       className="w-full h-64 object-contain"
                     />
                   </div>
@@ -422,17 +403,17 @@ const Bipvpage = () => {
                   {/* Description */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Description
+                      {t("Description")}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      {selectedProduct.description}
+                      {t(selectedProduct.description)}
                     </p>
                   </div>
 
                   {/* Key Features */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Key Features
+                      {t("Key Features")}
                     </h3>
                     <ul className="space-y-2">
                       {selectedProduct.features.map((feature, index) => (
@@ -440,8 +421,8 @@ const Bipvpage = () => {
                           key={index}
                           className="flex items-center text-sm text-gray-700"
                         >
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                          {feature}
+                          <div className="w-2 h-2 bg-green-500 rounded-full me-3"></div>
+                          {t(feature)}
                         </li>
                       ))}
                     </ul>
@@ -450,7 +431,7 @@ const Bipvpage = () => {
                   {/* Applications */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Applications
+                      {t("Applications")}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProduct.applications.map((app, index) => (
@@ -458,29 +439,11 @@ const Bipvpage = () => {
                           key={index}
                           className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
                         >
-                          {app}
+                          {t(app)}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Certifications
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                      <Award size={20} className="text-primary mr-2" />
-                      Certifications
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProduct.certifications.map((cert, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-amber-100 text-primary rounded-full text-sm font-medium"
-                        >
-                          {cert}
-                        </span>
-                      ))}
-                    </div>
-                  </div> */}
                 </div>
               </div>
 
@@ -488,32 +451,32 @@ const Bipvpage = () => {
               {selectedProduct.models && selectedProduct.models.length > 0 && (
                 <div className="border-t border-gray-200 pt-6 mt-6">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    Available Models
+                    {t("Available Models")}
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
                         <tr className="bg-gradient-to-r from-amber-50 to-orange-50">
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Model Name
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Model Name")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Product Type
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Product Type")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Wattage (WP)
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Wattage (WP)")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Efficiency (%)
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Efficiency (%)")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Dimensions
-                          </th>
-                          <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                            View Product
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Dimensions")}
                           </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                            Download
+                            {t("View Product")}
+                          </th>
+                          <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
+                            {t("Download")}
                           </th>
                         </tr>
                       </thead>
@@ -533,10 +496,10 @@ const Bipvpage = () => {
                               {model.wattage}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                              {model.efficiency}
+                              {t(model.efficiency)}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                              {model.dimensions || "-"}
+                              {t(model.dimensions) || "-"}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-center">
                               <button
@@ -545,7 +508,7 @@ const Bipvpage = () => {
                                 }
                                 className="inline-flex items-center justify-center w-8 h-8 text-white rounded-full transition-colors duration-200 hover:brightness-110"
                                 style={{ backgroundColor: '#4B2354' }}
-                                title={`View ${model.name} datasheet`}
+                                title={t("View {name} datasheet", { name: model.name })}
                               >
                                 <Eye size={16} />
                               </button>
@@ -559,7 +522,7 @@ const Bipvpage = () => {
                                   )
                                 }
                                 className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
-                                title={`Download ${model.name} datasheet`}
+                                title={t("Download {name} datasheet", { name: model.name })}
                               >
                                 <Download size={16} />
                               </button>

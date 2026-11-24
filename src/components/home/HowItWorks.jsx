@@ -1,7 +1,8 @@
-import React from "react";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
   const steps = [
     {
       title: "Advanced European Automation",
@@ -30,12 +31,12 @@ const HowItWorks = () => {
         <div className="text-center mb-20 relative">
           <div className="inline-flex items-center justify-center mb-6">
             <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary leading-tight py-2">
-              Technology
+              {t("Technology")}
             </h2>
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Simple steps to transition to solar energy with Bronze Solar
+            {t("Simple steps to transition to solar energy with Bronze Solar")}
           </p>
         </div>
         {/* Process Steps */}
@@ -55,9 +56,9 @@ const HowItWorks = () => {
 
                 {/* Step Content */}
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {step.title}
+                  {t(step.title)}
                 </h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-gray-600">{t(step.description)}</p>
               </div>
             </Card>
           ))}

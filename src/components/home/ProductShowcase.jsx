@@ -5,9 +5,21 @@ import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black mod
 import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
 import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
 import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
+import { moduleFamilies } from "@/core/constants/products";
+import { useLanguage } from "@/i18n/useLanguage";
+
+// Showcase cards use "min-max" units, e.g. "595-615W" and "23.03-23.81%"
+const toVariants = ({ models }) =>
+  models.map((m) => ({
+    name: m.name,
+    wattage: `${m.wattage.replace(" to ", "-")}W`,
+    efficiency: `${m.efficiency.replace(" to ", "-")}%`,
+    dimensions: m.dimensions,
+  }));
 
 const ProductShowcase = () => {
   const navigate = useNavigate();
+  const { t, localizePath } = useLanguage();
   const [activeSeries, setActiveSeries] = useState("N-type TOPCon");
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -24,47 +36,10 @@ const ProductShowcase = () => {
         {
           name: "Glass Glass Bifacial PV Module",
           type: "Glass/Glass Bifacial",
-          wattage: "435-725W",
-          efficiency: "22.65-23.42%",
+          wattage: `${moduleFamilies.glassGlassBifacial.wattageRange}W`,
+          efficiency: `${moduleFamilies.glassGlassBifacial.efficiencyRange}%`,
           image: imgGlassGlassBifacial,
-          variants: [
-            {
-              name: "ABS-144GGS-M10",
-              wattage: "585-605W",
-              efficiency: "22.65-23.42%",
-              dimensions: "2278 mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-132GGS-M10",
-              wattage: "535-555W",
-              efficiency: "22.58-23.43%",
-              dimensions: "2089mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-120GGS-M10",
-              wattage: "485-505W",
-              efficiency: "22.42-23.34%",
-              dimensions: "1908mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-108GGS-M10",
-              wattage: "435-455W",
-              efficiency: "22.28-23.30%",
-              dimensions: "1722mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-132GGS-G12",
-              wattage: "705-725W",
-              efficiency: "22.70-23.34%",
-              dimensions: "2384mm x 1303mm x 30mm",
-            },
-            {
-              name: "ABS-132GGS-G12R",
-              wattage: "610-630W",
-              efficiency: "22.56-23.30%",
-              dimensions: "2384mm x 1134mm x 30mm",
-            },
-          ],
+          variants: toVariants(moduleFamilies.glassGlassBifacial),
           features: [
             "Dual Glass Design for 30+ year lifespan",
             "Bifacial Output (5-30% extra energy)",
@@ -78,41 +53,10 @@ const ProductShowcase = () => {
         {
           name: "Glass Glass All Black PV Module",
           type: "Glass/Glass All Black",
-          wattage: "485-630W",
-          efficiency: "22.65-23.42%",
+          wattage: `${moduleFamilies.glassGlassAllBlack.wattageRange}W`,
+          efficiency: `${moduleFamilies.glassGlassAllBlack.efficiencyRange}%`,
           image: imgGlassGlassAllBlack,
-          variants: [
-            {
-              name: "ABS-144GGB-M10",
-              wattage: "585-605W",
-              efficiency: "22.65-23.42%",
-              dimensions: "2278 mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-132GGB-M10",
-              wattage: "535-555W",
-              efficiency: "22.58-23.43%",
-              dimensions: "2089mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-120GGB-M10",
-              wattage: "485-505W",
-              efficiency: "22.42-23.34%",
-              dimensions: "1908mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-108GGB-M10",
-              wattage: "435-455W",
-              efficiency: "22.28-23.30%",
-              dimensions: "1722mm x 1134 mm x 30mm",
-            },
-            {
-              name: "ABS-132GGB-G12R",
-              wattage: "610-630W",
-              efficiency: "22.56-23.30%",
-              dimensions: "2384mm x 1134mm x 30mm",
-            },
-          ],
+          variants: toVariants(moduleFamilies.glassGlassAllBlack),
           features: [
             "Sleek all-black aesthetic",
             "Dual Glass Protection",
@@ -126,41 +70,10 @@ const ProductShowcase = () => {
         {
           name: "Glass Transparent Backsheet PV Module",
           type: "Glass/Transparent Backsheet",
-          wattage: "485-630W",
-          efficiency: "22.65-23.42%",
+          wattage: `${moduleFamilies.glassTransparentBacksheet.wattageRange}W`,
+          efficiency: `${moduleFamilies.glassTransparentBacksheet.efficiencyRange}%`,
           image: imgGlassTransparentBacksheet,
-          variants: [
-            {
-              name: "ABS-144GTS-M10",
-              wattage: "585-605W",
-              efficiency: "22.65-23.42%",
-              dimensions: "2278mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GTS-M10",
-              wattage: "535-555W",
-              efficiency: "22.58-23.43%",
-              dimensions: "2089mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-120GTS-M10",
-              wattage: "485-505W",
-              efficiency: "22.42-23.34%",
-              dimensions: "1908mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-108GTS-M10",
-              wattage: "435-455W",
-              efficiency: "22.28-23.30%",
-              dimensions: "1722mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GTS-G12R",
-              wattage: "610-630W",
-              efficiency: "22.56-23.30%",
-              dimensions: "2384mm x 1134mm x 30mm",
-            },
-          ],
+          variants: toVariants(moduleFamilies.glassTransparentBacksheet),
           features: [
             "Transparent backsheet design",
             "Enhanced bifacial gain",
@@ -174,47 +87,10 @@ const ProductShowcase = () => {
         {
           name: "Glass White Back Sheet PV Module",
           type: "Glass/White Back Sheet",
-          wattage: "485-725W",
-          efficiency: "22.65-23.42%",
+          wattage: `${moduleFamilies.glassWhiteBacksheet.wattageRange}W`,
+          efficiency: `${moduleFamilies.glassWhiteBacksheet.efficiencyRange}%`,
           image: imgGlassWhiteBacksheet,
-          variants: [
-            {
-              name: "ABS-144GWS-M10",
-              wattage: "585-605W",
-              efficiency: "22.65-23.42%",
-              dimensions: "2278mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GWS-M10",
-              wattage: "535-555W",
-              efficiency: "22.58-23.43%",
-              dimensions: "2089mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-120GWS-M10",
-              wattage: "485-505W",
-              efficiency: "22.42-23.34%",
-              dimensions: "1908mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-108GWS-M10",
-              wattage: "435-455W",
-              efficiency: "22.28-23.30%",
-              dimensions: "1722mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GWS-G12",
-              wattage: "705-725W",
-              efficiency: "22.70-23.34%",
-              dimensions: "2384mm x 1303mm x 30mm",
-            },
-            {
-              name: "ABS-132GWS-G12R",
-              wattage: "610-630W",
-              efficiency: "22.56-23.30%",
-              dimensions: "2384mm x 1134mm x 30mm",
-            },
-          ],
+          variants: toVariants(moduleFamilies.glassWhiteBacksheet),
           features: [
             "Cost-effective solution",
             "White backsheet for heat dissipation",
@@ -228,41 +104,10 @@ const ProductShowcase = () => {
         {
           name: "Glass Black Back Sheet – All Black PV Module",
           type: "Glass/Black Back Sheet",
-          wattage: "485-630W",
-          efficiency: "22.65-23.42%",
+          wattage: `${moduleFamilies.glassBlackBacksheet.wattageRange}W`,
+          efficiency: `${moduleFamilies.glassBlackBacksheet.efficiencyRange}%`,
           image: imgGlassBlackBacksheet,
-          variants: [
-            {
-              name: "ABS-144GBB-M10",
-              wattage: "585-605W",
-              efficiency: "22.65-23.42%",
-              dimensions: "2278mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GBB-M10",
-              wattage: "535-555W",
-              efficiency: "22.58-23.43%",
-              dimensions: "2089mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-120GBB-M10",
-              wattage: "485-505W",
-              efficiency: "22.42-23.34%",
-              dimensions: "1908mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-108GBB-M10",
-              wattage: "435-455W",
-              efficiency: "22.28-23.30%",
-              dimensions: "1722mm x 1134mm x 30mm",
-            },
-            {
-              name: "ABS-132GBB-G12R",
-              wattage: "610-630W",
-              efficiency: "22.56-23.30%",
-              dimensions: "2384mm x 1134mm x 30mm",
-            },
-          ],
+          variants: toVariants(moduleFamilies.glassBlackBacksheet),
           features: [
             "Premium all-black design",
             "High aesthetic appeal",
@@ -330,7 +175,7 @@ const ProductShowcase = () => {
         <div className="flex justify-between items-end h-full">
           <div className="flex-1 space-y-1">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              Efficiency
+              {t("Efficiency")}
             </div>
             <div
               className="h-4 sm:h-5 bg-gradient-to-t from-primary to-primary/80 rounded-md relative overflow-hidden transition-all duration-1000"
@@ -342,9 +187,9 @@ const ProductShowcase = () => {
               {efficiency}
             </div>
           </div>
-          <div className="flex-1 space-y-1 ml-3">
+          <div className="flex-1 space-y-1 ms-3">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              Max Power
+              {t("Max Power")}
             </div>
             <div
               className="h-4 sm:h-5 bg-gradient-to-t from-secondary to-secondary/80 rounded-md relative overflow-hidden transition-all duration-1000"
@@ -373,13 +218,12 @@ const ProductShowcase = () => {
         <div className="text-center mb-8 lg:mb-10 relative">
           <div className="inline-block">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-6 leading-tight">
-              Solar Innovation
+              {t("Solar Innovation")}
             </h1>
             <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-32 sm:w-48 mx-auto" />
           </div>
           <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
-            Engineering tomorrow&apos;s energy solutions with cutting-edge
-            photovoltaic technology
+            {t("Engineering tomorrow's energy solutions with cutting-edge photovoltaic technology")}
           </p>
         </div>
         {/* Compact Series Navigation */}
@@ -420,12 +264,12 @@ const ProductShowcase = () => {
                 <div className="relative group">
                   <div className="relative bg-white border border-gray-200 rounded-xl overflow-hidden">
                     <div
-                      onClick={() => navigate("/products")}
+                      onClick={() => navigate(localizePath("/products"))}
                       className="aspect-[4/3] relative overflow-hidden"
                     >
                       <img
                         src={currentProduct?.image}
-                        alt={currentProduct?.name}
+                        alt={t(currentProduct?.name)}
                         className="w-full h-full  transition-transform duration-700 object-contain"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
@@ -448,10 +292,11 @@ const ProductShowcase = () => {
                   <div className="flex justify-center space-x-3">
                     <button
                       onClick={() => handleProductChange("prev")}
+                      aria-label={t("Previous product")}
                       className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-primary transition-all duration-300 flex items-center justify-center hover:bg-primary/10"
                     >
                       <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors rtl:-scale-x-100"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -466,10 +311,11 @@ const ProductShowcase = () => {
                     </button>
                     <button
                       onClick={() => handleProductChange("next")}
+                      aria-label={t("Next product")}
                       className="group w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-gray-200 hover:border-primary transition-all duration-300 flex items-center justify-center hover:bg-primary/10"
                     >
                       <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-primary transition-colors rtl:-scale-x-100"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -490,22 +336,22 @@ const ProductShowcase = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div>
                   <div className="inline-block px-2 sm:px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-secondary rounded-full text-xs font-semibold mb-2 sm:mb-3 border border-primary/30">
-                    {currentProduct?.type}
+                    {t(currentProduct?.type)}
                   </div>
                   <h2 className="text-lg sm:text-xl md:text-2xl font-black text-gray-800 mb-2 leading-tight">
-                    {currentProduct?.name}
+                    {t(currentProduct?.name)}
                   </h2>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                    {productSeries[activeSeries].description}
+                    {t(productSeries[activeSeries].description)}
                   </p>
                 </div>
 
                 {/* Variants */}
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
-                    Available Configurations
+                    {t("Available Configurations")}
                   </h3>
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {currentProduct?.variants.map((variant, index) => (
                       <div
                         key={index}
@@ -522,11 +368,11 @@ const ProductShowcase = () => {
                               {variant.name}
                             </div>
                             <div className="text-xs text-gray-600 mt-0.5">
-                              Efficiency: {variant.efficiency}
+                              {t("Efficiency: {value}", { value: variant.efficiency })}
                             </div>
                           </div>
-                          <div className="text-right">
-                            <div className="text-lg sm:text-xl font-black text-primary">
+                          <div className="text-end">
+                            <div className="text-lg sm:text-xl font-black text-primary" dir="ltr">
                               {variant.wattage}
                             </div>
                           </div>
@@ -539,7 +385,7 @@ const ProductShowcase = () => {
                 {/* Applications */}
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
-                    Applications
+                    {t("Applications")}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {currentProduct?.applications.map((app, index) => (
@@ -547,7 +393,7 @@ const ProductShowcase = () => {
                         key={index}
                         className="px-2 sm:px-3 py-1  text-secondary bg-primary/20 rounded-full text-xs font-semibold hover:bg-secondary/20 transition-all duration-300 transform hover:scale-105"
                       >
-                        {app}
+                        {t(app)}
                       </span>
                     ))}
                   </div>
@@ -559,7 +405,7 @@ const ProductShowcase = () => {
           <div className="text-center py-8 sm:py-10">
             <div className="inline-block p-6 sm:p-8 bg-white border border-gray-200 rounded-xl">
               <p className="text-gray-600 mb-4 sm:mb-6 max-w-md text-xs sm:text-sm leading-relaxed">
-                {productSeries[activeSeries].description}
+                {t(productSeries[activeSeries].description)}
               </p>
             </div>
           </div>
@@ -568,13 +414,13 @@ const ProductShowcase = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-8 sm:mt-10">
           <button
-            onClick={() => navigate("/products")}
+            onClick={() => navigate(localizePath("/products"))}
             className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-secondary to-secondary/90 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-all duration-500 transform hover:scale-105 hover:from-secondary/90 hover:to-secondary"
           >
             <span className="relative z-10 flex items-center">
-              view all products
+              {t("view all products")}
               <svg
-                className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform duration-300"
+                className="ms-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 rtl:-scale-x-100 transition-transform duration-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

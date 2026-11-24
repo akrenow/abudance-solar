@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
@@ -7,6 +8,7 @@ import image4 from "@/assets/images/image4.png";
 // import image5 from "@/assets/images/image5.png";
 import image6 from "@/assets/images/image1.png";
 import yellowBanner from "@/assets/images/yellowBanner.png";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const aboutImages = [
   image4,
@@ -15,6 +17,7 @@ const aboutImages = [
 ];
 
 const AboutUsSection = () => {
+  const { t, localizePath } = useLanguage();
   const swiperRef = useRef(null);
 
   return (
@@ -38,7 +41,7 @@ const AboutUsSection = () => {
         <div className="text-center mb-8 md:mb-16">
           <div className="relative inline-block">
             <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white relative z-10">
-              About Us
+              {t("About Us")}
             </h2>
           </div>
           <div className="w-16 md:w-24 h-1 bg-white mx-auto rounded-full mt-4"></div>
@@ -59,6 +62,7 @@ const AboutUsSection = () => {
                   <div className="relative overflow-hidden rounded-lg md:rounded-[1.5rem]">
                     <Swiper
                       ref={swiperRef}
+                      dir="ltr"
                       modules={[Autoplay, EffectFade]}
                       effect="fade"
                       fadeEffect={{ crossFade: true }}
@@ -73,7 +77,7 @@ const AboutUsSection = () => {
                         <SwiperSlide key={idx} className="relative">
                           <img
                             src={img}
-                            alt={`About Bronze Solar ${idx + 1}`}
+                            alt={t("About Bronze Solar {number}", { number: idx + 1 })}
                             className="object-cover transition-transform duration-700 hover:scale-110"
                           />
                           {/* Modern counter */}
@@ -115,49 +119,44 @@ const AboutUsSection = () => {
                     ></div>
                   </div>
                   <span className="text-xs md:text-sm font-bold text-secondary uppercase tracking-wider">
-                    Leading Manufacturer
+                    {t("Leading Manufacturer")}
                   </span>
                 </div>
 
                 {/* Main heading */}
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-secondary leading-tight">
-                  Pioneering Solar Excellence in the UAE
+                  {t("Pioneering Solar Excellence in the UAE")}
                 </h3>
 
                 {/* Content cards */}
                 <div className="space-y-4 md:space-y-6">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border-l-4 border-secondary">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border-s-4 border-secondary">
                     <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                      Abundance Solar Panels Industries LLC, based in KEZAD,
-                      UAE, is a leading solar panel manufacturer with a{" "}
+                      {t("Abundance Solar Panels Industries L.L.C, based in KEZAD, UAE, is a leading solar panel manufacturer with a")}{" "}
                       <span className="font-bold text-secondary bg-secondary/10 px-1 md:px-2 py-0.5 md:py-1 rounded-md md:rounded-lg">
-                        600MW annual capacity
+                        {t("600MW annual capacity")}
                       </span>
                       .
                     </p>
                   </div>
 
-                  <div className="bg-white/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border-l-4 border-primary">
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg border-s-4 border-primary">
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                      Utilizing advanced European technology, we produce
-                      high-efficiency N-type TOPCon, HJT, and IBC photovoltaic
-                      modules, driving innovation and sustainability to make
-                      renewable energy accessible worldwide, supporting the
-                      UAE&apos;s vision for a green future.
+                      {t("Utilizing advanced European technology, we produce high-efficiency N-type TOPCon, HJT, and IBC photovoltaic modules, driving innovation and sustainability to make renewable energy accessible worldwide, supporting the UAE's vision for a green future.")}
                     </p>
                   </div>
                 </div>
 
                 {/* Modern CTA */}
                 <div className="pt-2 md:pt-4">
-                  <a
-                    href="/about"
+                  <Link
+                    to={localizePath("/about")}
                     className="group relative inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-secondary via-secondary to-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl md:shadow-2xl hover:shadow-secondary/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
-                    <span>Discover Our Story</span>
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2">
+                    <span>{t("Discover Our Story")}</span>
+                    <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2 rtl:group-hover:-translate-x-2">
                       <svg
-                        className="w-3 h-3 md:w-4 md:h-4"
+                        className="w-3 h-3 md:w-4 md:h-4 rtl:-scale-x-100"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -172,7 +171,7 @@ const AboutUsSection = () => {
                     </div>
                     {/* Animated background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

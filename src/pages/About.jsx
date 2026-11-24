@@ -14,9 +14,10 @@ const AboutPage = () => {
       <SEOHead
         title="About Us | Bronze Solar - Leading Solar Panel Manufacturer UAE"
         description="Learn about Bronze Solar, a leading solar panel manufacturer in UAE with 600MW capacity. Our mission, vision, and commitment to high-efficiency solar technology and European standards."
-        canonicalUrl="https://bronzesolar.com/about"
         keywords="about Bronze Solar, solar panel manufacturer UAE, solar company Abu Dhabi, N-type TOPCon manufacturer, HJT solar panels"
         ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="AboutPage"
+        breadcrumbs={[["Home", "/"], ["About Us", "/about"]]}
       />
       {/* Header will now handle its own spacing */}
       <Header page={"about"} />

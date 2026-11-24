@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cairo:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -95,7 +95,7 @@
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: "Outfit", "Cairo", sans-serif;
 }
 
 /* Custom utilities for better design consistency */
@@ -135,4 +135,21 @@ body {
   .text-gradient-secondary {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary/80;
   }
+}
+
+/* ---------- Arabic / right-to-left ---------- */
+/* Tailwind's space-x-* uses physical margins; swap them when the page is RTL. */
+html[dir="rtl"] [class*="space-x-"] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Letter-spacing breaks the joining of Arabic letters. */
+html[lang="ar"] body,
+html[lang="ar"] body * {
+  letter-spacing: normal !important;
+}
+
+/* Arabic script needs a little more line height than Latin. */
+html[lang="ar"] body {
+  line-height: 1.7;
 }

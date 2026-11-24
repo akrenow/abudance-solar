@@ -1,13 +1,16 @@
-import React from "react";
 import about from "../../assets/images/aboutus.png";
+import { useLanguage } from "@/i18n/useLanguage";
+
+// eslint-disable-next-line react/prop-types
 const HeroSection = ({ page }) => {
+  const { t } = useLanguage();
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* image background - now full screen */}
       <div className="absolute inset-0 w-screen h-screen z-0">
         <img
           src={about}
-          alt="About Bronze Solar"
+          alt={t("About Bronze Solar")}
           className="absolute inset-0 w-full h-full object-cover"
         />{" "}
       </div>
@@ -39,7 +42,7 @@ const HeroSection = ({ page }) => {
           mb-4 sm:mb-5 md:mb-6
         "
               >
-                About Bronze Solar
+                {t("About Bronze Solar")}
               </h1>
 
               <p
@@ -52,11 +55,7 @@ const HeroSection = ({ page }) => {
           mb-6 sm:mb-7 md:mb-8
         "
               >
-                Our AI-powered European highly-automated manufacturing facility
-                produces 600 MW annually, using advanced TOPCon, HJT, and IBC
-                technologies to deliver high-efficiency, top-quality solar
-                modules. With cutting-edge automation, we drive sustainability
-                and excellence in renewable energy.
+                {t("Our AI-powered European highly-automated manufacturing facility produces 600 MW annually, using advanced TOPCon, HJT, and IBC technologies to deliver high-efficiency, top-quality solar modules. With cutting-edge automation, we drive sustainability and excellence in renewable energy.")}
               </p>
 
               <div className="flex flex-wrap gap-4 sm:gap-5 md:gap-6">
@@ -70,10 +69,10 @@ const HeroSection = ({ page }) => {
           "
                 >
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                    KEZAD
+                    {t("KEZAD")}
                   </div>
                   <div className="text-xs sm:text-sm md:text-base text-white/80">
-                    Abu Dhabi, UAE
+                    {t("Abu Dhabi, UAE")}
                   </div>
                 </div>
               </div>

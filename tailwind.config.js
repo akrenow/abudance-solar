@@ -10,7 +10,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Outfit', 'sans-serif'],
+				sans: ['Outfit', 'Cairo', 'sans-serif'],
 			},
 			colors: {
 				background: 'hsl(var(--background))',

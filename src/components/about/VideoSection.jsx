@@ -120,8 +120,10 @@
 // export default VideoSection;
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const VideoSection = () => {
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
@@ -151,17 +153,16 @@ const VideoSection = () => {
         <div className="text-center mb-8 lg:mb-12 relative">
           <div className="inline-block">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-              Powering the Future with{" "}
+              {t("Powering the Future with")}{" "}
               <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600">
-                Solar Energy
+                {t("Solar Energy")}
               </span>
             </h1>
 
             <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-48 md:w-64 mx-auto" />
           </div>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
-            High-efficiency solar panels engineered for sustainable living by
-            Bronze Solar
+            {t("High-efficiency solar panels engineered for sustainable living by Bronze Solar")}
           </p>
         </div>
       </div>
@@ -214,7 +215,7 @@ const VideoSection = () => {
             <div className="flex items-center space-x-3">
               <div className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full">
                 <span className="text-white text-sm font-medium">
-                  Manufacturing Excellence
+                  {t("Manufacturing Excellence")}
                 </span>
               </div>
             </div>

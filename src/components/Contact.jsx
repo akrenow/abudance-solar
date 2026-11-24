@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 import SEOHead from "./SEOHead";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "@/i18n/useLanguage";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -130,26 +132,26 @@ const Contact = () => {
         title="Contact Us | Bronze Solar - Get In Touch"
         description="Contact Bronze Solar for inquiries about our high-efficiency solar panels, PV modules, and solar solutions. Available in Abu Dhabi, UAE."
 
-        canonicalUrl="https://bronzesolar.com/contact"
         keywords="contact Bronze Solar, solar inquiry, solar panels inquiry UAE, get solar quote"
         ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="ContactPage"
+        breadcrumbs={[["Home", "/"], ["Contact Us", "/contact"]]}
       />
       <Header page="contact" />
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#4B2354] mb-4">
-              Get in Touch
+              {t("Get in Touch")}
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Have questions about our products or services? Our team is here to
-              help.
+              {t("Have questions about our products or services? Our team is here to help.")}
             </p>
           </div>{" "}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-gray-50 p-8 rounded-2xl shadow-sm">
               <h3 className="text-2xl font-semibold text-[#4B2354] mb-6">
-                Send us a Message
+                {t("Send us a Message")}
               </h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -158,7 +160,7 @@ const Contact = () => {
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Name *
+                      {t("Name *")}
                     </label>
                     <input
                       type="text"
@@ -169,10 +171,10 @@ const Contact = () => {
                       className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                         errors.name ? "border-red-500" : "border-gray-300"
                       }`}
-                      placeholder="Your Name"
+                      placeholder={t("Your Name")}
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                      <p className="text-red-500 text-sm mt-1">{t(errors.name)}</p>
                     )}
                   </div>
                   <div>
@@ -180,7 +182,7 @@ const Contact = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Email *
+                      {t("Email *")}
                     </label>
                     <input
                       type="email"
@@ -191,11 +193,11 @@ const Contact = () => {
                       className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                         errors.email ? "border-red-500" : "border-gray-300"
                       }`}
-                      placeholder="Your Email"
+                      placeholder={t("Your Email")}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1">
-                        {errors.email}
+                        {t(errors.email)}
                       </p>
                     )}
                   </div>
@@ -205,7 +207,7 @@ const Contact = () => {
                     htmlFor="company"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Company
+                    {t("Company")}
                   </label>
                   <input
                     type="text"
@@ -214,7 +216,7 @@ const Contact = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent"
-                    placeholder="Your Company"
+                    placeholder={t("Your Company")}
                   />
                 </div>
                 <div>
@@ -222,7 +224,7 @@ const Contact = () => {
                     htmlFor="subject"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Subject *
+                    {t("Subject *")}
                   </label>
                   <input
                     type="text"
@@ -233,11 +235,11 @@ const Contact = () => {
                     className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent ${
                       errors.subject ? "border-red-500" : "border-gray-300"
                     }`}
-                    placeholder="Subject"
+                    placeholder={t("Subject")}
                   />
                   {errors.subject && (
                     <p className="text-red-500 text-sm mt-1">
-                      {errors.subject}
+                      {t(errors.subject)}
                     </p>
                   )}
                 </div>
@@ -246,7 +248,7 @@ const Contact = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Message *
+                    {t("Message *")}
                   </label>
                   <textarea
                     id="message"
@@ -257,11 +259,11 @@ const Contact = () => {
                     className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#F3B700] focus:border-transparent resize-none ${
                       errors.message ? "border-red-500" : "border-gray-300"
                     }`}
-                    placeholder="Your Message"
+                    placeholder={t("Your Message")}
                   ></textarea>
                   {errors.message && (
                     <p className="text-red-500 text-sm mt-1">
-                      {errors.message}
+                      {t(errors.message)}
                     </p>
                   )}
                 </div>
@@ -273,12 +275,12 @@ const Contact = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                      Sending...
+                      {t("Sending...")}
                     </>
                   ) : (
                     <>
                       <Send size={16} />
-                      Send Message
+                      {t("Send Message")}
                     </>
                   )}
                 </button>
@@ -287,37 +289,37 @@ const Contact = () => {
 
             <div>
               <div className="bg-[#4B2354] text-white p-8 rounded-2xl mb-8 shadow-lg">
-                <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold mb-6">{t("Get in Touch")}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center me-4 flex-shrink-0">
                       <MapPin />
                     </div>
                     <div>
-                      <h4 className="font-medium">Address</h4>
+                      <h4 className="font-medium">{t("Address")}</h4>
                       <p className="text-gray-300">
-                      Abundance Solar Panels Industries LLC
+                        {t("ABUNDANCE SOLAR PANELS INDUSTRIES L.L.C")}
                       </p>
                       <p className="text-gray-300">
-                      Plot No 7-8 , KHIA5 KEZAD, Abu Dhabi - U. A. E
+                        {t("Plot No. 7-8, KHIA5, KEZAD, Abu Dhabi, United Arab Emirates")}
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center me-4 flex-shrink-0">
                       <Phone />
                     </div>
                     <div>
-                      <h4 className="font-medium">Phone</h4>
-                      <p className="text-gray-300"> +971 55 950 1737</p>
+                      <h4 className="font-medium">{t("Phone")}</h4>
+                      <p className="text-gray-300" dir="ltr"> +971 55 950 1737</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#F3B700] flex items-center justify-center me-4 flex-shrink-0">
                       <Mail />
                     </div>
                     <div>
-                      <h4 className="font-medium">Email</h4>
+                      <h4 className="font-medium">{t("Email")}</h4>
                       <p className="text-gray-300">
                         info@bronzesolar.com
                       </p>
@@ -335,7 +337,7 @@ const Contact = () => {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Bronze Solar Location - KEZAD, Abu Dhabi"
+                  title={t("Bronze Solar Location - KEZAD, Abu Dhabi")}
                 ></iframe>
               </div>
             </div>

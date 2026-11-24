@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
+import { useLanguage } from '@/i18n/useLanguage';
 
 const ScrollToTopButton = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
@@ -33,8 +35,8 @@ const ScrollToTopButton = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-500 hover:to-red-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
-          aria-label="Scroll to top"
+          className="fixed bottom-8 end-8 z-50 w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-orange-500 hover:to-red-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
+          aria-label={t("Scroll to top")}
         >
           <ChevronUp 
             size={24} 

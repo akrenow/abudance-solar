@@ -4,43 +4,12 @@ import { X, Download, Info, Zap, Sun, Eye } from "lucide-react";
 import PropTypes from "prop-types";
 import Header from "../Header";
 import Footer from "../Footer";
+import SEOHead from "../SEOHead";
+import { SITE_URL } from "@/i18n/routing";
+import { moduleFamilyNode } from "@/seo/structuredData";
+import { useLanguage } from "@/i18n/useLanguage";
 
-// Import Glass Glass Bifacial PDFs
-import ABS_144GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-144GGS-M10-585-605.pdf";
-import ABS_132GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-M10-535-555.pdf";
-import ABS_120GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-120GGS-M10-485-505.pdf";
-import ABS_108GGS_M10 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-108GGS-M10-435-455.pdf";
-import ABS_132GGS_G12 from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12-705-725.pdf";
-import ABS_132GGS_G12R from "../../assets/pdf/1.Glass Glass Bifacial/PDF/ABS-132GGS-G12R-610-630.pdf";
-
-// Import Glass Glass All Black PDFs
-import ABS_144GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-144GGB-M10-585-605.pdf";
-import ABS_132GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-M10-535-555.pdf";
-import ABS_120GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-120GGB-M10-485-505.pdf";
-import ABS_108GGB_M10 from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-108GGB-M10-435-455.pdf";
-import ABS_132GGB_G12R from "../../assets/pdf/2.Glass Glass, All black module/PDF/ABS-132GGB-G12R-610-630.pdf";
-
-// Import Glass Transparent Backsheet PDFs
-import ABS_144GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-144GTS-M10-585-605.pdf";
-import ABS_132GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-M10-535-555.pdf";
-import ABS_120GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-120GTS-M10-485-505.pdf";
-import ABS_108GTS_M10 from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-108GTS-M10-435-455.pdf";
-import ABS_132GTS_G12R from "../../assets/pdf/3.Glass Transparent Backsheet/PDF/ABS-132GTS-G12R-610-630.pdf";
-
-// Import Glass White Backsheet PDFs
-import ABS_144GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-144GWS-M10-585-605.pdf";
-import ABS_132GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-M10-535-555.pdf";
-import ABS_120GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-120GWS-M10-485-505.pdf";
-import ABS_108GWS_M10 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-108GWS-M10-435-455.pdf";
-import ABS_132GWS_G12 from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12-705-725.pdf";
-import ABS_132GWS_G12R from "../../assets/pdf/4.Glass White Backsheet/PDF/ABS-132GWS-G12R-610-630.pdf";
-
-// Import Glass Black Backsheet PDFs
-import ABS_144GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-144GBB-M10-585-605.pdf";
-import ABS_132GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-M10-535-555.pdf";
-import ABS_120GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-120GBB-M10-485-505.pdf";
-import ABS_108GBB_M10 from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-108GBB-M10-435-455.pdf";
-import ABS_132GBB_G12R from "../../assets/pdf/5.Glass Black back sheet – all black Module/PDF/ABS-132GBB-G12R-610-630.pdf";
+import { moduleFamilies } from "@/core/constants/products";
 
 // Import local images for each product
 import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
@@ -56,8 +25,8 @@ const categories = {
       category: "Bifacial",
       image: imgGlassGlassBifacial,
       path: "/products/solar-panels",
-      wattage: "435-725W",
-      efficiency: "22.65-23.42%",
+      wattage: `${moduleFamilies.glassGlassBifacial.wattageRange}W`,
+      efficiency: `${moduleFamilies.glassGlassBifacial.efficiencyRange}%`,
       type: "Bifacial N-Type",
       description:
         "Premium dual-glass bifacial modules with N-Type TOPCon technology for maximum energy yield. Features superior low-light performance and excellent temperature coefficient.",
@@ -70,65 +39,15 @@ const categories = {
         "Superior low-light performance",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
-      models: [
-        {
-          name: "ABS-144GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GGS_M10,
-          dimensions: "2278 mm x 1134 mm x 30mm",
-        },
-        {
-          name: "ABS-132GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GGS_M10,
-          dimensions: "2089mm x 1134 mm x 30mm",
-        },
-        {
-          name: "ABS-120GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GGS_M10,
-          dimensions: "1908mm x 1134 mm x 30mm",
-        },
-        {
-          name: "ABS-108GGS-M10",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          dimensions: "1722mm x 1134 mm x 30mm",
-          pdfFile: ABS_108GGS_M10,
-        },
-        {
-          name: "ABS-132GGS-G12",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "705 to 725",
-          efficiency: "22.70 to 23.34",
-          dimensions: "2384mm x 1303mm x 30mm",
-          pdfFile: ABS_132GGS_G12,
-        },
-        {
-          name: "ABS-132GGS-G12R",
-          productType: "Glass/Glass-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          dimensions: " 2384mm x 1134mm x 30mm",
-          pdfFile: ABS_132GGS_G12R,
-        },
-      ],
+      models: moduleFamilies.glassGlassBifacial.models,
     },
     {
       title: "Glass Glass All Black PV Module",
       category: "Bifacial",
       image: imgGlassGlassAllBlack,
       path: "/products/solar-panels",
-      wattage: "485-630W",
-      efficiency: "22.65-23.42%",
+      wattage: `${moduleFamilies.glassGlassAllBlack.wattageRange}W`,
+      efficiency: `${moduleFamilies.glassGlassAllBlack.efficiencyRange}%`,
       type: "Bifacial N-Type",
       description:
         "Aesthetically pleasing all-black design with dual glass construction. Perfect for residential and architectural applications where appearance matters.",
@@ -141,57 +60,15 @@ const categories = {
         "Enhanced durability",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
-      models: [
-        {
-          name: "ABS-144GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GGB_M10,
-          dimensions: "2278 mm x 1134 mm x 30mm",
-        },
-        {
-          name: "ABS-132GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          dimensions: "2089mm x 1134 mm x 30mm",
-          pdfFile: ABS_132GGB_M10,
-        },
-        {
-          name: "ABS-120GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          dimensions: " 1908mm x 1134 mm x 30mm",
-          pdfFile: ABS_120GGB_M10,
-        },
-        {
-          name: "ABS-108GGB-M10",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          dimensions: "1722mm x 1134 mm x 30mm",
-          pdfFile: ABS_108GGB_M10,
-        },
-        {
-          name: "ABS-132GGB-G12R",
-          productType: "Glass/Glass-Black Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GGB_G12R,
-          dimensions: "2384mm x 1134mm x 30mm",
-        },
-      ],
+      models: moduleFamilies.glassGlassAllBlack.models,
     },
     {
       title: "Glass Transparent Backsheet PV Module",
       category: "Bifacial",
       image: imgGlassTransparentBacksheet,
       path: "/products/solar-panels",
-      wattage: "485-630W",
-      efficiency: "22.65-23.42%",
+      wattage: `${moduleFamilies.glassTransparentBacksheet.wattageRange}W`,
+      efficiency: `${moduleFamilies.glassTransparentBacksheet.efficiencyRange}%`,
       type: "Bifacial N-Type",
       description:
         "Innovative transparent backsheet design allowing light penetration for unique architectural applications and enhanced bifacial gain.",
@@ -204,57 +81,15 @@ const categories = {
         "Long-term reliability",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
-      models: [
-        {
-          name: "ABS-144GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GTS_M10,
-          dimensions: "2278mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GTS_M10,
-          dimensions: "2089mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-120GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GTS_M10,
-          dimensions: "1908mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-108GTS-M10",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GTS_M10,
-          dimensions: "1722mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GTS-G12R",
-          productType: "Glass/Transparent Back sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GTS_G12R,
-          dimensions: "2384mm x 1134mm x 30mm",
-        },
-      ],
+      models: moduleFamilies.glassTransparentBacksheet.models,
     },
     {
       title: "Glass White Back Sheet PV Module",
       category: "Monofacial",
       image: imgGlassWhiteBacksheet,
       path: "/products/solar-panels",
-      wattage: "485-725W",
-      efficiency: "22.65-23.42%",
+      wattage: `${moduleFamilies.glassWhiteBacksheet.wattageRange}W`,
+      efficiency: `${moduleFamilies.glassWhiteBacksheet.efficiencyRange}%`,
       type: "Monofacial N-Type",
       description:
         "Cost-effective monofacial design with white backsheet for optimal heat dissipation and reliable performance in various climatic conditions.",
@@ -267,65 +102,15 @@ const categories = {
         "Excellent price-performance ratio",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
-      models: [
-        {
-          name: "ABS-144GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GWS_M10,
-          dimensions: "2278mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GWS_M10,
-          dimensions: "2089mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-120GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GWS_M10,
-          dimensions: "1908mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-108GWS-M10",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GWS_M10,
-          dimensions: "1722mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GWS-G12",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "705 to 725",
-          efficiency: "22.70 to 23.34",
-          pdfFile: ABS_132GWS_G12,
-          dimensions: "2384mm x 1303mm x 30mm",
-        },
-        {
-          name: "ABS-132GWS-G12R",
-          productType: "Glass/White Back Sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GWS_G12R,
-          dimensions: "2384mm x 1134mm x 30mm",
-        },
-      ],
+      models: moduleFamilies.glassWhiteBacksheet.models,
     },
     {
       title: "Glass Black Back Sheet – All Black PV Module",
       category: "Monofacial",
       image: imgGlassBlackBacksheet,
       path: "/products/solar-panels",
-      wattage: "485-630W",
-      efficiency: "22.65-23.42%",
+      wattage: `${moduleFamilies.glassBlackBacksheet.wattageRange}W`,
+      efficiency: `${moduleFamilies.glassBlackBacksheet.efficiencyRange}%`,
       type: "Monofacial N-Type",
       description:
         "Premium all-black monofacial design combining aesthetic appeal with high performance. Ideal for residential and commercial applications.",
@@ -338,49 +123,7 @@ const categories = {
         "25-year performance warranty",
       ],
       applications: ["Residential", "Commercial", "Off-Grid", ],
-      certifications: ["IEC 61215", "IEC 61730", "CE", "TUV"],
-      models: [
-        {
-          name: "ABS-144GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "585 to 605",
-          efficiency: "22.65 to 23.42",
-          pdfFile: ABS_144GBB_M10,
-          dimensions: "2278mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "535 to 555",
-          efficiency: "22.58 to 23.43",
-          pdfFile: ABS_132GBB_M10,
-          dimensions: "2089mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-120GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "485 to 505",
-          efficiency: "22.42 to 23.34",
-          pdfFile: ABS_120GBB_M10,
-          dimensions: "1908mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-108GBB-M10",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "435 to 455",
-          efficiency: "22.28 to 23.30",
-          pdfFile: ABS_108GBB_M10,
-          dimensions: "1722mm x 1134mm x 30mm",
-        },
-        {
-          name: "ABS-132GBB-G12R",
-          productType: "Glass/Black Back Sheet-Silver Frame",
-          wattage: "610 to 630",
-          efficiency: "22.56 to 23.30",
-          pdfFile: ABS_132GBB_G12R,
-          dimensions: "2384mm x 1134mm x 30mm",
-        },
-      ],
+      models: moduleFamilies.glassBlackBacksheet.models,
     },
   ],
   "Heterojunction Technology": [
@@ -520,6 +263,7 @@ const categories = {
 };
 
 const SolarPanelsPage = () => {
+  const { t, localizePath } = useLanguage();
   const [activeTab, setActiveTab] = useState("N-type – Topcon");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -549,7 +293,7 @@ const SolarPanelsPage = () => {
         <div className="flex justify-between items-end h-full">
           <div className="flex-1 space-y-1 sm:space-y-2">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              Efficiency
+              {t("Efficiency")}
             </div>
             <div
               className="h-6 sm:h-8 bg-gradient-to-t from-primary to-primary/90 rounded-lg relative overflow-hidden transition-all duration-1000"
@@ -561,9 +305,9 @@ const SolarPanelsPage = () => {
               {efficiency}
             </div>
           </div>
-          <div className="flex-1 space-y-1 sm:space-y-2 ml-4">
+          <div className="flex-1 space-y-1 sm:space-y-2 ms-4">
             <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              MAX POWER
+              {t("MAX POWER")}
             </div>
             <div
               className="h-6 sm:h-8 bg-gradient-to-t from-slate-600 to-slate-500 rounded-lg relative overflow-hidden transition-all duration-1000"
@@ -587,6 +331,17 @@ const SolarPanelsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <SEOHead
+        title="Solar Panels | Bronze Solar - N-type TOPCon PV Modules"
+        description="Bronze Solar N-type TOPCon solar PV modules made in Abu Dhabi, UAE: Glass/Glass bifacial, all-black, transparent, white and black backsheet modules. Specifications and datasheets for every model."
+        keywords="N-type TOPCon solar panels, bifacial solar modules, glass glass solar panels, all black solar panels, PV module datasheets, solar panel manufacturer UAE"
+        ogImage="https://bronzesolar.com/Croppedlogo.png"
+        pageType="CollectionPage"
+        breadcrumbs={[["Home", "/"], ["Products", "/products"], ["High-Efficiency PV Modules", "/products/solar-panels"]]}
+        jsonLd={categories["N-type – Topcon"].map((product) =>
+          moduleFamilyNode({ t, url: SITE_URL + localizePath("/products/solar-panels"), product })
+        )}
+      />
       {/* Header */}
       <Header page="products" />
 
@@ -604,7 +359,7 @@ const SolarPanelsPage = () => {
               }`}
               onClick={() => setActiveTab(cat)}
             >
-              {cat}
+              {t(cat)}
             </button>
           ))}
         </div>
@@ -620,12 +375,12 @@ const SolarPanelsPage = () => {
               <div className="relative h-64 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={t(product.title)}
                   className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                 />
                 {/* Category Badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  {product.category}
+                <div className="absolute top-4 end-4 bg-gradient-to-r from-primary to-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  {t(product.category)}
                 </div>
               </div>
 
@@ -633,12 +388,12 @@ const SolarPanelsPage = () => {
               <div className="p-6">
                 {/* Type Badge */}
                 <div className="inline-block px-3 py-1 bg-gradient-to-r from-primary/10 to-primary/20 text-primary rounded-full text-xs font-semibold mb-3 border border-primary/30">
-                  {product.type}
+                  {t(product.type)}
                 </div>
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-slate-700 transition-colors duration-300">
-                  {product.title}
+                  {t(product.title)}
                 </h3>
 
                 {/* Performance Chart */}
@@ -652,12 +407,12 @@ const SolarPanelsPage = () => {
                 {/* Quick Features */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-gray-700">
-                    <Zap size={16} className="text-primary mr-2" />
-                    <span>{product.efficiency} Efficiency</span>
+                    <Zap size={16} className="text-primary me-2" />
+                    <span>{t("{value} Efficiency", { value: product.efficiency })}</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-700">
-                    <Sun size={16} className="text-primary mr-2" />
-                    <span>{product.wattage} Power Output</span>
+                    <Sun size={16} className="text-primary me-2" />
+                    <span>{t("{value} Power Output", { value: product.wattage })}</span>
                   </div>
                 </div>
 
@@ -668,7 +423,7 @@ const SolarPanelsPage = () => {
                     className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Info size={16} />
-                    Details
+                    {t("Details")}
                   </button>
                 </div>
               </div>
@@ -680,14 +435,14 @@ const SolarPanelsPage = () => {
             <div className="col-span-full text-center py-16">
               <div className="bg-white rounded-3xl p-12 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  Coming Soon
+                  {t("Coming Soon")}
                 </h3>
                 <p className="text-gray-600">
-                  Next-generation{" "}
+                  {t("Next-generation")}{" "}
                   <span className="font-semibold text-primary">
-                    {activeTab}
+                    {t(activeTab)}
                   </span>{" "}
-                  modules are currently under development.
+                  {t("modules are currently under development.")}
                 </p>
               </div>
             </div>
@@ -697,17 +452,16 @@ const SolarPanelsPage = () => {
         {/* Contact CTA */}
         <div className="text-center mt-20">
           <h3 className="text-2xl font-bold text-gray-800 mb-4">
-            Need Technical Specifications?
+            {t("Need Technical Specifications?")}
           </h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Get detailed technical documentation and customized solutions for
-            your specific project requirements.
+            {t("Get detailed technical documentation and customized solutions for your specific project requirements.")}
           </p>
           <Link
-            to="/contact"
+            to={localizePath("/contact")}
             className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
-            Contact Technical Team
+            {t("Contact Technical Team")}
           </Link>
         </div>
       </div>
@@ -721,10 +475,10 @@ const SolarPanelsPage = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800">
-                    {selectedProduct.title}
+                    {t(selectedProduct.title)}
                   </h2>
                   <p className="text-primary font-medium">
-                    {selectedProduct.type}
+                    {t(selectedProduct.type)}
                   </p>
                 </div>
                 <button
@@ -744,7 +498,7 @@ const SolarPanelsPage = () => {
                   <div className="bg-gray-50 rounded-2xl p-6 mb-6">
                     <img
                       src={selectedProduct.image}
-                      alt={selectedProduct.title}
+                      alt={t(selectedProduct.title)}
                       className="w-full h-64 object-contain"
                     />
                   </div>
@@ -761,17 +515,17 @@ const SolarPanelsPage = () => {
                   {/* Description */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Description
+                      {t("Description")}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      {selectedProduct.description}
+                      {t(selectedProduct.description)}
                     </p>
                   </div>
 
                   {/* Key Features */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Key Features
+                      {t("Key Features")}
                     </h3>
                     <ul className="space-y-2">
                       {selectedProduct.features.map((feature, index) => (
@@ -779,8 +533,8 @@ const SolarPanelsPage = () => {
                           key={index}
                           className="flex items-center text-sm text-gray-700"
                         >
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                          {feature}
+                          <div className="w-2 h-2 bg-green-500 rounded-full me-3"></div>
+                          {t(feature)}
                         </li>
                       ))}
                     </ul>
@@ -789,7 +543,7 @@ const SolarPanelsPage = () => {
                   {/* Applications */}
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      Applications
+                      {t("Applications")}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProduct.applications.map((app, index) => (
@@ -797,29 +551,11 @@ const SolarPanelsPage = () => {
                           key={index}
                           className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
                         >
-                          {app}
+                          {t(app)}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Certifications
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                      <Award size={20} className="text-primary mr-2" />
-                      Certifications
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProduct.certifications.map((cert, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-amber-100 text-primary rounded-full text-sm font-medium"
-                        >
-                          {cert}
-                        </span>
-                      ))}
-                    </div>
-                  </div> */}
                 </div>
               </div>
 
@@ -827,32 +563,32 @@ const SolarPanelsPage = () => {
               {selectedProduct.models && selectedProduct.models.length > 0 && (
                 <div className="border-t border-gray-200 pt-6 mt-6">
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                    Available Models
+                    {t("Available Models")}
                   </h3>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse">
                       <thead>
                         <tr className="bg-gradient-to-r from-amber-50 to-orange-50">
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Model Name
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Model Name")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Product Type
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Product Type")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Wattage (WP)
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Wattage (WP)")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Efficiency (%)
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Efficiency (%)")}
                           </th>
-                          <th className="border border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-800">
-                            Dimensions
-                          </th>
-                          <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                            View Product
+                          <th className="border border-gray-200 px-4 py-3 text-start text-sm font-semibold text-gray-800">
+                            {t("Dimensions")}
                           </th>
                           <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
-                            Download
+                            {t("View Product")}
+                          </th>
+                          <th className="border border-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-800">
+                            {t("Download")}
                           </th>
                         </tr>
                       </thead>
@@ -884,7 +620,7 @@ const SolarPanelsPage = () => {
                                 }
                                 className="inline-flex items-center justify-center w-8 h-8 text-white rounded-full transition-colors duration-200 hover:brightness-110"
                                 style={{ backgroundColor: '#4B2354' }}
-                                title={`View ${model.name} datasheet`}
+                                title={t("View {name} datasheet", { name: model.name })}
                               >
                                 <Eye size={16} />
                               </button>
@@ -898,7 +634,7 @@ const SolarPanelsPage = () => {
                                   )
                                 }
                                 className="inline-flex items-center justify-center w-8 h-8 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-colors duration-200"
-                                title={`Download ${model.name} datasheet`}
+                                title={t("Download {name} datasheet", { name: model.name })}
                               >
                                 <Download size={16} />
                               </button>
