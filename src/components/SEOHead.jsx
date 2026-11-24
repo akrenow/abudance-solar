@@ -28,7 +28,9 @@ const SEOHead = (props) => {
 
 SEOHead.propTypes = {
   title: PropTypes.string.isRequired,
+  titleVars: PropTypes.object,
   description: PropTypes.string.isRequired,
+  descriptionVars: PropTypes.object,
   keywords: PropTypes.string,
   ogImage: PropTypes.string,
   ogType: PropTypes.string,
@@ -36,6 +38,7 @@ SEOHead.propTypes = {
   pageType: PropTypes.string,
   breadcrumbs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
   jsonLd: PropTypes.arrayOf(PropTypes.object),
+  mainEntity: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default SEOHead;

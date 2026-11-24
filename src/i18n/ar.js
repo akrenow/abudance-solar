@@ -558,7 +558,7 @@ const ar = {
   "Reliable performance": "أداء موثوق",
   "Easy maintenance": "سهولة الصيانة",
   "Weather resistant frame": "إطار مقاوم للعوامل الجوية",
-  "25-year performance warranty": "ضمان أداء لمدة 25 عامًا",
+  "30-year linear power warranty": "ضمان خطي للقدرة لمدة 30 عامًا",
 
   // ---------- BIPV page ----------
   BIPV: "BIPV",
@@ -825,6 +825,60 @@ const ar = {
   "Did you know?": "هل تعلم؟",
   "Solar panels can still generate electricity on cloudy days, producing about 10-25% of their rated capacity. Just like how we're here to help even when things don't go as planned!":
     "يمكن للألواح الشمسية توليد الكهرباء حتى في الأيام الغائمة، بما يعادل نحو 10-25% من قدرتها الاسمية. تمامًا كما نحن هنا لمساعدتك حتى عندما لا تسير الأمور كما هو مخطط لها!",
+
+  // ---------- Product pages ----------
+  "View specifications": "عرض المواصفات",
+  Specifications: "المواصفات الفنية",
+  "{length} × {width} × {depth} mm": "{length} × {width} × {depth} مم",
+  Datasheet: "ورقة البيانات",
+  View: "عرض",
+  "Other products in this range": "منتجات أخرى ضمن هذه الفئة",
+  Breadcrumb: "مسار التنقل",
+  "{product} | Bronze Solar": "{product} | برونز سولار",
+
+  // ---------- FAQ page ----------
+  FAQ: "الأسئلة الشائعة",
+  "Frequently Asked Questions": "الأسئلة الشائعة",
+  "Answers about Bronze Solar, our solar panels and BIPV products, the warranty and our factory in Abu Dhabi.":
+    "إجابات عن برونز سولار وألواحنا الشمسية ومنتجات BIPV والضمان ومصنعنا في أبوظبي.",
+  "FAQ | Bronze Solar - Solar Panels, BIPV and Warranty":
+    "الأسئلة الشائعة | برونز سولار - الألواح الشمسية ومنتجات BIPV والضمان",
+  "Answers to common questions about Bronze Solar: the KEZAD factory in Abu Dhabi, N-type TOPCon solar panels and their efficiency, BIPV products, warranty, testing and datasheets.":
+    "إجابات عن الأسئلة الشائعة حول برونز سولار: مصنع كيزاد في أبوظبي، والألواح الشمسية بتقنية N-type TOPCon وكفاءتها، ومنتجات BIPV، والضمان، والاختبارات، وأوراق البيانات الفنية.",
+  "Where is the Bronze Solar factory?": "أين يقع مصنع برونز سولار؟",
+  "The factory is at Plot No. 7-8, KHIA5, KEZAD (Khalifa Economic Zones Abu Dhabi), Abu Dhabi, United Arab Emirates, on an industrial plot of 301,389 square feet.":
+    "يقع المصنع في القطعة رقم 7-8، KHIA5، كيزاد (مجموعة مناطق خليفة الاقتصادية - أبوظبي)، أبوظبي، الإمارات العربية المتحدة، على قطعة أرض صناعية تبلغ مساحتها 301,389 قدمًا مربعًا.",
+  "Which solar cell technology does Bronze Solar use?": "ما تقنية الخلايا الشمسية التي تستخدمها برونز سولار؟",
+  "Bronze Solar modules use N-type TOPCon cells: half-cut cells with 16-busbar interconnection. Heterojunction (HJT) and interdigitated back contact (IBC) modules are coming soon.":
+    "تستخدم وحدات برونز سولار خلايا N-type TOPCon: خلايا نصفية القطع موصولة بـ 16 قضيب تجميع (busbar). أما وحدات الوصلة غير المتجانسة (HJT) والتلامس الخلفي المتشابك (IBC) فستتوفر قريبًا.",
+  "Which solar panels does Bronze Solar make?": "ما الألواح الشمسية التي تصنعها برونز سولار؟",
+  "Bronze Solar makes {models} N-type TOPCon module models in {families} families: Glass/Glass Bifacial, Glass/Glass All Black and Glass/Transparent Backsheet (bifacial), and Glass/White Backsheet and Glass/Black Backsheet – all black (monofacial). Power ratings range from {minPower} to {maxPower} Wp.":
+    "تصنع برونز سولار {models} طرازًا من وحدات N-type TOPCon ضمن {families} عائلات: زجاج/زجاج ثنائية الوجه، وزجاج/زجاج سوداء بالكامل، وزجاج/غطاء خلفي شفاف (ثنائية الوجه)، وزجاج/غطاء خلفي أبيض، وزجاج/غطاء خلفي أسود – سوداء بالكامل (أحادية الوجه). وتتراوح القدرة الاسمية بين {minPower} و{maxPower} واط ذروة.",
+  "How efficient are Bronze Solar panels?": "ما مدى كفاءة ألواح برونز سولار؟",
+  "Module efficiency ranges from {minEfficiency}% to {maxEfficiency}%. The most efficient models, {topModels}, reach {maxEfficiency}%.":
+    "تتراوح كفاءة الوحدات بين {minEfficiency}% و{maxEfficiency}%. وتصل الطرازات الأعلى كفاءة، ⁦{topModels}⁩، إلى {maxEfficiency}%.",
+  "What is the difference between bifacial and monofacial modules?":
+    "ما الفرق بين الوحدات ثنائية الوجه وأحادية الوجه؟",
+  "Bifacial modules also generate power from light reaching the rear side, so rear irradiance can increase output; each bifacial datasheet shows illustrative power at different levels of bifacial gain. Monofacial modules generate power from the front only and have a white or black backsheet.":
+    "تولّد الوحدات ثنائية الوجه الطاقة أيضًا من الضوء الذي يصل إلى وجهها الخلفي، لذا يمكن للإشعاع الخلفي أن يزيد إنتاجها، وتعرض ورقة البيانات الفنية لكل وحدة ثنائية الوجه قيمًا توضيحية للقدرة عند مستويات مختلفة من الكسب الخلفي. أما الوحدات أحادية الوجه فتولّد الطاقة من الوجه الأمامي فقط، ولها غطاء خلفي أبيض أو أسود.",
+  "What warranty do Bronze Solar modules have?": "ما الضمان الذي تقدّمه برونز سولار على وحداتها؟",
+  "Bronze Solar PV modules have a 15-year limited product warranty and a 30-year linear power output warranty: at least 99.00% of rated power in the first year, then a decline of no more than 0.40 percentage points per year, to 87.40% at the end of year 30.":
+    "تحمل وحدات برونز سولار الكهروضوئية ضمانًا محدودًا للمنتج لمدة 15 عامًا وضمانًا خطيًا لقدرة الإخراج لمدة 30 عامًا: لا تقل القدرة عن 99.00% من القدرة الاسمية في السنة الأولى، ثم لا يتجاوز الانخفاض 0.40 نقطة مئوية سنويًا، لتبلغ 87.40% في نهاية السنة الثلاثين.",
+  "Does Bronze Solar make BIPV products?": "هل تصنع برونز سولار منتجات BIPV؟",
+  "Yes. Bronze Solar makes semi-transparent BIPV glass panels, coloured BIPV panels with front coloured glass, solar roof tiles and custom printed front-glass BIPV panels. Size, colour and print can be customized.":
+    "نعم. تصنع برونز سولار ألواح BIPV زجاجية شبه شفافة، وألواح BIPV ملوّنة بزجاج أمامي ملوّن، وبلاط أسطح شمسي، وألواح BIPV بزجاج أمامي مطبوع حسب الطلب. ويمكن تخصيص المقاس واللون والطباعة.",
+  "How are Bronze Solar modules tested?": "كيف تُختبر وحدات برونز سولار؟",
+  "The production process has inspection gates between stages, including electroluminescence (EL) inspection before lamination and again after the flash test, a flash test (sun simulation) under Standard Test Conditions (STC), high-voltage insulation (Hi-pot) testing and visual inspection, supported by an in-house quality control and testing laboratory.":
+    "تتضمن عملية الإنتاج نقاط فحص بين المراحل، منها فحص التألق الكهربائي (EL) قبل التصفيح ثم مجددًا بعد اختبار الوميض، واختبار الوميض (محاكاة أشعة الشمس) وفق ظروف الاختبار القياسية (STC)، واختبار عزل الجهد العالي (Hi-pot)، والفحص البصري، بدعم من مختبر داخلي لمراقبة الجودة والاختبارات.",
+  "Where can I download datasheets and manuals?": "أين يمكنني تنزيل أوراق البيانات الفنية والأدلة؟",
+  "The Downloads page has a datasheet for every module model and BIPV product, the product catalogue, the installation and safety precautions manual, the unpacking instructions and the limited and linear warranty.":
+    "تضم صفحة التنزيلات ورقة بيانات فنية لكل طراز من الوحدات ولكل منتج BIPV، إضافةً إلى كتالوج المنتجات، ودليل التركيب واحتياطات السلامة، وتعليمات فك التغليف، ووثيقة الضمان المحدود والخطي.",
+  "How can I contact Bronze Solar?": "كيف يمكنني التواصل مع برونز سولار؟",
+  "Call {phone}, email {email}, or use the enquiry form on the Contact page. The factory is at Plot No. 7-8, KHIA5, KEZAD, Abu Dhabi, United Arab Emirates.":
+    "اتصل على الرقم ⁦{phone}⁩، أو راسلنا على ⁦{email}⁩، أو استخدم نموذج الاستفسار في صفحة تواصل معنا. يقع المصنع في القطعة رقم 7-8، KHIA5، كيزاد، أبوظبي، الإمارات العربية المتحدة.",
+  "Is the Bronze Solar website available in Arabic?": "هل يتوفر موقع برونز سولار باللغة العربية؟",
+  "Yes. Every page is available in English and in Arabic; the Arabic pages are under bronzesolar.com/ar.":
+    "نعم. جميع صفحات الموقع متاحة باللغتين الإنجليزية والعربية، والصفحات العربية متاحة على ⁦bronzesolar.com/ar⁩.",
 
   // ---------- Shared ----------
   "Scroll to top": "العودة إلى الأعلى",

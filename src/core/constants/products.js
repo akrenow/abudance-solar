@@ -30,6 +30,18 @@ const datasheetFor = (folder, name, wattage) => {
   return url;
 };
 
+// Display form of a datasheet range: "595 to 615" -> "595–615" (reads the same in English and Arabic)
+export const formatRange = (value) => String(value).replace(" to ", "–");
+
+// Display form of module dimensions in the page's language:
+// "2278 mm x 1134 mm x 30 mm" -> "2278 × 1134 × 30 mm" (Arabic: "… مم")
+export const formatDimensions = (t, dimensions) => {
+  const match = String(dimensions).match(/^([\d.]+) mm x ([\d.]+) mm x ([\d.]+) mm$/);
+  return match
+    ? t("{length} × {width} × {depth} mm", { length: match[1], width: match[2], depth: match[3] })
+    : t(dimensions);
+};
+
 // "a to b" values across models -> "min-max" (keeps the source's decimals)
 const rangeOf = (values) => {
   const nums = values.flatMap((v) => v.split(" to "));

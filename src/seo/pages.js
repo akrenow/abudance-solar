@@ -2,6 +2,8 @@
 // language at build time and listed in sitemap.xml and llms.txt.
 // When you add a route in App.jsx, add it here too.
 // `label` is the navigation text, used to look up the Arabic name in ar.js.
+import { BIPV_PRODUCTS, PV_PRODUCTS, productPath } from "@/core/constants/productCatalog";
+
 export const SITE_PAGES = [
   {
     path: "/",
@@ -67,4 +69,21 @@ export const SITE_PAGES = [
     changefreq: "weekly",
     priority: 0.6,
   },
+  {
+    path: "/faq",
+    name: "FAQ",
+    label: "FAQ",
+    summary: "Answers about the factory location, solar panel range and efficiency, BIPV, warranty, testing, datasheets and contact.",
+    changefreq: "monthly",
+    priority: 0.8,
+  },
+  // One page per PV module family and BIPV product, with full specifications
+  ...[...PV_PRODUCTS, ...BIPV_PRODUCTS].map((product) => ({
+    path: productPath(product),
+    name: product.title,
+    label: product.title,
+    summary: product.description,
+    changefreq: "monthly",
+    priority: 0.8,
+  })),
 ];

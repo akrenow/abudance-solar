@@ -6,6 +6,7 @@ import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
 import bipv from "../../assets/images/BIPV.png"
 import SEOHead from "../SEOHead";
+import PageHeading from "../PageHeading";
 import { moduleEfficiencyRange } from "@/core/constants/products";
 import { SITE_URL } from "@/i18n/routing";
 import { categoryListNode } from "@/seo/structuredData";
@@ -59,6 +60,10 @@ const MainProductsPage = () => {
 
       {/* Product Cards */}
       <div className="container mx-auto px-4 py-12 relative">
+        <PageHeading
+          title={t("Products")}
+          intro={t("Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions.")}
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {mainProducts.map((product, index) => (
             <Link

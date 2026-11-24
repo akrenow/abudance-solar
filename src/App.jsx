@@ -14,10 +14,13 @@ import PageNotFound from "./components/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Bipvpage from "./components/products/Bipvsubproducts";
+import ProductDetailPage from "./components/products/ProductDetailPage";
+import Faq from "./pages/Faq";
 import Analytics from "./components/Analytics";
 import { LocaleLayout, DefaultLanguageRedirect } from "./i18n/LocaleLayout";
 
 // The same pages exist in every language: English at "/...", Arabic at "/ar/...".
+// When adding a page, also add it to src/seo/pages.js (pre-rendering, sitemap, llms.txt).
 const pageRoutes = (
   <>
     <Route index element={<Home />} />
@@ -25,6 +28,9 @@ const pageRoutes = (
     <Route path="products" element={<MainProductsPage />} />
     <Route path="products/solar-panels" element={<SubproductPage />} />
     <Route path="products/bipv-products" element={<Bipvpage />} />
+    <Route path="products/solar-panels/:slug" element={<ProductDetailPage kind="pv" />} />
+    <Route path="products/bipv-products/:slug" element={<ProductDetailPage kind="bipv" />} />
+    <Route path="faq" element={<Faq />} />
     <Route path="contact" element={<Contact />} />
     <Route path="career" element={<Career />} />
     {/* <Route path="products/:model" element={<ProductDetailPage />} /> */}

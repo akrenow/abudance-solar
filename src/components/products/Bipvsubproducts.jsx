@@ -6,147 +6,13 @@ import Header from "../Header";
 import Footer from "../Footer";
 import SEOHead from "../SEOHead";
 import { SITE_URL } from "@/i18n/routing";
-import { bipvProductNode } from "@/seo/structuredData";
+import { categoryListNode } from "@/seo/structuredData";
+import PageHeading from "../PageHeading";
 import { useLanguage } from "@/i18n/useLanguage";
 
-import { bipvDatasheets } from "@/core/constants/products";
-
-// Import local images for each product
-import SemiTransparentBIPVGlassPanels from "../../assets/Bipvsubproducts/Picture1.png";
-import ColoredBIPVPanel from "../../assets/Bipvsubproducts/Picture2.jpg";
-import SolarRoofTiles  from "../../assets/Bipvsubproducts/Picture3.png";
-import CustomPrintedFrontGlassBIPVPanels  from "../../assets/Bipvsubproducts/Picture3.jpg";
-
-
+import { BIPV_PRODUCTS, productPath } from "@/core/constants/productCatalog";
 const categories = {
-  "BIPV": [
-    {
-      title: "Semi-Transparent BIPV Glass Panels",
-    //   category: "Bifacial",
-      image: SemiTransparentBIPVGlassPanels,
-      path: "/products/solar-panels",
-      wattage: "100 to 300W",
-      efficiency: "12.48%",
-    //   type: "Bifacial N-Type",
-      description:
-        "Semi-transparent BIPV (Building-Integrated Photovoltaic) glass panels are advanced solar solutions that generate electricity while allowing natural light to pass through.",
-      features: [
-       "~50% visible light transparency (cells cover ~50% of area)",
-       "Customized size options.",
-       "Typical power output: 100–300 W/m²",
-       "Ideal for: Windows, skylights, curtain walls, atriums — balances daylight and power generation.",
-
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: [
-        {
-          name: "ABS-Semi-Transparent BIPV Glass Panel",
-          productType: "",
-          wattage: "270W",
-          efficiency: "Module Efficiency of 12.48 %",
-          pdfFile: bipvDatasheets.semiTransparent,
-          dimensions: "1908 mm x 1134 mm x 30 mm (Size can be Customized)",
-        },
-        
-      ],
-    },
-     {
-      title: "Colored BIPV Panels (Front Colored Glass)",
-    //   category: "Bifacial",
-      image: ColoredBIPVPanel,
-      path: "/products/solar-panels",
-      wattage: "Up to 520W",
-      efficiency: "23.59%",
-    //   type: "Bifacial N-Type",
-      description:
-        "Coloured BIPV (Building-Integrated Photovoltaic) panels with front coloured glass are aesthetically enhanced solar modules designed to blend seamlessly with modern architectural designs while generating clean electricity.",
-      features: [
-        "Customized colour and size options.",
-        "Typical power output: Up to 520 W/m²",
-        "Ideal for: facades, cladding, curtain walls, and decorative building elements.",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: [
-        {
-          name: "ABS-Colored BIPV Panel (Option 1)",
-          productType: "",
-          wattage: "520W",
-          efficiency: "Module Efficiency of 23.59 %",
-          pdfFile: bipvDatasheets.colored,
-          dimensions: "1954 mm x 1128 mm x 7.5 mm (Size can be Customized)",
-        },
-        {
-          name: "ABS-Colored BIPV Panel (Option 2)",
-          productType: "",
-          wattage: "460W",
-          efficiency: "Module Efficiency of 23.22 %",
-          pdfFile: bipvDatasheets.colored,
-          dimensions: "1756 mm x 1128 mm x 7.5 mm (Size can be Customized)",
-        },
-        
-      ],
-    },
-     {
-      title: "Solar Roof Tiles (BIPV Tiles)",
-    //   category: "Bifacial",
-      image: SolarRoofTiles,
-      path: "/products/solar-panels",
-      wattage: "70-150W",
-      efficiency: "20.66%",
-    //   type: "Bifacial N-Type",
-      description:
-"Solar roof tiles (BIPV tiles) are integrated photovoltaic roofing products that function as both durable roof coverings and solar power generators.",
-
-      features: [
-       "Customized colour and size options.",
-       "Typical power output: 70 to 150 W/m²",
-       "Ideal for: Residential homes, villas, heritage buildings, and premium architectural projects.",
-
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: [
-        {
-          name: "ABS-Solar Roof Tile",
-          productType: "Anodized Aluminum Alloy 6005T6",
-          wattage: "105W",
-          efficiency: "Module Efficiency of 20.66 %",
-          pdfFile: bipvDatasheets.roofTile,
-          dimensions: "1210 mm x 420 mm x 7.5 mm (Size can be Customized)",
-        },
-        
-      ],
-    },
-     {
-      title: "Custom Printed Front-Glass BIPV Panels",
-    //   category: "Bifacial",
-      image:CustomPrintedFrontGlassBIPVPanels,
-      path: "/products/solar-panels",
-      wattage: "100 to 640W",
-      efficiency: "23.88%",
-    //   type: "Bifacial N-Type",
-      description:
-"Custom printed front-glass BIPV (Building-Integrated Photovoltaic) panels are innovative solar modules featuring digitally printed or patterned glass surfaces that combine renewable energy generation with unique architectural design.",
-      features: [
-      "Customized colour and size options.",
-      "Typical power output: 100 to 640 W/m²",
-      "Ideal for: facades, skylights, canopies, and decorative building applications.",
-
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: [
-        {
-          name: "ABS-Custom Printed Front-Glass BIPV Panel",
-          productType: "",
-          wattage: "640W",
-          efficiency: "Module Efficiency of 23.88 %",
-          pdfFile: bipvDatasheets.customPrinted,
-          dimensions: "2376 mm x 1128 mm x 7.5 mm (Size can be Customized)",
-        },
-        
-      ],
-    },
-    
-  ],
+  BIPV: BIPV_PRODUCTS,
   
 };
 
@@ -227,7 +93,7 @@ const Bipvpage = () => {
         pageType="CollectionPage"
         breadcrumbs={[["Home", "/"], ["Products", "/products"], ["Building Integrated Photo-voltaic", "/products/bipv-products"]]}
         jsonLd={categories.BIPV.map((product) =>
-          bipvProductNode({ t, url: SITE_URL + localizePath("/products/bipv-products"), product })
+          categoryListNode({ url: SITE_URL + localizePath("/products/bipv-products"), items: [[t(product.title), SITE_URL + localizePath(productPath(product))]] })
         )}
       />
       {/* Header */}
@@ -235,6 +101,10 @@ const Bipvpage = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 relative z-20 ">
+        <PageHeading
+          title={t("Building Integrated Photo-voltaic")}
+          intro={t("Bronze Solar BIPV products: semi-transparent glass panels, coloured front-glass panels, solar roof tiles and custom printed front-glass panels, customizable in size and colour. Specifications and datasheets.")}
+        />
         {/* Technology Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-4">
           {/* {Object.keys(categories).map((cat) => (
@@ -313,6 +183,12 @@ const Bipvpage = () => {
                     <Info size={16} />
                     {t("Details")}
                   </button>
+                  <Link
+                    to={localizePath(productPath(product))}
+                    className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    {t("View specifications")}
+                  </Link>
                 </div>
               </div>
             </div>

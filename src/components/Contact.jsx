@@ -141,9 +141,9 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#4B2354] mb-4">
+            <h1 className="text-3xl font-bold text-[#4B2354] mb-4">
               {t("Get in Touch")}
-            </h2>
+            </h1>
             <p className="text-gray-600 max-w-3xl mx-auto">
               {t("Have questions about our products or services? Our team is here to help.")}
             </p>

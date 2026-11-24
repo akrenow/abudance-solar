@@ -152,12 +152,12 @@ const VideoSection = () => {
         {/* Heading Section */}
         <div className="text-center mb-8 lg:mb-12 relative">
           <div className="inline-block">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
               {t("Powering the Future with")}{" "}
               <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600">
                 {t("Solar Energy")}
               </span>
-            </h1>
+            </h2>
 
             <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-48 md:w-64 mx-auto" />
           </div>

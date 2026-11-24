@@ -6,126 +6,14 @@ import Header from "../Header";
 import Footer from "../Footer";
 import SEOHead from "../SEOHead";
 import { SITE_URL } from "@/i18n/routing";
-import { moduleFamilyNode } from "@/seo/structuredData";
+import { categoryListNode } from "@/seo/structuredData";
+import PageHeading from "../PageHeading";
+import { formatDimensions, formatRange } from "@/core/constants/products";
 import { useLanguage } from "@/i18n/useLanguage";
 
-import { moduleFamilies } from "@/core/constants/products";
-
-// Import local images for each product
-import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
-import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
-import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
-import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
-import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
-
+import { PV_PRODUCTS, productPath } from "@/core/constants/productCatalog";
 const categories = {
-  "N-type – Topcon": [
-    {
-      title: "Glass Glass Bifacial PV Module",
-      category: "Bifacial",
-      image: imgGlassGlassBifacial,
-      path: "/products/solar-panels",
-      wattage: `${moduleFamilies.glassGlassBifacial.wattageRange}W`,
-      efficiency: `${moduleFamilies.glassGlassBifacial.efficiencyRange}%`,
-      type: "Bifacial N-Type",
-      description:
-        "Premium dual-glass bifacial modules with N-Type TOPCon technology for maximum energy yield. Features superior low-light performance and excellent temperature coefficient.",
-      features: [
-        "Dual Glass Design for 30+ year lifespan",
-        "Bifacial Output (5-30% extra energy)",
-        "N-type TOPCon Cells (>23.5% efficiency)",
-        "Excellent temperature performance",
-        "Anti-PID technology",
-        "Superior low-light performance",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: moduleFamilies.glassGlassBifacial.models,
-    },
-    {
-      title: "Glass Glass All Black PV Module",
-      category: "Bifacial",
-      image: imgGlassGlassAllBlack,
-      path: "/products/solar-panels",
-      wattage: `${moduleFamilies.glassGlassAllBlack.wattageRange}W`,
-      efficiency: `${moduleFamilies.glassGlassAllBlack.efficiencyRange}%`,
-      type: "Bifacial N-Type",
-      description:
-        "Aesthetically pleasing all-black design with dual glass construction. Perfect for residential and architectural applications where appearance matters.",
-      features: [
-        "Sleek all-black aesthetic",
-        "Dual Glass Protection",
-        "High efficiency in low light",
-        "Perfect for residential rooftops",
-        "Anti-reflective coating",
-        "Enhanced durability",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: moduleFamilies.glassGlassAllBlack.models,
-    },
-    {
-      title: "Glass Transparent Backsheet PV Module",
-      category: "Bifacial",
-      image: imgGlassTransparentBacksheet,
-      path: "/products/solar-panels",
-      wattage: `${moduleFamilies.glassTransparentBacksheet.wattageRange}W`,
-      efficiency: `${moduleFamilies.glassTransparentBacksheet.efficiencyRange}%`,
-      type: "Bifacial N-Type",
-      description:
-        "Innovative transparent backsheet design allowing light penetration for unique architectural applications and enhanced bifacial gain.",
-      features: [
-        "Transparent backsheet design",
-        "Enhanced bifacial gain",
-        "Architectural integration",
-        "Superior light transmission",
-        "Weather resistant",
-        "Long-term reliability",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: moduleFamilies.glassTransparentBacksheet.models,
-    },
-    {
-      title: "Glass White Back Sheet PV Module",
-      category: "Monofacial",
-      image: imgGlassWhiteBacksheet,
-      path: "/products/solar-panels",
-      wattage: `${moduleFamilies.glassWhiteBacksheet.wattageRange}W`,
-      efficiency: `${moduleFamilies.glassWhiteBacksheet.efficiencyRange}%`,
-      type: "Monofacial N-Type",
-      description:
-        "Cost-effective monofacial design with white backsheet for optimal heat dissipation and reliable performance in various climatic conditions.",
-      features: [
-        "Cost-effective solution",
-        "White backsheet for heat dissipation",
-        "Proven reliability",
-        "Easy installation",
-        "Standard grid connection",
-        "Excellent price-performance ratio",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: moduleFamilies.glassWhiteBacksheet.models,
-    },
-    {
-      title: "Glass Black Back Sheet – All Black PV Module",
-      category: "Monofacial",
-      image: imgGlassBlackBacksheet,
-      path: "/products/solar-panels",
-      wattage: `${moduleFamilies.glassBlackBacksheet.wattageRange}W`,
-      efficiency: `${moduleFamilies.glassBlackBacksheet.efficiencyRange}%`,
-      type: "Monofacial N-Type",
-      description:
-        "Premium all-black monofacial design combining aesthetic appeal with high performance. Ideal for residential and commercial applications.",
-      features: [
-        "Premium all-black design",
-        "High aesthetic appeal",
-        "Reliable performance",
-        "Easy maintenance",
-        "Weather resistant frame",
-        "25-year performance warranty",
-      ],
-      applications: ["Residential", "Commercial", "Off-Grid", ],
-      models: moduleFamilies.glassBlackBacksheet.models,
-    },
-  ],
+  "N-type – Topcon": PV_PRODUCTS,
   "Heterojunction Technology": [
     // {
     //   title: "HJT Bifacial Solar Panel",
@@ -339,7 +227,7 @@ const SolarPanelsPage = () => {
         pageType="CollectionPage"
         breadcrumbs={[["Home", "/"], ["Products", "/products"], ["High-Efficiency PV Modules", "/products/solar-panels"]]}
         jsonLd={categories["N-type – Topcon"].map((product) =>
-          moduleFamilyNode({ t, url: SITE_URL + localizePath("/products/solar-panels"), product })
+          categoryListNode({ url: SITE_URL + localizePath("/products/solar-panels"), items: [[t(product.title), SITE_URL + localizePath(productPath(product))]] })
         )}
       />
       {/* Header */}
@@ -347,6 +235,10 @@ const SolarPanelsPage = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 relative z-20 ">
+        <PageHeading
+          title={t("High-Efficiency PV Modules")}
+          intro={t("Bronze Solar N-type TOPCon solar PV modules made in Abu Dhabi, UAE: Glass/Glass bifacial, all-black, transparent, white and black backsheet modules. Specifications and datasheets for every model.")}
+        />
         {/* Technology Tabs */}
         <div className="flex flex-wrap justify-center mb-12 gap-4">
           {Object.keys(categories).map((cat) => (
@@ -425,6 +317,12 @@ const SolarPanelsPage = () => {
                     <Info size={16} />
                     {t("Details")}
                   </button>
+                  <Link
+                    to={localizePath(productPath(product))}
+                    className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    {t("View specifications")}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -605,13 +503,13 @@ const SolarPanelsPage = () => {
                               {model.productType}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                              {model.wattage}
+                              {formatRange(model.wattage)}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                              {model.efficiency}
+                              {formatRange(model.efficiency)}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-sm text-gray-600">
-                              {model.dimensions || "-"}
+                              {model.dimensions ? formatDimensions(t, model.dimensions) : "-"}
                             </td>
                             <td className="border border-gray-200 px-4 py-3 text-center">
                               <button

@@ -114,7 +114,7 @@ const ProductShowcase = () => {
             "Reliable performance",
             "Easy maintenance",
             "Weather resistant frame",
-            "25-year performance warranty",
+            "30-year linear power warranty",
           ],
           applications: ["Residential", "Commercial", "Off-Grid", ],
         },
@@ -217,9 +217,9 @@ const ProductShowcase = () => {
         {/* Compact Header */}
         <div className="text-center mb-8 lg:mb-10 relative">
           <div className="inline-block">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-6 leading-tight">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-6 leading-tight">
               {t("Solar Innovation")}
-            </h1>
+            </h2>
             <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-32 sm:w-48 mx-auto" />
           </div>
           <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">

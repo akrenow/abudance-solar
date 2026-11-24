@@ -13,6 +13,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { useLanguage } from "@/i18n/useLanguage";
 import SEOHead from "../SEOHead";
+import PageHeading from "../PageHeading";
 import {
   moduleFamilies,
   bipvDownloads,
@@ -153,7 +154,11 @@ const DownloadCenter = () => {
       <Header page="downloads" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-3 py-8 mt-20 relative z-20">
+      <div className="container mx-auto px-3 py-8 mt-10 relative z-20">
+        <PageHeading
+          title={t("Downloads")}
+          intro={t("Download product datasheets, the product catalogue, installation manuals and warranty documents for Bronze Solar PV modules and BIPV solutions.")}
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {downloadCategories.map((category) => {
             const IconComponent = category.icon;

@@ -96,7 +96,7 @@ export const siteNodes = (t) => [
 ];
 
 // Full JSON-LD document for one page.
-export const pageGraph = ({ t, lang, url, title, description, pageType, breadcrumbs, nodes = [] }) => {
+export const pageGraph = ({ t, lang, url, title, description, pageType, breadcrumbs, nodes = [], mainEntity }) => {
   const page = {
     "@type": pageType,
     "@id": `${url}#webpage`,
@@ -107,6 +107,7 @@ export const pageGraph = ({ t, lang, url, title, description, pageType, breadcru
     isPartOf: { "@id": WEBSITE_ID },
     about: organizationRef,
     publisher: organizationRef,
+    ...(mainEntity && { mainEntity }),
   };
   const graph = [...siteNodes(t), page];
   if (breadcrumbs?.length > 1) {
@@ -211,6 +212,14 @@ export const documentListNode = ({ t, url, documents }) => ({
     },
   })),
 });
+
+// Questions and answers for an FAQPage (answers already translated).
+export const faqEntities = (items) =>
+  items.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  }));
 
 // Links to the product category pages.
 export const categoryListNode = ({ url, items }) => ({

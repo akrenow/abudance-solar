@@ -31,4 +31,6 @@ export { COMPANY } from "./seo/company";
 export { SITE_URL, LANGUAGES, DEFAULT_LANGUAGE, localizePath, dirFor } from "./i18n/routing";
 export { moduleFamilies, bipvDownloads, documents } from "./core/constants/products";
 export { jobOpenings } from "./core/constants/jobOpenings";
+export { PV_PRODUCTS, BIPV_PRODUCTS, productPath } from "./core/constants/productCatalog";
+export { FAQ, FAQ_VALUES } from "./seo/faq";
 export { default as ar } from "./i18n/ar";

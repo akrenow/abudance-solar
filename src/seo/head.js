@@ -21,7 +21,9 @@ export const buildHead = ({
   lang,
   pathname,
   title,
+  titleVars,
   description,
+  descriptionVars,
   keywords,
   ogImage = COMPANY.logo,
   ogType = "website",
@@ -29,12 +31,13 @@ export const buildHead = ({
   pageType = "WebPage",
   breadcrumbs = [],
   jsonLd = [],
+  mainEntity,
 }) => {
   const basePath = stripLangPrefix(pathname);
   const urlFor = (language) => SITE_URL + localizePath(basePath, language);
   const url = urlFor(lang);
-  const pageTitle = t(title);
-  const pageDescription = t(description);
+  const pageTitle = t(title, titleVars);
+  const pageDescription = t(description, descriptionVars);
 
   const metas = [
     ["name", "description", pageDescription],
@@ -80,6 +83,7 @@ export const buildHead = ({
         pageType,
         breadcrumbs: breadcrumbs.map(([label, path]) => [t(label), SITE_URL + localizePath(path, lang)]),
         nodes: jsonLd,
+        mainEntity,
       });
 
   return { lang, dir: dirFor(lang), title: pageTitle, metas, links, structuredData };

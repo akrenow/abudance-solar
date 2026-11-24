@@ -29,6 +29,11 @@ const {
   documents,
   jobOpenings,
   ar,
+  PV_PRODUCTS,
+  BIPV_PRODUCTS,
+  productPath,
+  FAQ,
+  FAQ_VALUES,
 } = server;
 
 const fail = (message) => {
@@ -107,24 +112,25 @@ const minPower = Math.min(...bounds("wattage"));
 const maxPower = Math.max(...bounds("wattage"));
 const maxEfficiency = Math.max(...bounds("efficiency")).toFixed(2);
 
-const summary = `${COMPANY.brand} is the solar brand of ${COMPANY.legalName}, a solar PV module manufacturer in KEZAD (Khalifa Economic Zones Abu Dhabi), Abu Dhabi, United Arab Emirates. Its highly automated, AI-powered European manufacturing facility has a 600 MW annual production capacity and produces N-type TOPCon PV modules (bifacial and monofacial) and building-integrated photovoltaic (BIPV) products.`;
+// The company's own description, as on the website
+const summary = "Abundance Solar Panels Industries L.L.C, based in KEZAD, UAE, is a leading solar panel manufacturer with a 600MW annual capacity. Utilizing advanced European technology, we produce high-efficiency N-type TOPCon, HJT, and IBC photovoltaic modules, driving innovation and sustainability to make renewable energy accessible worldwide, supporting the UAE's vision for a green future.";
 
 const keyFacts = [
-  `Brand: ${COMPANY.brand}`,
-  `Legal entity: ${COMPANY.legalName}`,
   `Address: ${COMPANY.address.streetAddress}, Abu Dhabi, United Arab Emirates`,
   `Phone: ${COMPANY.telephoneDisplay}`,
   `Email: ${COMPANY.email}`,
-  "Annual production capacity: 600 MW",
-  "Manufacturing facility: 301,389 sq ft industrial plot in KEZAD, Abu Dhabi; highly automated European production lines with an in-house quality control and testing laboratory",
   "Cell technology in production: N-type TOPCon, half-cut cells with 16-busbar interconnection (M10 and G12R module series); HJT and IBC modules are listed as coming soon",
   `PV modules: ${allModels.length} models in ${families.length} families, ${minPower}–${maxPower} Wp, module efficiency up to ${maxEfficiency}%`,
-  "Warranty (as stated on the website): 15-year product warranty, 30-year linear power performance warranty",
+  "Warranty (ABS-WAR-QA-001): 15-year limited product warranty; 30-year linear power output warranty guaranteeing at least 99.00% of rated power in year 1, declining by no more than 0.40 percentage points per year to 87.40% at the end of year 30",
   "Website languages: English and Arabic",
 ];
 
+// Product pages are listed under "Products", not repeated under "Pages"
+const isProductPage = (pagePath) => pagePath.split("/").length > 3;
+const faqText = (text) => text.replace(/\{(\w+)\}/g, (match, key) => (key in FAQ_VALUES ? FAQ_VALUES[key] : match));
+
 const pageLinks = (lang) =>
-  SITE_PAGES.map(
+  SITE_PAGES.filter((page) => !isProductPage(page.path)).map(
     (page) =>
       lang === "ar"
         ? `- [${arName(page.label)}](${abs(page.path, lang)})`
@@ -143,15 +149,12 @@ ${pageLinks("en")}
 
 ## Products
 
-${families
-  .map(
-    (f) =>
-      `- [${f.title.replace(" Datasheets", "")}](${abs("/products/solar-panels", "en")}): ${f.productType}, ${f.models.length} models, ${f.wattageRange} W, ${f.efficiencyRange}% efficiency`
-  )
-  .join("\n")}
-${bipvDownloads.models
-  .map((m) => `- [${m.name}](${url(m.pdfFile)}): BIPV, ${range(m.wattage)} W, ${range(m.efficiency)}% module efficiency (datasheet PDF)`)
-  .join("\n")}
+${PV_PRODUCTS.map(
+  (p) => `- [${p.title}](${abs(productPath(p), "en")}): N-type TOPCon, ${p.models[0].productType}, ${p.models.length} models, ${p.wattage}, ${p.efficiency} efficiency`
+).join("\n")}
+${BIPV_PRODUCTS.map(
+  (p) => `- [${p.title}](${abs(productPath(p), "en")}): BIPV, ${p.wattage} power output, ${p.efficiency} module efficiency`
+).join("\n")}
 
 ## Documents
 
@@ -195,13 +198,20 @@ ${keyFacts.map((fact) => `- ${fact}`).join("\n")}
 
 Bifacial: Glass/Glass Bifacial, Glass/Glass All Black, Glass/Transparent Backsheet. Monofacial: Glass/White Backsheet, Glass/Black Backsheet (all black).
 
-${families
-  .map((f) => `### ${f.title.replace(" Datasheets", "")}\n\nConstruction: ${f.productType}. Power ${f.wattageRange} W, efficiency ${f.efficiencyRange}%.\n\n${modelTable(f)}`)
-  .join("\n\n")}
+${PV_PRODUCTS.map(
+  (p) =>
+    `### ${p.title}\n\n${p.description}\n\nPage: ${abs(productPath(p), "en")}\n\nConstruction: ${p.models[0].productType}. Power ${p.wattage}, efficiency ${p.efficiency}.\n\n${modelTable(p)}`
+).join("\n\n")}
 
 ## BIPV (building-integrated photovoltaics)
 
 Size, colour and print can be customized. ${abs("/products/bipv-products", "en")}
+
+${BIPV_PRODUCTS.map(
+  (p) => `### ${p.title}\n\n${p.description} Typical power output: ${p.wattage}.\n\nPage: ${abs(productPath(p), "en")}`
+).join("\n\n")}
+
+### BIPV datasheets
 
 | Product | Power (Wp) | Module efficiency (%) | Datasheet |
 | --- | --- | --- | --- |
@@ -213,6 +223,12 @@ ${bipvDownloads.models.map((m) => `| ${m.name} | ${range(m.wattage)} | ${range(m
 - Limited and linear warranty (ABS-WAR-QA-001): ${url(documents.warranty)}
 - Installation and safety precautions manual (ABS-IM-ENG-001): ${url(documents.installationManual)}
 - Unpacking instructions (ABS-WI-ENG-010): ${url(documents.unpackingInstructions)}
+
+## Frequently asked questions
+
+${FAQ.map((item) => `### ${faqText(item.question)}\n\n${faqText(item.answer)}`).join("\n\n")}
+
+More: ${abs("/faq", "en")}
 
 ## Careers
 

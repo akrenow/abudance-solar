@@ -105,6 +105,24 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to={localizePath("/downloads")}
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
+                >
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("Downloads")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={localizePath("/faq")}
+                  className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
+                >
+                  <ExternalLink className="w-4 h-4 me-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {t("FAQ")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   to={localizePath("/career")}
                   className="text-gray-300 hover:text-primary transition-colors duration-200 flex items-center group"
                 >
