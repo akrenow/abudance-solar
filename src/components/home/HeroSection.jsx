@@ -6,8 +6,8 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, AnimatePresence } from "framer-motion";
-import image1 from "@/assets/images/image1.jpg";
-import image2 from "@/assets/images/image2.jpg";
+import image1 from "@/assets/images/hero-1.webp";
+import image2 from "@/assets/images/hero-2.webp";
 import vedio1 from "@/assets/videos/video_1.mp4";
 import { useLanguage } from "@/i18n/useLanguage";
 

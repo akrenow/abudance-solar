@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
-import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
-import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
-import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
-import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
+import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.webp";
+import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.webp";
+import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.webp";
+import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.webp";
+import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.webp";
 import { moduleFamilies } from "@/core/constants/products";
 import { useLanguage } from "@/i18n/useLanguage";
 import SectionHeading from "@/components/SectionHeading";

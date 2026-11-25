@@ -1,4 +1,4 @@
-import about from "../../assets/images/aboutus.png";
+import about from "../../assets/images/aboutus.webp";
 import { useLanguage } from "@/i18n/useLanguage";
 
 // eslint-disable-next-line react/prop-types

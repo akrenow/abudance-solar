@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo.webp";
 import { Mail, Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/useLanguage";
 import LanguageSwitcher from "./LanguageSwitcher";

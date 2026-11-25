@@ -8,7 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 // Light version of the logo (white "BRONZE") for the dark footer
-import logo from "../assets/images/logo-dark.png";
+import logo from "../assets/images/logo-dark.webp";
 import { useLanguage } from "@/i18n/useLanguage";
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="text-2xl font-bold">                
-                <img src={logo} alt={t("Bronze Solar")} width="2172" height="724" loading="lazy" decoding="async" className="h-12 w-auto" />
+                <img src={logo} alt={t("Bronze Solar")} width="600" height="200" loading="lazy" decoding="async" className="h-12 w-auto" />
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">

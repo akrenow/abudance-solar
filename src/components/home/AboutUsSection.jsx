@@ -4,10 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import image4 from "@/assets/images/image4.png";
+import image4 from "@/assets/images/image4.webp";
 // import image5 from "@/assets/images/image5.png";
-import image6 from "@/assets/images/image1.png";
-import yellowBanner from "@/assets/images/yellowBanner.png";
+import image6 from "@/assets/images/image1.webp";
+import yellowBanner from "@/assets/images/yellowBanner.webp";
 import { useLanguage } from "@/i18n/useLanguage";
 import SectionHeading from "@/components/SectionHeading";
 

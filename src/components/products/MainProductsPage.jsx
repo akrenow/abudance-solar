@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
-import SolarPanelImage from "../../assets/images/Solar.png";
-import SolarInverter from "../../assets/images/Inverter.png";
-import SolarEPC from "../../assets/images/epc.png";
-import bipv from "../../assets/images/BIPV.png";
+import SolarPanelImage from "../../assets/images/Solar.webp";
+import SolarInverter from "../../assets/images/Inverter.webp";
+import SolarEPC from "../../assets/images/epc.webp";
+import bipv from "../../assets/images/BIPV.webp";
 import SEOHead from "../SEOHead";
 import Breadcrumbs from "../Breadcrumbs";
 import { moduleEfficiencyRange } from "@/core/constants/products";
@@ -13,7 +13,7 @@ import { SITE_URL } from "@/i18n/routing";
 import { categoryListNode } from "@/seo/structuredData";
 import { useLanguage } from "@/i18n/useLanguage";
 
-// Product range. Images are 3:2 (1536 x 1024 px) and fill the card frame.
+// Product range. Images are 3:2 (1024 x 683 px WebP) and fill the card frame.
 // Products without a page yet are shown as "Coming Soon" and are not links.
 const PRODUCT_RANGE = [
   {
@@ -91,8 +91,8 @@ const MainProductsPage = () => {
                   <img
                     src={product.image}
                     alt={t(product.title)}
-                    width="1536"
-                    height="1024"
+                    width="1024"
+                    height="683"
                     loading={index < 2 ? "eager" : "lazy"}
                     className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
                       product.comingSoon ? "grayscale-[35%]" : "group-hover:scale-105"

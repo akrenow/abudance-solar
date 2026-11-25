@@ -4,15 +4,15 @@
 // ./products.js (the client's datasheet set).
 import { moduleFamilies, bipvDatasheets } from "./products";
 
-import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.png";
-import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.png";
-import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.png";
-import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.png";
-import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
-import SemiTransparentBIPVGlassPanels from "../../assets/Bipvsubproducts/Picture1.png";
-import ColoredBIPVPanel from "../../assets/Bipvsubproducts/Picture2.jpg";
-import SolarRoofTiles from "../../assets/Bipvsubproducts/Picture3.png";
-import CustomPrintedFrontGlassBIPVPanels from "../../assets/Bipvsubproducts/Picture3.jpg";
+import imgGlassGlassBifacial from "../../assets/pdf/1.Glass Glass Bifacial/image.webp";
+import imgGlassGlassAllBlack from "../../assets/pdf/2.Glass Glass, All black module/image.webp";
+import imgGlassTransparentBacksheet from "../../assets/pdf/3.Glass Transparent Backsheet/image.webp";
+import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/image.webp";
+import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.webp";
+import SemiTransparentBIPVGlassPanels from "../../assets/Bipvsubproducts/Picture1.webp";
+import ColoredBIPVPanel from "../../assets/Bipvsubproducts/Picture2.webp";
+import SolarRoofTiles from "../../assets/Bipvsubproducts/Picture3.webp";
+import CustomPrintedFrontGlassBIPVPanels from "../../assets/Bipvsubproducts/Picture3-printed.webp";
 
 export const PV_PRODUCTS_PATH = "/products/solar-panels";
 export const BIPV_PRODUCTS_PATH = "/products/bipv-products";

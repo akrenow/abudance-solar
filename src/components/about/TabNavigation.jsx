@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/useLanguage";
 import SectionHeading from "@/components/SectionHeading";
-import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
+import PowerPlant from "../../assets/images/poweplant.webp"; // Adjust the path as necessary
 const TabNavigation = () => {
   const navigate = useNavigate();
   const { t, localizePath } = useLanguage();
