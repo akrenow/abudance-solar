@@ -42,30 +42,18 @@ const Header = ({ page, enableGlassEffect = false }) => {
       {/* Fixed Header Container - Contains both announcement bar and main header */}
       <div className="fixed top-0 left-0 right-0 z-50">
         {/* Announcement Bar */}
-        <div className="bg-secondary text-primary text-xs sm:text-sm font-medium">
+        <div className="bg-secondary text-white text-xs sm:text-sm font-medium">
           <div className="container mx-auto px-4">
-            {/* Desktop view */}
-            <div className="hidden md:flex items-center justify-center space-x-6 py-3">
-              <div className="flex items-center space-x-2">
-                <Phone size={16} />
-                <span dir="ltr">+971 55 950 1737</span>
+            {/* One row on every screen size (wraps only on very narrow phones) */}
+            <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 py-3 sm:gap-x-6">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Phone aria-hidden="true" className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+                <span dir="ltr" className="whitespace-nowrap">+971 55 950 1737</span>
               </div>
-              <div className="h-4 w-[2px] bg-primary/80"></div>
-              <div className="flex items-center space-x-2">
-                <Mail size={16} />
-                <span>info@bronzesolar.com</span>
-              </div>
-            </div>
-
-            {/* Mobile view - stacked layout */}
-            <div className="md:hidden flex flex-col items-center space-y-1 py-2">
-              <div className="flex items-center space-x-2">
-                <Phone size={14} />
-                <span dir="ltr">+971 55 950 1737</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail size={14} />
-                <span>info@bronzesolar.com</span>
+              <div aria-hidden="true" className="h-4 w-[2px] bg-white/80"></div>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <Mail aria-hidden="true" className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+                <span className="whitespace-nowrap">info@bronzesolar.com</span>
               </div>
             </div>
           </div>
@@ -95,7 +83,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
               }`}
             >
               <Link to={localizePath("/")} className="flex items-center">
-                <img src={Logo} alt={t("Bronze Solar")} className="h-12 w-auto" />
+                <img src={Logo} alt={t("Bronze Solar")} className="h-10 w-auto md:h-12" />
               </Link>
             </div>
 
@@ -271,7 +259,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
       </div>
 
       {/* Spacer div to push content below the fixed header */}
-      <div className="h-[108px] md:h-[100px]"></div>
+      <div className="h-24 md:h-[100px]"></div>
     </>
   );
 };
