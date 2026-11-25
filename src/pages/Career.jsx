@@ -412,7 +412,7 @@ Best regards,
       {/* Contact HR Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-secondary to-secondary/90 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-secondary rounded-2xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
               <SectionHeading light title={t("Don't See the Right Position?")} className="mb-6" />
               <p className="text-xl mb-8 text-white/90">

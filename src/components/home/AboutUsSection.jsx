@@ -144,7 +144,7 @@ const AboutUsSection = () => {
                 <div className="pt-2 md:pt-4">
                   <Link
                     to={localizePath("/about")}
-                    className="group relative inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-secondary via-secondary to-primary text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl md:shadow-2xl hover:shadow-secondary/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                    className="group relative inline-flex items-center gap-2 md:gap-3 bg-secondary hover:bg-secondary/90 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg transition-colors duration-300"
                   >
                     <span>{t("Discover Our Story")}</span>
                     <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-2 rtl:group-hover:-translate-x-2">
@@ -162,8 +162,6 @@ const AboutUsSection = () => {
                         />
                       </svg>
                     </div>
-                    {/* Animated background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </Link>
                 </div>
               </div>

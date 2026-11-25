@@ -50,7 +50,7 @@ const NewsSection = ({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     {/* Category Badge */}
-                    <div className="absolute top-4 start-4 px-3 py-1 bg-gradient-to-r from-primary to-secondary text-white text-xs font-semibold rounded-full shadow-lg">
+                    <div className="absolute top-4 start-4 px-3 py-1 bg-secondary text-white text-xs font-semibold rounded-full">
                       {t(news.category || "Industry News")}
                     </div>
                   </div>

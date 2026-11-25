@@ -31,7 +31,6 @@ const ProductShowcase = () => {
       description:
         "High-efficiency N-type TOPCon technology with 30-year linear performance warranty",
       color: "#F3B700",
-      gradient: "from-primary to-secondary",
       lightGradient: "from-primary/10 to-secondary/10",
       products: [
         {
@@ -124,14 +123,12 @@ const ProductShowcase = () => {
     HJT: {
       description: "Coming soon - Next-generation Heterojunction Technology",
       color: "#4B2354",
-      gradient: "from-secondary to-secondary/80",
       lightGradient: "from-secondary/10 to-secondary/5",
       comingSoon: true,
     },
     IBC: {
       description: "Coming soon - IBC technology with enhanced performance",
       color: "#F3B700",
-      gradient: "from-primary to-primary/80",
       lightGradient: "from-primary/10 to-primary/5",
       comingSoon: true,
     },
@@ -229,8 +226,8 @@ const ProductShowcase = () => {
                   key={series}
                   onClick={() => handleSeriesChange(series)}
                   className={`relative px-3 sm:px-4 py-2 rounded-lg font-semibold text-xs uppercase tracking-wider transition-all duration-500 ${activeSeries === series
-                      ? `bg-gradient-to-r ${data.gradient} text-white`
-                      : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
+                      ? "bg-secondary text-white"
+                      : "text-gray-600 hover:text-primary hover:bg-gray-50"
                     }`}
                 >
                   <span className="relative z-10">{series}</span>
@@ -329,7 +326,7 @@ const ProductShowcase = () => {
               {/* Right: Product Information */}
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <div className="inline-block px-2 sm:px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-secondary rounded-full text-xs font-semibold mb-2 sm:mb-3 border border-primary/30">
+                  <div className="inline-block px-2 sm:px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-semibold mb-2 sm:mb-3">
                     {t(currentProduct?.type)}
                   </div>
                   <h2 className="text-lg sm:text-xl md:text-2xl font-black text-gray-800 mb-2 leading-tight">
@@ -352,7 +349,7 @@ const ProductShowcase = () => {
                         onMouseEnter={() => setHoveredVariant(index)}
                         onMouseLeave={() => setHoveredVariant(null)}
                         className={`p-2 sm:p-3 rounded-lg border-2 transition-all duration-300 cursor-pointer ${hoveredVariant === index
-                            ? "border-primary bg-gradient-to-r from-primary/10 to-secondary/10 transform scale-105"
+                            ? "border-primary bg-primary/5"
                             : "border-gray-200 bg-white hover:border-gray-300"
                           }`}
                       >
@@ -409,7 +406,7 @@ const ProductShowcase = () => {
         <div className="text-center mt-8 sm:mt-10">
           <button
             onClick={() => navigate(localizePath("/products"))}
-            className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-secondary to-secondary/90 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-all duration-500 transform hover:scale-105 hover:from-secondary/90 hover:to-secondary"
+            className="group relative px-6 sm:px-8 py-2 sm:py-3 bg-secondary hover:bg-secondary/90 text-white font-black text-xs sm:text-sm md:text-base rounded-xl transition-colors duration-300"
           >
             <span className="relative z-10 flex items-center">
               {t("view all products")}
@@ -427,7 +424,6 @@ const ProductShowcase = () => {
                 />
               </svg>
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </div>
