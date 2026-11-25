@@ -111,8 +111,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 data-readdy="true"
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("Home")}
@@ -121,8 +121,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 to={localizePath("/about")}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("About Us")}
@@ -131,8 +131,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 to={localizePath("/products")}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("Products")}
@@ -141,8 +141,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 to={localizePath("/downloads")}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("Downloads")}
@@ -151,8 +151,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 to={localizePath("/contact")}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("Contact")}
@@ -161,8 +161,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 to={localizePath("/career")}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
               >
                 {t("Career")}
@@ -181,15 +181,15 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 align="end"
                 buttonClassName={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary border-primary/30 hover:border-secondary"
-                    : "text-white hover:text-secondary/90 border-white/40"
+                    ? "text-secondary border-secondary/50 hover:text-primary hover:border-primary"
+                    : "text-white border-white/40 hover:text-primary hover:border-primary"
                 } border rounded-full px-3 py-1`}
               />
               <button
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
               >
                 <i className="fas fa-search"></i>
@@ -202,8 +202,8 @@ const Header = ({ page, enableGlassEffect = false }) => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`${
                   isScrolled || !shouldShowGlass
-                    ? "text-primary hover:text-secondary"
-                    : "text-white hover:text-secondary/90"
+                    ? "text-secondary hover:text-primary"
+                    : "text-white hover:text-primary"
                 } transition-colors duration-200 cursor-pointer whitespace-nowrap !rounded-button`}
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -222,46 +222,46 @@ const Header = ({ page, enableGlassEffect = false }) => {
                   <Link
                     to={localizePath("/")}
                     data-readdy="true"
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("Home")}
                   </Link>
                   <Link
                     to={localizePath("/about")}
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("About Us")}
                   </Link>
                   <Link
                     to={localizePath("/products")}
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("Products")}
                   </Link>
                   <Link
                     to={localizePath("/downloads")}
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("Downloads")}
                   </Link>
                   <Link
                     to={localizePath("/contact")}
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("Contact")}
                   </Link>
                   <Link
                     to={localizePath("/career")}
-                    className="text-primary hover:text-secondary font-medium transition-colors duration-200 py-2"
+                    className="text-secondary hover:text-primary font-medium transition-colors duration-200 py-2"
                   >
                     {t("Career")}
                   </Link>
                   <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                     <LanguageSwitcher
                       align="start"
-                      buttonClassName="text-primary hover:text-secondary border border-primary/30 rounded-full px-3 py-1"
+                      buttonClassName="text-secondary border border-secondary/50 hover:text-primary hover:border-primary rounded-full px-3 py-1"
                     />
-                    <button className="text-primary hover:text-secondary transition-colors duration-200">
+                    <button className="text-secondary hover:text-primary transition-colors duration-200">
                       <i className="fas fa-search"></i>
                     </button>
                   </div>

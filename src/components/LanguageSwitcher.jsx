@@ -70,7 +70,7 @@ const LanguageSwitcher = ({ buttonClassName = "", align = "end" }) => {
               aria-current={code === lang ? "true" : undefined}
               onClick={() => setOpen(false)}
               className={`flex items-center justify-between gap-4 px-4 py-2 text-sm transition-colors duration-150 hover:bg-gray-50 ${
-                code === lang ? "font-semibold text-primary" : "text-gray-700 hover:text-primary"
+                code === lang ? "font-semibold text-secondary hover:text-primary" : "text-gray-700 hover:text-primary"
               }`}
             >
               <span className="flex items-center gap-2.5">
