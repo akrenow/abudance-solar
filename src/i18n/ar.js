@@ -882,6 +882,13 @@ const ar = {
 
   // ---------- Shared ----------
   "Scroll to top": "العودة إلى الأعلى",
+
+  // ---------- Summarize with AI (floating buttons; assistant names stay in English) ----------
+  "Summarize this page with AI": "لخّص هذه الصفحة بالذكاء الاصطناعي",
+  "Summarize with {name}": "لخّص باستخدام {name}",
+  "Explain Bronze Solar and its products, and summarize this page: {url} — for company and product details, read {llms} and {llmsFull}":
+    "اشرح شركة برونز سولار ومنتجاتها، ولخّص هذه الصفحة: {url} — للاطلاع على تفاصيل الشركة والمنتجات، اقرأ {llms} و {llmsFull}",
+  "(opens in a new tab)": "(يُفتح في علامة تبويب جديدة)",
 };
 
 export default ar;

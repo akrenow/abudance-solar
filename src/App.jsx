@@ -13,6 +13,7 @@ import Career from "./pages/Career";
 import PageNotFound from "./components/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import AiSummarize from "./components/AiSummarize";
 import Bipvpage from "./components/products/Bipvsubproducts";
 import ProductDetailPage from "./components/products/ProductDetailPage";
 import Faq from "./pages/Faq";
@@ -45,6 +46,7 @@ export const AppRoutes = () => (
     <Analytics />
     <ScrollToTop />
     <ScrollToTopButton />
+    <AiSummarize />
     <Routes>
       <Route path="/ar" element={<LocaleLayout lang="ar" />}>
         {pageRoutes}
