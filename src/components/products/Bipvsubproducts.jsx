@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { X, Download, Info, Zap, Sun, Eye } from "lucide-react";
-import PropTypes from "prop-types";
+import { X, Download, Zap, Sun, Eye } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
 import SEOHead from "../SEOHead";
 import { SITE_URL } from "@/i18n/routing";
 import { categoryListNode } from "@/seo/structuredData";
-import PageHeading from "../PageHeading";
+import Breadcrumbs from "../Breadcrumbs";
+import ProductCard, { KeyFigures } from "./ProductCard";
 import { useLanguage } from "@/i18n/useLanguage";
 
 import { BIPV_PRODUCTS, productPath } from "@/core/constants/productCatalog";
@@ -15,6 +15,9 @@ const categories = {
   BIPV: BIPV_PRODUCTS,
   
 };
+
+// Highest rated power among the product's models, e.g. "520W"
+const maxPowerOf = (product) => `${Math.max(...product.models.map((model) => parseFloat(model.wattage)))}W`;
 
 const Bipvpage = () => {
   const { t, localizePath } = useLanguage();
@@ -41,48 +44,6 @@ const Bipvpage = () => {
     document.body.removeChild(link);
   };
 
-  const PerformanceChart = ({ efficiency, wattage }) => (
-    <div className="relative h-20 sm:h-24 w-full overflow-auto rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="absolute inset-0 px-2">
-        <div className="flex justify-between items-end h-full">
-          <div className="flex-1 space-y-1 sm:space-y-2">
-            <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              {t("Efficiency")}
-            </div>
-            <div
-              className="h-6 sm:h-8 bg-gradient-to-t from-primary to-primary/90 rounded-lg relative overflow-hidden transition-all duration-1000"
-              style={{ width: `${parseFloat(efficiency) * 4}%` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
-            </div>
-            <div className="text-sm sm:text-base font-bold text-gray-800">
-              {efficiency}
-            </div>
-          </div>
-          <div className="flex-1 space-y-1 sm:space-y-2 ms-4">
-            <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
-              {t("MAX POWER")}
-            </div>
-            <div
-              className="h-6 sm:h-8 bg-gradient-to-t from-slate-600 to-slate-500 rounded-lg relative overflow-hidden transition-all duration-1000"
-              style={{ width: `${parseInt(wattage) / 10}%` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-30"></div>
-            </div>
-            <div className="text-sm sm:text-base font-bold text-gray-800">
-              {wattage}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  PerformanceChart.propTypes = {
-    efficiency: PropTypes.string.isRequired,
-    wattage: PropTypes.string.isRequired,
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <SEOHead
@@ -100,14 +61,12 @@ const Bipvpage = () => {
       <Header page="products" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 relative z-20 ">
-        <PageHeading
-          title={t("Building Integrated Photo-voltaic")}
-          intro={t("Bronze Solar BIPV products: semi-transparent glass panels, coloured front-glass panels, solar roof tiles and custom printed front-glass panels, customizable in size and colour. Specifications and datasheets.")}
-        />
-        {/* Technology Tabs */}
-        <div className="flex flex-wrap justify-center mb-12 gap-4">
-          {/* {Object.keys(categories).map((cat) => (
+      <div className="container mx-auto px-4 pt-10 pb-16 relative z-20">
+        <Breadcrumbs items={[["Home", "/"], ["Products", "/products"], ["Building Integrated Photo-voltaic", "/products/bipv-products"]]} />
+        {/* Page title for search engines and screen readers; the breadcrumb is the visible header */}
+        <h1 className="sr-only">{t("Building Integrated Photo-voltaic")}</h1>
+        {/* Technology Tabs (single category for now)
+          {Object.keys(categories).map((cat) => (
             <button
               key={cat}
               className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 ${
@@ -120,78 +79,23 @@ const Bipvpage = () => {
               {cat}
             </button>
           ))} */}
-        </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories[activeTab].map((product, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-            >
-              {/* Product Image */}
-              <div className="relative h-64 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={t(product.title)}
-                  className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
-                />
-                {/* Category Badge */}
-                {/* <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  {product.category}
-                </div> */}
-              </div>
-
-              {/* Product Content */}
-              <div className="p-6">
-                {/* Type Badge */}
-                {/* <div className="inline-block px-3 py-1 bg-gradient-to-r from-primary/10 to-primary/20 text-primary rounded-full text-xs font-semibold mb-3 border border-primary/30">
-                  {product.type}
-                </div> */}
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-slate-700 transition-colors duration-300">
-                  {t(product.title)}
-                </h3>
-
-                {/* Performance Chart */}
-                <div className="mb-4">
-                  <PerformanceChart
-                    efficiency={product.efficiency}
-                    wattage={product.models[0].wattage}
-                  />
-                </div>
-
-                {/* Quick Features */}
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center text-sm text-gray-700">
-                    <Zap size={16} className="text-primary me-2" />
-                    <span>{t("Fully customizable upon request")}</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-700">
-                    <Sun size={16} className="text-primary me-2" />
-                    <span>{t("{value} Power Output", { value: t(product.wattage) })}</span>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => openProductPopup(product)}
-                    className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    <Info size={16} />
-                    {t("Details")}
-                  </button>
-                  <Link
-                    to={localizePath(productPath(product))}
-                    className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
-                  >
-                    {t("View specifications")}
-                  </Link>
-                </div>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {categories[activeTab].map((product) => (
+            <ProductCard
+              key={product.slug}
+              image={product.image}
+              title={t(product.title)}
+              efficiency={product.efficiency}
+              maxPower={maxPowerOf(product)}
+              highlights={[
+                { icon: Zap, text: t("Fully customizable upon request") },
+                { icon: Sun, text: t("{value} Power Output", { value: t(product.wattage) }) },
+              ]}
+              href={localizePath(productPath(product))}
+              onDetails={() => openProductPopup(product)}
+            />
           ))}
 
           {/* Coming Soon Message */}
@@ -223,7 +127,7 @@ const Bipvpage = () => {
           </p>
           <Link
             to={localizePath("/contact")}
-            className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl"
+            className="inline-flex items-center bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-2xl font-semibold transition-colors duration-300"
           >
             {t("Contact Technical Team")}
           </Link>
@@ -266,12 +170,7 @@ const Bipvpage = () => {
                       className="w-full h-64 object-contain"
                     />
                   </div>
-                  <PerformanceChart
-                    efficiency={
-                      selectedProduct.efficiency
-                    }
-                    wattage={selectedProduct.models[0].wattage}
-                  />
+                  <KeyFigures efficiency={selectedProduct.efficiency} maxPower={maxPowerOf(selectedProduct)} />
                 </div>
 
                 {/* Right Column - Details */}
