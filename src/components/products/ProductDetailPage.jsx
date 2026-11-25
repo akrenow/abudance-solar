@@ -1,10 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
-import { ChevronRight, Download, Eye } from "lucide-react";
+import { Download, Eye } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
 import SEOHead from "../SEOHead";
 import PageNotFound from "../PageNotFound";
+import Breadcrumbs from "../Breadcrumbs";
 import { useLanguage } from "@/i18n/useLanguage";
 import { SITE_URL } from "@/i18n/routing";
 import { formatDimensions, formatRange } from "@/core/constants/products";
@@ -64,25 +65,7 @@ const ProductDetailPage = ({ kind }) => {
       <Header page="products" />
 
       <main className="container mx-auto px-4 py-10">
-        {/* Breadcrumb */}
-        <nav aria-label={t("Breadcrumb")} className="mb-6 text-sm text-gray-500">
-          <ol className="flex flex-wrap items-center gap-1">
-            {breadcrumbs.map(([label, href], index) => (
-              <li key={href} className="flex items-center gap-1">
-                {index > 0 && <ChevronRight size={14} aria-hidden="true" className="rtl:-scale-x-100" />}
-                {index < breadcrumbs.length - 1 ? (
-                  <Link to={localizePath(href)} className="hover:text-primary transition-colors">
-                    {t(label)}
-                  </Link>
-                ) : (
-                  <span aria-current="page" className="text-gray-800 font-medium">
-                    {t(label)}
-                  </span>
-                )}
-              </li>
-            ))}
-          </ol>
-        </nav>
+        <Breadcrumbs items={breadcrumbs} />
 
         {/* Overview */}
         <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10 grid md:grid-cols-2 gap-10 mb-10">

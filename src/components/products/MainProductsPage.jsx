@@ -1,222 +1,175 @@
 import { Link } from "react-router-dom";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import Header from "../Header";
 import Footer from "../Footer";
 import SolarPanelImage from "../../assets/images/Solar.png";
 import SolarInverter from "../../assets/images/Inverter.png";
 import SolarEPC from "../../assets/images/epc.png";
-import bipv from "../../assets/images/BIPV.png"
+import bipv from "../../assets/images/BIPV.png";
 import SEOHead from "../SEOHead";
-import PageHeading from "../PageHeading";
+import Breadcrumbs from "../Breadcrumbs";
 import { moduleEfficiencyRange } from "@/core/constants/products";
 import { SITE_URL } from "@/i18n/routing";
 import { categoryListNode } from "@/seo/structuredData";
 import { useLanguage } from "@/i18n/useLanguage";
-const mainProducts = [
+
+// Product range. Images are 3:2 (1536 x 1024 px) and fill the card frame.
+// Products without a page yet are shown as "Coming Soon" and are not links.
+const PRODUCT_RANGE = [
   {
     title: "High-Efficiency PV Modules",
     image: SolarPanelImage,
     path: "/products/solar-panels",
+    description:
+      "High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty",
+    features: [["{range}% Efficiency", { range: moduleEfficiencyRange }], ["Bifacial Technology"], ["Monofacial technology"]],
   },
-   {
+  {
     title: "Building Integrated Photo-voltaic",
     image: bipv,
     path: "/products/bipv-products",
+    description:
+      "Innovative BIPV systems that integrate solar photovoltaic technology into building structures, enabling efficient power generation while maintaining architectural aesthetics",
+    features: [
+      ["Fully Customizable"],
+      ["Ideal for windows, skylights, façades, cladding, roof tiles, and display/signboard BIPV applications."],
+    ],
   },
   {
     title: "Solar Inverters",
     image: SolarInverter,
-    path: "/products/solar-inverters",
+    comingSoon: true,
+    description: "Advanced string inverters with maximum power point tracking and smart monitoring capabilities",
+    features: [["99.5% Peak Efficiency"], ["Smart Monitoring"]],
   },
   {
     title: "EPC Solution",
     image: SolarEPC,
-    path: "/products/epc-solution",
+    comingSoon: true,
+    description: "Complete Engineering, Procurement & Construction services for large-scale solar installations",
+    features: [["Turnkey Solutions"], ["Project Management"]],
   },
+];
+
+const BREADCRUMBS = [
+  ["Home", "/"],
+  ["Products", "/products"],
 ];
 
 const MainProductsPage = () => {
   const { t, localizePath } = useLanguage();
+  const available = PRODUCT_RANGE.filter((product) => !product.comingSoon);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-10">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <SEOHead
         title="Products | Bronze Solar - Solar Panels, Inverters & BIPV Solutions"
         description="Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions."
         keywords="solar products, PV modules, solar inverters, BIPV products, solar solutions UAE, photovoltaic panels"
         ogImage="https://bronzesolar.com/Croppedlogo.png"
         pageType="CollectionPage"
-        breadcrumbs={[["Home", "/"], ["Products", "/products"]]}
+        breadcrumbs={BREADCRUMBS}
         jsonLd={[
           categoryListNode({
             url: SITE_URL + localizePath("/products"),
-            items: [
-              [t("High-Efficiency PV Modules"), SITE_URL + localizePath("/products/solar-panels")],
-              [t("Building Integrated Photo-voltaic"), SITE_URL + localizePath("/products/bipv-products")],
-            ],
+            items: available.map((product) => [t(product.title), SITE_URL + localizePath(product.path)]),
           }),
         ]}
       />
-      {/* Header - Using the main site header */}
       <Header page="products" />
 
-      {/* Product Cards */}
-      <div className="container mx-auto px-4 py-12 relative">
-        <PageHeading
-          title={t("Products")}
-          intro={t("Explore Bronze Solar's product range: High-efficiency PV modules (N-type TOPCon, HJT), Building Integrated Photovoltaic (BIPV), Solar Inverters, and EPC solutions.")}
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {mainProducts.map((product, index) => (
-            <Link
-              key={index}
-              to={localizePath(product.path)}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-400 transform hover:-translate-y-1 hover:scale-102"
-            >
-              {/* Product Image Container */}
-              <div className="relative h-56 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent z-10"></div>
-                <img
-                  src={product.image}
-                  alt={t(product.title)}
-                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Floating badge */}
-                <div className="absolute top-3 end-3 bg-gradient-to-r from-primary to-primary/90 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-md">
-                  {t("Premium")}
-                </div>
-              </div>
+      <main className="container mx-auto px-4 pt-10 pb-16">
+        <Breadcrumbs items={BREADCRUMBS} />
+        {/* Page title for search engines and screen readers; the breadcrumb is the visible header */}
+        <h1 className="sr-only">{t("Products")}</h1>
 
-              {/* Product Info */}
-              <div className="p-5">
-                <h2 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-secondary transition-colors duration-300">
-                  {t(product.title)}
-                </h2>
-
-                {/* Product descriptions */}
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                  {index === 0 &&
-                    t("High-efficiency N-Type TOPCon solar modules with premium glass-glass design and 30-year warranty")}
-                    {index === 1 &&
-                    t("Innovative BIPV systems that integrate solar photovoltaic technology into building structures, enabling efficient power generation while maintaining architectural aesthetics")}
-                  {index === 2 &&
-                    t("Advanced string inverters with maximum power point tracking and smart monitoring capabilities")}
-                  {index === 3 &&
-                    t("Complete Engineering, Procurement & Construction services for large-scale solar installations")}
-                </p>
-
-                {/* Features list */}
-                <div className="space-y-1.5 mb-4">
-                  {index === 0 && (
-                    <>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
-                        <span>{t("{range}% Efficiency", { range: moduleEfficiencyRange })}</span>
-                      </div>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
-                        <span>{t("Bifacial Technology")}</span>
-                      </div>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full me-2"></div>
-                        <span>{t("Monofacial technology")}</span>
-                      </div>
-                    </>
-                  )}
-                  {index === 1 && (
-                    <>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full me-2"></div>
-                        <span>{t("Fully Customizable")}</span>
-                      </div>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full me-2"></div>
-                        <span>{t("Ideal for windows, skylights, façades, cladding, roof tiles, and display/signboard BIPV applications.")}</span>
-                      </div>
-                    </>
-                  )}
-                   {index === 2 && (
-                    <>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full me-2"></div>
-                        <span>{t("99.5% Peak Efficiency")}</span>
-                      </div>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full me-2"></div>
-                        <span>{t("Smart Monitoring")}</span>
-                      </div>
-                    </>
-                  )}
-                  {index === 3 && (
-                    <>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full me-2"></div>
-                        <span>{t("Turnkey Solutions")}</span>
-                      </div>
-                      <div className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full me-2"></div>
-                        <span>{t("Project Management")}</span>
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                {/* Call to action */}
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-primary group-hover:text-primary/80 transition-colors duration-300">
-                    {t("Explore Products")}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {PRODUCT_RANGE.map((product, index) => {
+            const content = (
+              <>
+                <div className="relative aspect-[3/2] shrink-0 overflow-hidden bg-gray-100">
+                  <img
+                    src={product.image}
+                    alt={t(product.title)}
+                    width="1536"
+                    height="1024"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
+                      product.comingSoon ? "grayscale-[35%]" : "group-hover:scale-105"
+                    }`}
+                  />
+                  <span
+                    className={`absolute top-3 end-3 rounded-full px-2 py-1 text-xs font-semibold shadow-md ${
+                      product.comingSoon ? "bg-white/90 text-gray-700" : "bg-primary text-white"
+                    }`}
+                  >
+                    {product.comingSoon ? t("Coming Soon") : t("Premium")}
                   </span>
-                  <div className="w-7 h-7 bg-gradient-to-r from-primary to-primary/90 rounded-full flex items-center justify-center group-hover:from-primary/90 group-hover:to-primary/80 transition-all duration-300 group-hover:scale-105">
-                    <svg
-                      className="w-3 h-3 text-white transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 rtl:-scale-x-100 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
                 </div>
-              </div>
 
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400 rounded-2xl"></div>
-            </Link>
-          ))}
+                <div className="flex flex-1 flex-col p-4">
+                  <h2
+                    className={`mb-2 text-base font-bold transition-colors ${
+                      product.comingSoon ? "text-gray-700" : "text-gray-800 group-hover:text-secondary"
+                    }`}
+                  >
+                    {t(product.title)}
+                  </h2>
+                  <p className="mb-3 text-sm leading-relaxed text-gray-600">{t(product.description)}</p>
+                  <ul className="mb-4 space-y-1.5">
+                    {product.features.map(([text, vars]) => (
+                      <li key={text} className="flex items-start gap-2 text-xs text-gray-700">
+                        <span aria-hidden="true" className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {t(text, vars)}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {!product.comingSoon && (
+                    <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-3">
+                      <span className="text-xs font-semibold text-secondary">{t("Explore Products")}</span>
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-white transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                        <ArrowRight size={14} aria-hidden="true" className="rtl:-scale-x-100" />
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </>
+            );
+
+            const cardClass = "group flex flex-col overflow-hidden rounded-xl bg-white shadow-md";
+            return product.comingSoon ? (
+              <div key={product.title} className={cardClass}>
+                {content}
+              </div>
+            ) : (
+              <Link
+                key={product.title}
+                to={localizePath(product.path)}
+                className={`${cardClass} transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+              >
+                {content}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* Bottom CTA Section */}
-        <div className="text-center mt-16">
-          <h3 className="text-xl font-bold text-gray-800 mb-3">
-            {t("Need Help Choosing the Right Solution?")}
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto text-sm">
+        {/* Help choosing */}
+        <section className="mt-8 rounded-xl bg-white p-6 text-center shadow-md">
+          <h2 className="mb-2 text-lg font-bold text-gray-800">{t("Need Help Choosing the Right Solution?")}</h2>
+          <p className="mx-auto mb-4 max-w-2xl text-sm text-gray-600">
             {t("Our expert team is here to help you find the perfect solar solution for your specific needs and requirements.")}
           </p>
           <Link
             to={localizePath("/contact")}
-            className="inline-flex items-center bg-gradient-to-r from-secondary to-secondary/90 hover:from-secondary/90 hover:to-secondary/80 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
+            className="inline-flex items-center gap-2 rounded-xl bg-secondary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-secondary/90"
           >
-            <svg
-              className="w-5 h-5 me-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              />
-            </svg>
+            <MessageCircle size={16} aria-hidden="true" />
             {t("Contact Our Experts")}
           </Link>
-        </div>
-      </div>
+        </section>
+      </main>
+
       <Footer />
     </div>
   );
