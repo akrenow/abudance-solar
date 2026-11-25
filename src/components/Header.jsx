@@ -4,6 +4,7 @@ import Logo from "../assets/images/logo.png";
 import { Mail, Phone, Menu, X } from "lucide-react";
 import { useLanguage } from "@/i18n/useLanguage";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ProductsMenu from "./ProductsMenu";
 
 const Header = ({ page, enableGlassEffect = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +73,7 @@ const Header = ({ page, enableGlassEffect = false }) => {
 
         {/* Main Header */}
         <header
-          className={`transition-all duration-300 ${
+          className={`relative transition-all duration-300 ${
             isScrolled
               ? "bg-white shadow-sm"
               : shouldShowGlass
@@ -127,16 +128,13 @@ const Header = ({ page, enableGlassEffect = false }) => {
               >
                 {t("About Us")}
               </Link>
-              <Link
-                to={localizePath("/products")}
-                className={`${
+              <ProductsMenu
+                linkClassName={`${
                   isScrolled || !shouldShowGlass
                     ? "text-secondary hover:text-primary"
                     : "text-white hover:text-primary"
                 } font-medium transition-colors duration-200`}
-              >
-                {t("Products")}
-              </Link>
+              />
               <Link
                 to={localizePath("/downloads")}
                 className={`${

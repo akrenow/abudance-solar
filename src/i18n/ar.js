@@ -883,6 +883,15 @@ const ar = {
   // ---------- Shared ----------
   "Scroll to top": "العودة إلى الأعلى",
 
+  // ---------- Products menu (header) ----------
+  "Show products menu": "عرض قائمة المنتجات",
+  "Featured": "منتجات مميزة",
+  "View all products": "عرض جميع المنتجات",
+  "N-type TOPCon modules, {min}–{max} Wp, up to {efficiency}% efficiency": "وحدات N-type TOPCon بقدرة {min}–{max} واط ذروة، وكفاءة تصل إلى {efficiency}%",
+  "Semi-transparent glass, coloured panels, solar roof tiles and custom printed glass": "زجاج شبه شفاف وألواح ملوّنة وبلاط أسطح شمسي وزجاج مطبوع حسب الطلب",
+  "String inverters with smart monitoring": "محوّلات سلسلية مع مراقبة ذكية",
+  "Engineering, procurement and construction for solar projects": "الهندسة والتوريد والإنشاء لمشاريع الطاقة الشمسية",
+
   // ---------- Summarize with AI (floating buttons; assistant names stay in English) ----------
   "Summarize this page with AI": "لخّص هذه الصفحة بالذكاء الاصطناعي",
   "Summarize with {name}": "لخّص باستخدام {name}",
