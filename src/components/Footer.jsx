@@ -4,13 +4,11 @@ import {
   Mail,
   Send,
   ExternalLink,
-  LinkedinIcon,
-  TwitterIcon,
-  FacebookIcon,
-  InstagramIcon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+// Light version of the logo (white "BRONZE") for the dark footer
+import logo from "../assets/images/logo-dark.png";
 import { useLanguage } from "@/i18n/useLanguage";
 
 const Footer = () => {
@@ -18,7 +16,6 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white pt-20 pb-8 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(219,132,10,0.1)_0%,transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(27,42,79,0.1)_0%,transparent_50%)]"></div>
 
       <div className="container mx-auto container-padding relative z-10">
@@ -27,7 +24,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <div className="text-2xl font-bold">                
-                <img src={logo} alt={t("Bronze Solar")} className="h-12 w-auto" />
+                <img src={logo} alt={t("Bronze Solar")} width="2172" height="724" loading="lazy" decoding="async" className="h-12 w-auto" />
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed text-lg">
@@ -38,35 +35,39 @@ const Footer = () => {
             <div className="flex space-x-6">
               <a
                 href="https://www.linkedin.com/company/abundance-solar-panels-industries-llc?originalSubdomain=ae"
+                aria-label={`LinkedIn ${t("(opens in a new tab)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300"
               >
-                <LinkedinIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                <FaLinkedinIn aria-hidden="true" className="w-5 h-5 text-white group-hover:text-secondary transition-colors" />
               </a>
               <a
                 href="https://x.com/webronzesolar"
+                aria-label={`X ${t("(opens in a new tab)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300"
               >
-                <TwitterIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                <FaXTwitter aria-hidden="true" className="w-5 h-5 text-white group-hover:text-secondary transition-colors" />
               </a>
               <a
                 href="https://www.facebook.com/bronzesolar"
+                aria-label={`Facebook ${t("(opens in a new tab)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300"
               >
-                <FacebookIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                <FaFacebookF aria-hidden="true" className="w-5 h-5 text-white group-hover:text-secondary transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/bronze.solar_?igsh=cHRyYmF3OTM1d2pn"
+                aria-label={`Instagram ${t("(opens in a new tab)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center transition-colors duration-300"
               >
-                <InstagramIcon className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                <FaInstagram aria-hidden="true" className="w-5 h-5 text-white group-hover:text-secondary transition-colors" />
               </a>
             </div>
           </div>
@@ -150,9 +151,9 @@ const Footer = () => {
                 <a
                   href="https://maps.app.goo.gl/xpKYsctNtk8WZ3Fu7"
                   target="_blank"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-colors duration-300"
                 >
-                  <MapPin className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                  <MapPin className="w-6 h-6 text-white group-hover:text-secondary transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed w-full">
                   <div className="font-semibold text-white mb-1">
@@ -166,9 +167,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <a
                   href="tel:+971559501737"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-colors duration-300"
                 >
-                  <Phone className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                  <Phone className="w-6 h-6 text-white group-hover:text-secondary transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   <div className="font-semibold text-white mb-1">{t("Call Us")}</div>
@@ -178,9 +179,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <a
                   href="mailto:info@bronzesolar.com"
-                  className="group w-12 h-12 bg-white/10 hover:bg-gradient-to-r hover:from-primary hover:to-secondary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className="group w-12 h-12 bg-white/10 hover:bg-primary rounded-xl flex items-center justify-center me-4 flex-shrink-0 transition-colors duration-300"
                 >
-                  <Mail className="w-6 h-6 text-white group-hover:text-white transition-colors" />
+                  <Mail className="w-6 h-6 text-white group-hover:text-secondary transition-colors" />
                 </a>
                 <div className="text-gray-300 group-hover:text-white transition-colors duration-300">
                   <div className="font-semibold text-white mb-1">{t("Email Us")}</div>
