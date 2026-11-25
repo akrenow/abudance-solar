@@ -1,5 +1,6 @@
 import { Target, Users, Leaf, Award, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const OurMission = () => {
   const { t } = useLanguage();
@@ -12,15 +13,7 @@ const OurMission = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-              {t("Our Mission")}
-            </h2>
-          </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto rounded-full mb-8"></div>
-        </div>
+        <SectionHeading title={t("Our Mission")} />
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">

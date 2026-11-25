@@ -9,6 +9,7 @@ import image4 from "@/assets/images/image4.png";
 import image6 from "@/assets/images/image1.png";
 import yellowBanner from "@/assets/images/yellowBanner.png";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const aboutImages = [
   image4,
@@ -37,15 +38,7 @@ const AboutUsSection = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Modern Heading Design */}
-        <div className="text-center mb-8 md:mb-16">
-          <div className="relative inline-block">
-            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white relative z-10">
-              {t("About Us")}
-            </h2>
-          </div>
-          <div className="w-16 md:w-24 h-1 bg-white mx-auto rounded-full mt-4"></div>
-        </div>
+        <SectionHeading light title={t("About Us")} className="mb-8 md:mb-16" />
 
         {/* Redesigned Main Content with Split Layout */}
         <div className="max-w-7xl mx-auto">

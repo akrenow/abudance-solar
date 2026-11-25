@@ -121,6 +121,7 @@
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const VideoSection = () => {
   const { t } = useLanguage();
@@ -149,22 +150,19 @@ const VideoSection = () => {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white py-12 lg:py-16">
       <div className="container mx-auto px-4">
-        {/* Heading Section */}
-        <div className="text-center mb-8 lg:mb-12 relative">
-          <div className="inline-block">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+        <SectionHeading
+          title={
+            <>
               {t("Powering the Future with")}{" "}
-              <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600">
+              {/* Kept on one line: "Solar Energy" always wraps as a pair */}
+              <span className="inline-block whitespace-nowrap font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600">
                 {t("Solar Energy")}
               </span>
-            </h2>
-
-            <div className="h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-48 md:w-64 mx-auto" />
-          </div>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6 leading-relaxed">
-            {t("High-efficiency solar panels engineered for sustainable living by Bronze Solar")}
-          </p>
-        </div>
+            </>
+          }
+          subtitle={t("High-efficiency solar panels engineered for sustainable living by Bronze Solar")}
+          className="mb-8 lg:mb-12"
+        />
       </div>
 
       {/* Video Section - Full Width with No Gaps */}

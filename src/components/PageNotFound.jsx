@@ -20,7 +20,7 @@ const PageNotFound = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* 404 Animation */}
           <div className="relative mb-8">
-            <div className="text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary opacity-20 select-none">
+            <div className="text-8xl md:text-9xl font-black text-secondary opacity-20 select-none">
               404
             </div>
           </div>

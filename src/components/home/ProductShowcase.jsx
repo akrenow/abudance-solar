@@ -7,6 +7,7 @@ import imgGlassWhiteBacksheet from "../../assets/pdf/4.Glass White Backsheet/ima
 import imgGlassBlackBacksheet from "../../assets/pdf/5.Glass Black back sheet – all black Module/image.png";
 import { moduleFamilies } from "@/core/constants/products";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 // Showcase cards use "min-max" units, e.g. "595-615W" and "23.03-23.81%"
 const toVariants = ({ models }) =>
@@ -214,18 +215,11 @@ const ProductShowcase = () => {
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Compact Header */}
-        <div className="text-center mb-8 lg:mb-10 relative">
-          <div className="inline-block">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-6 leading-tight">
-              {t("Solar Innovation")}
-            </h2>
-            <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-32 sm:w-48 mx-auto" />
-          </div>
-          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mt-4 leading-relaxed">
-            {t("Engineering tomorrow's energy solutions with cutting-edge photovoltaic technology")}
-          </p>
-        </div>
+        <SectionHeading
+          title={t("Solar Innovation")}
+          subtitle={t("Engineering tomorrow's energy solutions with cutting-edge photovoltaic technology")}
+          className="mb-8 lg:mb-10"
+        />
         {/* Compact Series Navigation */}
         <div className="flex justify-center mb-4 sm:mb-6">
           <div className="bg-white border border-gray-200 rounded-xl p-1">

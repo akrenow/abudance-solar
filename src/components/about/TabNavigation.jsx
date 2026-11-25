@@ -13,6 +13,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 import PowerPlant from "../../assets/images/poweplant.png"; // Adjust the path as necessary
 const TabNavigation = () => {
   const navigate = useNavigate();
@@ -207,9 +208,7 @@ const TabNavigation = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {t("Pioneering Solar Manufacturing in the UAE")}
-                </h2>
+                <SectionHeading title={t("Pioneering Solar Manufacturing in the UAE")} align="start" className="mb-6" />
                 <p className="text-lg text-gray-600 mb-6">
                  {t("Abundance Solar Panels Industries L.L.C is a pioneering solar panel manufacturing company based in Khalifa Economic Zones Abu Dhabi (KEZAD), UAE. The company is dedicated to supporting the global shift towards renewable energy by producing high-quality solar panels using advanced European technology.")}
                 </p>
@@ -289,9 +288,7 @@ const TabNavigation = () => {
                   <div className="text-white text-6xl mb-4">
                     <i className="fas fa-eye"></i>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                    {t("Our Vision")}
-                  </h2>
+                  <SectionHeading title={t("Our Vision")} light align="start" className="mb-4" />
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
@@ -315,9 +312,7 @@ const TabNavigation = () => {
                   <div className="text-white text-6xl mb-4">
                     <i className="fas fa-bullseye"></i>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                    {t("Our Mission")}
-                  </h2>
+                  <SectionHeading title={t("Our Mission")} light align="start" className="mb-4" />
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-xl text-white leading-relaxed">
@@ -329,9 +324,7 @@ const TabNavigation = () => {
 
             {/* Values */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-                {t("Our Core Values")}
-              </h2>
+              <SectionHeading title={t("Our Core Values")} className="mb-12" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 rounded-lg p-8 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-secondary text-gray-100 mb-6">
@@ -415,9 +408,7 @@ const TabNavigation = () => {
         <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Our Leadership Team
-              </h2>
+              <SectionHeading title="Our Leadership Team" align="start" className="mb-6" />
               <p className="text-lg text-gray-600">
                 Meet the experienced professionals leading Bronze Solar's
                 mission to revolutionize the renewable energy landscape with
@@ -467,9 +458,7 @@ const TabNavigation = () => {
 
             {/* Board of Advisors */}
             <div className="mt-24">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                Board of Advisors
-              </h2>
+              <SectionHeading title="Board of Advisors" className="mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 rounded-lg p-6 flex items-center">
                   <img
@@ -529,9 +518,7 @@ const TabNavigation = () => {
             {/* Facility Overview */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {t("State-of-the-Art Manufacturing Facility")}
-                </h2>
+                <SectionHeading title={t("State-of-the-Art Manufacturing Facility")} align="start" className="mb-6" />
                 <p className="text-lg text-gray-600 mb-6">
                   {t("Located at Plot No. 7-8, KHIA5, KEZAD, Abu Dhabi, United Arab Emirates, our manufacturing plant represents a significant investment in the region's renewable energy sector. The facility spans 3,01,389 square feet and utilizes the latest innovations in solar panel technology.")}
                 </p>
@@ -602,9 +589,7 @@ const TabNavigation = () => {
 
             {/* Manufacturing Process */}
             <div className="mb-20 max-w-7xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-                {t("Our Manufacturing Process")}
-              </h2>
+              <SectionHeading title={t("Our Manufacturing Process")} className="mb-12" />
 
               {/* Process Steps Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -661,9 +646,7 @@ const TabNavigation = () => {
 
             {/* Strategic Impact */}
             <div className="bg-gray-50 rounded-xl p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                {t("Strategic Impact")}
-              </h2>
+              <SectionHeading title={t("Strategic Impact")} className="mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -706,9 +689,7 @@ const TabNavigation = () => {
             {/* Sustainability Overview */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {t("Our Commitment to Sustainability")}
-                </h2>
+                <SectionHeading title={t("Our Commitment to Sustainability")} align="start" className="mb-6" />
                 <p className="text-lg text-gray-600 mb-6">
                   {t("Bronze Solar is deeply committed to environmental stewardship, striving to reduce carbon emissions and foster green technologies. Our operations are designed to support the creation of energy-efficient ecosystems and promote responsible industrial development in line with the UAE's net-zero goals.")}
                 </p>
@@ -767,9 +748,7 @@ const TabNavigation = () => {
 
             {/* Environmental Initiatives */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-                {t("Environmental Initiatives")}
-              </h2>
+              <SectionHeading title={t("Environmental Initiatives")} className="mb-12" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white rounded-lg shadow-md p-8">
                   <div className="text-green-500 text-4xl mb-4">
@@ -861,9 +840,7 @@ const TabNavigation = () => {
 
             {/* CSR Initiatives */}
             <div className="mb-20">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-                {t("Corporate Social Responsibility")}
-              </h2>
+              <SectionHeading title={t("Corporate Social Responsibility")} className="mb-12" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-gray-50 rounded-lg p-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -949,9 +926,7 @@ const TabNavigation = () => {
 
             {/* Sustainability Goals */}
             <div className="bg-green-50 rounded-xl p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                {t("Our Sustainability Goals")}
-              </h2>
+              <SectionHeading title={t("Our Sustainability Goals")} className="mb-8" />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white rounded-lg p-6 text-center">
                   <div className="inline-flex items-center justify-center h-20 w-20 rounded-full bg-green-100 text-green-600 mb-6">

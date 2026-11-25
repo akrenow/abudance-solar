@@ -104,7 +104,7 @@ const TestimonialsSwiper = ({
                 {/* Header */}
                 <div className="text-center mb-8 lg:mb-10 relative">
                     <div className="inline-block">
-                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-amber-600 to-orange-600 mb-6 leading-tight">
+                        <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-secondary mb-6 leading-tight">
                             Customer Satisfaction is Our Priority
                         </h1>
                         <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent w-32 sm:w-48 mx-auto" />

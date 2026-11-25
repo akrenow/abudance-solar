@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const NewsSection = ({
   title = "Latest News",
@@ -13,18 +14,7 @@ const NewsSection = ({
   return (
     <section className={`section-padding ${backgroundColor}`}>
       <div className="container mx-auto container-padding">
-        {/* Section Header */}
-        <div className="text-center mb-20 relative">
-          <div className="inline-block">
-            <h2 className="text-3xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary mb-8 leading-tight">
-              {t(title)}
-            </h2>
-            <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-32 sm:w-48 mx-auto" />
-          </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-8 leading-relaxed">
-            {t(description)}
-          </p>
-        </div>
+        <SectionHeading title={t(title)} subtitle={t(description)} />
 
         {newsItems.length > 0 ? (
           <>

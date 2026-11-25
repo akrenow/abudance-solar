@@ -1,5 +1,6 @@
 import { Lightbulb, Globe, Zap } from "lucide-react";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const OurVision = () => {
   const { t } = useLanguage();
@@ -12,15 +13,7 @@ const OurVision = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary">
-              {t("Our Vision")}
-            </h2>
-          </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
-        </div>
+        <SectionHeading title={t("Our Vision")} />
 
         {/* Main Content */}
         <div className="max-w-6xl mx-auto">

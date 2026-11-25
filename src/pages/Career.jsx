@@ -16,6 +16,7 @@ import { jobOpenings } from "../core/constants/jobOpenings";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 import { SITE_URL } from "@/i18n/routing";
 import { jobPostingNode } from "@/seo/structuredData";
 
@@ -215,14 +216,10 @@ Best regards,
       {/* Why Join Us Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t("Why Choose Bronze Solar?")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t("Join a company that's not just manufacturing solar panels, but shaping the future of renewable energy")}
-            </p>
-          </div>
+          <SectionHeading
+            title={t("Why Choose Bronze Solar?")}
+            subtitle={t("Join a company that's not just manufacturing solar panels, but shaping the future of renewable energy")}
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {benefits.map((benefit, index) => (
@@ -279,9 +276,7 @@ Best regards,
           <section className="py-10 ">
             <div className="container mx-auto px-4">
               <div className="text-center mb-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  {t("Search Job Openings")}
-                </h2>
+                <SectionHeading title={t("Search Job Openings")} className="mb-6" />
                 <input
                   type="text"
                   placeholder={t("Search by title, department, or description")}
@@ -368,14 +363,10 @@ Best regards,
       {/* Application Process Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t("Application Process")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t("Our streamlined hiring process ensures we find the right fit for both you and our team")}
-            </p>
-          </div>
+          <SectionHeading
+            title={t("Application Process")}
+            subtitle={t("Our streamlined hiring process ensures we find the right fit for both you and our team")}
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
@@ -423,9 +414,7 @@ Best regards,
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-r from-secondary to-secondary/90 rounded-2xl p-8 md:p-12 text-white">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t("Don't See the Right Position?")}
-              </h2>
+              <SectionHeading light title={t("Don't See the Right Position?")} className="mb-6" />
               <p className="text-xl mb-8 text-white/90">
                 {t("We're always looking for talented individuals to join our team. Send us your resume and let us know how you can contribute to our mission.")}
               </p>

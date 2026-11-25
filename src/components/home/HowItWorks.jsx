@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/i18n/useLanguage";
+import SectionHeading from "@/components/SectionHeading";
 
 const HowItWorks = () => {
   const { t } = useLanguage();
@@ -27,18 +28,10 @@ const HowItWorks = () => {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto ">
-        {/* Section Header */}
-        <div className="text-center mb-20 relative">
-          <div className="inline-flex items-center justify-center mb-6">
-            <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary leading-tight py-2">
-              {t("Technology")}
-            </h2>
-          </div>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t("Simple steps to transition to solar energy with Bronze Solar")}
-          </p>
-        </div>
+        <SectionHeading
+          title={t("Technology")}
+          subtitle={t("Simple steps to transition to solar energy with Bronze Solar")}
+        />
         {/* Process Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
